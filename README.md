@@ -14,6 +14,7 @@ features:
 - every quest is finished with 3*
 - buy rare items from shop
 - use free summons
+- overlords tower supported
 - farm item world for both weapons & armor
 - catching innocents while farming item world
 - multi region support gl & jp (need jp proxy)
