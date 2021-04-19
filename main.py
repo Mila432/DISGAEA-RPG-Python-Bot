@@ -46,7 +46,7 @@ class API(object):
 		if self.device=='1':
 			self.platform='iOS'
 		else:
-			self.platform='iOS'
+			self.platform='Android'
 
 	def setPassword(self,p):
 		self.password=p
@@ -144,7 +144,7 @@ class API(object):
 		if self.region==1 or hasattr(self,'isReroll'):
 			data=self.callAPI('login',{"password": self.password, "uuid": self.uuid})
 		else:
-			data=self.callAPI('sdk/login',{"platform":"iOS","sess":self.sess,"sdk":"BC4D6C8AE94230CC","region":"non_mainland","uin":self.uin})
+			data=self.callAPI('sdk/login',{"platform":self.platform,"sess":self.sess,"sdk":"BC4D6C8AE94230CC","region":"non_mainland","uin":self.uin})
 		return data
 
 	def version_check(self):
