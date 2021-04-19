@@ -84,7 +84,9 @@ class API(object):
 		if 'api_error' in res:
 			if res['api_error']['code']==30005:
 				self.log(res['api_error'])
-				self.item_use(use_item_id=301,use_item_num=1)
+				rr=self.item_use(use_item_id=301,use_item_num=1)
+				if 'api_error' in rr and rr['api_error']['code']==12009:
+					return None
 				return self.callAPI(url,data)
 		if 'password' in res:
 			self.password=res['password']
@@ -258,6 +260,14 @@ class API(object):
 		data=self.rpc('friend/index',{})
 		return data
 
+	def trophy_get_reward_daily(self,receive_all=1,id=0):
+		data=self.rpc('trophy/get_reward_daily',{"receive_all": receive_all, "id": id})
+		return data
+
+	def trophy_get_reward(self,receive_all=1,id=0):
+		data=self.rpc('trophy/get_reward',{"receive_all": receive_all, "id": id})
+		return data
+
 	def player_home_customizes(self):
 		data=self.rpc('player/home_customizes',{})
 		return data
@@ -377,12 +387,18 @@ class API(object):
 		return data
 
 	def getmail(self):
-		ids=self.present_index(conditions=[0, 1, 2, 3, 4, 99],order=1)['result']['_items']
-		msgs=[]
-		for i in ids:
-			msgs.append(i['id'])
-		if len(msgs)>=1:
-			self.present_receive(receive_ids=msgs,conditions=[0, 1, 2, 3, 4, 99],order=1)
+		did=set()
+		while(1):
+			ids=self.present_index(conditions=[0, 1, 2, 3, 4, 99],order=1)['result']['_items']
+			msgs=[]
+			for i in ids:
+				if i['id'] in did:	continue
+				msgs.append(i['id'])
+				did.add(i['id'])
+			if len(msgs)>=1:
+				self.present_receive(receive_ids=msgs[0:len(msgs) if len(msgs)<=20 else 20],conditions=[0, 1, 2, 3, 4, 99],order=1)
+			else:
+				break
 
 	def gacha_available(self):
 		data=self.rpc('gacha/available',{})
@@ -398,6 +414,7 @@ class API(object):
 
 	def getfreegacha(self):
 		res=self.gacha_available()
+		self.gacha_do(is_gacha_free=True,price=0,item_type=2,num=1,m_gacha_id=100001,item_id=0)
 
 	def battle_status(self):
 		data=self.rpc('battle/status',{})
@@ -458,6 +475,11 @@ class API(object):
 	def getUnit(self,i):
 		for s in units.data:
 			if i == s['id']:
+				return s
+
+	def getChar(self,i):
+		for s in characters.data:
+			if i == s['m_character_id']:
 				return s
 
 	def doQuest(self,m_stage_id=101102):
@@ -535,7 +557,7 @@ class API(object):
 					self.log('%s +%s'%(i['name'],self.getGain(t)))
 			elif e == 'drop_character':
 				for t in drop_result[e]:
-					self.log('unit:%s lv:%s rarity:%s*'%(self.getUnit(t['m_character_name_id'])['name'],t['lv'],t['rarity']))
+					self.log('unit:%s lv:%s rarity:%s*'%(self.getChar(t['m_character_id'])['class_name'],t['lv'],t['rarity']))
 			elif e == 'stones':
 				self.log('+%s nether quartz'%(drop_result[e][0]['num']-self.gems))
 			#else:
@@ -566,7 +588,7 @@ class API(object):
 		i=0
 		blacklist=set()
 		for s in ss:
-			if limit is not None and i>=limit:	return
+			if limit is not None and i>=limit:	return False
 			#print(s,self.getStage(s)['m_area_id'])
 			if m_area_id is not None and m_area_id!=self.getStage(s)['m_area_id']:	continue
 			if not skipDone and s in self.done:	continue
@@ -574,10 +596,12 @@ class API(object):
 			try:
 				self.doQuest(s)
 			except KeyboardInterrupt:
-				return
+				return False
 			except:
-				self.log('failed %s'%(s))
-				#blacklist.add(self.getStage(s)['m_area_id'])
+				#print(traceback.format_exc())
+				self.log('failed %s %s'%(s,self.getStage(s)['m_area_id']))
+				#return False
+				blacklist.add(self.getStage(s)['m_area_id'])
 				continue
 			self.player_stone_sum()
 			self.player_items()
