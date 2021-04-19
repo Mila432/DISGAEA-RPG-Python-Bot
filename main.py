@@ -10,6 +10,7 @@ from codedbots import codedbots
 import stages
 import items
 import units
+import characters
 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
