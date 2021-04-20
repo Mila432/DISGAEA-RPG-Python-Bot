@@ -25,4 +25,4 @@ a.doQuest(1001101303)
 #do multiple quests
 a.completeStory(90101)
 #farm dungeon
-a.completeStory(50107,skipDone=True)
+a.completeStory(50107,farmingAll=True)

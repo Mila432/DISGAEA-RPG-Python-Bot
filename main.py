@@ -578,8 +578,8 @@ class API(object):
 		data=self.rpc('item_world/persuasion',{})
 		return data
 
-	def completeStory(self,m_area_id=None,limit=None,skipDone=False):
-		if not skipDone:
+	def completeStory(self,m_area_id=None,limit=None,farmingAll=False):
+		if not farmingAll:
 			self.getDone()
 		ss=[]
 		for s in stages.data:
@@ -592,7 +592,7 @@ class API(object):
 			if limit is not None and i>=limit:	return False
 			#print(s,self.getStage(s)['m_area_id'])
 			if m_area_id is not None and m_area_id!=self.getStage(s)['m_area_id']:	continue
-			if not skipDone and s in self.done:	continue
+			if not farmingAll and s in self.done:	continue
 			if self.getStage(s)['m_area_id'] in blacklist:	continue
 			try:
 				self.doQuest(s)
