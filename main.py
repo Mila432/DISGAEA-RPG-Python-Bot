@@ -444,7 +444,7 @@ class API(object):
 		return data
 
 	def battle_end(self,battle_exp_data,m_stage_id,battle_type,result,command_count,equipment_id=0,equipment_type=0,m_tower_no=0):
-		data=self.rpc('battle/end',{"battle_exp_data": battle_exp_data, "equipment_type": equipment_type, "steal_hl_num": 0, "m_tower_no": m_tower_no, "raid_battle_result": "", "m_stage_id": m_stage_id, "total_receive_damage": 0, "equipment_id": equipment_id, "killed_character_num": 0, "t_raid_status_id": 0, "battle_type": battle_type, "result": result, "innocent_dead_flg": 0, "tower_attack_num": 0, "max_once_damage": random.uniform(10000, 10000000), "mission_status": "1,1,1", "command_count": command_count, "prinny_bomb_num": 0})
+		data=self.rpc('battle/end',{"battle_exp_data": battle_exp_data, "equipment_type": equipment_type, "steal_hl_num": 0, "m_tower_no": m_tower_no, "raid_battle_result": "", "m_stage_id": m_stage_id, "total_receive_damage": 0, "equipment_id": equipment_id, "killed_character_num": 0, "t_raid_status_id": 0, "battle_type": battle_type, "result": result, "innocent_dead_flg": 0, "tower_attack_num": 0, "max_once_damage": int(random.uniform(10000, 10000000)*10), "mission_status": "1,1,1", "command_count": command_count, "prinny_bomb_num": 0})
 		return data
 
 	def item_use(self,use_item_id,use_item_num):
