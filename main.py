@@ -82,6 +82,9 @@ class API(object):
 			self.log('missing iv!')
 			return None
 		res= self.c.decrypt(base64.b64encode(r.content),r.headers['X-Crypt-Iv'])
+		if 'title' in res and 'Maintenance' in res['title']:
+			self.log(res['content'])
+			exit(1)
 		if 'api_error' in res:
 			if res['api_error']['code']==30005:
 				self.log(res['api_error'])
