@@ -10,6 +10,9 @@ class codedbots(object):
 	def __init__(self):
 		self.s=requests.Session()
 		self.license='PUT YOUR LICENSE KEY HERE'
+		if len(self.license)!=64:
+			print('license invalid')
+			exit(1)
 		self.mainurl=base64.b64decode('aHR0cHM6Ly9kaXNnYWVhLmNvZGVkYm90cy5jb20=').decode()
 		self.key=None
 
@@ -26,6 +29,7 @@ class codedbots(object):
 		if r.status_code==200:
 			return base64.b64decode(r.content)
 		else:
+			print('[%s] license key invalid or blocked [%s]'%(r.status_code,self.license))
 			time.sleep(60)
 			return None
 
@@ -34,5 +38,6 @@ class codedbots(object):
 		if r.status_code==200:
 			return json.loads(base64.b64decode(r.content))
 		else:
+			print('[%s] license key invalid or blocked [%s]'%(r.status_code,self.license))
 			time.sleep(60)
 			return None
