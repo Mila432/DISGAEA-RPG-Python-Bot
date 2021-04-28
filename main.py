@@ -86,12 +86,15 @@ class API(object):
 			self.log(res['content'])
 			exit(1)
 		if 'api_error' in res:
-			if res['api_error']['code']==30005:
+			if 'code' in res['api_error'] and res['api_error']['code']==30005:
 				self.log(res['api_error'])
 				rr=self.item_use(use_item_id=301,use_item_num=1)
 				if 'api_error' in rr and rr['api_error']['code']==12009:
 					return None
 				return self.callAPI(url,data)
+			else:
+				self.log(res['api_error']['message'])
+				exit(1)
 		if 'password' in res:
 			self.password=res['password']
 			self.uuid=res['uuid']
