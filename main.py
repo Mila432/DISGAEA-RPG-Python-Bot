@@ -27,7 +27,6 @@ class API(object):
 		self.setDevice(1)
 
 	def setProxy(self,proxy):
-		self.b.setProxy(proxy)
 		proxy='http://'+proxy
 		proxy={'http': proxy,'https': proxy,}
 		self.s.proxies.update(proxy)
@@ -116,8 +115,8 @@ class API(object):
 		if 'result' in res and 'after_t_status' in res['result']:
 			self.log('%s / %s rank:%s'%(res['result']['after_t_status']['act'],res['result']['after_t_status']['act_max'],res['result']['after_t_status']['rank']))
 		if 'result' in res and 't_innocent_id' in res['result']:
-			self.log('t_innocent_id:%s'%(res['result']['t_innocent_id']))
 			if res['result']['t_innocent_id']!=0:
+				self.log('t_innocent_id:%s'%(res['result']['t_innocent_id']))
 				status=0
 				while(status==0):
 					status=self.item_world_persuasion()
@@ -506,6 +505,8 @@ class API(object):
 		return data
 
 	def getDiffWeapon(self,i):
+		if 'after_t_weapon' not in i['result'] and 'after_t_equipment' not in i['result']:
+			return False
 		stuff=self.weapons if 'after_t_weapon' in i['result'] else self.equipments
 		i=i['result']['after_t_weapon' if 'after_t_weapon' in i['result'] else 'after_t_equipment']
 		res=[str(i['id'])]
@@ -539,13 +540,21 @@ class API(object):
 		end= self.battle_end(battle_exp_data=self.getbattle_exp_data(start),m_tower_no=m_tower_no,m_stage_id=0,battle_type=4,result=1,command_count=9)
 		return end
 
+	def parseStart(self,start):
+		if 'result' in start and 'reward_id' in start['result']:
+			reward_id=start['result']['reward_id']
+			if reward_id != [101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101]:
+				self.log(reward_id)
+		return 1
+
 	def doItemWorld(self,equipment_id=None,equipment_type=1):
 		if equipment_id is None:
 			self.log('missing equip')
 			return
 		start=self.item_world_start(equipment_id,equipment_type=equipment_type)
 		if 'result' not in start:	return False
-		end= self.battle_end(battle_exp_data=self.getbattle_exp_data(start),m_stage_id=0,battle_type=5,result=1,command_count=9,equipment_type=equipment_type,equipment_id=equipment_id)
+		result=self.parseStart(start)
+		end= self.battle_end(battle_exp_data=self.getbattle_exp_data(start),m_stage_id=0,battle_type=5,result=result,command_count=9,equipment_type=equipment_type,equipment_id=equipment_id)
 		res=self.getDiffWeapon(end)
 		self.log(res)
 		return res
@@ -574,7 +583,8 @@ class API(object):
 		if not hasattr(self,'done'):
 			self.done=set()
 		r=self.player_clear_stages(updated_at=0,page=page)['result']['_items']
-		if len(r)<=0:	return
+		if len(r)<=0:
+			return
 		for i in r:
 			if i['clear_num']>=1:
 				self.done.add(i['m_stage_id'])
@@ -584,8 +594,8 @@ class API(object):
 		data=self.rpc('item_world/persuasion',{})
 		return data
 
-	def completeStory(self,m_area_id=None,limit=None,farmingAll=False):
-		if not farmingAll:
+	def completeStory(self,m_area_id=None,limit=None,skipDone=False):
+		if not skipDone:
 			self.getDone()
 		ss=[]
 		for s in stages.data:
@@ -598,7 +608,7 @@ class API(object):
 			if limit is not None and i>=limit:	return False
 			#print(s,self.getStage(s)['m_area_id'])
 			if m_area_id is not None and m_area_id!=self.getStage(s)['m_area_id']:	continue
-			if not farmingAll and s in self.done:	continue
+			if not skipDone and s in self.done:	continue
 			if self.getStage(s)['m_area_id'] in blacklist:	continue
 			try:
 				self.doQuest(s)
@@ -613,6 +623,11 @@ class API(object):
 			self.player_stone_sum()
 			self.player_items()
 			i+=1
+
+	def useCodes(self):
+		for c in ['5uf6dyc6gh','dp9GVSSnXG','dupj4kjfc3','f7wtnxk65h','j5zysmkvvv','ju56hvdwhz','nfefnysyy5','skfcqwykif','sqzvquhtqp','tcv5saaskw','xnv2ndstwp']:
+			self.boltrend_exchange_code(c)
+		self.getmail()
 
 	def addAccount(self):
 		self.player_stone_sum()
@@ -639,15 +654,12 @@ class API(object):
 		self.getmail()
 		self.player_stone_sum()
 		self.app_constants()
+		self.player_tutorial()
 		self.battle_status()
-		self.player_sync()
 		self.player_characters(updated_at=0,page=1)
 		self.player_weapons(updated_at=0,page=1)
-		self.player_weapon_effects(updated_at=0,page=1)
 		self.player_equipments(updated_at=0,page=1)
-		self.player_equipment_effects(updated_at=0,page=1)
 		self.player_innocents(updated_at=0,page=1)
-		self.player_clear_stages(updated_at=int(time.time()),page=1)
 		self.player_index()
 		self.player_agendas()
 		self.player_boosts()
@@ -665,23 +677,14 @@ class API(object):
 		self.stage_boost_index()
 		self.information_popup()
 		self.player_character_mana_potions()
-		self.potential_current()
-		self.potential_conditions()
-		self.character_boosts()
-		self.survey_index()
-		self.kingdom_entries()
-		self.breeding_center_list()
-		self.trophy_daily_requests()
-		self.weapon_equipment_update_effect_unconfirmed()
+		self.player_equipments(updated_at=0,page=2)
+		self.player_innocents(updated_at=0,page=2)
 		self.player_badges()
 		self.system_version_manage()
 		self.player_update_device_token(device_token='')
 		self.login_update()
 		self.player_badge_homes()
 		self.trophy_beginner_missions()
-		self.trophy_beginner_missions(sheet_type=3)
-		self.trophy_beginner_missions(sheet_type=4)
-		self.raid_ranking_reward()
 		self.getmail()
 		self.getmail()
 		self.getfreegacha()
@@ -703,7 +706,7 @@ class API(object):
 		return data
 
 	def buyRare(self):
-		lineup_no=self.shop_equipment_shop()['result']
+		lineup_no=self.shop_equipment_items()['result']
 		lineup_no=lineup_no['lineup_no']
 		if lineup_no>=4:	return
 		while(lineup_no<4):
