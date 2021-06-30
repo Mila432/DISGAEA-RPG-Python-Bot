@@ -76,8 +76,8 @@ class API(object):
 			print('[%s] %s'%(time.strftime('%H:%M:%S'),msg.encode('utf-8')))
 	
 	def callAPI(self,url,data=None):
-		if hasattr(self,'waitn') and self.waitn>=1:
-			time.sleep(self.waitn)
+		#if hasattr(self,'waitn') and self.waitn>=1:
+		#	time.sleep(self.waitn)
 		self.thisiv=self.c.randomiv()
 		self.setheaders(url)
 		if data is None:
