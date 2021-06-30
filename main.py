@@ -7,10 +7,14 @@ import random
 import json
 import sys
 from codedbots import codedbots
+from db import Database
+import db2
+from boltrend import boltrend
 import stages
 import items
 import units
 import characters
+import traceback
 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -20,6 +24,8 @@ head={'version_check':0,'signup':1,'login':1,'rpc':2}
 class API(object):
 	def __init__(self):
 		self.c=codedbots()
+		self.db=Database()
+		self.b=boltrend()
 		self.s=requests.Session()
 		self.s.verify=False
 		self.setRegion(1)
@@ -342,6 +348,10 @@ class API(object):
 		data=self.rpc('kingdom/entries',{})
 		return data
 
+	def update_admin_flg(self):
+		data=self.rpc('debug/update_admin_flg',{})
+		return data
+
 	def breeding_center_list(self):
 		data=self.rpc('breeding_center/list',{})
 		return data
@@ -500,6 +510,8 @@ class API(object):
 			return self.battle_story(m_stage_id)
 		help_players=self.battle_help_list()['result']['help_players'][0]
 		start=self.battle_start(m_stage_id=m_stage_id,help_t_player_id=help_players['t_player_id'],help_t_character_id=help_players['t_character']['id'],act=stage['act'],help_t_character_lv=help_players['t_character']['lv'])
+		if 'result' not in start:
+			return
 		self.battle_help_list()
 		end= self.battle_end(battle_exp_data=self.getbattle_exp_data(start),m_stage_id=m_stage_id,battle_type=1,result=1,command_count=9)
 		res=self.parseReward(end)
@@ -570,15 +582,21 @@ class API(object):
 				return t['num']-j['num']
 
 	def parseReward(self,end):
-		drop_result=end['result']['drop_result']
+		drop_result=end
+		rpcid=drop_result['id']
+		current_id=drop_result['result']['after_t_stage_current']['current_id']
+		drop_result=drop_result['result']['drop_result']
+		db=db2.Database()
 		for e in drop_result:
 			if e == 'after_t_item':
 				for t in drop_result[e]:
 					i=self.getItem(t['m_item_id'])
 					self.log('%s +%s'%(i['name'],self.getGain(t)))
+					db.add(t['m_item_id'],0,self.getGain(t),current_id,rpcid)
 			elif e == 'drop_character':
 				for t in drop_result[e]:
 					self.log('unit:%s lv:%s rarity:%s*'%(self.getChar(t['m_character_id'])['class_name'],t['lv'],t['rarity']))
+					db.add(t['m_character_id'],1,1,current_id,rpcid)
 			elif e == 'stones':
 				self.log('+%s nether quartz'%(drop_result[e][0]['num']-self.gems))
 			#else:
@@ -636,18 +654,6 @@ class API(object):
 
 	def addAccount(self):
 		self.player_stone_sum()
-		self.boltrend_exchange_code('73rss7mw9i')
-		self.boltrend_exchange_code('ckwwievtx9')
-		self.boltrend_exchange_code('dkskdyexfr')
-		self.boltrend_exchange_code('e7ef24evfc')
-		self.boltrend_exchange_code('gyka4jreqf')
-		self.boltrend_exchange_code('h3wq5ft9kw')
-		self.boltrend_exchange_code('k7uu7d6zkq')
-		self.boltrend_exchange_code('ksyyrtaufe')
-		self.boltrend_exchange_code('nuwjyu26xh')
-		self.boltrend_exchange_code('pe3q2hrden')
-		self.boltrend_exchange_code('rkxwj7qrwk')
-		self.boltrend_exchange_code('rr5nguvafi')
 		self.getmail()
 		self.getmail()
 
@@ -693,6 +699,8 @@ class API(object):
 		self.getmail()
 		self.getmail()
 		self.getfreegacha()
+		self.db.addAccount(self.sess,'',self.uin,self.gems)
+		self.updateAccount()
 
 	def shop_equipment_items(self):
 		data=self.rpc('shop/equipment_items',{})
@@ -727,10 +735,54 @@ class API(object):
 		return data
 
 	def dofarm(self):
-		self.buyRare()
-		#self.shop_buy_item(itemid=1012,quantity=1)#ap
-		#self.completeStory()
+		#self.buyRare()
+		self.trophy_get_reward_daily()
+		self.trophy_get_reward()
+		self.trophy_get_reward()
+		self.trophy_get_reward()
+		self.trophy_get_reward()
+		self.trophy_get_reward()
+		self.getmail()
+		self.getmail()
+		self.getmail()
+		self.getmail()
+		self.getmail()
+		if True:
+			self.shop_buy_item(itemid=9,quantity=1)
+			self.shop_buy_item(itemid=8,quantity=1)
+			self.shop_buy_item(itemid=7,quantity=1)
+			self.shop_buy_item(itemid=6,quantity=1)
+			self.shop_buy_item(itemid=1012,quantity=1)
+			self.shop_buy_item(itemid=1011,quantity=1)
+			self.shop_buy_item(itemid=101,quantity=1)
+			self.shop_buy_item(itemid=101,quantity=1)
+			self.shop_buy_item(itemid=101,quantity=1)
+			self.shop_buy_item(itemid=101,quantity=1)
+			self.shop_buy_item(itemid=101,quantity=1)
+		if True:
+			self.sub_tutorial_read(m_sub_tutorial_id=31)
+			self.sub_tutorial_read(m_sub_tutorial_id=8)
+			self.sub_tutorial_read(m_sub_tutorial_id=7)
+			self.sub_tutorial_read(m_sub_tutorial_id=1)
+			self.sub_tutorial_read(m_sub_tutorial_id=19)
+			self.sub_tutorial_read(m_sub_tutorial_id=21)
+			self.sub_tutorial_read(m_sub_tutorial_id=29)
+			self.sub_tutorial_read(m_sub_tutorial_id=24)
+			self.sub_tutorial_read(m_sub_tutorial_id=2)
+			self.sub_tutorial_read(m_sub_tutorial_id=6)
+			self.sub_tutorial_read(m_sub_tutorial_id=25)
+			self.sub_tutorial_read(m_sub_tutorial_id=26)
+		self.completeStory()
+
+	def updateAccount(self):
+		if hasattr(self,'sess'):
+			self.db.updateAccount(int(self.uin),self.gems,self.sess)
 
 if __name__ == "__main__":
 	a=API()
-	a.reroll()
+	if False:
+		a.password='26eYVYpYVdbwpPkq'
+		a.uuid='e08ed5d9-61a6-4055-a18e-9795d8f40f47'
+		a.dologin()
+	else:
+		a.reroll()
