@@ -15,6 +15,8 @@ import items
 import units
 import characters
 import traceback
+import equip
+import weapon
 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -56,6 +58,9 @@ class API(object):
 
 	def wait(self,n):
 		self.waitn=int(n)
+
+	def minrarity(self,i):
+		self.minrare=int(i)
 
 	def setPassword(self,p):
 		self.password=p
@@ -503,6 +508,16 @@ class API(object):
 			if i == s['m_character_id']:
 				return s
 
+	def getEquip(self,i):
+		for s in equip.data:
+			if i == s['id']:
+				return s
+
+	def getWeapon(self,i):
+		for s in weapon.data:
+			if i == s['id']:
+				return s
+
 	def doQuest(self,m_stage_id=101102):
 		stage=self.getStage(m_stage_id)
 		self.log('doing quest:%s [%s]'%(stage['name'],m_stage_id))
@@ -522,7 +537,7 @@ class API(object):
 		return data
 
 	def getDiffWeapon(self,i):
-		if 'after_t_weapon' not in i['result'] and 'after_t_equipment' not in i['result']:
+		if 'result' not in i or ('after_t_weapon' not in i['result'] and 'after_t_equipment' not in i['result']):
 			return False
 		stuff=self.weapons if 'after_t_weapon' in i['result'] else self.equipments
 		i=i['result']['after_t_weapon' if 'after_t_weapon' in i['result'] else 'after_t_equipment']
@@ -557,11 +572,19 @@ class API(object):
 		end= self.battle_end(battle_exp_data=self.getbattle_exp_data(start),m_tower_no=m_tower_no,m_stage_id=0,battle_type=4,result=1,command_count=9)
 		return end
 
-	def parseStart(self,start):
+	def parseStart(self,start,equipment_type=1):
 		if 'result' in start and 'reward_id' in start['result']:
 			reward_id=start['result']['reward_id']
-			if reward_id != [101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101]:
-				self.log(reward_id)
+			if start['result']['stage'] in set([30,60,90,100]):
+				if reward_id == [101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101, 101]:
+					return 5
+				#self.log(reward_id)
+				for j,r in enumerate(reward_id):
+					if r == 101:	continue
+					item=self.getWeapon(r) if equipment_type==1 else self.getEquip(r)
+					self.log('[+] found item:%s with rarity:%s'%(item['name'],start['result']['reward_rarity'][j]))
+					if hasattr(self,'minrare') and start['result']['reward_rarity'][j]<self.minrare:
+						return 5
 		return 1
 
 	def doItemWorld(self,equipment_id=None,equipment_type=1):
@@ -570,10 +593,13 @@ class API(object):
 			return
 		start=self.item_world_start(equipment_id,equipment_type=equipment_type)
 		if 'result' not in start:	return False
-		result=self.parseStart(start)
+		result=self.parseStart(start,equipment_type)
 		end= self.battle_end(battle_exp_data=self.getbattle_exp_data(start),m_stage_id=0,battle_type=5,result=result,command_count=9,equipment_type=equipment_type,equipment_id=equipment_id)
 		res=self.getDiffWeapon(end)
 		self.log(res)
+		if result == 5:
+			self.log('did not drop anything good, retrying..')
+			return self.doItemWorld(equipment_id=equipment_id,equipment_type=equipment_type)
 		return res
 
 	def getGain(self,t):
