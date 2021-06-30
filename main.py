@@ -48,6 +48,9 @@ class API(object):
 		else:
 			self.platform='Android'
 
+	def wait(self,n):
+		self.waitn=int(n)
+
 	def setPassword(self,p):
 		self.password=p
 
@@ -67,6 +70,8 @@ class API(object):
 			print('[%s] %s'%(time.strftime('%H:%M:%S'),msg.encode('utf-8')))
 	
 	def callAPI(self,url,data=None):
+		if hasattr(self,'waitn') and self.waitn>=1:
+			time.sleep(self.waitn)
 		self.thisiv=self.c.randomiv()
 		self.setheaders(url)
 		if data is None:
@@ -92,8 +97,8 @@ class API(object):
 					return None
 				return self.callAPI(url,data)
 			else:
-				self.log(res['api_error']['message'])
-				exit(1)
+				self.log('server returned error: %s'%(res['api_error']['message']))
+				#exit(1)
 		if 'password' in res:
 			self.password=res['password']
 			self.uuid=res['uuid']
@@ -594,8 +599,8 @@ class API(object):
 		data=self.rpc('item_world/persuasion',{})
 		return data
 
-	def completeStory(self,m_area_id=None,limit=None,skipDone=False):
-		if not skipDone:
+	def completeStory(self,m_area_id=None,limit=None,farmingAll=False):
+		if not farmingAll:
 			self.getDone()
 		ss=[]
 		for s in stages.data:
@@ -608,7 +613,7 @@ class API(object):
 			if limit is not None and i>=limit:	return False
 			#print(s,self.getStage(s)['m_area_id'])
 			if m_area_id is not None and m_area_id!=self.getStage(s)['m_area_id']:	continue
-			if not skipDone and s in self.done:	continue
+			if not farmingAll and s in self.done:	continue
 			if self.getStage(s)['m_area_id'] in blacklist:	continue
 			try:
 				self.doQuest(s)

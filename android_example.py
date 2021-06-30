@@ -3,6 +3,7 @@ from main import API
 a=API()
 a.sess='AAAATlrvMaj5B1tRrTdG_YVdKwPRplka5d5_lV_i6PTtcED06tscRIVj0ifXN0xU3weXf_Eh-PNSzTMzNw7CBcLbjkT_kww941dFj4hdSc5cineU'
 a.uin='393298264'
+a.wait(5)#this will wait 5 seconds between each action
 a.setRegion(2)
 a.setDevice(2)
 a.dologin()

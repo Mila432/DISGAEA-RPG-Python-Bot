@@ -1,8 +1,10 @@
 from main import API
 
 a=API()
-a.sess='AAAATlrvMaj5B1tRrTdG_YVdKwPRplka5d5_lV_i6PTtcED06tscRIVj0ifXN0xU3weXf_Eh-PNSzTMzNw7CBcLbjkT_kww941dFj4hdSc5cineU'
-a.uin='393298264'
+a.setProxy('127.0.0.1:8888')
+a.sess='AAAATlrvMaj5B1tR4VrD1Qhy3GV_zukDoYg5KF_i6PTtcED04lhQItRHCj0A9Gx_RoAIHBvWLPZloWZfGGGt_6zzGqa1dHIO9cqZdIhdSc5cineU'
+a.uin='396184879'
+a.wait(5)#this will wait 5 seconds between each action
 a.setRegion(2)
 a.setDevice(1)
 a.dologin()
