@@ -582,6 +582,8 @@ class API(object):
 				for j,r in enumerate(reward_id):
 					if r == 101:	continue
 					item=self.getWeapon(r) if equipment_type==1 else self.getEquip(r)
+					if item is None:
+						item={'name':r}
 					self.log('[+] found item:%s with rarity:%s'%(item['name'],start['result']['reward_rarity'][j]))
 					if hasattr(self,'minrare') and start['result']['reward_rarity'][j]<self.minrare:
 						return 5
