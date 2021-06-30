@@ -28,3 +28,8 @@ a.doQuest(1001101303)
 a.completeStory(90101)
 #farm dungeon
 a.completeStory(50107,farmingAll=True)
+
+#retry stages until min X rarity
+a.minrarity(40)
+#farm item world
+a.upgradeItems()

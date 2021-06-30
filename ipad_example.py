@@ -1,7 +1,6 @@
 from main import API
 
 a=API()
-a.setProxy('127.0.0.1:8888')
 a.sess='AAAATlrvMaj5B1tR4VrD1Qhy3GV_zukDoYg5KF_i6PTtcED04lhQItRHCj0A9Gx_RoAIHBvWLPZloWZfGGGt_6zzGqa1dHIO9cqZdIhdSc5cineU'
 a.uin='396184879'
 a.wait(5)#this will wait 5 seconds between each action
@@ -29,3 +28,8 @@ a.doQuest(1001101303)
 a.completeStory(90101)
 #farm dungeon
 a.completeStory(50107,farmingAll=True)
+
+#retry stages until min X rarity
+a.minrarity(40)
+#farm item world
+a.upgradeItems()
