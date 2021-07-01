@@ -385,6 +385,27 @@ class API(object):
 		data=self.rpc('player/badge_homes',{})
 		return data
 
+	def shop_sell_equipment(self,sell_equipments):
+		data=self.rpc('shop/sell_equipment',{"sell_equipments": sell_equipments})
+		return data
+
+	def sellItems(self,minrarity=40):
+		self.player_equipments()
+		self.player_weapons()
+		selling=[]
+		for w in self.weapons:
+			if w['rarity_value']>=minrarity:	continue
+			if w['set_chara_id']!=0:	continue
+			print(w)
+			selling.append({'eqtype': 1, 'eqid': w['id']})
+		for w in self.equipments:
+			if w['rarity_value']>=minrarity:	continue
+			if w['set_chara_id']!=0:	continue
+			print(w)
+			selling.append({'eqtype': 2, 'eqid': w['id']})
+		if len(selling)>=1:
+			self.shop_sell_equipment(selling)
+
 	def trophy_beginner_missions(self,sheet_type=None):
 		data=self.rpc('trophy/beginner_missions',{} if sheet_type is None else {'sheet_type':sheet_type})
 		return data
