@@ -537,7 +537,7 @@ class API(object):
 		return data
 
 	def getDiffWeapon(self,i):
-		if 'result' not in i or ('after_t_weapon' not in i['result'] and 'after_t_equipment' not in i['result']):
+		if not i or 'result' not in i or ('after_t_weapon' not in i['result'] and 'after_t_equipment' not in i['result']):
 			return False
 		stuff=self.weapons if 'after_t_weapon' in i['result'] else self.equipments
 		i=i['result']['after_t_weapon' if 'after_t_weapon' in i['result'] else 'after_t_equipment']

@@ -5,6 +5,15 @@ import os.path
 class Database(object):
 	def __init__(self):
 		self.sqlite_file='accounts.db'
+		if not os.path.isfile(self.sqlite_file):
+			self.createDb()
+
+	def createDb(self):
+		conn = sqlite3.connect(self.sqlite_file)
+		c = conn.cursor()
+		c.execute('''CREATE TABLE "players" ("uuid" TEXT,"password" TEXT,"id" INTEGER UNIQUE,"gems" INTEGER,PRIMARY KEY("id"));''')
+		conn.commit()
+		conn.close()
 
 	def addAccount(self,uuid,password,pid,gems):
 		conn = sqlite3.connect(self.sqlite_file)
