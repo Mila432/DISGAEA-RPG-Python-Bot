@@ -396,12 +396,10 @@ class API(object):
 		for w in self.weapons:
 			if w['rarity_value']>=minrarity:	continue
 			if w['set_chara_id']!=0:	continue
-			print(w)
 			selling.append({'eqtype': 1, 'eqid': w['id']})
 		for w in self.equipments:
 			if w['rarity_value']>=minrarity:	continue
 			if w['set_chara_id']!=0:	continue
-			print(w)
 			selling.append({'eqtype': 2, 'eqid': w['id']})
 		if len(selling)>=1:
 			self.shop_sell_equipment(selling)
@@ -486,7 +484,7 @@ class API(object):
 		return data
 
 	def battle_start(self,m_stage_id,help_t_player_id,help_t_character_id,act,help_t_character_lv):
-		data=self.rpc('battle/start',{"t_character_ids": [], "t_deck_no": 1, "m_stage_id": m_stage_id, "m_guest_character_id": 0, "help_t_player_id": help_t_player_id, "t_raid_status_id": 0, "help_t_character_id": help_t_character_id, "auto_rebirth_t_character_ids": [], "act": act, "help_t_character_lv": help_t_character_lv})
+		data=self.rpc('battle/start',{"t_character_ids": [], "t_deck_no": 1, "m_stage_id": m_stage_id, "m_guest_character_id": 0, "help_t_player_id": help_t_player_id, "t_raid_status_id": 0, "help_t_character_id": help_t_character_id, "auto_rebirth_t_character_ids": self.deck, "act": act, "help_t_character_lv": help_t_character_lv})
 		return data
 
 	def battle_end(self,battle_exp_data,m_stage_id,battle_type,result,command_count,equipment_id=0,equipment_type=0,m_tower_no=0):
@@ -554,7 +552,7 @@ class API(object):
 		return res
 
 	def item_world_start(self,equipment_id,equipment_type=1):
-		data=self.rpc('item_world/start',{"equipment_type": equipment_type, "t_deck_no": 1, "equipment_id": equipment_id, "auto_rebirth_t_character_ids": []})
+		data=self.rpc('item_world/start',{"equipment_type": equipment_type, "t_deck_no": 1, "equipment_id": equipment_id, "auto_rebirth_t_character_ids": self.deck})
 		return data
 
 	def getDiffWeapon(self,i):
@@ -593,7 +591,7 @@ class API(object):
 		end= self.battle_end(battle_exp_data=self.getbattle_exp_data(start),m_tower_no=m_tower_no,m_stage_id=0,battle_type=4,result=1,command_count=9)
 		return end
 
-	def parseStart(self,start,equipment_type=1):
+	def parseStart(self,start):
 		if 'result' in start and 'reward_id' in start['result']:
 			reward_id=start['result']['reward_id']
 			if start['result']['stage'] in set([30,60,90,100]):
@@ -602,7 +600,8 @@ class API(object):
 				#self.log(reward_id)
 				for j,r in enumerate(reward_id):
 					if r == 101:	continue
-					item=self.getWeapon(r) if equipment_type==1 else self.getEquip(r)
+					equipment_type= start['result']['reward_type'][j]
+					item=self.getWeapon(r) if equipment_type==3 else self.getEquip(r)
 					if item is None:
 						item={'name':r}
 					self.log('[+] found item:%s with rarity:%s'%(item['name'],start['result']['reward_rarity'][j]))
@@ -616,7 +615,7 @@ class API(object):
 			return
 		start=self.item_world_start(equipment_id,equipment_type=equipment_type)
 		if 'result' not in start:	return False
-		result=self.parseStart(start,equipment_type)
+		result=self.parseStart(start)
 		end= self.battle_end(battle_exp_data=self.getbattle_exp_data(start),m_stage_id=0,battle_type=5,result=result,command_count=9,equipment_type=equipment_type,equipment_id=equipment_id)
 		res=self.getDiffWeapon(end)
 		self.log(res)
@@ -767,17 +766,13 @@ class API(object):
 		data=self.rpc('shop/change_equipment_items',{"shop_rank": shop_rank})
 		return data
 
-	def buyRare(self):
-		lineup_no=self.shop_equipment_items()['result']
-		lineup_no=lineup_no['lineup_no']
-		if lineup_no>=4:	return
-		while(lineup_no<4):
-			equipment_items=self.shop_change_equipment_items(shop_rank=1)['result']['equipment_items']
-			for i in equipment_items:
-				if i['rarity']>=50:
-					self.log('found item:%s rare:%s'%(i['id'],i['rarity']))
-					self.shop_buy_item(i['id'],1)
-			lineup_no+=1
+	def buyAll(self,minrarity=None):
+		items=self.shop_equipment_items()['result']['_items']
+		for i in items:
+			if i['sold_flg']:	continue
+			if minrarity is not None and i['rarity']<minrarity:	continue
+			self.log('found item:%s rare:%s'%(i['id'],i['rarity']))
+			self.shop_buy_equipment(item_type=i['item_type'],itemid=i['id'])
 
 	def shop_buy_item(self,itemid,quantity):
 		data=self.rpc('shop/buy_item',{"id": itemid, "quantity": quantity})
