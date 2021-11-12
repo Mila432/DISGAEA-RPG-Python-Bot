@@ -797,7 +797,6 @@ class API(object):
 		self.getmail()
 		self.getmail()
 		self.getfreegacha()
-		self.updateAccount()
 
 	def shop_equipment_items(self):
 		data=self.rpc('shop/equipment_items',{})
