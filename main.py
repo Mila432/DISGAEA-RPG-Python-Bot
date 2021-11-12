@@ -7,7 +7,6 @@ import random
 import json
 import sys
 from codedbots import codedbots
-from db import Database
 import db2
 from boltrend import boltrend
 import stages
@@ -26,7 +25,6 @@ head={'version_check':0,'signup':1,'login':1,'rpc':2}
 class API(object):
 	def __init__(self):
 		self.c=codedbots()
-		self.db=Database()
 		self.b=boltrend()
 		self.s=requests.Session()
 		self.s.verify=False
@@ -282,12 +280,24 @@ class API(object):
 		data=self.rpc('friend/index',{})
 		return data
 
+	def friend_send_act(self,target_t_player_id=0):
+		data=self.rpc('friend/send_act',{"target_t_player_id": target_t_player_id})
+		return data
+
+	def friend_receive_act(self,target_t_player_id=0):
+		data=self.rpc('friend/receive_act',{"target_t_player_id": target_t_player_id})
+		return data
+
 	def trophy_get_reward_daily(self,receive_all=1,id=0):
 		data=self.rpc('trophy/get_reward_daily',{"receive_all": receive_all, "id": id})
 		return data
 
 	def trophy_get_reward(self,receive_all=1,id=0):
 		data=self.rpc('trophy/get_reward',{"receive_all": receive_all, "id": id})
+		return data
+
+	def trophy_get_reward_repetition(self,receive_all=1,id=0):
+		data=self.rpc('trophy/get_reward_repetition',{"receive_all": receive_all, "id": id})
 		return data
 
 	def player_home_customizes(self):
@@ -484,7 +494,15 @@ class API(object):
 		return data
 
 	def battle_start(self,m_stage_id,help_t_player_id,help_t_character_id,act,help_t_character_lv):
-		data=self.rpc('battle/start',{"t_character_ids": [], "t_deck_no": 1, "m_stage_id": m_stage_id, "m_guest_character_id": 0, "help_t_player_id": help_t_player_id, "t_raid_status_id": 0, "help_t_character_id": help_t_character_id, "auto_rebirth_t_character_ids": self.deck, "act": act, "help_t_character_lv": help_t_character_lv})
+		data=self.rpc('battle/start',{"t_character_ids": [], "t_deck_no": 1, "m_stage_id": m_stage_id, "m_guest_character_id": 0, "help_t_player_id": help_t_player_id, "t_raid_status_id": 0, "help_t_character_id": help_t_character_id, "auto_rebirth_t_character_ids": [], "act": act, "help_t_character_lv": help_t_character_lv})
+		return data
+
+	def battle_start_event(self,m_stage_id,help_t_player_id,help_t_character_id,act,help_t_character_lv):
+		data=self.rpc('battle/start',{"t_character_ids": [], "t_deck_no": 3, "m_stage_id": m_stage_id, "m_guest_character_id": 0, "help_t_player_id": help_t_player_id, "t_raid_status_id": 0, "help_t_character_id": help_t_character_id, "auto_rebirth_t_character_ids": [], "act": act, "help_t_character_lv": help_t_character_lv})
+		return data        
+
+	def battle_start_event2(self,m_stage_id,help_t_player_id,help_t_character_id,act,help_t_character_lv):
+		data=self.rpc('battle/start',{"t_character_ids": [], "t_deck_no": 4, "m_stage_id": m_stage_id, "m_guest_character_id": 0, "help_t_player_id": help_t_player_id, "t_raid_status_id": 0, "help_t_character_id": help_t_character_id, "auto_rebirth_t_character_ids": [], "act": act, "help_t_character_lv": help_t_character_lv})
 		return data
 
 	def battle_end(self,battle_exp_data,m_stage_id,battle_type,result,command_count,equipment_id=0,equipment_type=0,m_tower_no=0):
@@ -550,6 +568,34 @@ class API(object):
 		end= self.battle_end(battle_exp_data=self.getbattle_exp_data(start),m_stage_id=m_stage_id,battle_type=1,result=1,command_count=9)
 		res=self.parseReward(end)
 		return res
+        
+	def doQuestEvent(self,m_stage_id=101102):
+		stage=self.getStage(m_stage_id)
+		self.log('doing quest:%s [%s]'%(stage['name'],m_stage_id))
+		if stage['exp']==0:
+			return self.battle_story(m_stage_id)
+		help_players=self.battle_help_list()['result']['help_players'][0]
+		start=self.battle_start_event(m_stage_id=m_stage_id,help_t_player_id=help_players['t_player_id'],help_t_character_id=help_players['t_character']['id'],act=stage['act'],help_t_character_lv=help_players['t_character']['lv'])
+		if 'result' not in start:
+			return
+		self.battle_help_list()
+		end= self.battle_end(battle_exp_data=self.getbattle_exp_data(start),m_stage_id=m_stage_id,battle_type=1,result=1,command_count=9)
+		res=self.parseReward(end)
+		return res        
+
+	def doQuestEvent2(self,m_stage_id=101102):
+		stage=self.getStage(m_stage_id)
+		self.log('doing quest:%s [%s]'%(stage['name'],m_stage_id))
+		if stage['exp']==0:
+			return self.battle_story(m_stage_id)
+		help_players=self.battle_help_list()['result']['help_players'][0]
+		start=self.battle_start_event2(m_stage_id=m_stage_id,help_t_player_id=help_players['t_player_id'],help_t_character_id=help_players['t_character']['id'],act=stage['act'],help_t_character_lv=help_players['t_character']['lv'])
+		if 'result' not in start:
+			return
+		self.battle_help_list()
+		end= self.battle_end(battle_exp_data=self.getbattle_exp_data(start),m_stage_id=m_stage_id,battle_type=1,result=1,command_count=9)
+		res=self.parseReward(end)
+		return res
 
 	def item_world_start(self,equipment_id,equipment_type=1):
 		data=self.rpc('item_world/start',{"equipment_type": equipment_type, "t_deck_no": 1, "equipment_id": equipment_id, "auto_rebirth_t_character_ids": self.deck})
@@ -574,11 +620,15 @@ class API(object):
 		self.player_weapons()
 		for w in self.weapons:
 			if w['lv']>=w['lv_max']:	continue
+			self.trophy_get_reward_repetition()
+			self.getmail()
 			while(1):
 				if not self.doItemWorld(w['id'],equipment_type=1):	break
 		self.player_equipments()
 		for e in self.equipments:
 			if e['lv']>=e['lv_max']:	continue
+			self.trophy_get_reward_repetition()
+			self.getmail()
 			while(1):
 				if not self.doItemWorld(e['id'],equipment_type=2):	break
 
@@ -747,7 +797,6 @@ class API(object):
 		self.getmail()
 		self.getmail()
 		self.getfreegacha()
-		self.db.addAccount(self.sess,'',self.uin,self.gems)
 		self.updateAccount()
 
 	def shop_equipment_items(self):
@@ -817,10 +866,6 @@ class API(object):
 			self.sub_tutorial_read(m_sub_tutorial_id=25)
 			self.sub_tutorial_read(m_sub_tutorial_id=26)
 		self.completeStory()
-
-	def updateAccount(self):
-		if hasattr(self,'sess'):
-			self.db.updateAccount(int(self.uin),self.gems,self.sess)
 
 if __name__ == "__main__":
 	a=API()
