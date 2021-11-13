@@ -542,8 +542,10 @@ class API(object):
 
 	def getChar(self,i):
 		for s in characters.data:
+			if 'm_character_id' not in s:	continue
 			if i == s['m_character_id']:
 				return s
+		return {'class_name':'MISSING'}
 
 	def getEquip(self,i):
 		for s in equip.data:
