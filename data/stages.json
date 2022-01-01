@@ -149072,5 +149072,24 @@
     "proper_level": "9999",
     "id": 2035106104,
     "description": ""
+  },
+  {
+    "sort": 4,
+    "m_area_id": 1079105,
+    "name": "Santa Vs. Dark Santa",
+    "no": 4,
+    "boss_bgm": "bgm_boss03",
+    "appear_m_stage_id": 1079105308,
+    "lose_m_story_id": 0,
+    "bgm": "bgm_battle12",
+    "rank": 3,
+    "bg_id": 1,
+    "m_story_id": 0,
+    "display_info_flg": true,
+    "exp": 450,
+    "act": 20,
+    "proper_level": "1250",
+    "id": 1079105308,
+    "description": ""
   }
 ]
