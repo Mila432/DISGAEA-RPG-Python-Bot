@@ -39,17 +39,17 @@ class Shop(Player, metaclass=ABCMeta):
         data = self.rpc('shop/sell_equipment', {"sell_equipments": sell_equipments})
         return data
 
-    def sellItems(self, maxrarity=40, maxrank=100):
+    def sellItems(self, maxrarity=40, maxrank=100, keep_max_lvl=False):
         self.player_equipments()
         self.player_weapons()
         selling = []
         for w in self.weapons:
-            if not self.can_sell_item(w, maxrarity, maxrank):
+            if not self.can_sell_item(w, maxrarity, maxrank, keep_max_lvl):
                 continue
             self.log_sell(w)
             selling.append({'eqtype': 1, 'eqid': w['id']})
         for w in self.equipments:
-            if not self.can_sell_item(w, maxrarity, maxrank):
+            if not self.can_sell_item(w, maxrarity, maxrank, keep_max_lvl):
                 continue
             self.log_sell(w)
             selling.append({'eqtype': 2, 'eqid': w['id']})
@@ -64,9 +64,9 @@ class Shop(Player, metaclass=ABCMeta):
              w['lv_max'], w['lock_flg'])
         )
 
-    def can_sell_item(self, w, maxrarity=40, maxrank=100):
+    def can_sell_item(self, w, maxrarity=40, maxrank=100, keep_max_lvl=False):
         # Keep leveled items
-        if w['lv'] == w['lv_max']:
+        if keep_max_lvl and w['lv'] == w['lv_max']:
             return False
         if w['lock_flg']:
             return False

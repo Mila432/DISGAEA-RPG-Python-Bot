@@ -7,14 +7,26 @@ from api import Player
 class Battle(Player, metaclass=ABCMeta):
     def __init__(self):
         super().__init__()
+        self.min_rank = 0
         self.min_item_level = 0
         self.min_item_rank = 0
+        self.only_weapons = False
+        self.auto_rebirth = False
+
+    def autoRebirth(self, i):
+        self.auto_rebirth = bool(i)
+
+    def minrank(self, i):
+        self.min_rank = int(i)
 
     def minItemLevel(self, i):
         self.min_item_level = int(i)
 
     def minItemRank(self, i):
         self.min_item_rank = int(i)
+
+    def onlyWeapons(self, i):
+        self.only_weapons = bool(i)
 
     def battle_status(self):
         data = self.rpc('battle/status', {})
@@ -72,9 +84,10 @@ class Battle(Player, metaclass=ABCMeta):
         return data
 
     def item_world_start(self, equipment_id, equipment_type=1):
+
         data = self.rpc('item_world/start',
                         {"equipment_type": equipment_type, "t_deck_no": self.teamNum(), "equipment_id": equipment_id,
-                         "auto_rebirth_t_character_ids": self.deck})
+                         "auto_rebirth_t_character_ids": self.deck if self.auto_rebirth else []})
         return data
 
     def getDiffWeapon(self, i):
@@ -137,9 +150,9 @@ class Battle(Player, metaclass=ABCMeta):
                     )
 
                     # Only farm weapons
-                    # if equipment_type != 3:
-                    #     return 5
-                    if hasattr(self, 'min_item_rank') and rank < self.min_item_rank:
+                    if self.only_weapons and equipment_type != 3:
+                        return 5
+                    if hasattr(self, 'min_item_rank') and rank < self.min_rank:
                         return 5
                     if hasattr(self, 'minrare') and start['result']['reward_rarity'][j] < self.minrare:
                         return 5

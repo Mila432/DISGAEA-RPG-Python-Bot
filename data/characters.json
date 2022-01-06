@@ -27,7 +27,7 @@
       2,
       5
     ],
-    "class_name_4": "The Most Atrocious Overlord",
+    "class_name_4": "The most Atrocious Overlord",
     "atk_min": 39,
     "color_no": 7,
     "scale_x": [
@@ -139,7 +139,7 @@
     "attr_water": 50,
     "inte_min": 29,
     "grazing_type": 0,
-    "description": "Supported by his friends, Killia has overcome his anger and sadness. No longer confused, his True power has already awakened.",
+    "description": "Supported by his friends, Killia has overcome his anger and sadness. No longer confused, his true power has already awakened.",
     "attr_fire": -25,
     "spd_per_lv": 0,
     "base_rare": 4,
@@ -349,7 +349,8 @@
       2,
       42,
       51,
-      94
+      94,
+      126
     ],
     "inversion_type": 0,
     "explosion_flg": false,
@@ -446,7 +447,8 @@
       20018,
       25,
       24,
-      94
+      94,
+      119
     ],
     "inversion_type": 0,
     "explosion_flg": false,
@@ -540,7 +542,12 @@
       16,
       41,
       42,
-      67
+      67,
+      130,
+      136,
+      137,
+      139,
+      138
     ],
     "inversion_type": 0,
     "explosion_flg": false,
