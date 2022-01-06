@@ -156,6 +156,54 @@
     "description": "A classic biscuit that restores 50% of your AP."
   },
   {
+    "icon_no": 311,
+    "name": "Raw Sardine Chocolate",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 3,
+    "max_num": 9999,
+    "id": 311,
+    "description": "A devilish seafood candy that fully restores your AP."
+  },
+  {
+    "icon_no": 312,
+    "name": "Translator's Dengaku",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 3,
+    "max_num": 9999,
+    "id": 312,
+    "description": "Fully restores your AP. Feels kinda familiar..."
+  },
+  {
+    "icon_no": 313,
+    "name": "Crab Miso Can",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 3,
+    "max_num": 9999,
+    "id": 313,
+    "description": "Fully restores your AP. One taste, and you're hooked."
+  },
+  {
+    "icon_no": 314,
+    "name": "BBQ Corn",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 3,
+    "max_num": 9999,
+    "id": 314,
+    "description": "Fully restores your AP. Looks like it was walking until this morning."
+  },
+  {
     "icon_no": 401,
     "name": "Golden Candy",
     "effect_value": [
@@ -275,7 +323,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1511,
     "description": "Slightly increases the WM Lv of Swords."
   },
@@ -288,7 +336,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1512,
     "description": "Moderately increases the WM Lv of Swords."
   },
@@ -301,9 +349,22 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1513,
     "description": "Significantly increases the WM Lv of Swords."
+  },
+  {
+    "icon_no": 1514,
+    "name": "Statue of Sword (Lv4)",
+    "effect_value": [
+      500,
+      1
+    ],
+    "sell_price": 0,
+    "item_type": 15,
+    "max_num": 9999,
+    "id": 1514,
+    "description": "Massively increases the WM Lv of Swords."
   },
   {
     "icon_no": 1521,
@@ -314,7 +375,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1521,
     "description": "Slightly increases the WM Lv of Fists."
   },
@@ -327,7 +388,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1522,
     "description": "Moderately increases the WM Lv of Fists."
   },
@@ -340,9 +401,22 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1523,
     "description": "Significantly increases the WM Lv of Fists."
+  },
+  {
+    "icon_no": 1524,
+    "name": "Fist Statue (Lv4)",
+    "effect_value": [
+      500,
+      2
+    ],
+    "sell_price": 0,
+    "item_type": 15,
+    "max_num": 9999,
+    "id": 1524,
+    "description": "Massively increases the WM Lv of Fists."
   },
   {
     "icon_no": 1531,
@@ -353,7 +427,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1531,
     "description": "Slightly increases the WM Lv of Spears."
   },
@@ -366,7 +440,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1532,
     "description": "Moderately increases the WM Lv of Spears."
   },
@@ -379,9 +453,22 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1533,
     "description": "Significantly increases the WM Lv of Spears."
+  },
+  {
+    "icon_no": 1534,
+    "name": "Statue of Spear (Lv4)",
+    "effect_value": [
+      500,
+      3
+    ],
+    "sell_price": 0,
+    "item_type": 15,
+    "max_num": 9999,
+    "id": 1534,
+    "description": "Massively increases the WM Lv of Spears."
   },
   {
     "icon_no": 1541,
@@ -392,7 +479,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1541,
     "description": "Slightly increases the WM Lv of Bows."
   },
@@ -405,7 +492,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1542,
     "description": "Moderately increases the WM Lv of Bows."
   },
@@ -418,9 +505,22 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1543,
     "description": "Significantly increases the WM Lv of Bows."
+  },
+  {
+    "icon_no": 1544,
+    "name": "Statue of Bow (Lv4)",
+    "effect_value": [
+      500,
+      4
+    ],
+    "sell_price": 0,
+    "item_type": 15,
+    "max_num": 9999,
+    "id": 1544,
+    "description": "Massively increases the WM Lv of Bows."
   },
   {
     "icon_no": 1551,
@@ -431,7 +531,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1551,
     "description": "Slightly increases the WM Lv of Guns."
   },
@@ -444,7 +544,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1552,
     "description": "Moderately increases the WM Lv of Guns."
   },
@@ -457,9 +557,22 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1553,
     "description": "Significantly increases the WM Lv of Guns."
+  },
+  {
+    "icon_no": 1554,
+    "name": "Statue of Gun (Lv4)",
+    "effect_value": [
+      500,
+      5
+    ],
+    "sell_price": 0,
+    "item_type": 15,
+    "max_num": 9999,
+    "id": 1554,
+    "description": "Massively increases the WM Lv of Guns."
   },
   {
     "icon_no": 1561,
@@ -470,7 +583,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1561,
     "description": "Slightly increases the WM Lv of Axes."
   },
@@ -483,7 +596,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1562,
     "description": "Moderately increases the WM Lv of Axes."
   },
@@ -496,9 +609,22 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1563,
     "description": "Significantly increases the WM Lv of Axes."
+  },
+  {
+    "icon_no": 1564,
+    "name": "Statue of Axe (Lv4)",
+    "effect_value": [
+      500,
+      6
+    ],
+    "sell_price": 0,
+    "item_type": 15,
+    "max_num": 9999,
+    "id": 1564,
+    "description": "Massively increases the WM Lv of Axes."
   },
   {
     "icon_no": 1571,
@@ -509,7 +635,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1571,
     "description": "Slightly increases the WM Lv of Staffs."
   },
@@ -522,7 +648,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1572,
     "description": "Moderately increases the WM Lv of Staffs."
   },
@@ -535,9 +661,22 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1573,
     "description": "Significantly increases the WM Lv of Staffs."
+  },
+  {
+    "icon_no": 1574,
+    "name": "Statue of Staff (Lv4)",
+    "effect_value": [
+      500,
+      7
+    ],
+    "sell_price": 0,
+    "item_type": 15,
+    "max_num": 9999,
+    "id": 1574,
+    "description": "Massively increases the WM Lv of Staves."
   },
   {
     "icon_no": 1581,
@@ -548,7 +687,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1581,
     "description": "Slightly increases the WM Lv of Mon. Phys."
   },
@@ -561,7 +700,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1582,
     "description": "Moderately increases the WM Lv of Mon. Phys."
   },
@@ -574,9 +713,22 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1583,
     "description": "Significantly increases the WM Lv of Mon. Phys."
+  },
+  {
+    "icon_no": 1584,
+    "name": "Statue of Mon. Phys. (Lv4)",
+    "effect_value": [
+      500,
+      8
+    ],
+    "sell_price": 0,
+    "item_type": 15,
+    "max_num": 9999,
+    "id": 1584,
+    "description": "Massively increases the WM Lv of Mon. Phys."
   },
   {
     "icon_no": 1591,
@@ -587,7 +739,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1591,
     "description": "Slightly increases the WM Lv of Mon. Mag."
   },
@@ -600,7 +752,7 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1592,
     "description": "Moderately increases the WM Lv of Mon. Mag."
   },
@@ -613,9 +765,22 @@
     ],
     "sell_price": 0,
     "item_type": 15,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1593,
     "description": "Significantly increases the WM Lv of Mon. Mag."
+  },
+  {
+    "icon_no": 1594,
+    "name": "Statue of Mon. Mag. (Lv4)",
+    "effect_value": [
+      500,
+      9
+    ],
+    "sell_price": 0,
+    "item_type": 15,
+    "max_num": 9999,
+    "id": 1594,
+    "description": "Massively increases the WM Lv of Mon. Mag."
   },
   {
     "icon_no": 1601,
@@ -649,7 +814,7 @@
     ],
     "sell_price": 0,
     "item_type": 17,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1701,
     "description": "Slightly increases the EXP of skill"
   },
@@ -661,7 +826,7 @@
     ],
     "sell_price": 0,
     "item_type": 17,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1702,
     "description": "Moderately  increases the EXP of skill"
   },
@@ -673,9 +838,21 @@
     ],
     "sell_price": 0,
     "item_type": 17,
-    "max_num": 999,
+    "max_num": 9999,
     "id": 1703,
     "description": "Significantly increases the EXP of skill"
+  },
+  {
+    "icon_no": 1704,
+    "name": "Skill Book (Lv4)",
+    "effect_value": [
+      500
+    ],
+    "sell_price": 0,
+    "item_type": 17,
+    "max_num": 9999,
+    "id": 1704,
+    "description": "Massively increases the EXP of skill"
   },
   {
     "icon_no": 1801,
@@ -967,7 +1144,7 @@
   },
   {
     "icon_no": 1902,
-    "name": "3★ or above Summon Ticket",
+    "name": "3\u2605 or above Summon Ticket",
     "effect_value": [
       110001
     ],
@@ -975,11 +1152,11 @@
     "item_type": 19,
     "max_num": 999,
     "id": 1902,
-    "description": "Summon 3★ or above characters"
+    "description": "Summon 3\u2605 or above characters"
   },
   {
     "icon_no": 1903,
-    "name": "4★ Summon Ticket",
+    "name": "4\u2605 Summon Ticket",
     "effect_value": [
       110002
     ],
@@ -987,11 +1164,11 @@
     "item_type": 19,
     "max_num": 999,
     "id": 1903,
-    "description": "Summon characters of 4★"
+    "description": "Summon characters of 4\u2605"
   },
   {
     "icon_no": 1904,
-    "name": "1&D2 Summon Ticket",
+    "name": "1 & D2 Summon Ticket",
     "effect_value": [
       210001
     ],
@@ -1003,7 +1180,7 @@
   },
   {
     "icon_no": 1905,
-    "name": "2&3 Summon Ticket",
+    "name": "2 & 3 Summon Ticket",
     "effect_value": [
       210002
     ],
@@ -1015,7 +1192,7 @@
   },
   {
     "icon_no": 1906,
-    "name": "4&5 Summon Ticket",
+    "name": "4 & 5 Summon Ticket",
     "effect_value": [
       210003
     ],
@@ -1027,7 +1204,7 @@
   },
   {
     "icon_no": 1902,
-    "name": "3★ or above Summon Ticket (4★: 150% Drop Rate)",
+    "name": "3\u2605 or above Summon Ticket (4\u2605: 150% Drop Rate)",
     "effect_value": [
       110005
     ],
@@ -1035,7 +1212,7 @@
     "item_type": 19,
     "max_num": 999,
     "id": 1907,
-    "description": "Summon 3★ or above characters"
+    "description": "Summon 3\u2605 or above characters"
   },
   {
     "icon_no": 1909,
@@ -1134,6 +1311,18 @@
     "description": "A summon ticket for the Dark Santa Summon Party I."
   },
   {
+    "icon_no": 1917,
+    "name": "Compensation 3\u2605 Summon Ticket",
+    "effect_value": [
+      210010
+    ],
+    "sell_price": 0,
+    "item_type": 19,
+    "max_num": 999,
+    "id": 1917,
+    "description": "A 3\u2605 characters Summon Ticket"
+  },
+  {
     "icon_no": 1999,
     "name": "1st Anniversary Celebration Ticket",
     "effect_value": [
@@ -1227,7 +1416,7 @@
     "item_type": 20,
     "max_num": 99999999,
     "id": 2007,
-    "description": "Magic Cutie Purity Party ☆ Pts"
+    "description": "Magic Cutie Purity Party \u2606 Pts"
   },
   {
     "icon_no": 2008,
@@ -1506,6 +1695,234 @@
     "description": "Disgaea 6 Challenge?! Exclusive PT"
   },
   {
+    "icon_no": 2031,
+    "name": "Event Points",
+    "effect_value": [
+      95
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2031,
+    "description": "Re:Zero - Starting Life in A Netherworld Dedicated Pts"
+  },
+  {
+    "icon_no": 2032,
+    "name": "Event Points",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2032,
+    "description": "Netherworld Style! Bean Throwing Showdown! Dedicated Pts"
+  },
+  {
+    "icon_no": 2033,
+    "name": "Event Points",
+    "effect_value": [
+      103
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2033,
+    "description": "Burn It Up! Straw Doll Festival With The Saints Dedicated Pts"
+  },
+  {
+    "icon_no": 2034,
+    "name": "Event Points",
+    "effect_value": [
+      104
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2034,
+    "description": "Advent! Her Name is Overlord Priere?! Dedicated Pts"
+  },
+  {
+    "icon_no": 2035,
+    "name": "Event Points",
+    "effect_value": [
+      110
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2035,
+    "description": "Disgaea 6 Challenge! Exclusive Pts"
+  },
+  {
+    "icon_no": 2036,
+    "name": "Event Points",
+    "effect_value": [
+      112
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2036,
+    "description": ""
+  },
+  {
+    "icon_no": 2037,
+    "name": "Event Points",
+    "effect_value": [
+      117
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2037,
+    "description": "Fierce Battle: XENO Rush! Dedicated Pts"
+  },
+  {
+    "icon_no": 2038,
+    "name": "Event Points",
+    "effect_value": [
+      119
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2038,
+    "description": "Emizel XENO's Raid Exclusive PT"
+  },
+  {
+    "icon_no": 2039,
+    "name": "Event Points",
+    "effect_value": [
+      126
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2039,
+    "description": "Love Laboratory Advertising \u2665 Plan Dedicated Pts"
+  },
+  {
+    "icon_no": 2040,
+    "name": "Event Points",
+    "effect_value": [
+      123
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2040,
+    "description": "Attack on Titan Collab Raid Dedicated Pts"
+  },
+  {
+    "icon_no": 2041,
+    "name": "Event Points",
+    "effect_value": [
+      131
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2041,
+    "description": "Desco XENO's Assault Exclusive PT"
+  },
+  {
+    "icon_no": 2042,
+    "name": "Event Points",
+    "effect_value": [
+      132
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2042,
+    "description": "Legend of the Mysterious Oceanfarers and Guardian Deity Dedicated Pts"
+  },
+  {
+    "icon_no": 2043,
+    "name": "Event Points",
+    "effect_value": [
+      135
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2043,
+    "description": "Swimsuit Prinny Raid Dedicated Pts"
+  },
+  {
+    "icon_no": 2044,
+    "name": "Event Points",
+    "effect_value": [
+      142
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2044,
+    "description": "Phantom Kingdom RPG Dedicated Pts"
+  },
+  {
+    "icon_no": 2045,
+    "name": "Event Points",
+    "effect_value": [
+      143
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2045,
+    "description": "Dark Lord Valvoga Raid Dedicated Pts"
+  },
+  {
+    "icon_no": 2018,
+    "name": "Event Points",
+    "effect_value": [
+      149
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2046,
+    "description": "Visitors to the Netherworld Exclusive PT"
+  },
+  {
+    "icon_no": 2047,
+    "name": "Event Points",
+    "effect_value": [
+      151
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2047,
+    "description": "Seven Deadly Sins Raid Dedicated Pts"
+  },
+  {
+    "icon_no": 2048,
+    "name": "Event Points",
+    "effect_value": [
+      154
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2048,
+    "description": "The \"I'm Selling Your Summer Retreat\" Incident Dedicated Pts"
+  },
+  {
+    "icon_no": 2049,
+    "name": "Event Points",
+    "effect_value": [
+      156
+    ],
+    "sell_price": 0,
+    "item_type": 20,
+    "max_num": 99999999,
+    "id": 2049,
+    "description": "Kagemaru Raid Dedicated Pts"
+  },
+  {
     "icon_no": 2101,
     "name": "Majin Etna Shard",
     "effect_value": [
@@ -1595,7 +2012,7 @@
     "effect_value": [
       3
     ],
-    "sell_price": 0,
+    "sell_price": 100,
     "item_type": 24,
     "max_num": 99999,
     "id": 2401,
@@ -1807,12 +2224,72 @@
     "description": "Used in the Netherworld New Year Exchange."
   },
   {
+    "icon_no": 3403,
+    "name": "1.5th Anniversary Special Ticket",
+    "effect_value": [
+      118
+    ],
+    "sell_price": 0,
+    "item_type": 34,
+    "max_num": 9999,
+    "id": 3403,
+    "description": "Used in the 1.5th Anniversary Exchange."
+  },
+  {
+    "icon_no": 3404,
+    "name": "Demonic Summer Special Ticket",
+    "effect_value": [
+      134
+    ],
+    "sell_price": 0,
+    "item_type": 34,
+    "max_num": 9999,
+    "id": 3404,
+    "description": "Used in the Demonic Summer Exchange."
+  },
+  {
+    "icon_no": 3405,
+    "name": "Fest Character Redeem Ticket",
+    "effect_value": [
+      155
+    ],
+    "sell_price": 0,
+    "item_type": 34,
+    "max_num": 9999,
+    "id": 3405,
+    "description": "Can be used to redeem Fest Character"
+  },
+  {
+    "icon_no": 3406,
+    "name": "Fest Character Redeem Ticket",
+    "effect_value": [
+      157
+    ],
+    "sell_price": 0,
+    "item_type": 34,
+    "max_num": 9999,
+    "id": 3406,
+    "description": "Can be used to redeem Fest Character"
+  },
+  {
+    "icon_no": 3499,
+    "name": "Battle Pts",
+    "effect_value": [
+      99998
+    ],
+    "sell_price": 0,
+    "item_type": 34,
+    "max_num": 99999999,
+    "id": 3499,
+    "description": "Defending Etna's Summer Resort Dedicated Pts"
+  },
+  {
     "icon_no": 3501,
     "name": "HP Boost Caretaker",
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3501,
@@ -1824,7 +2301,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3502,
@@ -1836,7 +2313,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3503,
@@ -1848,7 +2325,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3504,
@@ -1860,7 +2337,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3505,
@@ -1872,7 +2349,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3506,
@@ -1884,7 +2361,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3507,
@@ -1896,7 +2373,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3508,
@@ -1908,7 +2385,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3509,
@@ -1920,7 +2397,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3510,
@@ -1932,7 +2409,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3511,
@@ -1944,7 +2421,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3512,
@@ -1956,7 +2433,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3513,
@@ -1968,7 +2445,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3514,
@@ -1980,7 +2457,7 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3515,
@@ -1992,11 +2469,143 @@
     "effect_value": [
       0
     ],
-    "sell_price": 0,
+    "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
     "id": 3516,
     "description": "This caretaker will take good care of Axe ATK Boost Innocents."
+  },
+  {
+    "icon_no": 3517,
+    "name": "Staff INT Boost Caretaker",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 500,
+    "item_type": 35,
+    "max_num": 9999,
+    "id": 3517,
+    "description": "This caretaker will take good care of Staff INT Boost Innocents."
+  },
+  {
+    "icon_no": 3518,
+    "name": "Fist ATK Boost Caretaker",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 500,
+    "item_type": 35,
+    "max_num": 9999,
+    "id": 3518,
+    "description": "This caretaker will take good care of Fist ATK Boost Innocents."
+  },
+  {
+    "icon_no": 3519,
+    "name": "Mon. Phys. ATK Boost Caretaker",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 500,
+    "item_type": 35,
+    "max_num": 9999,
+    "id": 3519,
+    "description": "This caretaker will take good care of Mon. Phys. ATK Boost Innocents."
+  },
+  {
+    "icon_no": 3520,
+    "name": "Armor DEF Boost Caretaker",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 500,
+    "item_type": 35,
+    "max_num": 9999,
+    "id": 3520,
+    "description": "This caretaker will take good care of Armor DEF Boost Innocents."
+  },
+  {
+    "icon_no": 3521,
+    "name": "Belt ATK Boost Caretaker",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 500,
+    "item_type": 35,
+    "max_num": 9999,
+    "id": 3521,
+    "description": "This caretaker will take good care of Belt ATK Boost Innocents."
+  },
+  {
+    "icon_no": 3522,
+    "name": "Muscle HP Boost Caretaker",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 500,
+    "item_type": 35,
+    "max_num": 9999,
+    "id": 3522,
+    "description": "This caretaker will take good care of Muscle HP Boost Innocents."
+  },
+  {
+    "icon_no": 3523,
+    "name": "Gun ATK Boost Caretaker",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 500,
+    "item_type": 35,
+    "max_num": 9999,
+    "id": 3523,
+    "description": "This caretaker will take good care of Gun ATK Boost Innocents."
+  },
+  {
+    "icon_no": 3524,
+    "name": "Sword ATK Boost Caretaker",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 500,
+    "item_type": 35,
+    "max_num": 9999,
+    "id": 3524,
+    "description": "This caretaker will take good care of Sword ATK Boost Innocents."
+  },
+  {
+    "icon_no": 3525,
+    "name": "Glasses INT Boost Caretaker",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 500,
+    "item_type": 35,
+    "max_num": 9999,
+    "id": 3525,
+    "description": "This caretaker will take good care of Glasses INT Boost Innocents."
+  },
+  {
+    "icon_no": 3526,
+    "name": "Spear ATK Boost Caretaker",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 500,
+    "item_type": 35,
+    "max_num": 9999,
+    "id": 3526,
+    "description": "This caretaker will take good care of Spear ATK Boost Innocents."
+  },
+  {
+    "icon_no": 3527,
+    "name": "Bow ATK Boost Caretaker",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 500,
+    "item_type": 35,
+    "max_num": 9999,
+    "id": 3527,
+    "description": "This caretaker will take good care of Bow ATK Boost Innocents."
   },
   {
     "icon_no": 3601,
@@ -2004,7 +2613,7 @@
     "effect_value": [
       1
     ],
-    "sell_price": 0,
+    "sell_price": 200,
     "item_type": 36,
     "max_num": 9999,
     "id": 3601,
@@ -2016,7 +2625,7 @@
     "effect_value": [
       2
     ],
-    "sell_price": 0,
+    "sell_price": 200,
     "item_type": 36,
     "max_num": 9999,
     "id": 3602,
@@ -2028,7 +2637,7 @@
     "effect_value": [
       3
     ],
-    "sell_price": 0,
+    "sell_price": 200,
     "item_type": 36,
     "max_num": 9999,
     "id": 3603,
@@ -2040,11 +2649,155 @@
     "effect_value": [
       1
     ],
-    "sell_price": 0,
+    "sell_price": 10,
     "item_type": 39,
     "max_num": 9999,
     "id": 3901,
     "description": "Used to subdue Innocents stored in equipment."
+  },
+  {
+    "icon_no": 4101,
+    "name": "Pri Prism",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 0,
+    "item_type": 41,
+    "max_num": 99999,
+    "id": 4101,
+    "description": "Alchemy item. Full of sparkles."
+  },
+  {
+    "icon_no": 4201,
+    "name": "Prilixir",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 0,
+    "item_type": 42,
+    "max_num": 99999,
+    "id": 4201,
+    "description": "Additional Alchemy item. Glows in seven colors."
+  },
+  {
+    "icon_no": 4501,
+    "name": "BTS Point",
+    "effect_value": [
+      117
+    ],
+    "sell_price": 0,
+    "item_type": 45,
+    "max_num": 99999999,
+    "id": 4501,
+    "description": "Fierce Battle: XENO Rush! Dedicated BTS Pts"
+  },
+  {
+    "icon_no": 4501,
+    "name": "BTS Point",
+    "effect_value": [
+      126
+    ],
+    "sell_price": 0,
+    "item_type": 45,
+    "max_num": 99999999,
+    "id": 4502,
+    "description": "Love Laboratory Advertising \u2665 Plan Dedicated BTS Pts"
+  },
+  {
+    "icon_no": 4501,
+    "name": "BTS Point",
+    "effect_value": [
+      132
+    ],
+    "sell_price": 0,
+    "item_type": 45,
+    "max_num": 99999999,
+    "id": 4503,
+    "description": "Legend of the Mysterious Oceanfarers and Guardian Deity BTS Dedicated Pts"
+  },
+  {
+    "icon_no": 4501,
+    "name": "BTS Point",
+    "effect_value": [
+      142
+    ],
+    "sell_price": 0,
+    "item_type": 45,
+    "max_num": 99999999,
+    "id": 4504,
+    "description": "Phantom Kingdom RPG Dedicated BTS Pts"
+  },
+  {
+    "icon_no": 4501,
+    "name": "BTS Point",
+    "effect_value": [
+      149
+    ],
+    "sell_price": 0,
+    "item_type": 45,
+    "max_num": 99999999,
+    "id": 4505,
+    "description": "Visitors to the Netherworld Exclusive BTS Pts"
+  },
+  {
+    "icon_no": 4501,
+    "name": "BTS Point",
+    "effect_value": [
+      154
+    ],
+    "sell_price": 0,
+    "item_type": 45,
+    "max_num": 99999999,
+    "id": 4506,
+    "description": "The \"I'm Selling Your Summer Retreat\" Incident Dedicated BTS Pts"
+  },
+  {
+    "icon_no": 4701,
+    "name": "Memory Enhancement Piece",
+    "effect_value": [
+      0
+    ],
+    "sell_price": 0,
+    "item_type": 47,
+    "max_num": 99999,
+    "id": 4701,
+    "description": "Allows you to enhance Netherworld Memories"
+  },
+  {
+    "icon_no": 4901,
+    "name": "BTS Challenge Ticket",
+    "effect_value": [
+      142
+    ],
+    "sell_price": 0,
+    "item_type": 49,
+    "max_num": 9999,
+    "id": 4901,
+    "description": "Phantom Kingdom RPG Dedicated BTS Challenge Ticket"
+  },
+  {
+    "icon_no": 4901,
+    "name": "BTS Challenge Ticket",
+    "effect_value": [
+      149
+    ],
+    "sell_price": 0,
+    "item_type": 49,
+    "max_num": 9999,
+    "id": 4902,
+    "description": "Visitors to the Netherworld Exclusive BTSChallenge Ticket"
+  },
+  {
+    "icon_no": 4901,
+    "name": "BTS Challenge Ticket",
+    "effect_value": [
+      154
+    ],
+    "sell_price": 0,
+    "item_type": 49,
+    "max_num": 9999,
+    "id": 4903,
+    "description": "The \"I'm Selling Your Summer Retreat\" Incident Dedicated BTS Challenge Ticket"
   },
   {
     "icon_no": 12341,
@@ -2077,7 +2830,7 @@
     "effect_value": [
       30005
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37001,
@@ -2089,7 +2842,7 @@
     "effect_value": [
       30006
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37002,
@@ -2101,7 +2854,7 @@
     "effect_value": [
       30007
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37003,
@@ -2113,7 +2866,7 @@
     "effect_value": [
       30008
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37004,
@@ -2125,7 +2878,7 @@
     "effect_value": [
       30009
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37005,
@@ -2137,7 +2890,7 @@
     "effect_value": [
       30010
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37006,
@@ -2149,7 +2902,7 @@
     "effect_value": [
       30011
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37007,
@@ -2161,7 +2914,7 @@
     "effect_value": [
       30012
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37008,
@@ -2173,7 +2926,7 @@
     "effect_value": [
       30013
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37009,
@@ -2185,7 +2938,7 @@
     "effect_value": [
       30014
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37010,
@@ -2197,7 +2950,7 @@
     "effect_value": [
       30015
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37011,
@@ -2209,7 +2962,7 @@
     "effect_value": [
       30016
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37012,
@@ -2221,7 +2974,7 @@
     "effect_value": [
       30017
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37013,
@@ -2233,7 +2986,7 @@
     "effect_value": [
       30018
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37014,
@@ -2245,7 +2998,7 @@
     "effect_value": [
       30019
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37015,
@@ -2257,7 +3010,7 @@
     "effect_value": [
       30020
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37016,
@@ -2269,7 +3022,7 @@
     "effect_value": [
       30021
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37017,
@@ -2281,7 +3034,7 @@
     "effect_value": [
       30022
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37018,
@@ -2293,7 +3046,7 @@
     "effect_value": [
       30023
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37019,
@@ -2305,7 +3058,7 @@
     "effect_value": [
       30024
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37020,
@@ -2317,7 +3070,7 @@
     "effect_value": [
       30025
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37021,
@@ -2329,7 +3082,7 @@
     "effect_value": [
       30026
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37022,
@@ -2341,7 +3094,7 @@
     "effect_value": [
       30027
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37023,
@@ -2353,7 +3106,7 @@
     "effect_value": [
       30028
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37024,
@@ -2365,7 +3118,7 @@
     "effect_value": [
       30037
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37025,
@@ -2377,7 +3130,7 @@
     "effect_value": [
       30038
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37026,
@@ -2389,7 +3142,7 @@
     "effect_value": [
       30039
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37027,
@@ -2401,7 +3154,7 @@
     "effect_value": [
       30040
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37028,
@@ -2413,7 +3166,7 @@
     "effect_value": [
       30033
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37029,
@@ -2425,7 +3178,7 @@
     "effect_value": [
       30034
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37030,
@@ -2437,7 +3190,7 @@
     "effect_value": [
       30035
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37031,
@@ -2449,7 +3202,7 @@
     "effect_value": [
       30036
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37032,
@@ -2461,7 +3214,7 @@
     "effect_value": [
       30125
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37033,
@@ -2473,7 +3226,7 @@
     "effect_value": [
       30126
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37034,
@@ -2485,7 +3238,7 @@
     "effect_value": [
       30127
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37035,
@@ -2497,7 +3250,7 @@
     "effect_value": [
       30128
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37036,
@@ -2509,7 +3262,7 @@
     "effect_value": [
       30089
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37037,
@@ -2521,7 +3274,7 @@
     "effect_value": [
       30090
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37038,
@@ -2533,7 +3286,7 @@
     "effect_value": [
       30091
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37039,
@@ -2545,7 +3298,7 @@
     "effect_value": [
       30092
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37040,
@@ -2557,7 +3310,7 @@
     "effect_value": [
       30085
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37041,
@@ -2569,7 +3322,7 @@
     "effect_value": [
       30086
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37042,
@@ -2581,7 +3334,7 @@
     "effect_value": [
       30087
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37043,
@@ -2593,7 +3346,7 @@
     "effect_value": [
       30088
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37044,
@@ -2605,7 +3358,7 @@
     "effect_value": [
       30045
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37045,
@@ -2617,7 +3370,7 @@
     "effect_value": [
       30046
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37046,
@@ -2629,7 +3382,7 @@
     "effect_value": [
       30047
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37047,
@@ -2641,7 +3394,7 @@
     "effect_value": [
       30048
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37048,
@@ -2653,7 +3406,7 @@
     "effect_value": [
       30029
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37049,
@@ -2665,7 +3418,7 @@
     "effect_value": [
       30030
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37050,
@@ -2677,7 +3430,7 @@
     "effect_value": [
       30031
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37051,
@@ -2689,7 +3442,7 @@
     "effect_value": [
       30032
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37052,
@@ -2701,7 +3454,7 @@
     "effect_value": [
       30041
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37053,
@@ -2713,7 +3466,7 @@
     "effect_value": [
       30042
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37054,
@@ -2725,7 +3478,7 @@
     "effect_value": [
       30043
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37055,
@@ -2737,7 +3490,7 @@
     "effect_value": [
       30044
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37056,
@@ -2749,7 +3502,7 @@
     "effect_value": [
       30061
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37057,
@@ -2761,7 +3514,7 @@
     "effect_value": [
       30062
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37058,
@@ -2773,7 +3526,7 @@
     "effect_value": [
       30063
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37059,
@@ -2785,7 +3538,7 @@
     "effect_value": [
       30064
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37060,
@@ -2797,7 +3550,7 @@
     "effect_value": [
       30097
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37061,
@@ -2809,7 +3562,7 @@
     "effect_value": [
       30098
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37062,
@@ -2821,7 +3574,7 @@
     "effect_value": [
       30099
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37063,
@@ -2833,7 +3586,7 @@
     "effect_value": [
       30100
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37064,
@@ -2845,7 +3598,7 @@
     "effect_value": [
       30057
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37065,
@@ -2857,7 +3610,7 @@
     "effect_value": [
       30058
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37066,
@@ -2869,7 +3622,7 @@
     "effect_value": [
       30059
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37067,
@@ -2881,7 +3634,7 @@
     "effect_value": [
       30060
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37068,
@@ -2893,7 +3646,7 @@
     "effect_value": [
       30065
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37069,
@@ -2905,7 +3658,7 @@
     "effect_value": [
       30066
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37070,
@@ -2917,7 +3670,7 @@
     "effect_value": [
       30067
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37071,
@@ -2929,7 +3682,7 @@
     "effect_value": [
       30068
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37072,
@@ -2941,7 +3694,7 @@
     "effect_value": [
       30081
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37073,
@@ -2953,7 +3706,7 @@
     "effect_value": [
       30082
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37074,
@@ -2965,7 +3718,7 @@
     "effect_value": [
       30083
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37075,
@@ -2977,7 +3730,7 @@
     "effect_value": [
       30084
     ],
-    "sell_price": 0,
+    "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
     "id": 37076,
@@ -2989,7 +3742,7 @@
     "effect_value": [
       1
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380001,
@@ -3001,7 +3754,7 @@
     "effect_value": [
       2
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380002,
@@ -3013,7 +3766,7 @@
     "effect_value": [
       3
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380003,
@@ -3025,7 +3778,7 @@
     "effect_value": [
       4
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380004,
@@ -3037,7 +3790,7 @@
     "effect_value": [
       5
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380005,
@@ -3049,7 +3802,7 @@
     "effect_value": [
       6
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380006,
@@ -3061,7 +3814,7 @@
     "effect_value": [
       7
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380007,
@@ -3073,7 +3826,7 @@
     "effect_value": [
       8
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380008,
@@ -3085,7 +3838,7 @@
     "effect_value": [
       9
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380009,
@@ -3097,7 +3850,7 @@
     "effect_value": [
       10
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380010,
@@ -3109,7 +3862,7 @@
     "effect_value": [
       11
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380011,
@@ -3121,7 +3874,7 @@
     "effect_value": [
       12
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380012,
@@ -3133,7 +3886,7 @@
     "effect_value": [
       13
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380013,
@@ -3145,7 +3898,7 @@
     "effect_value": [
       14
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380014,
@@ -3157,7 +3910,7 @@
     "effect_value": [
       15
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380015,
@@ -3169,7 +3922,7 @@
     "effect_value": [
       16
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380016,
@@ -3181,7 +3934,7 @@
     "effect_value": [
       17
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380017,
@@ -3193,7 +3946,7 @@
     "effect_value": [
       18
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380018,
@@ -3205,7 +3958,7 @@
     "effect_value": [
       19
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380019,
@@ -3217,7 +3970,7 @@
     "effect_value": [
       20
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380020,
@@ -3229,7 +3982,7 @@
     "effect_value": [
       21
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380021,
@@ -3241,7 +3994,7 @@
     "effect_value": [
       22
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380200,
@@ -3253,7 +4006,7 @@
     "effect_value": [
       23
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380201,
@@ -3265,7 +4018,7 @@
     "effect_value": [
       24
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380202,
@@ -3277,7 +4030,7 @@
     "effect_value": [
       25
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380203,
@@ -3289,7 +4042,7 @@
     "effect_value": [
       26
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380204,
@@ -3301,7 +4054,7 @@
     "effect_value": [
       27
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380205,
@@ -3313,7 +4066,7 @@
     "effect_value": [
       28
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380206,
@@ -3325,7 +4078,7 @@
     "effect_value": [
       29
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380207,
@@ -3337,7 +4090,7 @@
     "effect_value": [
       30
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380208,
@@ -3349,7 +4102,7 @@
     "effect_value": [
       31
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380209,
@@ -3361,7 +4114,7 @@
     "effect_value": [
       32
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380210,
@@ -3373,7 +4126,7 @@
     "effect_value": [
       33
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380211,
@@ -3385,7 +4138,7 @@
     "effect_value": [
       34
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380212,
@@ -3397,7 +4150,7 @@
     "effect_value": [
       35
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380213,
@@ -3409,7 +4162,7 @@
     "effect_value": [
       36
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380214,
@@ -3421,7 +4174,7 @@
     "effect_value": [
       37
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380215,
@@ -3433,7 +4186,7 @@
     "effect_value": [
       38
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380216,
@@ -3445,7 +4198,7 @@
     "effect_value": [
       39
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380217,
@@ -3457,7 +4210,7 @@
     "effect_value": [
       40
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380218,
@@ -3469,7 +4222,7 @@
     "effect_value": [
       41
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380219,
@@ -3481,7 +4234,7 @@
     "effect_value": [
       42
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380220,
@@ -3493,7 +4246,7 @@
     "effect_value": [
       43
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380221,
@@ -3505,7 +4258,7 @@
     "effect_value": [
       44
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380222,
@@ -3517,7 +4270,7 @@
     "effect_value": [
       45
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380223,
@@ -3529,7 +4282,7 @@
     "effect_value": [
       46
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380224,
@@ -3541,7 +4294,7 @@
     "effect_value": [
       47
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380225,
@@ -3553,7 +4306,7 @@
     "effect_value": [
       48
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380226,
@@ -3565,7 +4318,7 @@
     "effect_value": [
       49
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380227,
@@ -3577,7 +4330,7 @@
     "effect_value": [
       50
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380228,
@@ -3589,7 +4342,7 @@
     "effect_value": [
       51
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380229,
@@ -3601,7 +4354,7 @@
     "effect_value": [
       52
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380230,
@@ -3613,7 +4366,7 @@
     "effect_value": [
       53
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380231,
@@ -3625,7 +4378,7 @@
     "effect_value": [
       54
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380232,
@@ -3637,7 +4390,7 @@
     "effect_value": [
       55
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380233,
@@ -3649,7 +4402,7 @@
     "effect_value": [
       56
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380234,
@@ -3661,7 +4414,7 @@
     "effect_value": [
       57
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380235,
@@ -3673,7 +4426,7 @@
     "effect_value": [
       58
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380236,
@@ -3685,7 +4438,7 @@
     "effect_value": [
       59
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380237,
@@ -3697,7 +4450,7 @@
     "effect_value": [
       60
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380238,
@@ -3709,7 +4462,7 @@
     "effect_value": [
       61
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380239,
@@ -3721,7 +4474,7 @@
     "effect_value": [
       62
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380240,
@@ -3733,7 +4486,7 @@
     "effect_value": [
       63
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380241,
@@ -3745,7 +4498,7 @@
     "effect_value": [
       64
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380242,
@@ -3757,7 +4510,7 @@
     "effect_value": [
       65
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380243,
@@ -3769,7 +4522,7 @@
     "effect_value": [
       66
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380244,
@@ -3781,7 +4534,7 @@
     "effect_value": [
       67
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380245,
@@ -3793,7 +4546,7 @@
     "effect_value": [
       68
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380246,
@@ -3805,11 +4558,128 @@
     "effect_value": [
       69
     ],
-    "sell_price": 0,
+    "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
     "id": 380247,
     "description": "A recipe used to breed Legendary Combined Innocents."
+  },
+  {
+    "icon_no": 2302,
+    "name": "Dedicated Mana Potion",
+    "effect_value": [
+      500,
+      127
+    ],
+    "sell_price": 0,
+    "item_type": 23,
+    "max_num": 9999,
+    "id": 2300127,
+    "description": "A wondrous potion that grants Fuka mana when used"
+  },
+  {
+    "icon_no": 2302,
+    "name": "Dedicated Mana Potion",
+    "effect_value": [
+      500,
+      129
+    ],
+    "sell_price": 0,
+    "item_type": 23,
+    "max_num": 9999,
+    "id": 2300129,
+    "description": "A wondrous potion that grants Amane mana when used"
+  },
+  {
+    "icon_no": 2302,
+    "name": "Dedicated Mana Potion",
+    "effect_value": [
+      500,
+      132
+    ],
+    "sell_price": 0,
+    "item_type": 23,
+    "max_num": 9999,
+    "id": 2300132,
+    "description": "A wondrous potion that grants Petta mana when used"
+  },
+  {
+    "icon_no": 2302,
+    "name": "Dedicated Mana Potion",
+    "effect_value": [
+      500,
+      133
+    ],
+    "sell_price": 0,
+    "item_type": 23,
+    "max_num": 9999,
+    "id": 2300133,
+    "description": "A wondrous potion that grants Pram mana when used"
+  },
+  {
+    "icon_no": 2302,
+    "name": "Dedicated Mana Potion",
+    "effect_value": [
+      500,
+      134
+    ],
+    "sell_price": 0,
+    "item_type": 23,
+    "max_num": 9999,
+    "id": 2300134,
+    "description": "A wondrous potion that grants Salome mana when used"
+  },
+  {
+    "icon_no": 2302,
+    "name": "Dedicated Mana Potion",
+    "effect_value": [
+      500,
+      136
+    ],
+    "sell_price": 0,
+    "item_type": 23,
+    "max_num": 9999,
+    "id": 2300136,
+    "description": "A wondrous potion that grants Wise mana when used"
+  },
+  {
+    "icon_no": 2302,
+    "name": "Dedicated Mana Potion",
+    "effect_value": [
+      500,
+      137
+    ],
+    "sell_price": 0,
+    "item_type": 23,
+    "max_num": 9999,
+    "id": 2300137,
+    "description": "A wondrous potion that grants Keke mana when used"
+  },
+  {
+    "icon_no": 2302,
+    "name": "Dedicated Mana Potion",
+    "effect_value": [
+      500,
+      139
+    ],
+    "sell_price": 0,
+    "item_type": 23,
+    "max_num": 9999,
+    "id": 2300139,
+    "description": "A wondrous potion that grants Aiko mana when used"
+  },
+  {
+    "icon_no": 2302,
+    "name": "Dedicated Mana Potion",
+    "effect_value": [
+      500,
+      20040
+    ],
+    "sell_price": 0,
+    "item_type": 23,
+    "max_num": 9999,
+    "id": 2320040,
+    "description": "A wondrous potion that grants Raspberyl mana when used"
   },
   {
     "icon_no": 2701,
@@ -4041,6 +4911,18 @@
   },
   {
     "icon_no": 2701,
+    "name": "Krichevskoy Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700020,
+    "description": "A crystal used for Krichevskoy's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
     "name": "Sicily Crystal",
     "effect_value": [
       100
@@ -4122,6 +5004,18 @@
     "max_num": 9999,
     "id": 2700033,
     "description": "A crystal used for Pure Flonne's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Archangel Flonne Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700034,
+    "description": "A crystal used for Archangel Flonne's Nether Enhancement."
   },
   {
     "icon_no": 2701,
@@ -4209,7 +5103,7 @@
   },
   {
     "icon_no": 2701,
-    "name": "Protagonist Asagi Crystal",
+    "name": "Heroine Asagi Crystal",
     "effect_value": [
       100
     ],
@@ -4217,7 +5111,7 @@
     "item_type": 27,
     "max_num": 9999,
     "id": 2700043,
-    "description": "A crystal used for Protagonist Asagi's Nether Enhancement."
+    "description": "A crystal used for Heroine Asagi's Nether Enhancement."
   },
   {
     "icon_no": 2701,
@@ -4557,7 +5451,7 @@
   },
   {
     "icon_no": 2701,
-    "name": "Yukata Yukimaru Crystal",
+    "name": "Bathrobe Yukimaru Crystal",
     "effect_value": [
       100
     ],
@@ -4565,7 +5459,7 @@
     "item_type": 27,
     "max_num": 9999,
     "id": 2700076,
-    "description": "A crystal used for Yukata Yukimaru's Nether Enhancement."
+    "description": "A crystal used for Bathrobe Yukimaru's Nether Enhancement."
   },
   {
     "icon_no": 2701,
@@ -4641,6 +5535,30 @@
   },
   {
     "icon_no": 2701,
+    "name": "Cutie Demon Elizabeth Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700083,
+    "description": "A crystal used for Cutie Demon Elizabeth's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Liones Princess Etna Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700084,
+    "description": "A crystal used for Liones Princess Etna's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
     "name": "Merlin Crystal",
     "effect_value": [
       100
@@ -4689,7 +5607,7 @@
   },
   {
     "icon_no": 2701,
-    "name": "Cute Mei Ling Crystal",
+    "name": "Cute Merlin Crystal",
     "effect_value": [
       100
     ],
@@ -4697,7 +5615,7 @@
     "item_type": 27,
     "max_num": 9999,
     "id": 2700089,
-    "description": "A crystal used for Cute Mei Ling's Nether Enhancement."
+    "description": "A crystal used for Cute Merlin's Nether Enhancement."
   },
   {
     "icon_no": 2701,
@@ -4821,7 +5739,7 @@
   },
   {
     "icon_no": 2701,
-    "name": "Santa Adell Crystal",
+    "name": "Xmas Adell Crystal",
     "effect_value": [
       100
     ],
@@ -4829,11 +5747,11 @@
     "item_type": 27,
     "max_num": 9999,
     "id": 2700101,
-    "description": "A crystal used for Santa Adell's Nether Enhancement."
+    "description": "A crystal used for Xmas Adell's Nether Enhancement."
   },
   {
     "icon_no": 2701,
-    "name": "Santa Rozalin Crystal",
+    "name": "Xmas Rozalin Crystal",
     "effect_value": [
       100
     ],
@@ -4841,7 +5759,7 @@
     "item_type": 27,
     "max_num": 9999,
     "id": 2700102,
-    "description": "A crystal used for Santa Rozalin's Nether Enhancement."
+    "description": "A crystal used for Xmas Rozalin's Nether Enhancement."
   },
   {
     "icon_no": 2701,
@@ -4902,6 +5820,414 @@
     "max_num": 9999,
     "id": 2700107,
     "description": "A crystal used for Ivar's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Emilia Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700108,
+    "description": "A crystal used for Emilia's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Rem Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700109,
+    "description": "A crystal used for Rem's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Ram Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700110,
+    "description": "A crystal used for Ram's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Sweet Omega Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700111,
+    "description": "A crystal used for Sweet Omega's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Priere Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700112,
+    "description": "A crystal used for Priere's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Croix Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700113,
+    "description": "A crystal used for Croix's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Alouette Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700114,
+    "description": "A crystal used for Alouette's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Eclair Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700115,
+    "description": "A crystal used for Eclair's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Bieko Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700116,
+    "description": "A crystal used for Bieko's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Piyori Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700117,
+    "description": "A crystal used for Piyori's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Misedor Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700118,
+    "description": "A crystal used for Misedor's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Wicked Mao Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700119,
+    "description": "A crystal used for Wicked Mao's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Emizel XENO Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700120,
+    "description": "A crystal used for Emizel XENO's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Frostlord Rozalin Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700121,
+    "description": "A crystal used for Frostlord Rozalin's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Flamelord Majorita Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700122,
+    "description": "A crystal used for Flamelord Majorita's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Merome Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700123,
+    "description": "A crystal used for Merome's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Mikasa Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700124,
+    "description": "A crystal used for Mikasa's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Levi Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700125,
+    "description": "A crystal used for Levi's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Rampaging Adell Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700126,
+    "description": "A crystal used for Rampaging Adell's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Swimsuit Fuka Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700127,
+    "description": "A crystal used for Swimsuit Fuka's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Swimsuit Lucy Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700128,
+    "description": "A crystal used for Swimsuit Lucy's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Amane Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700129,
+    "description": "A crystal used for Amane's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Tyrant Overlord Etna Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700130,
+    "description": "A crystal used for Tyrant Overlord Etna's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Zetta Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700131,
+    "description": "A crystal used for Zetta's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Petta Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700132,
+    "description": "A crystal used for Petta's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Pram Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700133,
+    "description": "A crystal used for Pram's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Salome Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700134,
+    "description": "A crystal used for Salome's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Siedl Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700135,
+    "description": "A crystal used for Siedl's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Wise Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700136,
+    "description": "A crystal used for Wise's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Keke Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700137,
+    "description": "A crystal used for Keke's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Timmy Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700138,
+    "description": "A crystal used for Timmy's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Aiko Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700139,
+    "description": "A crystal used for Aiko's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Tavern Mascot Flonne Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700146,
+    "description": "A crystal used for Tavern Mascot Flonne's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Kagemaru Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2700147,
+    "description": "A crystal used for Kagemaru's Nether Enhancement."
   },
   {
     "icon_no": 2701,
@@ -5445,6 +6771,18 @@
   },
   {
     "icon_no": 2701,
+    "name": "Lamington Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2720015,
+    "description": "A crystal used for Lamington's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
     "name": "Mid Boss Crystal",
     "effect_value": [
       100
@@ -5466,6 +6804,18 @@
     "max_num": 9999,
     "id": 2720018,
     "description": "A crystal used for Ms. Raspberyl's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Overlord Priere Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2720019,
+    "description": "A crystal used for Overlord Priere's Nether Enhancement."
   },
   {
     "icon_no": 2701,
@@ -5505,7 +6855,7 @@
   },
   {
     "icon_no": 2701,
-    "name": "Doomsday Overlord Asagi Crystal",
+    "name": "Overlord Asagi Crystal",
     "effect_value": [
       100
     ],
@@ -5513,7 +6863,7 @@
     "item_type": 27,
     "max_num": 9999,
     "id": 2720023,
-    "description": "A crystal used for Doomsday Overlord Asagi's Nether Enhancement."
+    "description": "A crystal used for Overlord Asagi's Nether Enhancement."
   },
   {
     "icon_no": 2701,
@@ -5625,6 +6975,18 @@
   },
   {
     "icon_no": 2701,
+    "name": "Beatrice Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2720033,
+    "description": "A crystal used for Beatrice's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
     "name": "Pringer X Crystal",
     "effect_value": [
       100
@@ -5634,6 +6996,66 @@
     "max_num": 9999,
     "id": 2720036,
     "description": "A crystal used for Pringer X's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Tink XENO Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2720037,
+    "description": "A crystal used for Tink XENO's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Fallen Vessel Flonne Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2720038,
+    "description": "A crystal used for Fallen Vessel Flonne's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Trista Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2720039,
+    "description": "A crystal used for Trista's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Swimsuit Raspberyl Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2720040,
+    "description": "A crystal used for Swimsuit Raspberyl's Nether Enhancement."
+  },
+  {
+    "icon_no": 2701,
+    "name": "Des X Crystal",
+    "effect_value": [
+      100
+    ],
+    "sell_price": 0,
+    "item_type": 27,
+    "max_num": 9999,
+    "id": 2720041,
+    "description": "A crystal used for Des X's Nether Enhancement."
   },
   {
     "icon_no": 2701,
@@ -7062,5 +8484,149 @@
     "max_num": 9999,
     "id": 2730137,
     "description": "A crystal used for Space Barila's Nether Enhancement."
+  },
+  {
+    "icon_no": 4000001,
+    "name": "1\u2605 Prinny (Blue)",
+    "effect_value": [
+      30001
+    ],
+    "sell_price": 0,
+    "item_type": 40,
+    "max_num": 99999,
+    "id": 4000001,
+    "description": "1\u2605 Prinny (Blue)"
+  },
+  {
+    "icon_no": 4000002,
+    "name": "1\u2605 Prinny (Pink)",
+    "effect_value": [
+      30002
+    ],
+    "sell_price": 0,
+    "item_type": 40,
+    "max_num": 99999,
+    "id": 4000002,
+    "description": "1\u2605 Prinny (Pink)"
+  },
+  {
+    "icon_no": 4000003,
+    "name": "1\u2605 Prinny (Green)",
+    "effect_value": [
+      30003
+    ],
+    "sell_price": 0,
+    "item_type": 40,
+    "max_num": 99999,
+    "id": 4000003,
+    "description": "1\u2605 Prinny (Green)"
+  },
+  {
+    "icon_no": 4000004,
+    "name": "1\u2605 Prinny (Red)",
+    "effect_value": [
+      30004
+    ],
+    "sell_price": 0,
+    "item_type": 40,
+    "max_num": 99999,
+    "id": 4000004,
+    "description": "1\u2605 Prinny (Red)"
+  },
+  {
+    "icon_no": 4601,
+    "name": "Swimsuit Fuka Nether Star",
+    "effect_value": [
+      127
+    ],
+    "sell_price": 0,
+    "item_type": 46,
+    "max_num": 9999,
+    "id": 4600127,
+    "description": "Nether Star for Awakening 6\u2605 Swimsuit Fuka."
+  },
+  {
+    "icon_no": 4601,
+    "name": "Petta Nether Star",
+    "effect_value": [
+      132
+    ],
+    "sell_price": 0,
+    "item_type": 46,
+    "max_num": 9999,
+    "id": 4600132,
+    "description": "Nether Star for Awakening 6\u2605 Petta"
+  },
+  {
+    "icon_no": 4601,
+    "name": "Pram Nether Star",
+    "effect_value": [
+      133
+    ],
+    "sell_price": 0,
+    "item_type": 46,
+    "max_num": 9999,
+    "id": 4600133,
+    "description": "Nether Star for Awakening 6\u2605 Pram"
+  },
+  {
+    "icon_no": 4601,
+    "name": "Salome Nether Star",
+    "effect_value": [
+      134
+    ],
+    "sell_price": 0,
+    "item_type": 46,
+    "max_num": 9999,
+    "id": 4600134,
+    "description": "Nether Star for Awakening 6\u2605 Salome"
+  },
+  {
+    "icon_no": 4601,
+    "name": "Wise Nether Star",
+    "effect_value": [
+      136
+    ],
+    "sell_price": 0,
+    "item_type": 46,
+    "max_num": 9999,
+    "id": 4600136,
+    "description": "Nether Star for Awakening 6\u2605 Wise"
+  },
+  {
+    "icon_no": 4601,
+    "name": "Keke Nether Star",
+    "effect_value": [
+      137
+    ],
+    "sell_price": 0,
+    "item_type": 46,
+    "max_num": 9999,
+    "id": 4600137,
+    "description": "Nether Star for Awakening 6\u2605 Keke"
+  },
+  {
+    "icon_no": 4601,
+    "name": "Aiko Nether Star",
+    "effect_value": [
+      139
+    ],
+    "sell_price": 0,
+    "item_type": 46,
+    "max_num": 9999,
+    "id": 4600139,
+    "description": "Nether Star for Awakening 6\u2605 Aiko"
+  },
+  {
+    "icon_no": 4601,
+    "name": "Swimsuit Raspberyl Nether Star",
+    "effect_value": [
+      20040
+    ],
+    "sell_price": 0,
+    "item_type": 46,
+    "max_num": 9999,
+    "id": 4620040,
+    "description": "Nether Star for Awakening 6\u2605 Swimsuit Raspberyl."
   }
 ]
