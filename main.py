@@ -7,15 +7,9 @@ import random
 import json
 import sys
 from codedbots import codedbots
-import db2
 from boltrend import boltrend
-import stages
-import items
-import units
-import characters
 import traceback
-import equip
-import weapon
+from data import data as gamedata
 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -526,34 +520,34 @@ class API(object):
 
 	def getStage(self,i):
 		i=int(i)
-		for s in stages.data:
+		for s in gamedata['stages']:
 			if i == s['id']:
 				return s
 
 	def getItem(self,i):
-		for s in items.data:
+		for s in gamedata['items']:
 			if i == s['id']:
 				return s
 
 	def getUnit(self,i):
-		for s in units.data:
+		for s in gamedata['units']:
 			if i == s['id']:
 				return s
 
 	def getChar(self,i):
-		for s in characters.data:
+		for s in gamedata['characters']:
 			if 'm_character_id' not in s:	continue
 			if i == s['m_character_id']:
 				return s
 		return {'class_name':'MISSING'}
 
 	def getEquip(self,i):
-		for s in equip.data:
+		for s in gamedata['equip']:
 			if i == s['id']:
 				return s
 
 	def getWeapon(self,i):
-		for s in weapon.data:
+		for s in gamedata['weapon']:
 			if i == s['id']:
 				return s
 
@@ -686,17 +680,14 @@ class API(object):
 		rpcid=drop_result['id']
 		current_id=drop_result['result']['after_t_stage_current']['current_id']
 		drop_result=drop_result['result']['drop_result']
-		db=db2.Database()
 		for e in drop_result:
 			if e == 'after_t_item':
 				for t in drop_result[e]:
 					i=self.getItem(t['m_item_id'])
 					self.log('%s +%s'%(i['name'],self.getGain(t)))
-					db.add(t['m_item_id'],0,self.getGain(t),current_id,rpcid)
 			elif e == 'drop_character':
 				for t in drop_result[e]:
 					self.log('unit:%s lv:%s rarity:%s*'%(self.getChar(t['m_character_id'])['class_name'],t['lv'],t['rarity']))
-					db.add(t['m_character_id'],1,1,current_id,rpcid)
 			elif e == 'stones':
 				self.log('+%s nether quartz'%(drop_result[e][0]['num']-self.gems))
 			#else:
@@ -721,7 +712,7 @@ class API(object):
 		if not farmingAll:
 			self.getDone()
 		ss=[]
-		for s in stages.data:
+		for s in gamedata['stages']:
 			ss.append(s['id'])
 		ss.sort(reverse = False)
 		#ss=sorted(ss)
