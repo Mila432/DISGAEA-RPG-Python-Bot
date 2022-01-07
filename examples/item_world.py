@@ -17,39 +17,6 @@ a.dologin()
 a.wait(1)
 
 
-def farm_event(x, id, team):
-    a.setTeamNum(team)
-    for i in range(x):
-        a.doQuest(id)
-    # exit(0)
-
-
-def farm_gem_gates(team=1, start_at=10, human=True, monster=True):
-    a.setTeamNum(team)
-    if human:
-        for stage in a.getAreaStages(50107):
-            if stage['no'] > start_at:
-                a.doQuest(stage['id'])
-                a.doQuest(stage['id'])
-                a.doQuest(stage['id'])
-    if monster:
-        for stage in a.getAreaStages(50108):
-            if stage['no'] > start_at:
-                a.doQuest(stage['id'])
-                a.doQuest(stage['id'])
-                a.doQuest(stage['id'])
-
-
-#
-def farm_hl_gates(team=1, start_at=10):
-    a.setTeamNum(team)
-    for stage in a.getAreaStages(50102):
-        if stage['no'] > start_at:
-            a.doQuest(stage['id'])
-            a.doQuest(stage['id'])
-            a.doQuest(stage['id'])
-
-
 def farm_item_world(team=1, min_rarity=40, min_rank=0, min_item_rank=0, min_item_level=0, only_weapons=False):
     a.onlyWeapons(only_weapons)
     # Change the party: 1-9
@@ -66,18 +33,9 @@ def farm_item_world(team=1, min_rarity=40, min_rank=0, min_item_rank=0, min_item
     a.upgradeItems()
 
 
-# This runs all non cleared normal maps, and makes them 3 stars.
-# a.completeStory(farmingAll=False)
-
-# Once a day tasks
-# farm_gem_gates(team=7)
-# farm_hl_gates(team=8)
-# exit
-
-
-# a.autoRebirth(True)
-# farm_event(200, 1082105310, 9)
-
+a.get_mail_and_rewards()
+# Will enable auto reincarnation
+a.autoRebirth(True)
 # This will sell all non-equipped items that's below given rarity and rank.
 a.sellItems(maxrarity=39, maxrank=39, keep_max_lvl=True)
 farm_item_world(team=2, min_rarity=70, min_rank=40, min_item_rank=40, min_item_level=0, only_weapons=False)

@@ -23,8 +23,7 @@ class API(BaseAPI):
         data = self.rpc('passport/index', {})
         return data
 
-    def dofarm(self):
-        # self.buyRare()
+    def get_mail_and_rewards(self):
         self.trophy_get_reward_daily()
         self.trophy_get_reward()
         self.trophy_get_reward()
@@ -36,6 +35,10 @@ class API(BaseAPI):
         self.getmail()
         self.getmail()
         self.getmail()
+
+    def dofarm(self):
+        # self.buyRare()
+        self.get_mail_and_rewards()
         if True:
             self.shop_buy_item(itemid=9, quantity=1)
             self.shop_buy_item(itemid=8, quantity=1)
