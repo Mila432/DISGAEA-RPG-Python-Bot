@@ -84,7 +84,6 @@ class Battle(Player, metaclass=ABCMeta):
         return data
 
     def item_world_start(self, equipment_id, equipment_type=1):
-
         data = self.rpc('item_world/start',
                         {"equipment_type": equipment_type, "t_deck_no": self.teamNum(), "equipment_id": equipment_id,
                          "auto_rebirth_t_character_ids": self.deck if self.auto_rebirth else []})

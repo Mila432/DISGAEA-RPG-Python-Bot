@@ -6,8 +6,7 @@ import base64
 import time
 import json
 import sys
-
-import data
+from data import data as gamedata
 from codedbots import codedbots
 from boltrend import boltrend
 
@@ -370,36 +369,40 @@ class Base(object, metaclass=ABCMeta):
     def player_decks(self):
         pass
 
+    def stages(self):
+        return gamedata['stages']
+
     def getStage(self, i):
         i = int(i)
-        for s in data.data['stages']:
+        for s in gamedata['stages']:
             if i == s['id']:
                 return s
 
     def getItem(self, i):
-        for s in data.data['items']:
+        for s in gamedata['items']:
             if i == s['id']:
                 return s
 
     def getUnit(self, i):
-        for s in data.data['units']:
+        for s in gamedata['units']:
             if i == s['id']:
                 return s
 
     def getChar(self, i):
-        for s in data.data['characters']:
-            if 'm_character_id' not in s:    continue
+        for s in gamedata['characters']:
+            if 'm_character_id' not in s:
+                continue
             if i == s['m_character_id']:
                 return s
         return {'class_name': 'MISSING'}
 
     def getEquip(self, i):
-        for s in data.data['equip']:
+        for s in gamedata['equip']:
             if i == s['id']:
                 return s
 
     def getWeapon(self, i):
-        for s in data.data['weapon']:
+        for s in gamedata['weapon']:
             if i == s['id']:
                 return s
 

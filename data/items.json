@@ -1144,7 +1144,7 @@
   },
   {
     "icon_no": 1902,
-    "name": "3\u2605 or above Summon Ticket",
+    "name": "3★ or above Summon Ticket",
     "effect_value": [
       110001
     ],
@@ -1152,11 +1152,11 @@
     "item_type": 19,
     "max_num": 999,
     "id": 1902,
-    "description": "Summon 3\u2605 or above characters"
+    "description": "Summon 3★ or above characters"
   },
   {
     "icon_no": 1903,
-    "name": "4\u2605 Summon Ticket",
+    "name": "4★ Summon Ticket",
     "effect_value": [
       110002
     ],
@@ -1164,7 +1164,7 @@
     "item_type": 19,
     "max_num": 999,
     "id": 1903,
-    "description": "Summon characters of 4\u2605"
+    "description": "Summon characters of 4★"
   },
   {
     "icon_no": 1904,
@@ -1204,7 +1204,7 @@
   },
   {
     "icon_no": 1902,
-    "name": "3\u2605 or above Summon Ticket (4\u2605: 150% Drop Rate)",
+    "name": "3★ or above Summon Ticket (4★: 150% Drop Rate)",
     "effect_value": [
       110005
     ],
@@ -1212,7 +1212,7 @@
     "item_type": 19,
     "max_num": 999,
     "id": 1907,
-    "description": "Summon 3\u2605 or above characters"
+    "description": "Summon 3★ or above characters"
   },
   {
     "icon_no": 1909,
@@ -1312,7 +1312,7 @@
   },
   {
     "icon_no": 1917,
-    "name": "Compensation 3\u2605 Summon Ticket",
+    "name": "Compensation 3★ Summon Ticket",
     "effect_value": [
       210010
     ],
@@ -1320,7 +1320,7 @@
     "item_type": 19,
     "max_num": 999,
     "id": 1917,
-    "description": "A 3\u2605 characters Summon Ticket"
+    "description": "A 3★ characters Summon Ticket"
   },
   {
     "icon_no": 1999,
@@ -1416,7 +1416,7 @@
     "item_type": 20,
     "max_num": 99999999,
     "id": 2007,
-    "description": "Magic Cutie Purity Party \u2606 Pts"
+    "description": "Magic Cutie Purity Party ☆ Pts"
   },
   {
     "icon_no": 2008,
@@ -1800,7 +1800,7 @@
     "item_type": 20,
     "max_num": 99999999,
     "id": 2039,
-    "description": "Love Laboratory Advertising \u2665 Plan Dedicated Pts"
+    "description": "Love Laboratory Advertising ♥ Plan Dedicated Pts"
   },
   {
     "icon_no": 2040,
@@ -2701,7 +2701,7 @@
     "item_type": 45,
     "max_num": 99999999,
     "id": 4502,
-    "description": "Love Laboratory Advertising \u2665 Plan Dedicated BTS Pts"
+    "description": "Love Laboratory Advertising ♥ Plan Dedicated BTS Pts"
   },
   {
     "icon_no": 4501,
@@ -8487,7 +8487,7 @@
   },
   {
     "icon_no": 4000001,
-    "name": "1\u2605 Prinny (Blue)",
+    "name": "1★ Prinny (Blue)",
     "effect_value": [
       30001
     ],
@@ -8495,11 +8495,11 @@
     "item_type": 40,
     "max_num": 99999,
     "id": 4000001,
-    "description": "1\u2605 Prinny (Blue)"
+    "description": "1★ Prinny (Blue)"
   },
   {
     "icon_no": 4000002,
-    "name": "1\u2605 Prinny (Pink)",
+    "name": "1★ Prinny (Pink)",
     "effect_value": [
       30002
     ],
@@ -8507,11 +8507,11 @@
     "item_type": 40,
     "max_num": 99999,
     "id": 4000002,
-    "description": "1\u2605 Prinny (Pink)"
+    "description": "1★ Prinny (Pink)"
   },
   {
     "icon_no": 4000003,
-    "name": "1\u2605 Prinny (Green)",
+    "name": "1★ Prinny (Green)",
     "effect_value": [
       30003
     ],
@@ -8519,11 +8519,11 @@
     "item_type": 40,
     "max_num": 99999,
     "id": 4000003,
-    "description": "1\u2605 Prinny (Green)"
+    "description": "1★ Prinny (Green)"
   },
   {
     "icon_no": 4000004,
-    "name": "1\u2605 Prinny (Red)",
+    "name": "1★ Prinny (Red)",
     "effect_value": [
       30004
     ],
@@ -8531,7 +8531,7 @@
     "item_type": 40,
     "max_num": 99999,
     "id": 4000004,
-    "description": "1\u2605 Prinny (Red)"
+    "description": "1★ Prinny (Red)"
   },
   {
     "icon_no": 4601,
@@ -8543,7 +8543,7 @@
     "item_type": 46,
     "max_num": 9999,
     "id": 4600127,
-    "description": "Nether Star for Awakening 6\u2605 Swimsuit Fuka."
+    "description": "Nether Star for Awakening 6★ Swimsuit Fuka."
   },
   {
     "icon_no": 4601,
@@ -8555,7 +8555,7 @@
     "item_type": 46,
     "max_num": 9999,
     "id": 4600132,
-    "description": "Nether Star for Awakening 6\u2605 Petta"
+    "description": "Nether Star for Awakening 6★ Petta"
   },
   {
     "icon_no": 4601,
@@ -8567,7 +8567,7 @@
     "item_type": 46,
     "max_num": 9999,
     "id": 4600133,
-    "description": "Nether Star for Awakening 6\u2605 Pram"
+    "description": "Nether Star for Awakening 6★ Pram"
   },
   {
     "icon_no": 4601,
@@ -8579,7 +8579,7 @@
     "item_type": 46,
     "max_num": 9999,
     "id": 4600134,
-    "description": "Nether Star for Awakening 6\u2605 Salome"
+    "description": "Nether Star for Awakening 6★ Salome"
   },
   {
     "icon_no": 4601,
@@ -8591,7 +8591,7 @@
     "item_type": 46,
     "max_num": 9999,
     "id": 4600136,
-    "description": "Nether Star for Awakening 6\u2605 Wise"
+    "description": "Nether Star for Awakening 6★ Wise"
   },
   {
     "icon_no": 4601,
@@ -8603,7 +8603,7 @@
     "item_type": 46,
     "max_num": 9999,
     "id": 4600137,
-    "description": "Nether Star for Awakening 6\u2605 Keke"
+    "description": "Nether Star for Awakening 6★ Keke"
   },
   {
     "icon_no": 4601,
@@ -8615,7 +8615,7 @@
     "item_type": 46,
     "max_num": 9999,
     "id": 4600139,
-    "description": "Nether Star for Awakening 6\u2605 Aiko"
+    "description": "Nether Star for Awakening 6★ Aiko"
   },
   {
     "icon_no": 4601,
@@ -8627,6 +8627,6 @@
     "item_type": 46,
     "max_num": 9999,
     "id": 4620040,
-    "description": "Nether Star for Awakening 6\u2605 Swimsuit Raspberyl."
+    "description": "Nether Star for Awakening 6★ Swimsuit Raspberyl."
   }
 ]

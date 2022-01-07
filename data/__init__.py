@@ -1,23 +1,10 @@
 import json
+import os
 
-data = {
-    'equip': [],
-    'characters': [],
-    'stages': [],
-    'items': [],
-    'units': [],
-    'weapon': [],
-}
+data = {}
+pwd=os.path.dirname(__file__)
 
-with open('data/characters.json') as f:
-    data['characters'] = json.load(f)
-with open('data/equipment.json') as f:
-    data['equip'] = json.load(f)
-with open('data/items.json') as f:
-    data['items'] = json.load(f)
-with open('data/stages.json') as f:
-    data['stages'] = json.load(f)
-with open('data/units.json') as f:
-    data['units'] = json.load(f)
-with open('data/weapons.json') as f:
-    data['weapon'] = json.load(f)
+for f in os.listdir(pwd):
+	if '.json' not in f:	continue
+	with open(os.path.join(pwd,f)) as fj:
+		data[f.split('.')[0]]=json.load(fj)

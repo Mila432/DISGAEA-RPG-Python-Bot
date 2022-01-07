@@ -2,8 +2,7 @@
 import requests
 import string
 import random
-import data
-import db2
+from data import data as gamedata
 from api import BaseAPI
 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
@@ -256,18 +255,15 @@ class API(BaseAPI):
         event_points = drop_result['result']['after_t_event']['point'] if drop_result['result']['after_t_event'] else 0
         current_id = drop_result['result']['after_t_stage_current']['current_id']
         drop_result = drop_result['result']['drop_result']
-        db = db2.Database()
         for e in drop_result:
             if e == 'after_t_item':
                 for t in drop_result[e]:
                     i = self.getItem(t['m_item_id'])
                     self.log('%s +%s' % (i['name'], self.getGain(t)))
-                    db.add(t['m_item_id'], 0, self.getGain(t), current_id, rpcid)
             elif e == 'drop_character':
                 for t in drop_result[e]:
                     self.log('unit:%s lv:%s rarity:%s*' % (
                         self.getChar(t['m_character_id'])['class_name'], t['lv'], t['rarity']))
-                    db.add(t['m_character_id'], 1, 1, current_id, rpcid)
             elif e == 'stones':
                 self.log('+%s nether quartz' % (drop_result[e][0]['num'] - self.gems))
         if event_points > 0:
@@ -286,8 +282,6 @@ class API(BaseAPI):
                 self.done.add(i['m_stage_id'])
         return self.getDone(page + 1)
 
-    def stages(self):
-        return data.data['stages']
 
     def getAreaStages(self, m_area_id):
         ss = []
