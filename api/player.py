@@ -4,9 +4,11 @@ from api.base import Base
 class Player(Base):
     def __init__(self):
         super().__init__()
-        self.deck = None
+        self.gems = []
+        self.deck = []
         self.weapons = []
         self.equipments = []
+        self.innocents = []
 
     def player_sync(self):
         data = self.rpc('player/sync', {})
@@ -25,7 +27,7 @@ class Player(Base):
         return data
 
     def player_weapons(self, updated_at=0, page=1):
-        if not hasattr(self, 'equipments'):
+        if not hasattr(self, 'weapons') or page == 1:
             self.weapons = []
         data = self.rpc('player/weapons', {"updated_at": updated_at, "page": page})
         if len(data['result']['_items']) <= 0:    return data
@@ -37,19 +39,43 @@ class Player(Base):
         return data
 
     def player_equipments(self, updated_at=0, page=1):
-        if not hasattr(self, 'equipments'):
+        if not hasattr(self, 'equipments') or page == 1:
             self.equipments = []
         data = self.rpc('player/equipments', {"updated_at": updated_at, "page": page})
-        if len(data['result']['_items']) <= 0:    return data
+        if len(data['result']['_items']) <= 0:
+            return data
         self.equipments = self.equipments + data['result']['_items']
         return self.player_equipments(updated_at, page + 1)
 
+    # innocent_type
+    #   1 = HP
+    #   2 = ATK
+    #   3 = DEF
+    #   4 = INT
+    #   5 = RES
+    #   6 = SPD
+    #   7 = EXP Boost
+    #   8 = HL Boost
+    #   9 = WM Enhancer
+    #   10 = Skill Enhancer
+    #   11 = HP Amplifier
+    #   12 = ATK Amplifier
+    #   13 = DEF Amplifier
+    #   14 = INT Amplifier
+    #   15 = RES Amplifier
+    #   16 = Axe ATK Boost
+    #   17+ = ????
+    def player_innocents(self, updated_at=0, page=1):
+        if not hasattr(self, 'innocents') or page == 1:
+            self.innocents = []
+        data = self.rpc('player/innocents', {"updated_at": updated_at, "page": page})
+        if len(data['result']['_items']) <= 0:
+            return data
+        self.innocents = self.innocents + data['result']['_items']
+        return self.player_innocents(updated_at, page + 1)
+
     def player_equipment_effects(self, updated_at, page):
         data = self.rpc('player/equipment_effects', {"updated_at": updated_at, "page": page})
-        return data
-
-    def player_innocents(self, updated_at, page):
-        data = self.rpc('player/innocents', {"updated_at": updated_at, "page": page})
         return data
 
     def player_clear_stages(self, updated_at, page):

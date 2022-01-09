@@ -421,3 +421,21 @@ class Base(object, metaclass=ABCMeta):
         if item_rank > 100:
             item_rank = item_rank - 100
         return item_rank
+
+    def get_item_innocents(self, e):
+        if isinstance(e, int):
+            place_id = e
+        elif 'm_weapon_id' in e:
+            place_id = e['id']
+        elif 'm_equipment_id' in e:
+            place_id = e['id']
+        elif 'id' in e:
+            place_id = e['id']
+        else:
+            raise Exception('unable to determine item id')
+
+        innos = []
+        for i in self.innocents:
+            if i['place_id'] == place_id:
+                innos.append(i)
+        return innos

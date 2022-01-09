@@ -285,7 +285,6 @@ class API(BaseAPI):
                 self.done.add(i['m_stage_id'])
         return self.getDone(page + 1)
 
-
     def getAreaStages(self, m_area_id):
         ss = []
         for s in self.stages():
