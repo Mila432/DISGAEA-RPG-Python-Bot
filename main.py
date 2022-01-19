@@ -192,6 +192,7 @@ class API(BaseAPI):
         return res
 
     def upgradeItems(self):
+        self.player_innocents()
         self.player_weapons()
         self.upgrade_weapons(self.weapons)
         self.player_equipments()
