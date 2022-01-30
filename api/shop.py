@@ -70,12 +70,12 @@ class Shop(Player, metaclass=ABCMeta):
         )
 
     def can_sell_item(self, w, max_rarity=39, max_rank=99, keep_max_lvl=False, only_max_lvl=False, max_innocent_rank=8,
-                      max_innocent_type=5):
+                      max_innocent_type=7):
         if keep_max_lvl and w['lv'] == w['lv_max']:
             self.log('skip due to lv_max')
             return False
         if w['lock_flg']:
-            self.log('skip due to lock_flg')
+            # self.log('skip due to lock_flg')
             return False
         if self.get_item_rank(w) > max_rank:
             self.log('skip due to max_rank')

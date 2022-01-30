@@ -157,40 +157,6 @@ class API(BaseAPI):
         res = self.parseReward(end)
         return res
 
-    def doQuestEvent(self, m_stage_id=101102):
-        stage = self.getStage(m_stage_id)
-        self.log('doing quest:%s [%s]' % (stage['name'], m_stage_id))
-        if stage['exp'] == 0:
-            return self.battle_story(m_stage_id)
-        help_players = self.battle_help_list()['result']['help_players'][0]
-        start = self.battle_start_event(m_stage_id=m_stage_id, help_t_player_id=help_players['t_player_id'],
-                                        help_t_character_id=help_players['t_character']['id'], act=stage['act'],
-                                        help_t_character_lv=help_players['t_character']['lv'])
-        if 'result' not in start:
-            return
-        self.battle_help_list()
-        end = self.battle_end(battle_exp_data=self.getbattle_exp_data(start), m_stage_id=m_stage_id, battle_type=1,
-                              result=1, command_count=9)
-        res = self.parseReward(end)
-        return res
-
-    def doQuestEvent2(self, m_stage_id=101102):
-        stage = self.getStage(m_stage_id)
-        self.log('doing quest:%s [%s]' % (stage['name'], m_stage_id))
-        if stage['exp'] == 0:
-            return self.battle_story(m_stage_id)
-        help_players = self.battle_help_list()['result']['help_players'][0]
-        start = self.battle_start_event2(m_stage_id=m_stage_id, help_t_player_id=help_players['t_player_id'],
-                                         help_t_character_id=help_players['t_character']['id'], act=stage['act'],
-                                         help_t_character_lv=help_players['t_character']['lv'])
-        if 'result' not in start:
-            return
-        self.battle_help_list()
-        end = self.battle_end(battle_exp_data=self.getbattle_exp_data(start), m_stage_id=m_stage_id, battle_type=1,
-                              result=1, command_count=9)
-        res = self.parseReward(end)
-        return res
-
     def upgradeItems(self):
         self.player_innocents()
         self.player_weapons()
@@ -304,11 +270,15 @@ class API(BaseAPI):
         i = 0
         blacklist = set()
         for s in ss:
-            if limit is not None and i >= limit:    return False
+            if limit is not None and i >= limit:
+                return False
             # print(s,self.getStage(s)['m_area_id'])
-            if m_area_id is not None and m_area_id != self.getStage(s)['m_area_id']:    continue
-            if not farmingAll and s in self.done:    continue
-            if self.getStage(s)['m_area_id'] in blacklist:    continue
+            if m_area_id is not None and m_area_id != self.getStage(s)['m_area_id']:
+                continue
+            if not farmingAll and s in self.done:
+                continue
+            if self.getStage(s)['m_area_id'] in blacklist:
+                continue
             try:
                 self.doQuest(s)
             except KeyboardInterrupt:
