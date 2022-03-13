@@ -38,7 +38,7 @@ class API(object):
 			self.region=1
 		else:
 			self.mainurl='https://disgaea-game-live-en.boltrend.com/'
-			self.version='1.0.254'
+			self.version='2.16.4'
 			self.region=2
 
 	def setDevice(self,r):
@@ -500,7 +500,7 @@ class API(object):
 		return data
 
 	def battle_end(self,battle_exp_data,m_stage_id,battle_type,result,command_count,equipment_id=0,equipment_type=0,m_tower_no=0):
-		data=self.rpc('battle/end',{"battle_exp_data": battle_exp_data, "equipment_type": equipment_type, "steal_hl_num": 0, "m_tower_no": m_tower_no, "raid_battle_result": "", "m_stage_id": m_stage_id, "total_receive_damage": 0, "equipment_id": equipment_id, "killed_character_num": 0, "t_raid_status_id": 0, "battle_type": battle_type, "result": result, "innocent_dead_flg": 0, "tower_attack_num": 0, "max_once_damage": int(random.uniform(10000, 10000000)*10), "mission_status": "1,1,1", "command_count": command_count, "prinny_bomb_num": 0})
+		data=self.rpc('battle/end',{"battle_exp_data": battle_exp_data, "equipment_type": equipment_type, "steal_hl_num": 0, "m_tower_no": m_tower_no, "raid_battle_result": "", "m_stage_id": m_stage_id, "total_receive_damage": 0, "equipment_id": equipment_id, "killed_character_num": 0, "t_raid_status_id": 0, "battle_type": battle_type, "result": result, "innocent_dead_flg": 0, "tower_attack_num": 0, "common_battle_result":"eyJhbGciOiJIUzI1NiJ9.eyJoZmJtNzg0a2hrMjYzOXBmIjoiMSwxLDEiLCJ5cGIyODJ1dHR6ejc2Mnd4Ijo5MDY3NDE5NzQsImRwcGNiZXc5bXo4Y3V3d24iOjAsInphY3N2NmpldjRpd3pqem0iOjAsImt5cXluaTNubm0zaTJhcWEiOjAsImVjaG02dGh0emNqNHl0eXQiOjAsImVrdXN2YXBncHBpazM1amoiOjAsInhhNWUzMjJtZ2VqNGY0eXEiOjJ9.4kuAV7qO3Rp5Bq1ikSHbn5nPxhvjsg5POnnlFNDlEu0", "command_count": command_count, "prinny_bomb_num": 0})
 		return data
 
 	def item_use(self,use_item_id,use_item_num):
