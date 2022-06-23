@@ -1,0 +1,70 @@
+[
+  {
+    "ID": 1,
+    "Name": "HP"
+  },
+  {
+    "ID": 2,
+    "Name": "ATK"
+  },
+  {
+    "ID": 3,
+    "Name": "DEF"
+  },
+  {
+    "ID": 4,
+    "Name": "INT"
+  },
+  {
+    "ID": 5,
+    "Name": "RES"
+  },
+  {
+    "ID": 6,
+    "Name": "SPD"
+  },
+  {
+    "ID": 7,
+    "Name": "EXP Boost"
+  },
+  {
+    "ID": 8,
+    "Name": "HL Boost"
+  },
+  {
+    "ID": 9,
+    "Name": "WM Enhancer"
+  },
+  {
+    "ID": 10,
+    "Name": "Skill Enhancer"
+  },
+  {
+    "ID": 11,
+    "Name": "HP Amplifier"
+  },
+  {
+    "ID": 12,
+    "Name": "ATK Amplifier"
+  },
+  {
+    "ID": 13,
+    "Name": "DEF Amplifier"
+  },
+  {
+    "ID": 14,
+    "Name": "INT Amplifier"
+  },
+  {
+    "ID": 15,
+    "Name": "RES Amplifier"
+  },
+  {
+    "ID": 16,
+    "Name": "Axe ATK Boost"
+  },
+  {
+    "ID": 48,
+    "Name": "Glasses INT"
+  }
+]
