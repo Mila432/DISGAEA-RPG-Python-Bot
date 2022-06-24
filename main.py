@@ -556,6 +556,19 @@ class API(BaseAPI):
         data = self.rpc('survey/index', {})
         return data
 
+    def survey_start(self, m_survey_id, hour, t_character_ids, auto_rebirth_t_character_ids=[]):
+        data = self.rpc('survey/start',{"m_survey_id":m_survey_id,"hour":hour,"t_character_ids":t_character_ids,"auto_rebirth_t_character_ids":auto_rebirth_t_character_ids})
+        return data
+
+    def survey_end(self, m_survey_id, cancel):
+        data = self.rpc('survey/end', {"m_survey_id":m_survey_id,"cancel":cancel})
+        return data
+
+    # bribe data [{"m_item_id":401,"num":4}]
+    def survey_use_bribe_item(self, m_survey_id, bribe_data):
+        data = self.rpc('survey/use_bribe_item', {"m_survey_id":m_survey_id,"bribe_data":bribe_data})
+        return data
+
     def kingdom_entries(self):
         data = self.rpc('kingdom/entries', {})
         return data
@@ -890,7 +903,7 @@ class API(BaseAPI):
         for w in self.weapons:
             if w['lv'] >= w['lv_max']: continue
             itemRank = self.get_item_rank(w)
-            if  itemRank < 40: continue
+            #if  itemRank < 40: continue
             #if w['rarity_value'] < 70: continue
             self.trophy_get_reward_repetition()
             count += 1
@@ -905,7 +918,7 @@ class API(BaseAPI):
             #if e['lv']>=e['lv_max'] or e['m_equipment_id']!= 50010:	continue
             if e['lv'] >= e['lv_max']: continue
             itemRank = self.get_item_rank(e)
-            if itemRank < 40: continue
+            #if itemRank < 40: continue
             #if e['rarity_value'] < 70: continue
             self.trophy_get_reward_repetition()
             count += 1
@@ -1325,7 +1338,7 @@ class API(BaseAPI):
         return data
 
     def bingo_lottery(self, bingo_id=Constants.Current_Bingo_ID, use_stone=False):
-        data = self.rpc('bingo/index', {"id":bingo_id,"use_stone":use_stone})
+        data = self.rpc('bingo/lottery', {"id":bingo_id,"use_stone":use_stone})
         return data
 
     #ids takes an array [57]

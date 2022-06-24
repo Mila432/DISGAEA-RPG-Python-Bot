@@ -1,6 +1,4 @@
 from abc import ABCMeta
-from data import data as gamedata
-
 class AxelContest(metaclass=ABCMeta):
     
     def __init__(self):
