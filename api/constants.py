@@ -8,6 +8,8 @@ class Constants:
     Current_Raid_Regular_Boss_Stage = "vs. Swimsuit Prinny"
     Current_Raid_Badass_Boss_Stage = "vs. Swimsuit Prinny Badass"
     Current_Bingo_ID = 2
+    session_id = '' # FILL SESSION_ID HERE
+    user_id ='' # FILL USER_ID HERE
 
 class Bingo_ID(IntEnum):
     JUNE_2022 = 2
@@ -32,3 +34,26 @@ class Raid_Boss_Stage_Names(str, Enum):
     SEVENDEADLYSINS_BADASS_BOSS = "vs. Diane Badass"
     KAGEMARU_REGULAR_BOSS = "vs. Kagemaru"
     KAGEMARU_BADASS_BOSS = "vs. Kagemaru Badass"
+
+class Fish_Fleet_Index(IntEnum):
+    CHARACTER_EXP_FLEET = 1
+    SKILL_EXP_FLEET = 2
+    WM_EXP_FLEET = 3
+    
+class Fish_Fleet_Result_type(IntEnum):
+    HARVEST_1 = 1
+    NORMAL_HARVEST = 2
+    SUPER_HARVEST = 3
+
+class Fish_Fleet_Survey_Duration(IntEnum):
+    HOURS_6 = 6
+    HOURS_12 = 12
+    HOURS_18 = 18
+    HOURS_24 = 24
+
+class Fish_Fleet_Area_Bribe_Status(IntEnum):
+    VERY_FEW = 1
+    FEW = 2
+    COMMON = 3
+    MANY = 4
+    VERY_MANY = 5

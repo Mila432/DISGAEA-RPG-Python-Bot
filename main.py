@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import datetime
+from dateutil import parser
 import requests
 import base64
 import time
@@ -462,6 +464,13 @@ class API(BaseAPI):
         data = self.rpc('friend/index', {})
         return data
 
+    def friend_print_full_list(self):
+        print("\nPrinting full friend list....")
+        data = self.rpc('friend/index', {})
+        for friend in data['result']['friends']:
+            print(f"Name: {friend['name']} - ID: {friend['id']}")
+        print("\n\n")
+
     def friend_send_sardines(self):
         data = self.rpc('friend/send_act', {"target_t_player_id":0})
         if (data['error'] == 'You cannot send more sardine.'):
@@ -550,24 +559,7 @@ class API(BaseAPI):
 
     def character_boosts(self):
         data = self.rpc('character/boosts', {})
-        return data
-
-    def survey_index(self):
-        data = self.rpc('survey/index', {})
-        return data
-
-    def survey_start(self, m_survey_id, hour, t_character_ids, auto_rebirth_t_character_ids=[]):
-        data = self.rpc('survey/start',{"m_survey_id":m_survey_id,"hour":hour,"t_character_ids":t_character_ids,"auto_rebirth_t_character_ids":auto_rebirth_t_character_ids})
-        return data
-
-    def survey_end(self, m_survey_id, cancel):
-        data = self.rpc('survey/end', {"m_survey_id":m_survey_id,"cancel":cancel})
-        return data
-
-    # bribe data [{"m_item_id":401,"num":4}]
-    def survey_use_bribe_item(self, m_survey_id, bribe_data):
-        data = self.rpc('survey/use_bribe_item', {"m_survey_id":m_survey_id,"bribe_data":bribe_data})
-        return data
+        return data    
 
     def kingdom_entries(self):
         data = self.rpc('kingdom/entries', {})
@@ -721,6 +713,15 @@ class API(BaseAPI):
         data = self.rpc('battle/help_list', {})
         return data
 
+    def battle_help_get_friend_by_id(self, help_t_player_id):
+        friend = None
+        print("Looking for friend")
+        while friend == None:
+            help_players = self.battle_help_list()['result']['help_players']
+            friend = next((x for x in help_players if x['t_player_id'] == help_t_player_id), None) 
+            time.sleep(1)
+        return friend
+
     def battle_start(self, m_stage_id, help_t_player_id, help_t_character_id,
                      act, help_t_character_lv):
         data = self.rpc(
@@ -762,7 +763,7 @@ class API(BaseAPI):
                 "prinny_bomb_num": 0, # missing
                 #3 star finish
                 "common_battle_result":"eyJhbGciOiJIUzI1NiJ9.eyJoZmJtNzg0a2hrMjYzOXBmIjoiMSwxLDEiLCJ5cGIyODJ1dHR6ejc2Mnd4IjoyNTkxNjg1OTc1MjQsImRwcGNiZXc5bXo4Y3V3d24iOjAsInphY3N2NmpldjRpd3pqem0iOjAsImt5cXluaTNubm0zaTJhcWEiOjAsImVjaG02dGh0emNqNHl0eXQiOjAsImVrdXN2YXBncHBpazM1amoiOjAsInhhNWUzMjJtZ2VqNGY0eXEiOjR9.4NWzKTpAs-GrjbFt9M6eEJEbEviUf5xvrYPGiIL4V0k"
-              })
+            })
         return data
 
     def item_use(self, use_item_id, use_item_num):
@@ -841,17 +842,18 @@ class API(BaseAPI):
         res = self.parseReward(end)
         return res
 
-    def doQuest_forcefriend(self, m_stage_id, help_t_player_id, help_t_character_id, help_t_character_lv):
+    def doQuest_forcefriend(self, m_stage_id, help_t_player_id):
         stage = self.getStage(m_stage_id)
         self.log('doing quest:%s [%s]' % (stage['name'], m_stage_id))
         if stage['exp'] == 0:
             return self.battle_story(m_stage_id)
+        help_player = self.battle_help_get_friend_by_id(help_t_player_id)
         start = self.battle_start(
             m_stage_id=m_stage_id,
-            help_t_player_id=help_t_player_id,
-            help_t_character_id=help_t_character_id,
+            help_t_player_id=help_player['t_player_id'],
+            help_t_character_id=help_player['t_character']['id'],
             act=stage['act'],
-            help_t_character_lv=help_t_character_lv)
+            help_t_character_lv=help_player['t_character']['lv'])
         if 'result' not in start:
             return
         self.battle_help_list()
@@ -1316,21 +1318,28 @@ class API(BaseAPI):
                     m_character_id = i['m_character_id']
                     break    
             pageIndex+=1
-            iterateNextPage = m_character_id == 0 and len(charactersInPage) == 100
+            iterateNextPage = m_character_id == 0 and len(charactersInPage) > 0
         
         allCollections = self.player_character_collections()['result']['_items']
         character = next((x for x in allCollections if x['m_character_id'] == m_character_id), None)
         return character
 
-    def decrypt(self, content, iv):
-        res = self.c.decrypt(content,iv)
-        if 'fuji_key' in res:
-            if sys.version_info >= (3, 0):
-                self.c.key = bytes(res['fuji_key'], encoding='utf8')
-            else:
-                self.c.key = bytes(res['fuji_key'])
-            self.session_id = res['session_id']
-            self.log('found fuji_key:%s' % (self.c.key))    
+    def find_character_ids(self):
+        iterateNextPage = True
+        pageIndex = 1
+        m_character_id = 0
+        while iterateNextPage:
+            charactersInPage = self.player_characters(updated_at=0, page=pageIndex)['result']['_items']
+            for i in charactersInPage:
+                character= self.getChar(i['m_character_id'])
+                print(i['id'], character['name'])
+                        
+            pageIndex+=1
+            iterateNextPage = m_character_id == 0 and len(charactersInPage) > 0
+        
+        allCollections = self.player_character_collections()['result']['_items']
+        character = next((x for x in allCollections if x['m_character_id'] == m_character_id), None)
+        return character
     
         
     def bingo_index(self, bingo_id=Constants.Current_Bingo_ID):
@@ -1345,6 +1354,23 @@ class API(BaseAPI):
     def bingo_receive_reward(self, reward_id):
         data = self.rpc('bingo/receive', {"ids":reward_id})
         return data
+
+    def bingo_is_spin_available(self):
+        data = self.bingo_index()
+        return  data['result']['t_bingo_data']['bingo_indexes'] < data['result']['t_bingo_data']['display_numbers'] and not data['result']['t_bingo_data']['drew_today']
+
+    def bingo_claim_free_rewards(self):
+        data = self.bingo_index()
+        free_reward_positions = [0,3,6,9,12,15,18,21,24,27,30,33]
+        bingo_rewards =  data['result']['rewards']
+        free_rewards = [bingo_rewards[i] for i in free_reward_positions ]
+        available_free_rewards = [x for x in free_rewards if x['status'] == 1] 
+        if(len(available_free_rewards) > 0):
+            print(f"Claiming {len(available_free_rewards)} free rewards...") 
+        for reward in available_free_rewards:
+            res = self.bingo_receive_reward([reward['id']])
+        print("Finished claiming free rewards.")
+
 
 if __name__ == "__main__":
     a = API()
