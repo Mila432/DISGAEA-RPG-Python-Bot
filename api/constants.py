@@ -57,3 +57,24 @@ class Fish_Fleet_Area_Bribe_Status(IntEnum):
     COMMON = 3
     MANY = 4
     VERY_MANY = 5
+
+class Innocent_Status(IntEnum):
+    NOT_SUBDUED = 0
+    SUBDUED = 1
+    ESCAPED = 2
+
+class Innocent_Training_Result(IntEnum):
+    NORMAL = 1
+    NOT_BAD = 2
+    DREAMLIKE = 3
+
+#There's innocent type and innocent id. The Glasses INT inno has the same type as the regular INT inno, but different ID
+class Innocent_ID(IntEnum):
+    HP = 1
+    ATK = 2
+    DEF = 3
+    INT = 4
+    RES = 5
+    SPD = 6
+    EXP = 7
+    HL = 8

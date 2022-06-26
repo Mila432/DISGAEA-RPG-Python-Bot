@@ -8,7 +8,7 @@ import string
 import random
 import json
 import sys
-from api.constants import Constants
+from api.constants import Constants, Innocent_Training_Result
 from api.raid import Raid
 from codedbots import codedbots
 from db import Database
@@ -44,6 +44,7 @@ class API(BaseAPI):
         self.EnsureDrops = False
         self.GetOnlyWeapons = False
         self.minrare = 0
+        self.innocents = []
 
     def setProxy(self, proxy):
         proxy = 'http://' + proxy
@@ -1387,6 +1388,39 @@ class API(BaseAPI):
             res = self.bingo_receive_reward([reward['id']])
         print("Finished claiming free rewards.")
 
+    def innocent_training(self, t_innocent_id):
+        data = self.rpc('innocent/training', {"t_innocent_id":t_innocent_id})
+        return data
+
+    def innocent_get_all(self):
+        if len(self.innocents) > 0:
+            return self.innocents
+        print("Fetching all innocents...")
+        page_index = 1
+        iterate_next_page = True
+        while iterate_next_page:
+            data = self.player_innocents(updated_at=0, page=page_index)
+            if len(data['result']['_items']) <= 0:
+                iterate_next_page = False
+            self.innocents = self.innocents + data['result']['_items']
+            page_index +=1
+        return self.innocents
+
+    def innocent_get_all_of_type(self, m_innocent_id, only_unequipped):
+        if len(self.innocents) == 0:
+            self.innocent_get_all()
+        innocents_of_type = [x for x in self.innocents if x['m_innocent_id'] == m_innocent_id]
+        if(only_unequipped):
+            innocents_of_type = [x for x in innocents_of_type if x['place_id'] == 0 and x['place'] == 0]
+        return innocents_of_type
+
+    def innocent_get_training_result(self, training_result):
+        if (training_result == Innocent_Training_Result.NORMAL):
+            return "Normal"
+        if (training_result == Innocent_Training_Result.NOT_BAD):
+            return "Not bad"
+        if (training_result == Innocent_Training_Result.DREAMLIKE):
+            return "Dreamlike"
 
 if __name__ == "__main__":
     a = API()
