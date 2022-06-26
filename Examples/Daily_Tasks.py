@@ -22,12 +22,7 @@ if player_data['result']['act_give_count']['act_send_count'] == 0:
 a.BuyDailyItemsFromShop()
 
 # Use free gacha
-last_free_gacha_at_string = player_data['result']['status']['last_free_gacha_at']
-last_free_gacha_at_string_date = parser.parse(last_free_gacha_at_string)
-serverTime = datetime.datetime.utcnow() + datetime.timedelta(hours=-4)
-server_date = serverTime.date()
-last_free_gacha_date = last_free_gacha_at_string_date.date()
-if(server_date > last_free_gacha_date):
+if(a.is_free_gacha_available()):
     print("free gacha available")
     a.getfreegacha()
 

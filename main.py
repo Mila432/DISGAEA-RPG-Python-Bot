@@ -453,12 +453,21 @@ class API(BaseAPI):
     def player_decks(self):
         data = self.rpc('player/decks', {})
         self.deck = [
-            data['result']['_items'][self.activeParty -
-                                     1]['t_character_ids'][x]
-            for x in data['result']['_items'][self.activeParty -
-                                              1]['t_character_ids']
+            data['result']['_items'][self.activeParty - 1]['t_character_ids'][x]
+            for x in data['result']['_items'][self.activeParty - 1]['t_character_ids']
         ]
         return data
+
+    # {"deck_data":
+    # {"selectDeckNo":4,
+    # "charaIdList":["","","","","","","","",""], # example of each array "184027719,181611027,0,0,0"
+    # "names":["","","","","","","","",""], # "Party 1","Party 2",.....
+    # "t_memory_ids_list":["","","","","","","","",""] # 0,0,0,0,0
+    # }}
+    def player_update_deck(self, deck_data):
+        data = self.rpc('player/update_deck', {"deck_data": deck_data})
+        return data
+
 
     def friend_index(self):
         data = self.rpc('friend/index', {})
@@ -677,6 +686,13 @@ class API(BaseAPI):
     def gacha_sums(self):
         data = self.rpc('gacha/sums', {})
         return data
+
+    def is_free_gacha_available(self):
+        player_data = self.player_index()
+        last_free_gacha_at_string = player_data['result']['status']['last_free_gacha_at']
+        last_free_gacha_at_string_date = parser.parse(last_free_gacha_at_string)
+        serverTime = datetime.datetime.utcnow() + datetime.timedelta(hours=-4)
+        return serverTime.date() > last_free_gacha_at_string_date.date()
 
     def getfreegacha(self):
         res = self.gacha_do(is_gacha_free=True,
