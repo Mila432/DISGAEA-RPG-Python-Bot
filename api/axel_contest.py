@@ -1,21 +1,23 @@
 from abc import ABCMeta
+from data import data as gamedata
+
 class AxelContest(metaclass=ABCMeta):
     
     def __init__(self):
         super().__init__()
 
     def find_character_for_axel_contest(self, highestStageToClear):
-        print("Looking for character....")
-        iterateNextPage = True
-        pageIndex = 1
-        while iterateNextPage:
-            charactersInPage = self.player_characters(updated_at=0, page=pageIndex)['result']['_items']
-            for i in charactersInPage:
-                character = self.find_character_by_id(i['id'])
-                if(character is not None and character['contest_stage'] < highestStageToClear):
-                    return i['id']
-            pageIndex+=1
-            iterateNextPage = len(charactersInPage) == 100        
+        # fetch all characters
+        print("Looking for a character...")
+        self.player_characters_get_all()   
+        #collections store axel contest progress.     
+        allCollections = self.player_character_collections()['result']['_items']
+        collections_available = [x for x in allCollections if x['contest_stage'] < highestStageToClear]
+        for collection in collections_available:          
+            #find the actual unit tht has the character_id
+            character = self.find_character_by_characterid(collection['m_character_id'])
+            if character is not None:
+                return character
         return None
 
     def axel_context_battle_start(self, act, m_character_id, t_character_ids):
@@ -94,29 +96,29 @@ class AxelContest(metaclass=ABCMeta):
     def do_axel_contest_multiple_characters(self, numberOfCharacters, highestStageToClear):        
         unitCount = 0
         while unitCount < numberOfCharacters:
-            unitID = self.find_character_for_axel_contest(highestStageToClear)
-            self.do_axel_contest(unitID, highestStageToClear)
+            character = self.find_character_for_axel_contest(highestStageToClear)
+            self.do_axel_contest(character, highestStageToClear)
             unitCount+=1
             print(f"Completed {unitCount} out of {numberOfCharacters} characters")
 
-    def do_axel_contest(self, unitID, highestStageToClear):
-        print("Looking for character....")
-        unit = self.find_character_by_id(unitID)
-        if unit is None: 
+    def do_axel_contest(self, character, highestStageToClear):
+        if not isinstance(character, int):            
+            character = character['id']
+                    
+        collection = self.find_character_collection_by_character_id(character)
+        if collection is None: 
             print("Unit not found. Exiting...")
             return
-        character= self.getChar(unit['m_character_id'])
-        unitName = ''
-        if character is not None: 
-            unitName = character['name']
-        lastClearedStage = unit['contest_stage']
+    
+        unitName = self.getChar(collection['m_character_id'])['name']
+        lastClearedStage = collection['contest_stage']
         print(f"Started Axel Contest for {unitName} - Last cleared stage: {lastClearedStage} - Highest stage to clear {highestStageToClear}")
 
         while lastClearedStage < highestStageToClear:
-            start = self.axel_context_battle_start(self.get_axel_stage_energy_cost(lastClearedStage), unit['m_character_id'], [unitID])
+            start = self.axel_context_battle_start(self.get_axel_stage_energy_cost(lastClearedStage), collection['m_character_id'], [character])
             end = self.axel_context_battle_end(                             
-                              unit['m_character_id'],
-                              self.getbattle_exp_data_axel_contest(start, [unitID]),
+                              collection['m_character_id'],
+                              self.getbattle_exp_data_axel_contest(start, [character]),
                               "eyJhbGciOiJIUzI1NiJ9.eyJoZmJtNzg0a2hrMjYzOXBmIjoiIiwieXBiMjgydXR0eno3NjJ3eCI6ODY4MTY2ODE1OCwiZHBwY2JldzltejhjdXd3biI6MCwiemFjc3Y2amV2NGl3emp6bSI6NCwia3lxeW5pM25ubTNpMmFxYSI6MCwiZWNobTZ0aHR6Y2o0eXR5dCI6MCwiZWt1c3ZhcGdwcGlrMzVqaiI6MCwieGE1ZTMyMm1nZWo0ZjR5cSI6MH0.NudHEcTQfUUuOaNr9vsFiJkQwaw4nTL6yjK93jXzqLY")
             lastClearedStage = end['result']['after_t_character_collections'][0]['contest_stage']
             print(f"Cleared stage {lastClearedStage} of Axel Contest for {unitName}.")

@@ -48,17 +48,17 @@ class FishFleet(metaclass=ABCMeta):
     def survey_complete_expedition(self, m_survey_id):
         fleet_name = self.survey_get_fleet_name(m_survey_id)
         end_data = self.survey_end(m_survey_id, False)
-        print(f"{fleet_name} has returned - Result: {self.survey_get_result_type(end_data['result']['result_type'])}")
-        print("Obtained the following rewards:")
+        print(f"\n{fleet_name} has returned - Result: {self.survey_get_result_type(end_data['result']['result_type'])}")
+        print("\tObtained the following rewards:")
         for drop in end_data['result']['drop_result']['drop_list']:
             #Item
             if(drop['type'] == 1):
                 item = self.getItem(drop['id'])
-                print(f"Obtained {drop['num']} {item['name']}")
+                print(f"\tObtained {drop['num']} {item['name']}")
             # Character
             if(drop['type'] == 2):
                 unit_obtained = self.getChar(drop['id'])
-                print(f"Obtained {drop['rarity']}★ character {unit_obtained['name']}") 
+                print(f"\tObtained {drop['rarity']}★ character {unit_obtained['name']}") 
 
     def survey_start_expedition(self, m_survey_id, use_bribes, hours):
         fish_fleet_data = self.survey_index()
@@ -66,14 +66,14 @@ class FishFleet(metaclass=ABCMeta):
         fleet_name = self.survey_get_fleet_name(m_survey_id)
         if(fish_fleet['end_at'] == ''):
             if(use_bribes):
-                print(f"Bribing {fleet_name} fleet expedition")
+                print(f"\tBribing {fleet_name} fleet expedition")
                 bribe_status = fish_fleet['area_condition']
                 #Bribe util max
                 while bribe_status < Fish_Fleet_Area_Bribe_Status.VERY_MANY:
                     bribe_result = self.survey_use_bribe_item(m_survey_id, [{"m_item_id":401,"num":1}])
                     bribe_status = bribe_result['result']['t_survey']['area_condition']
             survey_start_data = self.survey_start(m_survey_id, hours, fish_fleet['t_character_ids'], [])
-            print(f"Started {fleet_name} fleet expedition")
+            print(f"\tStarted {fleet_name} fleet expedition")
 
     def survey_get_fleet_name(self, m_survey_id):
         if(m_survey_id == Fish_Fleet_Index.CHARACTER_EXP_FLEET):
@@ -83,7 +83,6 @@ class FishFleet(metaclass=ABCMeta):
         if(m_survey_id == Fish_Fleet_Index.WM_EXP_FLEET):
             return "WM EXP Fleet"
 
-    ## TODO: figure all possible results
     def survey_get_result_type(self, result_type):
         if(result_type == Fish_Fleet_Result_type.HARVEST_1):
             return "???"

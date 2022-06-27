@@ -32,6 +32,8 @@ while True:
     serverTime = datetime.datetime.utcnow() + datetime.timedelta(hours=-4)
     if(serverTime > lastRouletteTime + datetime.timedelta(hours=8)):
         result = a.hospital_roulette()
+        lastRouleteTimeString = a.hospital_index()['result']['last_hospital_at']
+        lastRouletteTime = parser.parse(lastRouleteTimeString)
 
     if(datetime.datetime.utcnow() > ap_filled_date or current_ap >= max_ap):
         a.do_axel_contest_multiple_characters(1,50)   

@@ -8,8 +8,7 @@ import string
 import random
 import json
 import sys
-from api.constants import Constants, Innocent_Training_Result
-from api.raid import Raid
+from api.constants import Innocent_Training_Result
 from codedbots import codedbots
 from db import Database
 import db2
@@ -45,6 +44,9 @@ class API(BaseAPI):
         self.GetOnlyWeapons = False
         self.minrare = 0
         self.innocents = []
+        self.equipments = []
+        self.weapons = []
+        self.characters = []
 
     def setProxy(self, proxy):
         proxy = 'http://' + proxy
@@ -385,16 +387,40 @@ class API(BaseAPI):
         })
         return data
 
+    def player_characters_get_all(self):
+        if len(self.characters) > 0:
+            return self.characters
+        print("Fetching all characters...")
+        page_index = 1
+        iterate_next_page = True
+        while iterate_next_page:
+            data = self.player_characters(updated_at=0, page=page_index)
+            if len(data['result']['_items']) <= 0:
+                iterate_next_page = False
+            self.characters = self.characters + data['result']['_items']
+            page_index +=1
+        return self.characters
+
     def player_weapons(self, updated_at=0, page=1):
-        if not hasattr(self, 'equipments'):
-            self.weapons = []
         data = self.rpc('player/weapons', {
             "updated_at": updated_at,
             "page": page
         })
-        if len(data['result']['_items']) <= 0: return data
-        self.weapons = self.weapons + data['result']['_items']
-        return self.player_weapons(updated_at, page + 1)
+        return data
+
+    def player_weapons_get_all(self, refresh=True):
+        if len(self.weapons) > 0 and not refresh:
+            return self.weapons
+        print("Fetching all weapons...")
+        page_index = 1
+        iterate_next_page = True
+        while iterate_next_page:
+            data = self.player_weapons(updated_at=0, page=page_index)
+            if len(data['result']['_items']) <= 0:
+                iterate_next_page = False
+            self.weapons = self.weapons + data['result']['_items']
+            page_index +=1
+        return self.weapons
 
     def player_weapon_effects(self, updated_at, page):
         data = self.rpc('player/weapon_effects', {
@@ -404,15 +430,25 @@ class API(BaseAPI):
         return data
 
     def player_equipments(self, updated_at=0, page=1):
-        if not hasattr(self, 'equipments'):
-            self.equipments = []
         data = self.rpc('player/equipments', {
             "updated_at": updated_at,
             "page": page
         })
-        if len(data['result']['_items']) <= 0: return data
-        self.equipments = self.equipments + data['result']['_items']
-        return self.player_equipments(updated_at, page + 1)
+        return data
+
+    def player_equipments_get_all(self, refresh=True):
+        if len(self.equipments) > 0 and not refresh:
+            return self.equipments
+        print("Fetching all equipments...")
+        page_index = 1
+        iterate_next_page = True
+        while iterate_next_page:
+            data = self.player_equipments(updated_at=0, page=page_index)
+            if len(data['result']['_items']) <= 0:
+                iterate_next_page = False
+            self.equipments = self.equipments + data['result']['_items']
+            page_index +=1
+        return self.equipments
 
     def player_equipment_effects(self, updated_at, page):
         data = self.rpc('player/equipment_effects', {
@@ -421,6 +457,24 @@ class API(BaseAPI):
         })
         return data
 
+    def update_equip_detail(self, e, innos=[]):
+        equip_type = 1 if self.get_weapon_by_id(e['id']) else 2
+        data = self.rpc("player/update_equip_detail", {
+            't_equip_id': e['id'],
+            'equip_type': equip_type,
+            'lock_flg': e['lock_flg'],
+            'innocent_auto_obey_flg': e['innocent_auto_obey_flg'],
+            'change_innocent_list': innos
+        })
+        if 't_weapon' in data['result']:
+            index = self.weapons.index(e)
+            self.weapons[index] = data['result']['t_weapon']
+        elif 't_equipment' in data['result']:
+            index = self.equipments.index(e)
+            self.equipments[index] = data['result']['t_equipment']
+        else:
+            self.log("unable to update item with id: {0}".format(e['id']))
+    
     def player_innocents(self, updated_at, page):
         data = self.rpc('player/innocents', {
             "updated_at": updated_at,
@@ -469,7 +523,6 @@ class API(BaseAPI):
         data = self.rpc('player/update_deck', {"deck_data": deck_data})
         return data
 
-
     def friend_index(self):
         data = self.rpc('friend/index', {})
         return data
@@ -486,7 +539,6 @@ class API(BaseAPI):
         if (data['error'] == 'You cannot send more sardine.'):
             return data['error']
         print(f"Sent sardines to {data['result']['send_count_total']} friends")
-        return data
 
     def trophy_get_reward_daily(self, receive_all=1, id=0):
         data = self.rpc('trophy/get_reward_daily', {
@@ -726,63 +778,6 @@ class API(BaseAPI):
     def rndUser(self):
         return self.rndAlp(7).title()
 
-    def battle_help_list(self):
-        data = self.rpc('battle/help_list', {})
-        return data
-
-    def battle_help_get_friend_by_id(self, help_t_player_id):
-        friend = None
-        print("Looking for friend")
-        while friend == None:
-            help_players = self.battle_help_list()['result']['help_players']
-            friend = next((x for x in help_players if x['t_player_id'] == help_t_player_id), None) 
-            time.sleep(1)
-        return friend
-
-    def battle_start(self, m_stage_id, help_t_player_id, help_t_character_id,
-                     act, help_t_character_lv):
-        data = self.rpc(
-            'battle/start', {
-                "t_character_ids": [],
-                "t_deck_no": self.activeParty,
-                "m_stage_id": m_stage_id,
-                "m_guest_character_id": 0,
-                "help_t_player_id": help_t_player_id,
-                "t_raid_status_id": 0,
-                "help_t_character_id": help_t_character_id,
-                "auto_rebirth_t_character_ids": self.reincarnationIDs,
-                "act": act,
-                "help_t_character_lv": help_t_character_lv
-            })
-        return data
-
-    def battle_end(self, battle_exp_data, m_stage_id, battle_type,
-                   result, command_count, equipment_id=0, equipment_type=0, m_tower_no=0):
-        data = self.rpc(
-            'battle/end', {
-                "battle_exp_data": battle_exp_data,
-                "equipment_type": equipment_type,
-                "steal_hl_num": random.randint(2364, 4132), # missing
-                "m_tower_no": m_tower_no,
-                "raid_battle_result": "",
-                "m_stage_id": m_stage_id,
-                "total_receive_damage": 0, # missing
-                "equipment_id": equipment_id,
-                "killed_character_num": 0, # missing
-                "t_raid_status_id": 0,
-                "battle_type": battle_type,
-                "result": result,
-                "innocent_dead_flg": 0,
-                "tower_attack_num": 0, # missing
-                "max_once_damage": int(random.uniform(10000, 10000000) * 10), # missing
-                "mission_status": "1,1,1", #missing
-                "command_count": command_count, # missing
-                "prinny_bomb_num": 0, # missing
-                #3 star finish
-                "common_battle_result":"eyJhbGciOiJIUzI1NiJ9.eyJoZmJtNzg0a2hrMjYzOXBmIjoiMSwxLDEiLCJ5cGIyODJ1dHR6ejc2Mnd4IjoyNTkxNjg1OTc1MjQsImRwcGNiZXc5bXo4Y3V3d24iOjAsInphY3N2NmpldjRpd3pqem0iOjAsImt5cXluaTNubm0zaTJhcWEiOjAsImVjaG02dGh0emNqNHl0eXQiOjAsImVrdXN2YXBncHBpazM1amoiOjAsInhhNWUzMjJtZ2VqNGY0eXEiOjR9.4NWzKTpAs-GrjbFt9M6eEJEbEviUf5xvrYPGiIL4V0k"
-            })
-        return data
-
     def item_use(self, use_item_id, use_item_num):
         data = self.rpc('item/use', {
             "use_item_id": use_item_id,
@@ -800,10 +795,6 @@ class API(BaseAPI):
                     "m_enemy_id": d[r]
                 })
         return res
-
-    def battle_story(self, m_stage_id):
-        data = self.rpc('battle/story', {"m_stage_id": m_stage_id})
-        return data
 
     def getStage(self, i):
         i = int(i)
@@ -854,8 +845,7 @@ class API(BaseAPI):
         end = self.battle_end(battle_exp_data=self.getbattle_exp_data(start),
                               m_stage_id=m_stage_id,
                               battle_type=1,
-                              result=1,
-                              command_count=9)
+                              result=1)
         res = self.parseReward(end)
         return res
 
@@ -877,8 +867,7 @@ class API(BaseAPI):
         end = self.battle_end(battle_exp_data=self.getbattle_exp_data(start),
                               m_stage_id=m_stage_id,
                               battle_type=1,
-                              result=1,
-                              command_count=9)
+                              result=1)
         res = self.parseReward(end)
         return res
 
@@ -918,7 +907,7 @@ class API(BaseAPI):
         limit = runLimit
         self.EnsureDrops = ensureDrops
         self.GetOnlyWeapons = getOnlyWeapons
-        self.player_weapons()
+        self.player_weapons_get_all()
         for w in self.weapons:
             if w['lv'] >= w['lv_max']: continue
             itemRank = self.get_item_rank(w)
@@ -931,8 +920,8 @@ class API(BaseAPI):
             while (1):
                 if not self.doItemWorld(w['id'], equipment_type=1): break
 
-            self.raid_farm_shared_bosses(raid_farming_party)
-        self.player_equipments()
+            #self.raid_farm_shared_bosses(raid_farming_party)
+        self.player_equipments_get_all()
         for e in self.equipments:
             #if e['lv']>=e['lv_max'] or e['m_equipment_id']!= 50010:	continue
             if e['lv'] >= e['lv_max']: continue
@@ -946,24 +935,7 @@ class API(BaseAPI):
             while (1):
                 if not self.doItemWorld(e['id'], equipment_type=2): break
 
-            self.raid_farm_shared_bosses(raid_farming_party)
-
-    def tower_start(self, m_tower_no):
-        data = self.rpc('tower/start', {
-            "t_deck_no": self.activeParty,
-            "m_tower_no": m_tower_no
-        })
-        return data
-
-    def doTower(self, m_tower_no=1):
-        start = self.tower_start(m_tower_no)
-        end = self.battle_end(battle_exp_data=self.getbattle_exp_data(start),
-                              m_tower_no=m_tower_no,
-                              m_stage_id=0,
-                              battle_type=4,
-                              result=1,
-                              command_count=9)
-        return end
+            #self.raid_farm_shared_bosses(raid_farming_party)
 
     def parseStart(self, start):
         if 'result' in start and 'reward_id' in start['result']:
@@ -1022,7 +994,6 @@ class API(BaseAPI):
                               m_stage_id=0,
                               battle_type=5,
                               result=result,
-                              command_count=9,
                               equipment_type=equipment_type,
                               equipment_id=equipment_id)
         res = self.getDiffWeapon(end)
@@ -1156,42 +1127,25 @@ class API(BaseAPI):
         if hasattr(self, 'sess'):
             self.db.updateAccount(int(self.uin), self.gems, self.sess)
 
-    def shop_equipment_items(self):
-        data = self.rpc('shop/equipment_items', {})
-        return data
-    
-    def shop_index(self):
-        data = self.rpc('shop/index', {})
-        return data
-
-    def shop_gacha(self):
-        data = self.rpc('shop/garapon', {"m_garapon_id":1})
-        return data
-
-    def shop_equipment_shop(self):
-        data = self.rpc('shop/equipment_shop', {})
-        return data
-
-    def shop_buy_equipment(self, item_type, itemids):
-        data = self.rpc('shop/buy_equipment', {
-            "item_type": item_type,
-            "ids": itemids
-        })
-        return data
-
-    def shop_change_equipment_items(self, shop_rank=32):
-        updateNumber = self.shop_equipment_shop()['result']['lineup_update_num']
-        if (updateNumber < 5):
-            data = self.rpc('shop/change_equipment_items', {"shop_rank": shop_rank})
+    # e can be an equipment id or actual equipment/weapon
+    def get_item_innocents(self, e):
+        if isinstance(e, int):
+            place_id = e
+        elif 'm_weapon_id' in e:
+            place_id = e['id']
+        elif 'm_equipment_id' in e:
+            place_id = e['id']
+        elif 'id' in e:
+            place_id = e['id']
         else:
-            self.log('Free refreshes used up already')
-            data = 0
-        return data
+            raise Exception('unable to determine item id')
 
-    def shop_buy_item(self, itemid, quantity):
-        data = self.rpc('shop/buy_item', {"id": itemid, "quantity": quantity})
-        return data
-
+        equipment_innocents = []
+        for i in self.innocents:
+            if i['place_id'] == place_id:
+                equipment_innocents.append(i)
+        return 
+    
     def getAllInnocents(self):
         fullInnocents = []
         currPage = 0
@@ -1208,7 +1162,7 @@ class API(BaseAPI):
 
     def initInnocentPerEquipment(self, minimumEffectRank=7):
         self.log('retrieving full list of innocents...')
-        innocents = self.getAllInnocents()
+        innocents = self.innocent_get_all(True)
         equipmentsInnocents = {}
         if len(innocents) >= 1:
             self.log('generating equip-id => innocent hasmapmap...')
@@ -1229,8 +1183,8 @@ class API(BaseAPI):
         return equipmentsInnocents
 
     def innocent_safe_sellItems(self, minimumEffectRank=5, minimumItemRank=32):
-        self.player_equipments()
-        self.player_weapons()
+        self.player_equipments_get_all()
+        self.player_weapons_get_all()
         equipments = self.initInnocentPerEquipment(minimumEffectRank)
         selling = []
         for w in self.weapons:
@@ -1259,41 +1213,37 @@ class API(BaseAPI):
             self.log('selling...')
             self.shop_sell_equipment(selling)
 
-    def BuyDailyItemsFromShop(self):
-        productData = self.shop_index()['result']['shop_buy_products']['_items']
-        print("Buying daily AP Pots and bribe items...")
-        #50% AP Pot
-        item = [x for x in productData if x['m_product_id'] == 102][0]
-        if(item['buy_num'] == 0):
-            self.shop_buy_item(102, 2)
-        #Golden candy
-        item = [x for x in productData if x['m_product_id'] == 107][0]
-        if(item['buy_num'] == 0):
-            self.shop_buy_item(107, 3)
-        #Golden Bar
-        item = [x for x in productData if x['m_product_id'] == 108][0]
-        if(item['buy_num'] == 0):
-            self.shop_buy_item(108, 2)
-        #Skip ticket
-        item = [x for x in productData if x['m_product_id'] == 1121][0]
-        if(item['buy_num'] == 0):
-            self.shop_buy_item(1121, 1)
+    def get_weapon_by_id(self, eid):
+        return next((x for x in self.weapons if x['id'] == eid), None)
 
-    def BuyAllEquipmentWithInnocents(self):
-        equipment_items = self.shop_equipment_items()['result']['_items']
-        for i in equipment_items:
-            if i['sold_flg']: continue
-            if i['innocent_num'] > 0:
-                itemIDs = []
-                itemIDs.append(i['id']) 
-                res = self.shop_buy_equipment(item_type=i['item_type'], itemids=itemIDs)
-                if (res['error'] == 'Maximum weapon slot reached' or res['error'] == 'Maximum armour slot reached'):
-                    refresh_shop = False
+    def get_equipment_by_id(self, eid):
+        return next((x for x in self.equipments if x['id'] == eid), None)
 
-    def shop_sell_equipment(self, sell_equipments):
-        data = self.rpc('shop/sell_equipment',
-                        {"sell_equipments": sell_equipments})
-        return data
+    def lock_equipment_with_rare_innocents(self, minimumEffectRank=5, minimumItemRank=32):
+        self.player_equipments_get_all(True)
+        self.player_weapons_get_all(True)
+        equipments = self.initInnocentPerEquipment(minimumEffectRank)
+
+        for w in self.weapons:
+            wId = w['id']
+            if self.get_item_rank(w) < minimumItemRank: continue
+            if w['set_chara_id'] != 0: continue
+            if w['lv'] > 1: continue
+            if w['lock_flg'] == True: continue
+            if wId in equipments and equipments[wId]['canSell'] == False:
+                print("\tlocking weapon")
+                w['lock_flg'] = True
+                self.update_equip_detail(w)
+        for e in self.equipments:
+            if self.get_item_rank(e) < minimumItemRank: continue
+            eId = e['id']
+            if e['set_chara_id'] != 0: continue
+            if e['lv'] > 1: continue
+            if e['lock_flg'] == True: continue
+            if eId in equipments and equipments[eId]['canSell'] == False:
+                print("\tlocking equipment")
+                e['lock_flg'] = True                
+                self.update_equip_detail(e)
 
     def hospital_index(self):
         data = self.rpc('hospital/index', {})
@@ -1324,21 +1274,22 @@ class API(BaseAPI):
             item_rank = item_rank - 100
         return item_rank
 
-    def find_character_by_id(self, unitID):
-        iterateNextPage = True
-        pageIndex = 1
-        m_character_id = 0
-        while iterateNextPage:
-            charactersInPage = self.player_characters(updated_at=0, page=pageIndex)['result']['_items']
-            for i in charactersInPage:
-                if i['id'] == unitID:
-                    m_character_id = i['m_character_id']
-                    break    
-            pageIndex+=1
-            iterateNextPage = m_character_id == 0 and len(charactersInPage) > 0
+    # Character collections hold data about character episodes, axel contest progress..
+    def find_character_collection_by_character_id(self, unitID):
+        #find the specific unit and get character id
+        self.player_characters_get_all()
+        unit = next((x for x in self.characters if x['id'] == unitID), None)
+        m_character_id = unit['m_character_id']
         
+        #use character id to retrieve the collection
         allCollections = self.player_character_collections()['result']['_items']
-        character = next((x for x in allCollections if x['m_character_id'] == m_character_id), None)
+        collection = next((x for x in allCollections if x['m_character_id'] == m_character_id), None)
+        return collection
+
+    #character id identifies a character (I.E: Fallen Angel Flonne), not the specific Flonne unit in your inventory
+    def find_character_by_characterid(self, m_character_id):
+        self.player_characters_get_all()
+        character = next((x for x in self.characters if x['m_character_id'] == m_character_id), None)        
         return character
 
     def find_character_ids(self):
@@ -1357,43 +1308,23 @@ class API(BaseAPI):
         allCollections = self.player_character_collections()['result']['_items']
         character = next((x for x in allCollections if x['m_character_id'] == m_character_id), None)
         return character
-    
-        
-    def bingo_index(self, bingo_id=Constants.Current_Bingo_ID):
-        data = self.rpc('bingo/index', {"id":bingo_id})
-        return data
 
-    def bingo_lottery(self, bingo_id=Constants.Current_Bingo_ID, use_stone=False):
-        data = self.rpc('bingo/lottery', {"id":bingo_id,"use_stone":use_stone})
-        return data
-
-    #ids takes an array [57]
-    def bingo_receive_reward(self, reward_id):
-        data = self.rpc('bingo/receive', {"ids":reward_id})
-        return data
-
-    def bingo_is_spin_available(self):
-        data = self.bingo_index()
-        return  data['result']['t_bingo_data']['bingo_indexes'] < data['result']['t_bingo_data']['display_numbers'] and not data['result']['t_bingo_data']['drew_today']
-
-    def bingo_claim_free_rewards(self):
-        data = self.bingo_index()
-        free_reward_positions = [0,3,6,9,12,15,18,21,24,27,30,33]
-        bingo_rewards =  data['result']['rewards']
-        free_rewards = [bingo_rewards[i] for i in free_reward_positions ]
-        available_free_rewards = [x for x in free_rewards if x['status'] == 1] 
-        if(len(available_free_rewards) > 0):
-            print(f"Claiming {len(available_free_rewards)} free rewards...") 
-        for reward in available_free_rewards:
-            res = self.bingo_receive_reward([reward['id']])
-        print("Finished claiming free rewards.")
+    def decrypt(self, content, iv):
+        res = self.c.decrypt(content,iv)
+        if 'fuji_key' in res:
+            if sys.version_info >= (3, 0):
+                self.c.key = bytes(res['fuji_key'], encoding='utf8')
+            else:
+                self.c.key = bytes(res['fuji_key'])
+            self.session_id = res['session_id']
+            self.log('found fuji_key:%s' % (self.c.key))    
 
     def innocent_training(self, t_innocent_id):
         data = self.rpc('innocent/training', {"t_innocent_id":t_innocent_id})
         return data
 
-    def innocent_get_all(self):
-        if len(self.innocents) > 0:
+    def innocent_get_all(self, refresh=True):
+        if len(self.innocents) > 0 and not refresh:
             return self.innocents
         print("Fetching all innocents...")
         page_index = 1
@@ -1407,8 +1338,7 @@ class API(BaseAPI):
         return self.innocents
 
     def innocent_get_all_of_type(self, m_innocent_id, only_unequipped):
-        if len(self.innocents) == 0:
-            self.innocent_get_all()
+        self.innocent_get_all()
         innocents_of_type = [x for x in self.innocents if x['m_innocent_id'] == m_innocent_id]
         if(only_unequipped):
             innocents_of_type = [x for x in innocents_of_type if x['place_id'] == 0 and x['place'] == 0]
@@ -1421,6 +1351,7 @@ class API(BaseAPI):
             return "Not bad"
         if (training_result == Innocent_Training_Result.DREAMLIKE):
             return "Dreamlike"
+
 
 if __name__ == "__main__":
     a = API()
