@@ -36,6 +36,33 @@ class Battle(metaclass=ABCMeta):
             })
         return data
 
+
+    def battle_skip(self, m_stage_id, skip_number, help_t_player_id = 0):
+
+        if(help_t_player_id == 0):
+            helper_player = self.battle_help_list()['result']['help_players'][0] 
+        else:
+            helper_player = self.battle_help_get_friend_by_id(help_t_player_id) 
+
+        stage = self.getStage(m_stage_id)
+        data = self.rpc(
+            'battle/skip', 
+            {
+                "m_stage_id":m_stage_id,
+                "help_t_player_id":helper_player['t_player_id'],
+                "help_t_character_id":helper_player['t_character']['id'],
+                "help_t_character_lv":helper_player['t_character']['lv'],
+                "t_deck_no":self.activeParty,
+                "m_guest_character_id":0,
+                "t_character_ids":[],
+                "skip_num":skip_number,
+                "battle_type":3, # needs to be tested. It was an exp gate
+                "act":stage['act'],
+                "auto_rebirth_t_character_ids":self.reincarnationIDs,
+                "t_memery_ids":[] #pass parameters?
+            })
+        return data
+
     def battle_end(self, battle_exp_data, m_stage_id, battle_type,
                    result, equipment_id=0, equipment_type=0, m_tower_no=0):
         data = self.rpc(
@@ -51,9 +78,7 @@ class Battle(metaclass=ABCMeta):
                 "result": result,
                 "innocent_dead_flg": 0,
                 #3 star finish
-                #"common_battle_result":"eyJhbGciOiJIUzI1NiJ9.eyJoZmJtNzg0a2hrMjYzOXBmIjoiMSwxLDEiLCJ5cGIyODJ1dHR6ejc2Mnd4IjoyNTkxNjg1OTc1MjQsImRwcGNiZXc5bXo4Y3V3d24iOjAsInphY3N2NmpldjRpd3pqem0iOjAsImt5cXluaTNubm0zaTJhcWEiOjAsImVjaG02dGh0emNqNHl0eXQiOjAsImVrdXN2YXBncHBpazM1amoiOjAsInhhNWUzMjJtZ2VqNGY0eXEiOjR9.4NWzKTpAs-GrjbFt9M6eEJEbEviUf5xvrYPGiIL4V0k"
-                # finish stage with steal 1k
-                "common_battle_result":"eyJhbGciOiJIUzI1NiJ9.eyJoZmJtNzg0a2hrMjYzOXBmIjoiIiwieXBiMjgydXR0eno3NjJ3eCI6MjU0Mzc1NzMwOTcyLCJkcHBjYmV3OW16OGN1d3duIjowLCJ6YWNzdjZqZXY0aXd6anptIjowLCJreXF5bmkzbm5tM2kyYXFhIjowLCJlY2htNnRodHpjajR5dHl0IjowLCJla3VzdmFwZ3BwaWszNWpqIjoxMDEzLCJ4YTVlMzIybWdlajRmNHlxIjoxNn0.MWfmZHEHIVSFj-26a6bJ0tuMUGQP4496oA_Fxv8V8Tw"
+                "common_battle_result":"eyJhbGciOiJIUzI1NiJ9.eyJoZmJtNzg0a2hrMjYzOXBmIjoiMSwxLDEiLCJ5cGIyODJ1dHR6ejc2Mnd4IjoyNTkxNjg1OTc1MjQsImRwcGNiZXc5bXo4Y3V3d24iOjAsInphY3N2NmpldjRpd3pqem0iOjAsImt5cXluaTNubm0zaTJhcWEiOjAsImVjaG02dGh0emNqNHl0eXQiOjAsImVrdXN2YXBncHBpazM1amoiOjAsInhhNWUzMjJtZ2VqNGY0eXEiOjR9.4NWzKTpAs-GrjbFt9M6eEJEbEviUf5xvrYPGiIL4V0k"
             })
         return data
 
