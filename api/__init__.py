@@ -5,7 +5,8 @@ from api.fish_fleet import FishFleet
 from api.shop import Shop
 from api.bingo import Bingo
 from api.battle import Battle
+from api.etna_resort import EtnaResort
 
-class BaseAPI(Raid, AxelContest, FishFleet, Shop, Bingo, Battle, ABC):
+class BaseAPI(Raid, AxelContest, FishFleet, Shop, Bingo, Battle, EtnaResort, ABC):
     def __init__(self):
         super().__init__()

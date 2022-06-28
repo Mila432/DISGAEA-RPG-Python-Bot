@@ -390,7 +390,7 @@ class API(BaseAPI):
     def player_characters_get_all(self):
         if len(self.characters) > 0:
             return self.characters
-        print("Fetching all characters...")
+        self.characters = []
         page_index = 1
         iterate_next_page = True
         while iterate_next_page:
@@ -411,6 +411,7 @@ class API(BaseAPI):
     def player_weapons_get_all(self, refresh=True):
         if len(self.weapons) > 0 and not refresh:
             return self.weapons
+        self.weapons = []
         print("Fetching all weapons...")
         page_index = 1
         iterate_next_page = True
@@ -439,6 +440,7 @@ class API(BaseAPI):
     def player_equipments_get_all(self, refresh=True):
         if len(self.equipments) > 0 and not refresh:
             return self.equipments
+        self.equipments = []
         print("Fetching all equipments...")
         page_index = 1
         iterate_next_page = True
@@ -458,7 +460,7 @@ class API(BaseAPI):
         return data
 
     def update_equip_detail(self, e, innos=[]):
-        equip_type = 1 if self.get_weapon_by_id(e['id']) else 2
+        equip_type = 1 if 'm_weapon_id' in e else 2
         data = self.rpc("player/update_equip_detail", {
             't_equip_id': e['id'],
             'equip_type': equip_type,
@@ -629,10 +631,6 @@ class API(BaseAPI):
 
     def update_admin_flg(self):
         data = self.rpc('debug/update_admin_flg', {})
-        return data
-
-    def breeding_center_list(self):
-        data = self.rpc('breeding_center/list', {})
         return data
 
     def trophy_daily_requests(self):
@@ -902,7 +900,7 @@ class API(BaseAPI):
         except:
             return ''
 
-    def upgradeItems(self, ensureDrops=False, getOnlyWeapons=False, runLimit=0, raid_farming_party=1):
+    def upgradeItems(self, ensureDrops=False, getOnlyWeapons=False, runLimit=0, raid_farming_party=0):
         count = 0
         limit = runLimit
         self.EnsureDrops = ensureDrops
@@ -1139,30 +1137,17 @@ class API(BaseAPI):
             place_id = e['id']
         else:
             raise Exception('unable to determine item id')
-
+        
+        self.player_innocent_get_all(False)
         equipment_innocents = []
         for i in self.innocents:
             if i['place_id'] == place_id:
                 equipment_innocents.append(i)
-        return 
-    
-    def getAllInnocents(self):
-        fullInnocents = []
-        currPage = 0
-        while True:
-            currPage = currPage + 1
-            data = self.player_innocents(updated_at=0, page=currPage)
-            innocents = data['result']['_items']
-            if len(innocents) >= 1:
-                new_innocents = [*fullInnocents, *innocents]
-                fullInnocents = new_innocents
-            else:
-                break
-        return fullInnocents
+        return equipment_innocents
 
     def initInnocentPerEquipment(self, minimumEffectRank=7):
-        self.log('retrieving full list of innocents...')
-        innocents = self.innocent_get_all(True)
+        #self.log('retrieving full list of innocents...')
+        innocents = self.player_innocent_get_all(True)
         equipmentsInnocents = {}
         if len(innocents) >= 1:
             self.log('generating equip-id => innocent hasmapmap...')
@@ -1214,9 +1199,11 @@ class API(BaseAPI):
             self.shop_sell_equipment(selling)
 
     def get_weapon_by_id(self, eid):
+        self.player_weapons_get_all(False)
         return next((x for x in self.weapons if x['id'] == eid), None)
 
     def get_equipment_by_id(self, eid):
+        self.player_equipments_get_all(False)
         return next((x for x in self.equipments if x['id'] == eid), None)
 
     def lock_equipment_with_rare_innocents(self, minimumEffectRank=5, minimumItemRank=32):
@@ -1323,9 +1310,10 @@ class API(BaseAPI):
         data = self.rpc('innocent/training', {"t_innocent_id":t_innocent_id})
         return data
 
-    def innocent_get_all(self, refresh=True):
+    def player_innocent_get_all(self, refresh=False):
         if len(self.innocents) > 0 and not refresh:
             return self.innocents
+        self.innocents = []
         print("Fetching all innocents...")
         page_index = 1
         iterate_next_page = True
@@ -1338,7 +1326,7 @@ class API(BaseAPI):
         return self.innocents
 
     def innocent_get_all_of_type(self, m_innocent_id, only_unequipped):
-        self.innocent_get_all()
+        self.player_innocent_get_all()
         innocents_of_type = [x for x in self.innocents if x['m_innocent_id'] == m_innocent_id]
         if(only_unequipped):
             innocents_of_type = [x for x in innocents_of_type if x['place_id'] == 0 and x['place'] == 0]
