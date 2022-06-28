@@ -57,9 +57,42 @@ class Battle(metaclass=ABCMeta):
                 "t_character_ids":[],
                 "skip_num":skip_number,
                 "battle_type":3, # needs to be tested. It was an exp gate
-                "act":stage['act'],
+                "act":stage['act'] * skip_number,
                 "auto_rebirth_t_character_ids":self.reincarnationIDs,
                 "t_memery_ids":[] #pass parameters?
+            })
+        return data
+
+    # m_stage_ids [5010711,5010712,5010713,5010714,5010715] for monster reincarnation
+    def battle_skip_stages(self, m_stage_ids, help_t_player_id = 0):
+
+        if(help_t_player_id == 0):
+            helper_player = self.battle_help_list()['result']['help_players'][0] 
+        else:
+            helper_player = self.battle_help_get_friend_by_id(help_t_player_id) 
+
+        # calculate ap usage. Every stage is skipped 3 times
+        act = 0
+        for m_stage_id in m_stage_ids:
+            stage = self.getStage(m_stage_id)
+            act = act + (stage['act'] * 3)
+
+        data = self.rpc(
+            'battle/skip_stages', 
+            {
+                "m_stage_id":0,
+                "help_t_player_id":helper_player['t_player_id'],
+                "help_t_character_id":helper_player['t_character']['id'],
+                "help_t_character_lv":helper_player['t_character']['lv'],
+                "t_deck_no":self.activeParty,
+                "m_guest_character_id":0,
+                "t_character_ids":[],
+                "skip_num":0,
+                "battle_type":3, # needs to be tested. It was an exp gate
+                "act":act,
+                "auto_rebirth_t_character_ids":self.reincarnationIDs,
+                "t_memery_ids":[], #pass parameters?
+                "m_stage_ids":m_stage_ids
             })
         return data
 
@@ -79,7 +112,7 @@ class Battle(metaclass=ABCMeta):
                 "innocent_dead_flg": 0,
                 #3 star finish
                 "common_battle_result":"eyJhbGciOiJIUzI1NiJ9.eyJoZmJtNzg0a2hrMjYzOXBmIjoiMSwxLDEiLCJ5cGIyODJ1dHR6ejc2Mnd4IjoyNTkxNjg1OTc1MjQsImRwcGNiZXc5bXo4Y3V3d24iOjAsInphY3N2NmpldjRpd3pqem0iOjAsImt5cXluaTNubm0zaTJhcWEiOjAsImVjaG02dGh0emNqNHl0eXQiOjAsImVrdXN2YXBncHBpazM1amoiOjAsInhhNWUzMjJtZ2VqNGY0eXEiOjR9.4NWzKTpAs-GrjbFt9M6eEJEbEviUf5xvrYPGiIL4V0k"
-            })
+             })
         return data
 
     def battle_story(self, m_stage_id):
