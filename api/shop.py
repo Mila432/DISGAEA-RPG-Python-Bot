@@ -28,6 +28,15 @@ class Shop(metaclass=ABCMeta):
         })
         return data
 
+    def shop_sell_equipment(self, sell_equipments):
+        data = self.rpc('shop/sell_equipment',
+                        {"sell_equipments": sell_equipments})
+        return data
+
+    def shop_buy_item(self, itemid, quantity):
+        data = self.rpc('shop/buy_item', {"id": itemid, "quantity": quantity})
+        return data
+
     def shop_change_equipment_items(self, shop_rank=32):
         updateNumber = self.shop_equipment_shop()['result']['lineup_update_num']
         if (updateNumber < 5):
@@ -35,10 +44,6 @@ class Shop(metaclass=ABCMeta):
         else:
             self.log('Free refreshes used up already')
             data = 0
-        return data
-
-    def shop_buy_item(self, itemid, quantity):
-        data = self.rpc('shop/buy_item', {"id": itemid, "quantity": quantity})
         return data
 
     def BuyDailyItemsFromShop(self):
@@ -84,7 +89,43 @@ class Shop(metaclass=ABCMeta):
                     print(f"\tFree shop refreshes used up. Finished buying all equipment.")
                     buy = False
 
-    def shop_sell_equipment(self, sell_equipments):
-        data = self.rpc('shop/sell_equipment',
-                        {"sell_equipments": sell_equipments})
-        return data
+    def sell_r40_equipment_with_no_innocents(self):
+        print("\nLooking for equipment to sell...")
+        self.player_equipments_get_all(True)
+        self.player_weapons_get_all(True)
+        self.player_innocent_get_all(True)
+        selling = []
+        wc=0
+        ec=0
+        for w in self.weapons:
+            wId = w['id']
+            if self.get_item_rank(w) < 40: continue
+            if w['set_chara_id'] != 0: continue
+            if w['lv'] > 1: continue
+            if w['lock_flg'] == True: continue
+            if(len(self.get_item_innocents(wId)) == 0):
+                wc+=1
+                selling.append({'eqtype': 1, 'eqid': wId}) 
+        for e in self.equipments:
+            if self.get_item_rank(e) < 40: continue
+            eId = e['id']
+            if e['set_chara_id'] != 0: continue
+            if e['lv'] > 1: continue
+            if e['lock_flg'] == True: continue
+            if(len(self.get_item_innocents(eId)) == 0):
+                ec+=1
+                selling.append({'eqtype': 2, 'eqid': eId})
+        
+        print(f"\tWeapons to sell: {wc} - Equipment to sell: {ec}\n")
+        if(len(selling) > 0):            
+            #self.shop_log_sale(w)
+            self.shop_sell_equipment(selling)
+            
+    
+    def shop_log_sale(self, w):
+        item = self.getWeapon(w['m_weapon_id']) if 'm_weapon_id' in w else self.getEquip(w['m_equipment_id'])
+        self.log(
+            '[-] sell item: "%s" rarity: %s rank: %s lv: %s lv_max: %s locked: %s' %
+            (item['name'], w['rarity_value'], self.get_item_rank(w), w['lv'],
+             w['lv_max'], w['lock_flg'])
+        )
