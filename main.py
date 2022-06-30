@@ -47,6 +47,8 @@ class API(BaseAPI):
         self.equipments = []
         self.weapons = []
         self.characters = []
+        self.max_weapons = 0
+        self.max_equipments = 0
 
     def setProxy(self, proxy):
         proxy = 'http://' + proxy
@@ -412,7 +414,7 @@ class API(BaseAPI):
         if len(self.weapons) > 0 and not refresh:
             return self.weapons
         self.weapons = []
-        print("Fetching all weapons...")
+        #print("Fetching all weapons...")
         page_index = 1
         iterate_next_page = True
         while iterate_next_page:
@@ -441,7 +443,7 @@ class API(BaseAPI):
         if len(self.equipments) > 0 and not refresh:
             return self.equipments
         self.equipments = []
-        print("Fetching all equipments...")
+        #print("Fetching all equipments...")
         page_index = 1
         iterate_next_page = True
         while iterate_next_page:
@@ -458,24 +460,6 @@ class API(BaseAPI):
             "page": page
         })
         return data
-
-    def update_equip_detail(self, e, innos=[]):
-        equip_type = 1 if 'm_weapon_id' in e else 2
-        data = self.rpc("player/update_equip_detail", {
-            't_equip_id': e['id'],
-            'equip_type': equip_type,
-            'lock_flg': e['lock_flg'],
-            'innocent_auto_obey_flg': e['innocent_auto_obey_flg'],
-            'change_innocent_list': innos
-        })
-        if 't_weapon' in data['result']:
-            index = self.weapons.index(e)
-            self.weapons[index] = data['result']['t_weapon']
-        elif 't_equipment' in data['result']:
-            index = self.equipments.index(e)
-            self.equipments[index] = data['result']['t_equipment']
-        else:
-            self.log("unable to update item with id: {0}".format(e['id']))
     
     def player_innocents(self, updated_at, page):
         data = self.rpc('player/innocents', {
@@ -493,6 +477,8 @@ class API(BaseAPI):
 
     def player_index(self):
         data = self.rpc('player/index', {})
+        self.max_equipment = data['result']['status']['equipment_max']
+        self.max_weapons = data['result']['status']['weapon_max']
         return data
 
     def player_agendas(self):
@@ -815,16 +801,6 @@ class API(BaseAPI):
             if i == s['id']:
                 return s
 
-    def getEquip(self, i):
-        for s in gamedata['equip']:
-            if i == s['id']:
-                return s
-
-    def getWeapon(self, i):
-        for s in gamedata['weapon']:
-            if i == s['id']:
-                return s
-
     def doQuest(self, m_stage_id=101102):
         stage = self.getStage(m_stage_id)
         self.log('doing quest:%s [%s]' % (stage['name'], m_stage_id))
@@ -900,16 +876,16 @@ class API(BaseAPI):
         except:
             return ''
 
-    def upgradeItems(self, ensureDrops=False, getOnlyWeapons=False, runLimit=0, raid_farming_party=0):
+    def upgradeItems(self, ensureDrops=False, getOnlyWeapons=False, runLimit=0, min_item_rank_to_run = 40, raid_farming_party=0):
         count = 0
         limit = runLimit
         self.EnsureDrops = ensureDrops
         self.GetOnlyWeapons = getOnlyWeapons
-        self.player_weapons_get_all()
+        self.player_weapons_get_all(False)
         for w in self.weapons:
             if w['lv'] >= w['lv_max']: continue
             itemRank = self.get_item_rank(w)
-            #if  itemRank < 40: continue
+            if  itemRank < min_item_rank_to_run: continue
             #if w['rarity_value'] < 70: continue
             self.trophy_get_reward_repetition()
             count += 1
@@ -919,12 +895,12 @@ class API(BaseAPI):
                 if not self.doItemWorld(w['id'], equipment_type=1): break
 
             #self.raid_farm_shared_bosses(raid_farming_party)
-        self.player_equipments_get_all()
+        self.player_equipments_get_all(False)
         for e in self.equipments:
             #if e['lv']>=e['lv_max'] or e['m_equipment_id']!= 50010:	continue
             if e['lv'] >= e['lv_max']: continue
             itemRank = self.get_item_rank(e)
-            #if itemRank < 40: continue
+            if itemRank < min_item_rank_to_run: continue
             #if e['rarity_value'] < 70: continue
             self.trophy_get_reward_repetition()
             count += 1
@@ -955,6 +931,7 @@ class API(BaseAPI):
         #equipment drop, but farming only weapons, retry
         if reward_type == 4 and self.GetOnlyWeapons == True:
             return 5
+
         item = self.getWeapon(reward_id) if reward_type == 3 else self.getEquip(reward_id)
         if item is None:
             item = {'name': ''}
@@ -1125,87 +1102,6 @@ class API(BaseAPI):
         if hasattr(self, 'sess'):
             self.db.updateAccount(int(self.uin), self.gems, self.sess)
 
-    # e can be an equipment id or actual equipment/weapon
-    def get_item_innocents(self, e):
-        if isinstance(e, int):
-            place_id = e
-        elif 'm_weapon_id' in e:
-            place_id = e['id']
-        elif 'm_equipment_id' in e:
-            place_id = e['id']
-        elif 'id' in e:
-            place_id = e['id']
-        else:
-            raise Exception('unable to determine item id')
-        
-        self.player_innocent_get_all(False)
-        equipment_innocents = []
-        for i in self.innocents:
-            if i['place_id'] == place_id:
-                equipment_innocents.append(i)
-        return equipment_innocents
-
-    def initInnocentPerEquipment(self, minimumEffectRank=7):
-        #self.log('retrieving full list of innocents...')
-        innocents = self.player_innocent_get_all(True)
-        equipmentsInnocents = {}
-        if len(innocents) >= 1:
-            self.log('generating equip-id => innocent hasmapmap...')
-            for innocent in innocents:
-                equipmentId = innocent['place_id']
-                if equipmentId in equipmentsInnocents:
-                    equipmentsInnocents[equipmentId]['innocentsArray'][innocent['place_no']] = innocent
-                    # equipmentsInnocents[equipmentId][innocent['place_no']]=innocent # if we want an hasmap too...
-                else:
-                    equipmentsInnocents[equipmentId] = {}
-                    equipmentsInnocents[equipmentId]['innocentsArray'] = [None] * 10
-                    equipmentsInnocents[equipmentId]['innocentsArray'][innocent['place_no']] = innocent
-                    # equipmentsInnocents[equipmentId][innocent['place_no']]=innocent # if we want an hasmap too...
-                    equipmentsInnocents[equipmentId]['canSell'] = innocent['effect_rank'] < minimumEffectRank
-                if innocent['effect_rank'] >= minimumEffectRank:
-                    equipmentsInnocents[equipmentId]['canSell'] = False
-            self.log('hashmap generated!')
-        return equipmentsInnocents
-
-    def innocent_safe_sellItems(self, minimumEffectRank=5, minimumItemRank=32):
-        self.player_equipments_get_all()
-        self.player_weapons_get_all()
-        equipments = self.initInnocentPerEquipment(minimumEffectRank)
-        selling = []
-        for w in self.weapons:
-            wId = w['id']
-            if self.get_item_rank(w) > minimumItemRank: continue
-            #if w['rarity_value']>=minrarity:    continue
-            if w['set_chara_id'] != 0: continue
-            if w['lv'] > 1: continue
-            if w['lock_flg'] == True: continue
-            if wId in equipments and equipments[wId]['canSell'] == False:
-                continue
-            selling.append({'eqtype': 1, 'eqid': wId})
-        for e in self.equipments:
-            if self.get_item_rank(e) > minimumItemRank: continue
-            eId = e['id']
-            #if e['rarity_value'] >= minrarity: continue
-            if e['set_chara_id'] != 0: continue
-            if e['lv'] > 1: continue
-            if e['lock_flg'] == True: continue
-            if eId in equipments and equipments[eId]['canSell'] == False:
-                continue
-            selling.append({'eqtype': 2, 'eqid': eId})
-        self.log(selling)
-        self.log(len(selling))
-        if len(selling) >= 1:
-            self.log('selling...')
-            self.shop_sell_equipment(selling)
-
-    def get_weapon_by_id(self, eid):
-        self.player_weapons_get_all(False)
-        return next((x for x in self.weapons if x['id'] == eid), None)
-
-    def get_equipment_by_id(self, eid):
-        self.player_equipments_get_all(False)
-        return next((x for x in self.equipments if x['id'] == eid), None)
-
     def lock_equipment_with_rare_innocents(self, minimumEffectRank=5, minimumItemRank=32):
         self.player_equipments_get_all(True)
         self.player_weapons_get_all(True)
@@ -1242,24 +1138,6 @@ class API(BaseAPI):
             return data['error']
         print(f"Hospital Roulettte - Recovered {data['result']['recovery_num']} AP")
         return data
-
-    def get_item_rank(self, e):
-        item_rank = 140
-        if 'm_weapon_id' in e:
-            weapon = self.getWeapon(e['m_weapon_id'])
-            if weapon is not None:
-                item_rank = weapon['item_rank']
-        elif 'm_equipment_id' in e:
-            equip = self.getEquip(e['m_equipment_id'])
-            if equip is not None:
-                item_rank = equip['item_rank']
-        elif 'item_rank' in e:
-            item_rank = e['item_rank']
-        else:
-            raise Exception('unable to determine item rank')
-        if item_rank > 100:
-            item_rank = item_rank - 100
-        return item_rank
 
     # Character collections hold data about character episodes, axel contest progress..
     def find_character_collection_by_character_id(self, unitID):

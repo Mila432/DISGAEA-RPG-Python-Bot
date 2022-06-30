@@ -90,7 +90,7 @@ class Shop(metaclass=ABCMeta):
                     buy = False
 
     def sell_r40_equipment_with_no_innocents(self):
-        print("\nLooking for equipment to sell...")
+        print("\nLooking for r40 equipment with no innocents to sell...")
         self.player_equipments_get_all(True)
         self.player_weapons_get_all(True)
         self.player_innocent_get_all(True)
@@ -120,8 +120,86 @@ class Shop(metaclass=ABCMeta):
         if(len(selling) > 0):            
             #self.shop_log_sale(w)
             self.shop_sell_equipment(selling)
+
+    # Sell items (to make sure depository can be emptied) that have no innocent or 1 common
+    def shop_free_inventory_space(self, sell_weapons=False, sell_equipment=False, item_to_sell = 20):
+        print("\nSelling items to free inventory space...")
+        selling = []
+        wc=0
+        ec=0
+
+        self.player_equipments_get_all(True)
+        self.player_weapons_get_all(True)
+        self.player_innocent_get_all(True)
+
+        if(sell_weapons):
+            for w in self.weapons:
+                wId = w['id']
+                if self.get_item_rank(w) < 40: continue
+                if w['set_chara_id'] != 0: continue
+                if w['lv'] > 1: continue
+                if w['lock_flg'] == True: continue
+                if w['rarity_value'] >= 40: continue
+                item_innocents = self.get_item_innocents(w['id'])
+                innos_to_keep = [x for x in item_innocents if x['effect_rank'] >= 5]
+                if(len(item_innocents) == 0 or (len(item_innocents) == 1 and len(innos_to_keep) == 0)):
+                    wc+=1
+                    selling.append({'eqtype': 1, 'eqid': wId}) 
+                    if(wc == item_to_sell):
+                        break
+
+        if(sell_equipment):
+            for e in self.equipments:
+                if self.get_item_rank(e) < 40: continue
+                eId = e['id']
+                if e['set_chara_id'] != 0: continue
+                if e['lv'] > 1: continue
+                if e['lock_flg'] == True: continue
+                if e['rarity_value'] >= 40: continue
+                item_innocents = self.get_item_innocents(e['id'])
+                innos_to_keep = [x for x in item_innocents if x['effect_rank'] >= 5]
+                if(len(item_innocents) == 0 or (len(item_innocents) == 1 and len(innos_to_keep) == 0)):
+                    ec+=1
+                    selling.append({'eqtype': 2, 'eqid': eId})
+                    if(ec == item_to_sell):
+                        break
+        
+        print(f"\tWeapons to sell: {wc} - Equipment to sell: {ec}\n")
+        if(len(selling) > 0):            
+            #self.shop_log_sale(w)
+            self.shop_sell_equipment(selling)
             
-    
+    def innocent_safe_sellItems(self, minimumEffectRank=5, minimumItemRank=32):
+        self.player_equipments_get_all()
+        self.player_weapons_get_all()
+        equipments = self.initInnocentPerEquipment(minimumEffectRank)
+        selling = []
+        for w in self.weapons:
+            wId = w['id']
+            if self.get_item_rank(w) > minimumItemRank: continue
+            #if w['rarity_value']>=minrarity:    continue
+            if w['set_chara_id'] != 0: continue
+            if w['lv'] > 1: continue
+            if w['lock_flg'] == True: continue
+            if wId in equipments and equipments[wId]['canSell'] == False:
+                continue
+            selling.append({'eqtype': 1, 'eqid': wId})
+        for e in self.equipments:
+            if self.get_item_rank(e) > minimumItemRank: continue
+            eId = e['id']
+            #if e['rarity_value'] >= minrarity: continue
+            if e['set_chara_id'] != 0: continue
+            if e['lv'] > 1: continue
+            if e['lock_flg'] == True: continue
+            if eId in equipments and equipments[eId]['canSell'] == False:
+                continue
+            selling.append({'eqtype': 2, 'eqid': eId})
+        self.log(selling)
+        self.log(len(selling))
+        if len(selling) >= 1:
+            self.log('selling...')
+            self.shop_sell_equipment(selling)
+
     def shop_log_sale(self, w):
         item = self.getWeapon(w['m_weapon_id']) if 'm_weapon_id' in w else self.getEquip(w['m_equipment_id'])
         self.log(

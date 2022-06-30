@@ -1,37 +1,38 @@
-import datetime
-import random
-from dateutil import parser
-import time
-from api.constants import Constants
 from main import API
+from api.constants import Constants
 
 a = API()
-a.sess = ''
-a.uin = ''
+a.sess = Constants.session_id
+a.uin = Constants.user_id
 a.wait(0)
 a.setRegion(2)
 a.setDevice(2)
 a.dologin()
 
-#configure
-item_world_party = 4
-raid_farming_party = 9
-a.setActiveParty(item_world_party)
-a.minrarity(10)
+# a.setActiveParty(5)
+# a.minrarity(95)
+max_innocent_rank = 5 # do not donate items with innocents above this rank
+max_item_rarity = 40 # do not donate items above this rarity
+max_item_rank = 40 # do not donate items above this rank
+min_item_rank_to_run = 40 # do not run IW for items below this rank
+batch_size = 15
+batches_to_run = 3
 
-min_innocent_rank = 5 # if item has an innocent with a higher rank keep
-max_rarity = 70 # do not donate items above this rarity
-min_item_rank = 40 # minimum rank of items to be added to the depository
+#a.sell_r40_equipment_with_no_innocents()
 
-# ensureDrops=True - keep retrying on stages 10,20,30... until an tem drops
-# getOnlyWeapons=True - keep retrying until a weapon drops
-# runLimit=10 - Number of items to complete. 0 for unlimited
-# raid_farming_party - party to use to leech raid bosses. After each item run the bot will check for available booses and leech
-
-items_to_run = 2
-count=0
-while(count < items_to_run):
-    a.upgradeItems(ensureDrops=True, getOnlyWeapons=False, runLimit=1, raid_farming_party=0)
-    a.etna_resort_check_deposit_status(min_innocent_rank, min_item_rank)
+# Will run through X items in a batch
+# After each batch will donate items and sell items that have no innocents to open up inventory space
+# Keep runLimit=1 so that it check the depository after each item completed
+batch_count = 0
+while(batch_count < batches_to_run):
+    item_count= 0
+    while(item_count < batch_size):
+        a.upgradeItems(ensureDrops=True, getOnlyWeapons=False, runLimit=1, min_item_rank_to_run = 40, raid_farming_party=0)
+        a.etna_resort_check_deposit_status(max_innocent_rank, max_item_rank, max_item_rarity)        
+        item_count+=1
+    a.etna_resort_donate_items(max_innocent_rank, max_item_rank, max_item_rarity)
     a.sell_r40_equipment_with_no_innocents()
-    count+=1
+    batch_count +=1
+
+#a.lock_equipment_with_rare_innocents()
+#a.lock_equipment_with_rare_innocents(max_innocent_rank=5, max_item_rarity = 70, max_item_rank=40)
