@@ -131,8 +131,8 @@ class EtnaResort(metaclass=ABCMeta):
             deposit_free_slots = 11 - len(items_in_depository)
         
         if(deposit_free_slots > 0):    
-            self.player_weapons_get_all(False)
-            self.player_equipments_get_all(False)
+            self.player_weapons_get_all(True)
+            self.player_equipments_get_all(True)
             weapons_to_deposit =[]
             equipments_to_deposit =[]
             weapons_lvl1 = [x for x in self.weapons if x['lv'] <= 1 and x['set_chara_id'] == 0]

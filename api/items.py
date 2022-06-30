@@ -144,12 +144,12 @@ class Items(metaclass=ABCMeta):
             return False
         if self.get_item_rank(item) > max_item_rank:
             return False
-        if item['rarity_value'] > max_rarity:
+        if item['rarity_value'] >= max_rarity:
             return False
         if item['set_chara_id'] != 0:
             return False
         for inno in self.get_item_innocents(item):
-            if inno and inno['effect_rank'] > max_innocent_rank:
+            if inno and inno['effect_rank'] >= max_innocent_rank:
                 return False
             # TODO Keep specific innocent types?
             # for i in []: # innocents to keep
