@@ -11,6 +11,7 @@ class EtnaResort(metaclass=ABCMeta):
         data = self.rpc('breeding_center/list', {})
         return data
     
+    #Donate equipments
     def kingdom_weapon_equipment_entry(self, weap_ids=[], equip_ids=[]):
         data = self.rpc("kingdom/weapon_equipment_entry", {'t_weapon_ids': weap_ids, 't_equipment_ids': equip_ids})
         if len(weap_ids) > 0:
@@ -19,6 +20,7 @@ class EtnaResort(metaclass=ABCMeta):
             self.player_equipments_get_all(True)
         return data
 
+    # Donate innocents
     def kingdom_innocent_entry(self, innocent_ids=[]):
         data = self.rpc("kingdom/innocent_entry", {'t_innocent_ids': innocent_ids})
         self.player_innocent_get_all(True)
@@ -34,6 +36,10 @@ class EtnaResort(metaclass=ABCMeta):
         data = self.rpc('breeding_center/entrust', {"t_weapon_ids":t_weapon_ids,"t_equipment_ids":t_equipment_ids})
         return data
 
+    def etna_resort_refine(self, item_type, id):
+        data = self.rpc('weapon_equipment/rarity_up', {"item_type":item_type,"id":id})
+        return data
+    
     # Looks for maxed items retrieves or donates them and fills it again
     def etna_resort_check_deposit_status(self, max_innocent_rank=5, min_item_rank=40, max_item_rarity =40):
         print("\nChecking state of item depository...")
@@ -137,13 +143,14 @@ class EtnaResort(metaclass=ABCMeta):
             equipments_to_deposit =[]
             weapons_lvl1 = [x for x in self.weapons if x['lv'] <= 1 and x['set_chara_id'] == 0]
             equips_lvl1 = [x for x in self.equipments if x['lv'] <= 1 and x['set_chara_id'] == 0]
-            
-            weapons_to_deposit = self.generate_array_for_deposit(weapons_lvl1, deposit_free_slots, max_innocent_rank, max_item_rank)                 
-            # If deposit cannot be filled with only weapons, find equipment to finish filling
-            if(len(weapons_to_deposit) < deposit_free_slots):
-                deposit_free_slots = deposit_free_slots - len(weapons_to_deposit)
-                equipments_to_deposit = self.generate_array_for_deposit(equips_lvl1, deposit_free_slots, max_innocent_rank, max_item_rank)
 
+            equipments_to_deposit = self.generate_array_for_deposit(equips_lvl1, deposit_free_slots, max_innocent_rank, max_item_rank)
+            
+            # If deposit cannot be filled with only equipment, find weapons to finish filling
+            if(len(equipments_to_deposit) < deposit_free_slots):
+                deposit_free_slots = deposit_free_slots - len(equipments_to_deposit)
+                weapons_to_deposit = self.generate_array_for_deposit(weapons_lvl1, deposit_free_slots, max_innocent_rank, max_item_rank)                 
+            
             if(len(weapons_to_deposit) > 0 or len(equipments_to_deposit) > 0):
                 self.breeding_center_entrust(weapons_to_deposit, equipments_to_deposit)
 
@@ -234,6 +241,32 @@ class EtnaResort(metaclass=ABCMeta):
             self.kingdom_weapon_equipment_entry(equip_ids=equipment_batch)
 
         print("\tFinished donating equipment")
+
+    def etna_resort_refine_weapon(self, weapon_id):
+        retry = True
+        print("Attempting to refine equipment...")
+        attempt_count = 0
+        result = ''
+        while retry:
+            attempt_count +=1
+            res = self.etna_resort_refine(3, weapon_id)
+            if 'success_type' in res['result']:
+                result = res['result']['success_type']
+                retry = False
+        print(f"\tRefined weapon. Attempts used {attempt_count}. Result: {result}")
+
+    def etna_resort_refine_equipment(self, equipment_id):
+        retry = True
+        print("Attempting to refine equipment...")
+        attempt_count = 0
+        result = ''
+        while retry:
+            attempt_count +=1
+            res = self.etna_resort_refine(4, equipment_id)
+            if 'success_type' in res['result']:
+                result = res['result']['success_type']
+                retry = False
+        print(f"\tRefined equipment. Attempts used {attempt_count}. Result: {result}")
 
     def log_donate(self, w):
         item = self.getWeapon(w['m_weapon_id']) if 'm_weapon_id' in w else self.getEquip(w['m_equipment_id'])

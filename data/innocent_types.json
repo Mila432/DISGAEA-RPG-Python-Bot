@@ -61,7 +61,71 @@
   },
   {
     "ID": 16,
-    "Name": "Axe ATK Boost"
+    "Name": "Axe ATK"
+  },
+  {
+    "ID": 17,
+    "Name": "HP Ancient"
+  },
+  {
+    "ID": 18,
+    "Name": "ATK Ancient"
+  },
+  {
+    "ID": 19,
+    "Name": "DEF Ancient"
+  },
+  {
+    "ID": 20,
+    "Name": "INT Ancient"
+  },
+  {
+    "ID": 21,
+    "Name": "RES Ancient"
+  },
+  {
+    "ID": 22,
+    "Name": "WM Ancient"
+  },
+  {
+    "ID": 23,
+    "Name": "SKILL Ancient"
+  },
+  {
+    "ID": 39,
+    "Name": "Allmighty"
+  },
+  {
+    "ID": 40,
+    "Name": "Staff INT"
+  },
+  {
+    "ID": 41,
+    "Name": "Fist ATK"
+  },
+  {
+    "ID": 42,
+    "Name": "Monster Phys. ATK"
+  },
+  {
+    "ID": 43,
+    "Name": "Armour DEF"
+  },
+  {
+    "ID": 44,
+    "Name": "Belt ATK"
+  },
+  {
+    "ID": 45,
+    "Name": "Muscle HP"
+  },
+  {
+    "ID": 46,
+    "Name": "Gun ATK"
+  },
+  {
+    "ID": 47,
+    "Name": "Sword ATK"
   },
   {
     "ID": 48,
