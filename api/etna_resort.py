@@ -157,25 +157,36 @@ class EtnaResort(metaclass=ABCMeta):
     def generate_array_for_deposit(self, all_items, deposit_free_slots, max_innocent_rank, max_item_rank, max_rarity = 40):
         deposit_count=0
         items_to_deposit =[]
-        for item in all_items:
-            # If looking for rare innocents
-            if(max_innocent_rank > 0):
+        filled = False
+        innocent_count = 0
+
+        while not filled:
+            for item in all_items:
+                # If looking for rare innocents
                 item_innocents  = self.get_item_innocents(item['id'])
-                rare_innocents = [x for x in item_innocents if x['effect_rank'] >= max_innocent_rank]
-                if(len(rare_innocents) > 0):
+                if(max_innocent_rank > 0):                
+                    rare_innocents = [x for x in item_innocents if x['effect_rank'] >= max_innocent_rank]
+                    if(len(rare_innocents) > 0):
+                        items_to_deposit.append(item['id'])
+                        deposit_count+=1
+                        if(deposit_count == deposit_free_slots):
+                            filled = True
+                            return items_to_deposit
+                    filled = True
+                
+                # Otherwise fill with commons of specific rank
+                # fill with items with no innocents first, if there aren't enough items with 1 and so on
+                else:
+                    item_rank = self.get_item_rank(item)
+                    if(item_rank >= max_item_rank and item['rarity_value'] > max_rarity):
+                        continue
+                    if(len(item_innocents) > innocent_count): continue
                     items_to_deposit.append(item['id'])
                     deposit_count+=1
                     if(deposit_count == deposit_free_slots):
+                        filled = True
                         return items_to_deposit
-            
-            # Otherwise fill with commons of specific rank
-            else:
-                item_rank = self.get_item_rank(item)
-                if(item_rank >= max_item_rank and item['rarity_value'] < max_rarity):
-                    items_to_deposit.append(item['id'])
-                    deposit_count+=1
-                    if(deposit_count == deposit_free_slots):
-                        return items_to_deposit
+                    innocent_count += 1
         return items_to_deposit
 
     def etna_donate_innocents(self, max_innocent_rank=8, max_innocent_type=8):

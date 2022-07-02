@@ -11,10 +11,6 @@ class Constants:
     session_id = '' # FILL SESSION_ID HERE
     user_id ='' # FILL USER_ID HERE
 
-class Bingo_ID(IntEnum):
-    JUNE_2022 = 2
-    JULY_2022 = 0
-
 class Raid_Gacha_ID(IntEnum):
     SUMMER_PRINNY_EVENT_POINT = 49
     SUMMER_PRINNY_INNOCENT_REGULAR_ROULETTE = 50
