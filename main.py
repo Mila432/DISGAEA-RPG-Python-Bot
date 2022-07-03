@@ -10,7 +10,6 @@ import json
 import sys
 from api.constants import Innocent_Training_Result
 from codedbots import codedbots
-from db import Database
 import db2
 from boltrend import boltrend
 from contextlib import suppress
@@ -30,7 +29,6 @@ class API(BaseAPI):
     def __init__(self):
         super().__init__()
         self.c = codedbots()
-        self.db = Database()
         self.b = boltrend()
         self.s = requests.Session()
         self.s.verify = False
@@ -528,6 +526,11 @@ class API(BaseAPI):
             return data['error']
         print(f"Sent sardines to {data['result']['send_count_total']} friends")
 
+    
+    def friend_receive_act(self,target_t_player_id=0):
+        data = self.rpc('friend/receive_act',{"target_t_player_id": target_t_player_id})
+        return data
+
     def trophy_get_reward_daily(self, receive_all=1, id=0):
         data = self.rpc('trophy/get_reward_daily', {
             "receive_all": receive_all,
@@ -894,14 +897,14 @@ class API(BaseAPI):
             while (1):
                 if not self.doItemWorld(w['id'], equipment_type=1): break
 
-            #self.raid_farm_shared_bosses(raid_farming_party)
+        #     #self.raid_farm_shared_bosses(raid_farming_party)
         self.player_equipments_get_all(False)
         for e in self.equipments:
             #if e['lv']>=e['lv_max'] or e['m_equipment_id']!= 50010:	continue
             if e['lv'] >= e['lv_max']: continue
             itemRank = self.get_item_rank(e)
             if itemRank < min_item_rank_to_run: continue
-            #if e['rarity_value'] < 70: continue
+            if e['rarity_value'] < 70: continue
             self.trophy_get_reward_repetition()
             count += 1
             if (count > limit and limit > 0):
@@ -1092,15 +1095,6 @@ class API(BaseAPI):
         self.login_update()
         self.player_badge_homes()
         self.trophy_beginner_missions()
-        #self.getmail()
-        #self.getmail()
-        #self.getfreegacha()
-        self.db.addAccount(self.sess, '', self.uin, self.gems)
-        self.updateAccount()
-
-    def updateAccount(self):
-        if hasattr(self, 'sess'):
-            self.db.updateAccount(int(self.uin), self.gems, self.sess)
 
     def lock_equipment_with_rare_innocents(self, minimumEffectRank=5, minimumItemRank=32):
         self.player_equipments_get_all(True)

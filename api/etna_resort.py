@@ -277,7 +277,7 @@ class EtnaResort(metaclass=ABCMeta):
             if 'success_type' in res['result']:
                 result = res['result']['success_type']
                 retry = False
-        print(f"\tRefined equipment. Attempts used {attempt_count}. Result: {result}")
+        print(f"\tRefined equipment. Attempts used {attempt_count}. Rarity increase: {result}")
 
     def log_donate(self, w):
         item = self.getWeapon(w['m_weapon_id']) if 'm_weapon_id' in w else self.getEquip(w['m_equipment_id'])
