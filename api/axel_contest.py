@@ -97,6 +97,9 @@ class AxelContest(metaclass=ABCMeta):
         unitCount = 0
         while unitCount < numberOfCharacters:
             character = self.find_character_for_axel_contest(highestStageToClear)
+            if(character is None):
+                print("No characters left, please increase the level cap")
+                return
             self.do_axel_contest(character, highestStageToClear)
             unitCount+=1
             print(f"Completed {unitCount} out of {numberOfCharacters} characters")

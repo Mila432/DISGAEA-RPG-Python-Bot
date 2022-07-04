@@ -1,6 +1,6 @@
 from abc import ABCMeta
 
-from api.constants import Constants
+from api.constants import Constants, Innocent_Training_Result
 
 class EtnaResort(metaclass=ABCMeta):
     
@@ -277,8 +277,20 @@ class EtnaResort(metaclass=ABCMeta):
             if 'success_type' in res['result']:
                 result = res['result']['success_type']
                 retry = False
-        print(f"\tRefined equipment. Attempts used {attempt_count}. Rarity increase: {result}")
+        print(f"\tRefined equipment. Attempts used {attempt_count}. Result: {result}")
 
+    def etna_resort_innocent_training(self, t_innocent_id):
+        data = self.rpc('innocent/training', {"t_innocent_id":t_innocent_id})
+        return data
+
+    def innocent_get_training_result(self, training_result):
+        if (training_result == Innocent_Training_Result.NORMAL):
+            return "Normal"
+        if (training_result == Innocent_Training_Result.NOT_BAD):
+            return "Not bad"
+        if (training_result == Innocent_Training_Result.DREAMLIKE):
+            return "Dreamlike"
+            
     def log_donate(self, w):
         item = self.getWeapon(w['m_weapon_id']) if 'm_weapon_id' in w else self.getEquip(w['m_equipment_id'])
         self.log(

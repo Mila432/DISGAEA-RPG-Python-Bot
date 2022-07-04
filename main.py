@@ -387,8 +387,8 @@ class API(BaseAPI):
         })
         return data
 
-    def player_characters_get_all(self):
-        if len(self.characters) > 0:
+    def player_characters_get_all(self, refresh=False):
+        if len(self.characters) > 0 and not refresh:
             return self.characters
         self.characters = []
         page_index = 1
@@ -408,7 +408,7 @@ class API(BaseAPI):
         })
         return data
 
-    def player_weapons_get_all(self, refresh=True):
+    def player_weapons_get_all(self, refresh=False):
         if len(self.weapons) > 0 and not refresh:
             return self.weapons
         self.weapons = []
@@ -437,7 +437,7 @@ class API(BaseAPI):
         })
         return data
 
-    def player_equipments_get_all(self, refresh=True):
+    def player_equipments_get_all(self, refresh=False):
         if len(self.equipments) > 0 and not refresh:
             return self.equipments
         self.equipments = []
@@ -1133,6 +1133,13 @@ class API(BaseAPI):
         print(f"Hospital Roulettte - Recovered {data['result']['recovery_num']} AP")
         return data
 
+    # Find character by id
+    def find_character_by_id(self, unitID):
+        #find the specific unit and get character id
+        self.player_characters_get_all()
+        unit = next((x for x in self.characters if x['id'] == unitID), None)
+        return unit
+
     # Character collections hold data about character episodes, axel contest progress..
     def find_character_collection_by_character_id(self, unitID):
         #find the specific unit and get character id
@@ -1178,10 +1185,6 @@ class API(BaseAPI):
             self.session_id = res['session_id']
             self.log('found fuji_key:%s' % (self.c.key))    
 
-    def innocent_training(self, t_innocent_id):
-        data = self.rpc('innocent/training', {"t_innocent_id":t_innocent_id})
-        return data
-
     def player_innocent_get_all(self, refresh=False):
         if len(self.innocents) > 0 and not refresh:
             return self.innocents
@@ -1204,14 +1207,26 @@ class API(BaseAPI):
             innocents_of_type = [x for x in innocents_of_type if x['place_id'] == 0 and x['place'] == 0]
         return innocents_of_type
 
-    def innocent_get_training_result(self, training_result):
-        if (training_result == Innocent_Training_Result.NORMAL):
-            return "Normal"
-        if (training_result == Innocent_Training_Result.NOT_BAD):
-            return "Not bad"
-        if (training_result == Innocent_Training_Result.DREAMLIKE):
-            return "Dreamlike"
 
+    def print_team_info(self, team_num):
+        data = self.player_decks()
+        team0 = data['result']['_items'][team_num-1]['t_character_ids']
+        for key in team0.keys():
+            unit_id = team0[key]
+            unit = self.find_character_by_id(unit_id)
+            character = self.getChar(unit['m_character_id'])
+            self.player_equipments_get_all()
+            unit_equipments = [x for x in self.equipments if x['set_chara_id'] == unit_id]
+            self.player_weapons_get_all()
+            unit_weapons = [x for x in self.weapons if x['set_chara_id'] == unit_id]
+            unit_gear = unit_weapons + unit_equipments
+            print(f"{character['name']} - ID: {unit_id} - Level: {unit['lv']} - Equipped items: {len(unit_gear)}")
+            for equipment in unit_gear:        
+                if 'm_equipment_id' in equipment:
+                    e = self.getEquip(equipment['m_equipment_id'])
+                else :
+                    e = self.getWeapon(equipment['m_weapon_id'])
+                print(f"\t{e['name']} - Rarity: {equipment['rarity_value']} - ID: {equipment['id']}")
 
 if __name__ == "__main__":
     a = API()
