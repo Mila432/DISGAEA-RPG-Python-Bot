@@ -15,10 +15,15 @@ a.dologin()
 
 inital_innocent_rank = 8
 max_innocent_rank = 9
-
-all_available_innocents = a.innocent_get_all_of_type(Innocent_ID.RES, only_unequipped=True)
+all_available_innocents = a.innocent_get_all_of_type(Innocent_ID.HP, only_unequipped=True)
 innocents_trained = 0
+tickets_finished = False
+
 for innocent in all_available_innocents:
+    
+    if tickets_finished:
+        break
+
     effect_rank = innocent['effect_rank']
     if(effect_rank < inital_innocent_rank or effect_rank >= max_innocent_rank):
         continue
@@ -26,7 +31,11 @@ for innocent in all_available_innocents:
     attempts = 0
     innocents_trained +=1
     while effect_rank < max_innocent_rank:
-        res = a.innocent_training(innocent['id'])
+        res = a.etna_resort_innocent_training(innocent['id'])
+        if('api_error' in res and 'message' in res['api_error'] and res['api_error']['message'] == 'Not enough item.'):
+            print("No caretaker tickets left")
+            tickets_finished = True
+            break
         effect_rank = res['result']['after_t_data']['innocents'][0]['effect_rank']
         print(f"\tTrained innocent with result {a.innocent_get_training_result(res['result']['training_result'])} - Current value: {res['result']['after_t_data']['innocents'][0]['effect_values'][0]}")
         attempts +=1

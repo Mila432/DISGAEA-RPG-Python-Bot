@@ -206,9 +206,9 @@ class EtnaResort(metaclass=ABCMeta):
 
     def etna_resort_donate_items(self,max_innocent_rank=5, max_item_rank=40, max_rarity=40):
         print("\nLooking for items to donate...")
-        self.player_equipments_get_all(True)
-        self.player_weapons_get_all(True)
-        self.player_innocent_get_all(True)
+        self.player_equipments_get_all(False)
+        self.player_weapons_get_all(False)
+        self.player_innocent_get_all(False)
 
         weapons_to_donate = []
         equipments_to_donate = []
@@ -253,31 +253,23 @@ class EtnaResort(metaclass=ABCMeta):
 
         print("\tFinished donating equipment")
 
-    def etna_resort_refine_weapon(self, weapon_id):
-        retry = True
-        print("Attempting to refine equipment...")
-        attempt_count = 0
-        result = ''
-        while retry:
-            attempt_count +=1
-            res = self.etna_resort_refine(3, weapon_id)
-            if 'success_type' in res['result']:
-                result = res['result']['success_type']
-                retry = False
-        print(f"\tRefined weapon. Attempts used {attempt_count}. Result: {result}")
+    def etna_resort_refine_item(self,item_id):
+        if(self.get_weapon_by_id(item_id) is not None):
+            item_type = 3
+        else:
+            item_type = 4
 
-    def etna_resort_refine_equipment(self, equipment_id):
         retry = True
-        print("Attempting to refine equipment...")
+        print("Attempting to refine item...")
         attempt_count = 0
         result = ''
         while retry:
             attempt_count +=1
-            res = self.etna_resort_refine(4, equipment_id)
+            res = self.etna_resort_refine(item_type, item_id)
             if 'success_type' in res['result']:
                 result = res['result']['success_type']
                 retry = False
-        print(f"\tRefined equipment. Attempts used {attempt_count}. Result: {result}")
+        print(f"\tRefined item. Attempts used {attempt_count}. Rarity increase: {result}")
 
     def etna_resort_innocent_training(self, t_innocent_id):
         data = self.rpc('innocent/training', {"t_innocent_id":t_innocent_id})

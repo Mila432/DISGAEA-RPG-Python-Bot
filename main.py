@@ -10,7 +10,6 @@ import json
 import sys
 from api.constants import Innocent_Training_Result
 from codedbots import codedbots
-import db2
 from boltrend import boltrend
 from contextlib import suppress
 
@@ -904,7 +903,7 @@ class API(BaseAPI):
             if e['lv'] >= e['lv_max']: continue
             itemRank = self.get_item_rank(e)
             if itemRank < min_item_rank_to_run: continue
-            if e['rarity_value'] < 70: continue
+            #if e['rarity_value'] < 70: continue
             self.trophy_get_reward_repetition()
             count += 1
             if (count > limit and limit > 0):
@@ -985,28 +984,17 @@ class API(BaseAPI):
 
     def parseReward(self, end):
         try:
-            drop_result = end
-            rpcid = drop_result['id']
-            current_id = drop_result['result']['after_t_stage_current']['current_id']
-            drop_result = drop_result['result']['drop_result']
-            db = db2.Database()
+            drop_result=end['result']['drop_result']
             for e in drop_result:
                 if e == 'after_t_item':
                     for t in drop_result[e]:
-                        i = self.getItem(t['m_item_id'])
-                        self.log('%s +%s' % (i['name'], self.getGain(t)))
-                        db.add(t['m_item_id'], 0, self.getGain(t), current_id,
-                               rpcid)
+                        i=self.getItem(t['m_item_id'])
+                        self.log('%s +%s'%(i['name'],self.getGain(t)))
                 elif e == 'drop_character':
                     for t in drop_result[e]:
-                        self.log(
-                            'unit:%s lv:%s rarity:%s*' %
-                            (self.getChar(t['m_character_id'])['class_name'],
-                             t['lv'], t['rarity']))
-                        db.add(t['m_character_id'], 1, 1, current_id, rpcid)
+                        self.log('unit:%s lv:%s rarity:%s*'%(self.getChar(t['m_character_id'])['class_name'],t['lv'],t['rarity']))
                 elif e == 'stones':
-                    self.log('+%s nether quartz' %
-                             (drop_result[e][0]['num'] - self.gems))
+                    self.log('+%s nether quartz'%(drop_result[e][0]['num']-self.gems))
         except:
             print("Error logging item")
 
@@ -1207,12 +1195,12 @@ class API(BaseAPI):
             innocents_of_type = [x for x in innocents_of_type if x['place_id'] == 0 and x['place'] == 0]
         return innocents_of_type
 
-
+    #print character and equipment for the selected team
     def print_team_info(self, team_num):
         data = self.player_decks()
-        team0 = data['result']['_items'][team_num-1]['t_character_ids']
-        for key in team0.keys():
-            unit_id = team0[key]
+        team = data['result']['_items'][team_num-1]['t_character_ids']
+        for key in team.keys():
+            unit_id = team[key]
             unit = self.find_character_by_id(unit_id)
             character = self.getChar(unit['m_character_id'])
             self.player_equipments_get_all()
@@ -1220,13 +1208,43 @@ class API(BaseAPI):
             self.player_weapons_get_all()
             unit_weapons = [x for x in self.weapons if x['set_chara_id'] == unit_id]
             unit_gear = unit_weapons + unit_equipments
-            print(f"{character['name']} - ID: {unit_id} - Level: {unit['lv']} - Equipped items: {len(unit_gear)}")
+            print(f"{character['name']} - ID: {unit_id} - Level: {unit['lv']} - Equipped items:")
             for equipment in unit_gear:        
                 if 'm_equipment_id' in equipment:
                     e = self.getEquip(equipment['m_equipment_id'])
                 else :
                     e = self.getWeapon(equipment['m_weapon_id'])
                 print(f"\t{e['name']} - Rarity: {equipment['rarity_value']} - ID: {equipment['id']}")
+
+    # Build player deck data, can be used to update teams with player_update_deck
+    def player_get_deck_data(self):
+        deck_data = self.player_decks()
+        charaIdList = []
+        names = []
+        t_memory_ids_list = []
+
+        for team in deck_data['result']['_items']:
+            team_charaters = team['t_character_ids']
+            character_ids = ""
+            for key in team_charaters.keys():
+                unit_id = team_charaters[key]
+                if(character_ids == ""):
+                    character_ids = unit_id
+                else:
+                    character_ids = "{character_ids},{unit_id}".format(character_ids=character_ids, unit_id=unit_id)
+            charaIdList.append(character_ids)
+            names.append(team['name'])
+            
+            memories = ""
+            for memory in team['t_memory_ids']:
+                if(memories == ""):
+                    memories = memory
+                else:
+                    memories = "{memories},{memory}".format(memories=memories, memory=memory)
+            t_memory_ids_list.append(memories)
+
+        deck_data = {"selectDeckNo":4,"charaIdList": charaIdList,"names": names,"t_memory_ids_list":t_memory_ids_list}
+        return deck_data
 
 if __name__ == "__main__":
     a = API()
