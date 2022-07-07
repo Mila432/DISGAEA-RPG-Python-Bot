@@ -41,17 +41,17 @@ class EtnaResort(metaclass=ABCMeta):
         return data
     
     # Looks for maxed items retrieves or donates them and fills it again
-    def etna_resort_check_deposit_status(self, max_innocent_rank=5, min_item_rank=40, max_item_rarity =40):
+    def etna_resort_check_deposit_status(self, max_innocent_rank=5, max_item_rank_to_donate=40, max_item_rarity_to_donate = 40, min_item_rank_to_deposit = 40):
         print("\nChecking state of item depository...")
         
-        self.etna_resort_retrieve_or_donate_items_from_depository(max_innocent_rank, min_item_rank, max_item_rarity)
+        self.etna_resort_retrieve_or_donate_items_from_depository(max_innocent_rank, max_item_rank_to_donate, max_item_rarity_to_donate)
 
         depository_data = self.breeding_center_list()
         items_in_depository = depository_data['result']['t_weapons'] + depository_data['result']['t_equipments']
         deposit_free_slots = 11 - len(items_in_depository)
         if(deposit_free_slots > 0):
             print(f"\tFinished retrieving equipment - {deposit_free_slots} slots available in repository")  
-            self.etna_resort_fill_depository(deposit_free_slots, max_innocent_rank, min_item_rank)
+            self.etna_resort_fill_depository(deposit_free_slots, max_innocent_rank, min_item_rank_to_deposit)
 
         print(f"Finished checking depository.")  
 
@@ -59,7 +59,7 @@ class EtnaResort(metaclass=ABCMeta):
     # If item is locked, has rare innocents or is above specified rarity (default rare), it will be retrieved
     # Otherwise it will be donated
     # If there is no invetory space to retrieve, sell 20 items and retry
-    def etna_resort_retrieve_or_donate_items_from_depository(self, max_innocent_rank=5, max_item_rank=40, max_item_rarity = 40):
+    def etna_resort_retrieve_or_donate_items_from_depository(self, max_innocent_rank=5, max_item_rank_to_donate=40, max_item_rarity_to_donate = 40):
         retry = True
         
         # execute once - repeat if there was an exception retrieving equipment
@@ -75,12 +75,13 @@ class EtnaResort(metaclass=ABCMeta):
             finished_item_count = 0
 
             for i in items_in_depository:
+                item_rank = self.get_item_rank(i)
                 isWeapon = 'm_weapon_id' in i
                 if(i['lv'] == i['lv_max']):
                     finished_item_count+=1
                     innos_to_keep = [x for x in self.get_item_innocents(i['id']) if x['effect_rank'] >= max_innocent_rank]                
                     #Keep if rare innocent, item is locked or is above rarity
-                    if(len(innos_to_keep) >0 or i['lock_flg'] or i['rarity_value'] > max_item_rarity):
+                    if(len(innos_to_keep) >0 or i['lock_flg'] or i['rarity_value'] > max_item_rarity_to_donate or item_rank > max_item_rank_to_donate):
                         #TODO check if slots available for retrieving?
                         if(isWeapon):
                             weapons_to_retrieve.append(i['id'])
@@ -111,7 +112,7 @@ class EtnaResort(metaclass=ABCMeta):
 
     # Will first try to fill the depository with items with rare innocents (any rank)
     # Rest of spots will be filled with any item of specified rank (r40 by default)
-    def etna_resort_fill_depository(self, deposit_free_slots=0, max_innocent_rank=5, max_item_rank=40):
+    def etna_resort_fill_depository(self, deposit_free_slots=0, max_innocent_rank=5, min_item_rank_to_deposit = 40):
         if(deposit_free_slots == 0):
             depository_data = self.breeding_center_list()
             items_in_depository = depository_data['result']['t_weapons'] + depository_data['result']['t_equipments']
@@ -120,17 +121,17 @@ class EtnaResort(metaclass=ABCMeta):
         if(deposit_free_slots > 0):
             print(f"\tFilling depository with {deposit_free_slots} items...") 
             #Fill depository with items that have rare innocents first, regrdless of item rank    
-            self.etna_resort_find_items_for_depository(deposit_free_slots, max_innocent_rank, 0)
+            self.etna_resort_find_items_for_depository(deposit_free_slots, max_innocent_rank, min_item_rank_to_deposit =0)
 
             #if slots available, fill with any item of specified rank
             depository_data = self.breeding_center_list()
             items_in_depository = depository_data['result']['t_weapons'] + depository_data['result']['t_equipments']
             deposit_free_slots = 11 - len(items_in_depository)
             if(deposit_free_slots > 0):
-                self.etna_resort_find_items_for_depository(deposit_free_slots, 0, max_item_rank)
+                self.etna_resort_find_items_for_depository(deposit_free_slots, 0, min_item_rank_to_deposit)
 
     # Look for items with specified criteria
-    def etna_resort_find_items_for_depository(self, deposit_free_slots=0, max_innocent_rank=5, max_item_rank=40):
+    def etna_resort_find_items_for_depository(self, deposit_free_slots=0, max_innocent_rank=5, min_item_rank_to_deposit = 40):
         if(deposit_free_slots == 0):
             depository_data = self.breeding_center_list()
             items_in_depository = depository_data['result']['t_weapons'] + depository_data['result']['t_equipments']
@@ -144,23 +145,27 @@ class EtnaResort(metaclass=ABCMeta):
             weapons_lvl1 = [x for x in self.weapons if x['lv'] <= 1 and x['set_chara_id'] == 0]
             equips_lvl1 = [x for x in self.equipments if x['lv'] <= 1 and x['set_chara_id'] == 0]
 
-            equipments_to_deposit = self.generate_array_for_deposit(equips_lvl1, deposit_free_slots, max_innocent_rank, max_item_rank)
+            equipments_to_deposit = self.generate_array_for_deposit(equips_lvl1, deposit_free_slots, max_innocent_rank, min_item_rank_to_deposit)
             
             # If deposit cannot be filled with only equipment, find weapons to finish filling
             if(len(equipments_to_deposit) < deposit_free_slots):
                 deposit_free_slots = deposit_free_slots - len(equipments_to_deposit)
-                weapons_to_deposit = self.generate_array_for_deposit(weapons_lvl1, deposit_free_slots, max_innocent_rank, max_item_rank)                 
+                weapons_to_deposit = self.generate_array_for_deposit(weapons_lvl1, deposit_free_slots, max_innocent_rank, min_item_rank_to_deposit)                 
             
             if(len(weapons_to_deposit) > 0 or len(equipments_to_deposit) > 0):
                 self.breeding_center_entrust(weapons_to_deposit, equipments_to_deposit)
 
-    def generate_array_for_deposit(self, all_items, deposit_free_slots, max_innocent_rank, max_item_rank, max_rarity = 40):
+    def generate_array_for_deposit(self, all_items, deposit_free_slots, max_innocent_rank, min_item_rank_to_deposit = 40, max_rarity_to_deposit = 40):
         deposit_count=0
         items_to_deposit =[]
         filled = False
         innocent_count = 0
 
         while not filled:
+            # Looking for rare, iterate only once
+            if(max_innocent_rank > 0):
+                filled = True
+
             for item in all_items:
                 # If looking for rare innocents
                 item_innocents  = self.get_item_innocents(item['id'])
@@ -170,23 +175,22 @@ class EtnaResort(metaclass=ABCMeta):
                         items_to_deposit.append(item['id'])
                         deposit_count+=1
                         if(deposit_count == deposit_free_slots):
-                            filled = True
-                            return items_to_deposit
-                    filled = True
+                            break                    
                 
                 # Otherwise fill with commons of specific rank
-                # fill with items with no innocents first, if there aren't enough items with 1 and so on
+                # fill with items with no innocents first, 
+                # if there aren't enough iterate all items once again and find items with 1 inno
                 else:
                     item_rank = self.get_item_rank(item)
-                    if(item_rank >= max_item_rank and item['rarity_value'] > max_rarity):
+                    if(item['rarity_value'] > max_rarity_to_deposit or item_rank < min_item_rank_to_deposit):
                         continue
                     if(len(item_innocents) > innocent_count): continue
                     items_to_deposit.append(item['id'])
                     deposit_count+=1
                     if(deposit_count == deposit_free_slots):
                         filled = True
-                        return items_to_deposit
-                    innocent_count += 1
+                        break
+            innocent_count += 1
         return items_to_deposit
 
     def etna_donate_innocents(self, max_innocent_rank=8, max_innocent_type=8):
@@ -204,24 +208,24 @@ class EtnaResort(metaclass=ABCMeta):
             for batch in (innos[i:i + 20] for i in range(0, len(innos), 20)):
                 self.kingdom_innocent_entry(innocent_ids=batch)
 
-    def etna_resort_donate_items(self,max_innocent_rank=5, max_item_rank=40, max_rarity=40):
+    def etna_resort_donate_items(self,max_innocent_rank=5, max_item_rank_to_donate=40, max_rarity_to_donate=40):
         print("\nLooking for items to donate...")
-        self.player_equipments_get_all(False)
-        self.player_weapons_get_all(False)
-        self.player_innocent_get_all(False)
+        self.player_equipments_get_all()
+        self.player_weapons_get_all()
+        self.player_innocent_get_all()
 
         weapons_to_donate = []
         equipments_to_donate = []
 
-        all_weapons = [x for x in self.weapons if x['lv'] == x['lv_max'] and x['rarity_value'] < max_rarity]
-        all_equipments = [x for x in self.equipments if x['lv'] == x['lv_max'] and x['rarity_value'] < max_rarity]
+        all_weapons = [x for x in self.weapons if x['lv'] == x['lv_max'] and x['rarity_value'] < max_rarity_to_donate]
+        all_equipments = [x for x in self.equipments if x['lv'] == x['lv_max'] and x['rarity_value'] < max_rarity_to_donate]
 
         for item in all_weapons:
-            if(self.can_item_be_donated(item, max_innocent_rank, max_item_rank, max_rarity)):
+            if(self.can_item_be_donated(item, max_innocent_rank, max_item_rank_to_donate, max_rarity_to_donate)):
                 weapons_to_donate.append(item['id'])
 
         for item in all_equipments:
-            if(self.can_item_be_donated(item, max_innocent_rank, max_item_rank, max_rarity)):
+            if(self.can_item_be_donated(item, max_innocent_rank, max_item_rank_to_donate, max_rarity_to_donate)):
                 equipments_to_donate.append(item['id'])
 
         print(f"\tWill donate {len(weapons_to_donate)} weapons and {len(equipments_to_donate)} equipments")
@@ -254,10 +258,20 @@ class EtnaResort(metaclass=ABCMeta):
         print("\tFinished donating equipment")
 
     def etna_resort_refine_item(self,item_id):
-        if(self.get_weapon_by_id(item_id) is not None):
+        e = self.get_weapon_by_id(item_id)
+        if(e is not None):
             item_type = 3
         else:
             item_type = 4
+            e = self.get_equipment_by_id(item_id)
+
+        if(e['rarity_value'] == 100):
+            print("Item already has rarity 100...")
+            return
+
+        if(e['lv'] != e['lv_max']):
+            print("Item is not at max level...")
+            return
 
         retry = True
         print("Attempting to refine item...")
@@ -269,7 +283,11 @@ class EtnaResort(metaclass=ABCMeta):
             if 'success_type' in res['result']:
                 result = res['result']['success_type']
                 retry = False
-        print(f"\tRefined item. Attempts used {attempt_count}. Rarity increase: {result}")
+                if(item_type == 3):
+                    final_rarity = res['result']['t_weapon']['rarity_value']
+                else:
+                    final_rarity = res['result']['t_equipment']['rarity_value']
+        print(f"\tRefined item. Attempts used {attempt_count}. Rarity increase: {result}. Current rarity {final_rarity}")
 
     def etna_resort_innocent_training(self, t_innocent_id):
         data = self.rpc('innocent/training', {"t_innocent_id":t_innocent_id})
