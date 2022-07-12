@@ -200,6 +200,20 @@ class Shop(metaclass=ABCMeta):
             self.log('selling...')
             self.shop_sell_equipment(selling)
 
+    def shop_use_all_tickets(self):
+        tickets_left = True
+        while tickets_left:
+            data = self.shop_gacha()
+            if(data['result']['item_type'] == 4):
+                item = self.getEquip(data['result']['item_id'])
+            if(data['result']['item_type'] == 3):
+                item = self.getWeapon(data['result']['item_id'])
+            if(data['result']['item_type'] not in (3,4)):
+                item = self.getItem(data['result']['item_id'])
+            print(f"Obtained {data['result']['m_garapon_lot_id']} prize: {data['result']['item_num'] } x {item['name']}")
+            if(data['result']['t_item_garapon']['num'] <= 0):
+                tickets_left = False
+                
     def shop_log_sale(self, w):
         item = self.getWeapon(w['m_weapon_id']) if 'm_weapon_id' in w else self.getEquip(w['m_equipment_id'])
         self.log(
