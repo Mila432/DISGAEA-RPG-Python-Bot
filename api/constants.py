@@ -5,8 +5,8 @@ class Constants:
     Current_Raid_Event_Point_Gacha = 49
     Current_Raid_Innocent_Regular_Roulette = 49
     Current_Raid_Innocent_Special_Roulette = 49
-    Current_Raid_Regular_Boss_Stage = "vs. Swimsuit Prinny"
-    Current_Raid_Badass_Boss_Stage = "vs. Swimsuit Prinny Badass"
+    Current_Raid_Regular_Boss_Stage = "vs. Dark Lord Valvoga"
+    Current_Raid_Badass_Boss_Stage = "vs. Dark Lord Valvoga Badass"
     Current_Bingo_ID = 2
     session_id = '' # FILL SESSION_ID HERE
     user_id ='' # FILL USER_ID HERE
