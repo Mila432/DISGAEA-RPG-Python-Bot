@@ -659,6 +659,7 @@ class API(BaseAPI):
             {} if sheet_type is None else {'sheet_type': sheet_type})
         return data
 
+    #order 0 = ascending, 0 = descending
     def present_index(self, is_limit_notice=None, conditions=None, order=None):
         if is_limit_notice is not None:
             data = self.rpc('present/index',
@@ -679,6 +680,7 @@ class API(BaseAPI):
         data = self.rpc('present/history', {})
         return data
 
+    # {"receive_ids":[524623587],"order":0,"conditions":[0,1,2,3,4,99]}
     def present_receive(self, receive_ids, conditions, order):
         data = self.rpc('present/receive', {
             "receive_ids": receive_ids,

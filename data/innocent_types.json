@@ -130,5 +130,9 @@
   {
     "ID": 48,
     "Name": "Glasses INT"
+  },
+  {
+    "ID": 49,
+    "Name": "Spear ATK"
   }
 ]

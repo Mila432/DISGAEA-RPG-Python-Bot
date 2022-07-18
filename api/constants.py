@@ -1,24 +1,31 @@
 from enum import Enum, IntEnum
 
 class Constants:
-    Current_Raid_ID = 135
-    Current_Raid_Event_Point_Gacha = 49
-    Current_Raid_Innocent_Regular_Roulette = 49
-    Current_Raid_Innocent_Special_Roulette = 49
+    Current_Raid_ID = 143
+    Current_Raid_Event_Point_Gacha = 52
+    Current_Raid_Innocent_Regular_Roulette = 53
+    Current_Raid_Innocent_Special_Roulette = 54
     Current_Raid_Regular_Boss_Stage = "vs. Dark Lord Valvoga"
     Current_Raid_Badass_Boss_Stage = "vs. Dark Lord Valvoga Badass"
+    Current_Raid_Normal_Boss_ID = 1431
+    Current_Raid_Badass_Boss_ID = 1432
     Current_Bingo_ID = 2
     session_id = '' # FILL SESSION_ID HERE
     user_id ='' # FILL USER_ID HERE
+    ticket = '' # FILL TICKET FOR STEAM LOGIN
+
 
 class Raid_Gacha_ID(IntEnum):
     SUMMER_PRINNY_EVENT_POINT = 49
     SUMMER_PRINNY_INNOCENT_REGULAR_ROULETTE = 50
     SUMMER_PRINNY_INNOCENT_SPECIAL_ROULETTE = 51
+    MAKAI_KINGDOM_EVENT_POINT = 52
+    MAKAI_KINGDOM_INNOCENT_REGULAR_ROULETTE = 53
+    MAKAI_KINGDOM_INNOCENT_SPECIAL_ROULETTE = 54
 
 class Raid_ID(IntEnum):
     SUMMER_PRINNY_RAID_ID = 135
-    MAKAI_KINGDOM_RAID_ID = 0
+    MAKAI_KINGDOM_RAID_ID = 143
     KAGEMARU_RAID_ID = 0
 
 class Raid_Boss_Stage_Names(str, Enum):
