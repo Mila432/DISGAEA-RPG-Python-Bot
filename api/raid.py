@@ -215,7 +215,7 @@ class Raid(metaclass=ABCMeta):
         while spins_left > 0 or is_big_chance is True:
             data = ''
             if (is_big_chance):
-                data = self.raid_gacha(Constants.Current_Raid_Innocent_Regular_Roulette, 1)
+                data = self.raid_gacha(Constants.Current_Raid_Innocent_Special_Roulette, 1)
                 special_spin = "Special Spin - "
             else:
                 data = self.raid_gacha(Constants.Current_Raid_Innocent_Regular_Roulette, 1)
