@@ -36,6 +36,11 @@ class EtnaResort(metaclass=ABCMeta):
         data = self.rpc('breeding_center/entrust', {"t_weapon_ids":t_weapon_ids,"t_equipment_ids":t_equipment_ids})
         return data
 
+    def etna_resort_get_all_daily_rewards(self):
+        # trophy/get_reward_daily_request
+        data = self.rpc("trophy/get_reward_daily_request", {'receive_all': 1, 'id': 0})
+        return data
+
     def etna_resort_refine(self, item_type, id):
         data = self.rpc('weapon_equipment/rarity_up', {"item_type":item_type,"id":id})
         return data

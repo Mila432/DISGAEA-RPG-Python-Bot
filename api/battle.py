@@ -36,7 +36,6 @@ class Battle(metaclass=ABCMeta):
             })
         return data
 
-
     def battle_skip(self, m_stage_id, skip_number, help_t_player_id = 0):
 
         if(help_t_player_id == 0):
@@ -110,9 +109,10 @@ class Battle(metaclass=ABCMeta):
                 "battle_type": battle_type,
                 "result": result,
                 "innocent_dead_flg": 0,
+                "skip_party_update_flg":True,
                 #3 star finish
                 "common_battle_result":"eyJhbGciOiJIUzI1NiJ9.eyJoZmJtNzg0a2hrMjYzOXBmIjoiMSwxLDEiLCJ5cGIyODJ1dHR6ejc2Mnd4IjoyNTkxNjg1OTc1MjQsImRwcGNiZXc5bXo4Y3V3d24iOjAsInphY3N2NmpldjRpd3pqem0iOjAsImt5cXluaTNubm0zaTJhcWEiOjAsImVjaG02dGh0emNqNHl0eXQiOjAsImVrdXN2YXBncHBpazM1amoiOjAsInhhNWUzMjJtZ2VqNGY0eXEiOjR9.4NWzKTpAs-GrjbFt9M6eEJEbEviUf5xvrYPGiIL4V0k"
-             })
+                })
         return data
 
     def battle_story(self, m_stage_id):
@@ -134,3 +134,7 @@ class Battle(metaclass=ABCMeta):
                               battle_type=4,
                               result=1)
         return end
+
+    def battle_skip_parties(self):
+        data = self.rpc('battle/skip_parties', {})
+        return data

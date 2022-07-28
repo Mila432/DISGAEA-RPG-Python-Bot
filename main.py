@@ -1203,6 +1203,7 @@ class API(BaseAPI):
         team = data['result']['_items'][team_num-1]['t_character_ids']
         for key in team.keys():
             unit_id = team[key]
+            if(unit_id) == 0: continue
             unit = self.find_character_by_id(unit_id)
             character = self.getChar(unit['m_character_id'])
             self.player_equipments_get_all()
@@ -1248,6 +1249,10 @@ class API(BaseAPI):
         deck_data = {"selectDeckNo":4,"charaIdList": charaIdList,"names": names,"t_memory_ids_list":t_memory_ids_list}
         return deck_data
 
+    def memory_index(self):
+        data = self.rpc('memory/index', {})
+        return data
+        
 if __name__ == "__main__":
     a = API()
     if False:
