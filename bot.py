@@ -113,7 +113,7 @@ def clear_event(area_lt):
 
 def use_ap(stage_id):
     a.log("[*] using ap")
-    times = int(a.pd.current_ap / 30)
+    times = int(a.current_ap / 30)
     farm_event_stage(stage_id=stage_id, team=5, times=times)
 
 
@@ -170,7 +170,7 @@ def loop(team=9, rebirth=False, farm_stage_id=313515, only_weapons=False):
     a.o.auto_rebirth = rebirth
     a.o.team_num = team
 
-    if a.pd.current_ap >= 6000:
+    if a.current_ap >= 6000:
         # if farm_stage_id is None:
         #     a.do_axel_contest_multiple_characters(6)
         # else:
@@ -194,7 +194,7 @@ def loop(team=9, rebirth=False, farm_stage_id=313515, only_weapons=False):
         a.sell_items(max_rarity=69, max_item_rank=40, keep_max_lvl=False, only_max_lvl=True, max_innocent_rank=8,
                      max_innocent_type=8)
 
-        if a.pd.current_ap >= 6000:
+        if a.current_ap >= 6000:
             use_ap(stage_id=farm_stage_id)
 
     clear_inbox()
@@ -228,4 +228,4 @@ unit_id = 10884950
 # farm_event_stage(1, 1142105312, team=9)
 
 # Full loop
-loop(team=9, rebirth=True, farm_stage_id=1142105312)
+loop(team=9, rebirth=True, farm_stage_id=314109)

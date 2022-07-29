@@ -136,7 +136,7 @@ class API(BaseAPI):
         if stage['exp'] == 0:
             return self.client.battle_story(m_stage_id)
 
-        if stage['act'] > self.pd.current_ap:
+        if stage['act'] > self.current_ap:
             self.log('not enough ap')
             return
 

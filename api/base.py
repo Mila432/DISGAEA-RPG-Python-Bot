@@ -14,7 +14,11 @@ class Base(object, metaclass=ABCMeta):
         self.o: Options = Options(region=1, device=1)
         self.pd: PlayerData = PlayerData(options=self.o)
         self.client: Client = Client(self.o)
-        self.logger: Logger = Logger
+        self.logger: Logger = Logger()
+
+    @property
+    def current_ap(self):
+        return self.o.current_ap
 
     @property
     def options(self):

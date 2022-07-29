@@ -35,6 +35,7 @@ class Options:
         self.min_item_rarity: int = 0
         self.auto_rebirth: bool = False
         self.use_potions: bool = False
+        self.current_ap = 0
 
     @property
     def team_num(self):
@@ -66,5 +67,3 @@ class Options:
             self.platform = 'iOS'
         else:
             self.platform = 'Android'
-
-

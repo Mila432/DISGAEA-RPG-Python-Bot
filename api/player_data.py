@@ -7,7 +7,6 @@ class PlayerData:
     def __init__(self, options):
         self.gd: GameData = GameData()
         self.o: Options = options
-        self.current_ap: int = 0
         self.decks: [dict] = []
         self.gems: [dict] = []
         self.items: [dict] = []
