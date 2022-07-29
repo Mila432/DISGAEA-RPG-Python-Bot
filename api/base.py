@@ -45,3 +45,7 @@ class Base(object, metaclass=ABCMeta):
                         res.append(s)
                 stuff[k] = i
         return ', '.join(res)
+
+    def check_resp(self, resp):
+        if 'api_error' in resp:
+            raise resp['api_error']['message']

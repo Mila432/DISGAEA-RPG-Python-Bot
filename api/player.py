@@ -9,7 +9,7 @@ class Player(Base):
         if len(self.pd.characters) > 0 and not refresh:
             return self.pd.characters
         self.pd.characters = []
-        self.logger.debug("Fetching all characters...")
+        self.logger.debug("refreshing player characters...")
 
         page_index = 1
         iterate_next_page = True
@@ -26,7 +26,7 @@ class Player(Base):
         if len(self.pd.character_collections) > 0 and not refresh:
             return self.pd.character_collections
         self.pd.character_collections = []
-        self.logger.debug("Fetching all character collections...")
+        self.logger.debug("refreshing player character collections...")
         data = self.client.player_character_collections()
         self.pd.character_collections = data['result']['_items']
         return self.pd.character_collections
@@ -35,7 +35,7 @@ class Player(Base):
         if len(self.pd.weapons) > 0 and not refresh:
             return self.pd.weapons
         self.pd.weapons = []
-        self.logger.debug("Fetching all weapons...")
+        self.logger.debug("refreshing player weapons...")
         page_index = 1
         iterate_next_page = True
         while iterate_next_page:
@@ -50,7 +50,7 @@ class Player(Base):
         if len(self.pd.equipment) > 0 and not refresh:
             return self.pd.equipment
         self.pd.equipment = []
-        self.logger.debug("Fetching all equipments...")
+        self.logger.debug("refreshing player equipments...")
 
         page_index = 1
         iterate_next_page = True
@@ -66,7 +66,7 @@ class Player(Base):
         if len(self.pd.innocents) > 0 and not refresh:
             return self.pd.innocents
         self.pd.innocents = []
-        self.logger.debug("Fetching all innocents...")
+        self.logger.debug("refreshing player innocents...")
 
         page_index = 1
         iterate_next_page = True
@@ -89,7 +89,7 @@ class Player(Base):
         if len(self.pd.items) > 0 and not refresh:
             return self.pd.items
         self.pd.items = []
-        self.logger.debug("Fetching all items...")
+        self.logger.debug("refreshing player items...")
 
         page_index = 1
         iterate_next_page = True
