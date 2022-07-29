@@ -213,3 +213,9 @@ class PlayerData:
 
     def get_equip_type(self, item):
         return 1 if 'm_weapon_id' in item else 2
+
+    def innocent_get_all_of_type(self, m_innocent_id, only_unequipped):
+        innocents_of_type = [x for x in self.innocents if x['m_innocent_id'] == m_innocent_id]
+        if only_unequipped:
+            innocents_of_type = [x for x in innocents_of_type if x['place_id'] == 0 and x['place'] == 0]
+        return innocents_of_type

@@ -2,11 +2,13 @@ from api.constants import Constants, Innocent_ID
 from main import API
 
 a = API()
-a.sess = Constants.session_id
-a.uin = Constants.user_id
-a.wait(0)
-a.setRegion(2)
-a.setDevice(2)
+a.config(
+    sess=Constants.session_id,
+    uin=Constants.user_id,
+    wait=0,
+    region=2,
+    device=2
+)
 a.dologin()
 
 # Get all innocents from a specific type that are not part of any equipment
@@ -15,7 +17,7 @@ a.dologin()
 
 inital_innocent_rank = 8
 max_innocent_rank = 9
-all_available_innocents = a.innocent_get_all_of_type(Innocent_ID.HP, only_unequipped=True)
+all_available_innocents = a.pd.innocent_get_all_of_type(Innocent_ID.HP, only_unequipped=True)
 innocents_trained = 0
 tickets_finished = False
 

@@ -1,7 +1,7 @@
 import datetime
-import random
+
 from dateutil import parser
-import time
+
 from api.constants import Constants
 from main import API
 

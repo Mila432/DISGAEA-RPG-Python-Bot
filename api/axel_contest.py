@@ -78,7 +78,7 @@ class AxelContest(Player, metaclass=ABCMeta):
             unit_count += 1
             self.log(f"Completed {unit_count} out of {numberOfCharacters} characters")
 
-    def do_axel_contest(self, character, highestStageToClear):
+    def do_axel_contest(self, character, highest_stage_to_clear):
         if isinstance(character, int):
             character = self.pd.get_character_by_id(character)
         cid = character['m_character_id']
@@ -92,10 +92,16 @@ class AxelContest(Player, metaclass=ABCMeta):
         last_cleared_stage = collection['contest_stage'] if 'contest_stage' in collection else 0
 
         self.log(f"Started Axel Contest for {unit_name} - Last cleared stage: {last_cleared_stage}"
-                 f" - Highest stage to clear {highestStageToClear}")
-        while last_cleared_stage < highestStageToClear:
+                 f" - Highest stage to clear {highest_stage_to_clear}")
+
+        while last_cleared_stage < highest_stage_to_clear:
+            act = self.get_axel_stage_energy_cost(last_cleared_stage)
+            if act > self.current_ap:
+                self.logger.warn('not enough ap')
+                break
+
             start = self.client.axel_context_battle_start(
-                act=self.get_axel_stage_energy_cost(last_cleared_stage),
+                act=act,
                 m_character_id=collection['m_character_id'],
                 t_character_ids=[character['id']]
             )
