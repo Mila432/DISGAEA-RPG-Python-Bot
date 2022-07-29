@@ -141,16 +141,17 @@ class API(BaseAPI):
             return
 
         help_players = self.client.battle_help_list()['result']['help_players'][0]
-        start = self.client.battle_start(m_stage_id=m_stage_id, help_t_player_id=help_players['t_player_id'],
-                                         help_t_character_id=help_players['t_character']['id'], act=stage['act'],
-                                         help_t_character_lv=help_players['t_character']['lv'],
-                                         deck_no=self.o.deck_no, deck=self.pd.get_current_deck,
-                                         )
+        start = self.client.battle_start(
+            m_stage_id=m_stage_id, help_t_player_id=help_players['t_player_id'],
+            help_t_character_id=help_players['t_character']['id'], act=stage['act'],
+            help_t_character_lv=help_players['t_character']['lv'],
+            deck_no=self.o.team_num, deck=self.pd.get_current_deck,
+        )
         if 'result' not in start:
             return
         self.client.battle_help_list()
         end = self.client.battle_end(battle_exp_data=self.get_battle_exp_data(start), m_stage_id=m_stage_id,
-                                     battle_type=1, result=1, command_count=9)
+                                     battle_type=1, result=1)
         res = self.parseReward(end)
         return res
 
@@ -163,15 +164,39 @@ class API(BaseAPI):
         self.upgrade_item_list(self.pd.equipment, equipment_type=2, ensure_drops=ensure_drops,
                                only_weapons=only_weapons)
 
-    def upgrade_item_list(self, items, equipment_type, ensure_drops: bool = False, only_weapons: bool = False):
-        for w in filter(self.weapon_filter, items):
+    def upgrade_item_list(self, items, equipment_type: int, ensure_drops: bool = False, only_weapons: bool = False):
+        # items = filter(self.weapon_filter, items)
+        for w in filter(self.__item_filter, items):
             self.client.trophy_get_reward_repetition()
             self.get_mail()
             self.log_upgrade_item(w)
             while 1:
-                if not self.doItemWorld(w['id'], equipment_type=equipment_type,
-                                        ensure_drops=ensure_drops, only_weapons=only_weapons):
+                if not self.doItemWorld(
+                        equipment_id=w['id'],
+                        equipment_type=equipment_type,
+                        ensure_drops=ensure_drops,
+                        only_weapons=only_weapons
+                ):
                     break
+
+    def __item_filter(self, e, i_filter=None):
+        if i_filter is None:
+            i_filter = {
+                'min_item_rank': self.o.min_item_rank,
+                'min_item_rarity': self.o.min_item_rarity,
+                'min_item_level': self.o.min_item_level,
+                'lv_max': False,
+            }
+
+        if self.gd.get_item_rank(e) < i_filter['min_item_rank']:
+            return False
+        if e['rarity_value'] < i_filter['min_item_rarity']:
+            return False
+        if e['lv_max'] < i_filter['min_item_level']:
+            return False
+        if i_filter['lv_max'] is False and e['lv'] >= e['lv_max']:
+            return False
+        return True
 
     def log_upgrade_item(self, w):
         item = self.gd.get_weapon(w['m_weapon_id']) if 'm_weapon_id' in w else self.gd.get_equipment(
@@ -186,24 +211,29 @@ class API(BaseAPI):
         start = self.client.tower_start(m_tower_no)
         end = self.client.battle_end(battle_exp_data=self.get_battle_exp_data(start), m_tower_no=m_tower_no,
                                      m_stage_id=0,
-                                     battle_type=4, result=1, command_count=9)
+                                     battle_type=4, result=1)
         return end
 
     def doItemWorld(self, equipment_id=None, equipment_type=1, ensure_drops: bool = False, only_weapons: bool = False):
         if equipment_id is None:
-            self.log('missing equip')
+            self.log_err('missing equip')
             return
         start = self.client.item_world_start(equipment_id, equipment_type=equipment_type,
-                                             deck_no=self.o.deck_no,
-                                             deck=self.pd.get_current_deck if self.o.auto_rebirth else [])
+                                             deck_no=self.o.team_num,
+                                             deck=self.pd.deck(self.o.team_num) if self.o.auto_rebirth else [])
 
         if start is None or 'result' not in start:
             return False
 
         result = self.parse_start(start, ensure_drops=ensure_drops, only_weapons=only_weapons)
-        end = self.client.battle_end(battle_exp_data=self.get_battle_exp_data(start), m_stage_id=0, battle_type=5,
-                                     result=result, command_count=9, equipment_type=equipment_type,
-                                     equipment_id=equipment_id)
+        end = self.client.battle_end(
+            battle_exp_data=self.get_battle_exp_data(start),
+            m_stage_id=0,
+            result=result,
+            battle_type=start['result']['battle_type'],
+            equipment_type=start['result']['equipment_type'],
+            equipment_id=start['result']['equipment_id'],
+        )
         res = self.get_weapon_diff(end)
         if res:
             self.log(res)

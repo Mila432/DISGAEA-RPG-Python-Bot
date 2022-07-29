@@ -41,19 +41,3 @@ class Base(object, metaclass=ABCMeta):
                         res.append(s)
                 stuff[k] = i
         return ', '.join(res)
-
-    def weapon_filter(self, e):
-        return self.pd.check_item(e,
-                                  min_item_rank=self.o.min_item_rank,
-                                  min_rarity=self.o.min_item_rarity,
-                                  min_item_level=self.o.min_item_level,
-                                  skip_max_lvl=True,
-                                  )
-
-    def equip_filter(self, e):
-        return self.pd.check_item(e,
-                                  min_item_rank=self.o.min_item_rank,
-                                  min_rarity=self.o.min_item_rarity,
-                                  min_item_level=self.o.min_item_level,
-                                  skip_max_lvl=True,
-                                  )

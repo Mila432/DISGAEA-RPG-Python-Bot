@@ -16,7 +16,8 @@ class Raid(Player, metaclass=ABCMeta):
 
     def raid_battle_end_giveup(self, stage_id, raid_status_id):
         return self.client.battle_end(
-            m_stage_id=stage_id, battle_type=1,
+            m_stage_id=stage_id,
+            battle_type=1,
             raid_status_id=raid_status_id,
             raid_battle_result="eyJhbGciOiJIUzI1NiJ9.eyJoamptZmN3Njc4NXVwanpjIjowLCJzOW5lM2ttYWFuNWZxZHZ3Ijo5MD" \
                                "AsImQ0Y2RrbncyOGYyZjVubmwiOjUsInJnajVvbTVxOWNubDYxemIiOltdfQ.U7hhaGeDBZ3lYvgkh0" \

@@ -1,11 +1,12 @@
 from api.logger import Logger
 from api.game_data import GameData
+from api.options import Options
 
 
 class PlayerData:
     def __init__(self, options):
-        self.gd = GameData()
-        self.o = options
+        self.gd: GameData = GameData()
+        self.o: Options = options
         self.current_ap: int = 0
         self.decks: [dict] = []
         self.gems: [dict] = []
@@ -18,14 +19,15 @@ class PlayerData:
 
     @property
     def get_current_deck(self):
-        return self.deck if self.o.auto_rebirth else []
+        return self.deck(self.o.team_num) if self.o.auto_rebirth else []
 
-    @property
-    def deck(self, deck_no: (int, None) = None):
-        if deck_no is None:
-            deck_no = self.o.deck_no
+    def deck(self, team_num: (int, None) = None):
+        if team_num is None:
+            deck_index = self.o.deck_index
+        else:
+            deck_index = team_num - 1
 
-        deck = self.decks[deck_no]
+        deck = self.decks[deck_index]
         return [deck['t_character_ids'][x] for x in
                 deck['t_character_ids']]
 

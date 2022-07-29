@@ -37,7 +37,7 @@ def farm_event_stage(times, stage_id, team):
 
 def farm_item_world(team=1, min_rarity=0, min_rank=0, min_item_rank=0, min_item_level=0, only_weapons=False):
     # Change the party: 1-9
-    a.o.team_num = (team)
+    a.o.team_num = team
     # This changes the minimum rarity of equipments found in the item-world. 1 = common, 40 = rare, 70 = Legendary
     a.o.min_rarity = min_rarity
     # This changes the min rank of equipments found in the item-world
@@ -168,7 +168,7 @@ def refine_items(max_rarity: int = 99, max_item_rank: int = 9999, min_rarity: in
 
 def loop(team=9, rebirth=False, farm_stage_id=313515, only_weapons=False):
     a.o.auto_rebirth = rebirth
-    a.o.team_num = (team)
+    a.o.team_num = team
 
     if a.pd.current_ap >= 6000:
         # if farm_stage_id is None:
@@ -204,14 +204,14 @@ def loop(team=9, rebirth=False, farm_stage_id=313515, only_weapons=False):
 
 unit_id = 10884950
 # unit_id = 113247303
-a.do_axel_contest(unit_id, 1000)
+# a.do_axel_contest(unit_id, 1000)
 
 # a.do_axel_contest_multiple_characters(2)
 # farm_event_stage(stage_id=114710104, times=10, team=6)
 # do_quest(108410101)
 
 # Daily tasks
-daily(bts=False)
+# daily(bts=False)
 
 # a.autoRebirth(True)
 # a.setTeamNum(9)

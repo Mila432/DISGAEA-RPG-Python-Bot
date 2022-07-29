@@ -297,22 +297,45 @@ class Client:
                            "help_t_character_id": help_t_character_id,
                            "help_t_character_lv": help_t_character_lv})
 
-    def battle_end(self, m_stage_id, battle_type, result=0, command_count=0, battle_exp_data=[], equipment_id: int = 0,
+    def battle_end(self, m_stage_id, battle_type, result=0, battle_exp_data=[], equipment_id: int = 0,
                    equipment_type: int = 0, m_tower_no: int = 0, raid_status_id: int = 0, raid_battle_result: str = '',
                    skip_party_update_flg: bool = True, common_battle_result=None):
+
         if common_battle_result is None:
             common_battle_result = self.o.common_battle_result
-        return self.__rpc('battle/end',
-                          {"battle_exp_data": battle_exp_data, "equipment_type": equipment_type, "steal_hl_num": 0,
-                           "m_tower_no": m_tower_no, "m_stage_id": m_stage_id,
-                           "total_receive_damage": 0, "equipment_id": equipment_id, "killed_character_num": 0,
-                           "t_raid_status_id": raid_status_id, "raid_battle_result": raid_battle_result,
-                           "battle_type": battle_type, "result": result, "innocent_dead_flg": 0,
-                           "tower_attack_num": 0,
-                           "common_battle_result": common_battle_result,
-                           "command_count": command_count, "prinny_bomb_num": 0,
-                           "skip_party_update_flg": skip_party_update_flg,
-                           })
+
+        if raid_battle_result != '':
+            return self.__rpc('battle/end', {
+                "m_stage_id": m_stage_id,
+                "m_tower_no": m_tower_no,
+                "equipment_id": equipment_id,
+                "equipment_type": equipment_type,
+                "innocent_dead_flg": 0,
+                "t_raid_status_id": raid_status_id,
+                "raid_battle_result": raid_battle_result,
+                "m_character_id": 0,
+                "division_battle_result": "",
+                "battle_type": battle_type,
+                "result": result,
+                "battle_exp_data": battle_exp_data,
+                "common_battle_result": common_battle_result,
+                "skip_party_update_flg": skip_party_update_flg,
+            })
+        else:
+            return self.__rpc('battle/end', {
+                "battle_exp_data": battle_exp_data,
+                "equipment_type": equipment_type,
+                "m_tower_no": m_tower_no,
+                "raid_battle_result": raid_battle_result,
+                "m_stage_id": m_stage_id,
+                "equipment_id": equipment_id,
+                "t_raid_status_id": 0,
+                "battle_type": battle_type,
+                "result": result,
+                "innocent_dead_flg": 0,
+                "skip_party_update_flg": skip_party_update_flg,
+                "common_battle_result": common_battle_result,
+            })
 
     def battle_story(self, m_stage_id):
         return self.__rpc('battle/story', {"m_stage_id": m_stage_id})
@@ -611,6 +634,7 @@ class Client:
     #################
     # Bingo Endpoints
     #################
+
     def bingo_index(self, bingo_id=Constants.Current_Bingo_ID):
         return self.__rpc('bingo/index', {"id": bingo_id})
 

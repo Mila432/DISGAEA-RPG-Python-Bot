@@ -25,8 +25,8 @@ class Battle(Player, metaclass=ABCMeta):
         else:
             helper_player = self.battle_help_get_friend_by_id(help_t_player_id)
 
-        return self.client.battle_skip(m_stage_id=m_stage_id, deck_no=self.o.deck_no, skip_number=skip_number,
-                                       helper_player=helper_player, deck=self.pd.deck)
+        return self.client.battle_skip(m_stage_id=m_stage_id, deck_no=self.o.team_num, skip_number=skip_number,
+                                       helper_player=helper_player, deck=self.pd.deck())
 
     # m_stage_ids [5010711,5010712,5010713,5010714,5010715] for monster reincarnation
     def battle_skip_stages(self, m_stage_ids, help_t_player_id=0):
@@ -35,18 +35,20 @@ class Battle(Player, metaclass=ABCMeta):
         else:
             helper_player = self.battle_help_get_friend_by_id(help_t_player_id)
 
-        return self.client.battle_skip_stages(m_stage_ids=m_stage_ids, helper_player=helper_player,
-                                              deck_no=self.o.deck_no, deck=self.pd.deck, skip_number=3,
-                                              )
+        return self.client.battle_skip_stages(
+            m_stage_ids=m_stage_ids, helper_player=helper_player,
+            deck_no=self.o.team_num, deck=self.pd.deck(self.o.team_num), skip_number=3,
+        )
 
     def get_battle_exp_data(self, start):
         res = []
         for d in start['result']['enemy_list']:
             for r in d:
-                res.append({"finish_member_ids": self.pd.deck(start['result']['t_deck_no']),
-                            "finish_type": random.choice([1, 2, 3]),
-                            "m_enemy_id": d[r]
-                            })
+                res.append({
+                    "finish_member_ids": self.pd.deck(start['result']['t_deck_no']),
+                    "finish_type": random.choice([1, 2, 3]),
+                    "m_enemy_id": d[r]
+                })
         return res
 
     def do_tower(self, m_tower_no=1):

@@ -27,7 +27,7 @@ class Options:
         self.set_region(region)
         self.set_device(device)
 
-        self.deck_no: int = 0
+        self.deck_index: int = 0
         self.min_rarity: int = 0
         self.min_rank: int = 0
         self.min_item_level: int = 0
@@ -38,11 +38,11 @@ class Options:
 
     @property
     def team_num(self):
-        return self.deck_no + 1
+        return self.deck_index + 1
 
     @team_num.setter
     def team_num(self, r: int):
-        self.deck_no = r - 1
+        self.deck_index = r - 1
 
     def disable_potion_usage(self):
         self.use_potions = False
