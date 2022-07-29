@@ -79,25 +79,26 @@ class AxelContest(Player, metaclass=ABCMeta):
             self.log(f"Completed {unit_count} out of {numberOfCharacters} characters")
 
     def do_axel_contest(self, character, highestStageToClear):
-        if not isinstance(character, int):
-            character = character['id']
+        if isinstance(character, int):
+            character = self.pd.get_character_by_id(character)
+        cid = character['m_character_id']
+        collection = self.pd.get_character_collection_by_mid(cid)
 
-        collection = self.pd.get_character_by_id(character)
         if collection is None:
             self.log("Unit not found. Exiting...")
             return
 
-        unit_name = self.gd.get_character(collection['m_character_id'])['name']
-        last_cleared_stage = collection['contest_stage']
-        self.log(
-            f"Started Axel Contest for {unit_name} - Last cleared stage: {last_cleared_stage} - Highest stage to clear {highestStageToClear}")
+        unit_name = self.gd.get_character(cid)['name']
+        last_cleared_stage = collection['contest_stage'] if 'contest_stage' in collection else 0
 
+        self.log(f"Started Axel Contest for {unit_name} - Last cleared stage: {last_cleared_stage}"
+                 f" - Highest stage to clear {highestStageToClear}")
         while last_cleared_stage < highestStageToClear:
             start = self.client.axel_context_battle_start(self.get_axel_stage_energy_cost(last_cleared_stage),
-                                                          collection['m_character_id'], [character])
+                                                          collection['m_character_id'], [cid])
             end = self.client.axel_context_battle_end(
                 collection['m_character_id'],
-                self.get_battle_exp_data_axel_contest(start, [character]),
+                self.get_battle_exp_data_axel_contest(start, [cid]),
                 "eyJhbGciOiJIUzI1NiJ9.eyJoZmJtNzg0a2hrMjYzOXBmIjoiIiwieXBiMjgydXR0eno3NjJ3eCI6ODY4MTY2ODE1OCwiZHBwY2JldzltejhjdXd3biI6MCwiemFjc3Y2amV2NGl3emp6bSI6NCwia3lxeW5pM25ubTNpMmFxYSI6MCwiZWNobTZ0aHR6Y2o0eXR5dCI6MCwiZWt1c3ZhcGdwcGlrMzVqaiI6MCwieGE1ZTMyMm1nZWo0ZjR5cSI6MH0.NudHEcTQfUUuOaNr9vsFiJkQwaw4nTL6yjK93jXzqLY")
             last_cleared_stage = end['result']['after_t_character_collections'][0]['contest_stage']
             self.log(f"Cleared stage {last_cleared_stage} of Axel Contest for {unit_name}.")

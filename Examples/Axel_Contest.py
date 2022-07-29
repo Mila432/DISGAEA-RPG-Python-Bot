@@ -1,16 +1,20 @@
 from main import API
+import os
 
 a = API()
-a.sess = ''
-a.uin = ''
-a.wait(0)
-a.setRegion(2)
-a.setDevice(2)
-a.dologin()
+a.config(
+    sess=os.getenv('DRPG_TOKEN'),
+    uin=os.getenv('DRPG_UIN'),
+    wait=0,
+    region=2,
+    device=2
+)
+a.quick_login()
 
-#Set active party and print the IDs of the characters. Use them to run axel contest
-a.setActiveParty(1)
-print(a.deck)
+# Set active party and print the IDs of the characters. Use them to run axel contest
+a.options.team_num = 1
+print(a.pd.deck)
+exit(0)
 
 unitID = 11111111
 highestStageToClear = 50

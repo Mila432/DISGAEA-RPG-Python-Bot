@@ -13,8 +13,8 @@ class API(BaseAPI):
         self.o.sess = sess
         self.o.uin = uin
         self.o.wait = wait
-        self.o.region = region
-        self.o.device = device
+        self.o.set_region(region)
+        self.o.set_device(device)
 
     def get_mail_and_rewards(self):
         self.client.trophy_get_reward_daily()

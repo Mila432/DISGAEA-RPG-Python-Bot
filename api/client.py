@@ -61,7 +61,8 @@ class Client:
                 cdata = data
             r = self.s.post(self.o.main_url + url, data=cdata)
         if 'X-Crypt-Iv' not in r.headers:
-            Logger.info('missing iv!')
+            Logger.error('missing iv!')
+            exit(1)
             return None
         res = self.c.decrypt(base64.b64encode(r.content), r.headers['X-Crypt-Iv'])
         if 'title' in res and 'Maintenance' in res['title']:
@@ -161,7 +162,7 @@ class Client:
                     'X-PERF-FPS': '59.99',
                     'X-Crypt-Iv': iv,
                     'X-PERF-MEM-AVAILABLE': '24',
-                    'X-OS-TYPE': self.o.device,
+                    'X-OS-TYPE': str(self.o.device),
                     'X-PERF-LAST-DELTA-TIMES': '16,17,16,17,21,13,16,17,17,17',
                     'X-PERF-NETWORK-ERR-TOTAL': '0',
                     'X-PERF-DEVICE': 'iPad7,5',
@@ -193,7 +194,7 @@ class Client:
                     'Content-Type': 'application/x-haut-hoiski',
                     'User-Agent':
                         'forwardworks/194 CFNetwork/1206 Darwin/20.1.0',
-                    'X-OS-TYPE': self.o.device,
+                    'X-OS-TYPE': str(self.o.device),
                     'X-APP-VERSION': self.o.version
                 })
         elif i == 2:
@@ -203,7 +204,7 @@ class Client:
                 'Accept-Language': 'en-us',
                 'Content-Type': 'application/x-haut-hoiski',
                 'User-Agent': 'iPad6Gen/iOS 14.2',
-                'X-OS-TYPE': self.o.device,
+                'X-OS-TYPE': str(self.o.device),
                 'X-APP-VERSION': self.o.version,
                 'X-SESSION': self.o.session_id
             })
@@ -214,7 +215,7 @@ class Client:
                 'Accept-Language': 'en-us',
                 'Content-Type': 'application/x-haut-hoiski',
                 'User-Agent': 'forwardworks/194 CFNetwork/1206 Darwin/20.1.0',
-                'X-OS-TYPE': self.o.device,
+                'X-OS-TYPE': str(self.o.device),
                 'X-APP-VERSION': self.o.version
             })
 
@@ -602,7 +603,7 @@ class Client:
         return self.__rpc('friend/receive_act', {"target_t_player_id": target_t_player_id})
 
     def friend_send_sardines(self):
-        data = self.rpc('friend/send_act', {"target_t_player_id": 0})
+        data = self.__rpc('friend/send_act', {"target_t_player_id": 0})
         if data['error'] == 'You cannot send more sardine.':
             return data['error']
         Logger.info(f"Sent sardines to {data['result']['send_count_total']} friends")

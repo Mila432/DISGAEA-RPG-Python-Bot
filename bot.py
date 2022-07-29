@@ -4,11 +4,18 @@ from main import API
 
 a = API()
 # a.setProxy("127.0.0.1:8080")
-a.o.sess = os.getenv('DRPG_TOKEN')
-a.o.uin = os.getenv('DRPG_UIN')
-a.o.set_region(2)
-a.o.set_device(2)
+a.config(
+    sess=os.getenv('DRPG_TOKEN'),
+    uin=os.getenv('DRPG_UIN'),
+    wait=0,
+    region=2,
+    device=2
+)
 a.quick_login()
+
+# a.options.team_num = 1
+# print(a.pd.deck)
+# exit(0)
 
 codes = [
     # "drpgxhayzink",
@@ -194,6 +201,10 @@ def loop(team=9, rebirth=False, farm_stage_id=313515, only_weapons=False):
 
 
 # clear_inbox()
+
+unit_id = 10884950
+# unit_id = 113247303
+a.do_axel_contest(unit_id, 1000)
 
 # a.do_axel_contest_multiple_characters(2)
 # farm_event_stage(stage_id=114710104, times=10, team=6)
