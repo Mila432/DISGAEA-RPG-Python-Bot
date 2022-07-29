@@ -1,35 +1,38 @@
 from main import API
+from api.constants import Constants
 
-a=API()
-a.sess='AAAATlrvMaj5B1tR4VrD1Qhy3GV_zukDoYg5KF_i6PTtcED04lhQItRHCj0A9Gx_RoAIHBvWLPZloWZfGGGt_6zzGqa1dHIO9cqZdIhdSc5cineU'
-a.uin='396184879'
-a.wait(5)#this will wait 5 seconds between each action
-a.setRegion(2)
-a.setDevice(1)
+a: API = API()
+a.config(
+    sess=Constants.session_id,
+    uin=Constants.user_id,
+    wait=5,  # this will wait 5 seconds between each action
+    region=2,
+    device=2
+)
 a.dologin()
 
-#use event codes
-a.boltrend_exchange_code('73rss7mw9i')
-a.boltrend_exchange_code('ckwwievtx9')
-a.boltrend_exchange_code('dkskdyexfr')
-a.boltrend_exchange_code('e7ef24evfc')
-a.boltrend_exchange_code('gyka4jreqf')
-a.boltrend_exchange_code('h3wq5ft9kw')
-a.boltrend_exchange_code('k7uu7d6zkq')
-a.boltrend_exchange_code('ksyyrtaufe')
-a.boltrend_exchange_code('nuwjyu26xh')
-a.boltrend_exchange_code('pe3q2hrden')
-a.boltrend_exchange_code('rkxwj7qrwk')
-a.boltrend_exchange_code('rr5nguvafi')
+# use event codes
+a.client.boltrend_exchange_code('73rss7mw9i')
+a.client.boltrend_exchange_code('ckwwievtx9')
+a.client.boltrend_exchange_code('dkskdyexfr')
+a.client.boltrend_exchange_code('e7ef24evfc')
+a.client.boltrend_exchange_code('gyka4jreqf')
+a.client.boltrend_exchange_code('h3wq5ft9kw')
+a.client.boltrend_exchange_code('k7uu7d6zkq')
+a.client.boltrend_exchange_code('ksyyrtaufe')
+a.client.boltrend_exchange_code('nuwjyu26xh')
+a.client.boltrend_exchange_code('pe3q2hrden')
+a.client.boltrend_exchange_code('rkxwj7qrwk')
+a.client.boltrend_exchange_code('rr5nguvafi')
 
-#do single quest
+# do single quest
 a.doQuest(1001101303)
-#do multiple quests
+# do multiple quests
 a.completeStory(90101)
-#farm dungeon
-a.completeStory(50107,farmingAll=True)
+# farm dungeon
+a.completeStory(50107, farmingAll=True)
 
-#retry stages until min X rarity
-a.minrarity(40)
-#farm item world
-a.upgradeItems()
+# retry stages until min X rarity
+a.options.min_rarity = 40
+# farm item world
+a.upgrade_items()

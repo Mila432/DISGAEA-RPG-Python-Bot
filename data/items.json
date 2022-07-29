@@ -2,7 +2,9 @@
   {
     "icon_no": 101,
     "name": "HL",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 0,
     "item_type": 1,
     "max_num": 999999999,
@@ -12,7 +14,9 @@
   {
     "icon_no": 201,
     "name": "Nether Quartz",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 0,
     "item_type": 2,
     "max_num": 999999999,
@@ -22,7 +26,9 @@
   {
     "icon_no": 201,
     "name": "Nether Quartz",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 0,
     "item_type": 2,
     "max_num": 999999999,
@@ -32,7 +38,9 @@
   {
     "icon_no": 301,
     "name": "AP Potion",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -42,7 +50,9 @@
   {
     "icon_no": 302,
     "name": "50% AP Potion",
-    "effect_value": [50],
+    "effect_value": [
+      50
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -52,7 +62,9 @@
   {
     "icon_no": 303,
     "name": "Romance Chocolate",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -62,7 +74,9 @@
   {
     "icon_no": 304,
     "name": "Customary Chocolate",
-    "effect_value": [50],
+    "effect_value": [
+      50
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -72,7 +86,9 @@
   {
     "icon_no": 305,
     "name": "Doubled Return",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -82,7 +98,9 @@
   {
     "icon_no": 306,
     "name": "Customary Marshmallow",
-    "effect_value": [50],
+    "effect_value": [
+      50
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -92,7 +110,9 @@
   {
     "icon_no": 307,
     "name": "Netherworld Easter Egg",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -102,7 +122,9 @@
   {
     "icon_no": 308,
     "name": "Netherworld Small Egg",
-    "effect_value": [50],
+    "effect_value": [
+      50
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -112,7 +134,9 @@
   {
     "icon_no": 309,
     "name": "Stump Cake",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -122,7 +146,9 @@
   {
     "icon_no": 310,
     "name": "Netherworld Gingersnap",
-    "effect_value": [50],
+    "effect_value": [
+      50
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -132,7 +158,9 @@
   {
     "icon_no": 311,
     "name": "Raw Sardine Chocolate",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -142,7 +170,9 @@
   {
     "icon_no": 312,
     "name": "Translator's Dengaku",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -152,7 +182,9 @@
   {
     "icon_no": 313,
     "name": "Crab Miso Can",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -162,7 +194,9 @@
   {
     "icon_no": 314,
     "name": "BBQ Corn",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 3,
     "max_num": 9999,
@@ -172,7 +206,10 @@
   {
     "icon_no": 401,
     "name": "Golden Candy",
-    "effect_value": [1, 25],
+    "effect_value": [
+      1,
+      25
+    ],
     "sell_price": 0,
     "item_type": 4,
     "max_num": 9999,
@@ -182,7 +219,10 @@
   {
     "icon_no": 402,
     "name": "Gold Bar",
-    "effect_value": [2, 50],
+    "effect_value": [
+      2,
+      50
+    ],
     "sell_price": 0,
     "item_type": 4,
     "max_num": 9999,
@@ -192,7 +232,10 @@
   {
     "icon_no": 403,
     "name": "Crab Miso",
-    "effect_value": [4, 100],
+    "effect_value": [
+      4,
+      100
+    ],
     "sell_price": 0,
     "item_type": 4,
     "max_num": 9999,
@@ -202,7 +245,9 @@
   {
     "icon_no": 501,
     "name": "Character Slot +5",
-    "effect_value": [5],
+    "effect_value": [
+      5
+    ],
     "sell_price": 0,
     "item_type": 5,
     "max_num": 799,
@@ -212,7 +257,9 @@
   {
     "icon_no": 601,
     "name": "Weapon Slot +5",
-    "effect_value": [5],
+    "effect_value": [
+      5
+    ],
     "sell_price": 0,
     "item_type": 6,
     "max_num": 799,
@@ -222,7 +269,9 @@
   {
     "icon_no": 701,
     "name": "Armor Slot +5",
-    "effect_value": [5],
+    "effect_value": [
+      5
+    ],
     "sell_price": 0,
     "item_type": 7,
     "max_num": 799,
@@ -232,7 +281,9 @@
   {
     "icon_no": 801,
     "name": "Innocent Slot +5",
-    "effect_value": [5],
+    "effect_value": [
+      5
+    ],
     "sell_price": 0,
     "item_type": 8,
     "max_num": 799,
@@ -242,7 +293,9 @@
   {
     "icon_no": 1001,
     "name": "Lucky Ball Lottery",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 10,
     "max_num": 999,
@@ -252,7 +305,9 @@
   {
     "icon_no": 1401,
     "name": "Gate Key",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 14,
     "max_num": 9999,
@@ -262,7 +317,10 @@
   {
     "icon_no": 1511,
     "name": "Sword Statue (Lv1)",
-    "effect_value": [10, 1],
+    "effect_value": [
+      10,
+      1
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -272,7 +330,10 @@
   {
     "icon_no": 1512,
     "name": "Sword Statue (Lv2)",
-    "effect_value": [25, 1],
+    "effect_value": [
+      25,
+      1
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -282,7 +343,10 @@
   {
     "icon_no": 1513,
     "name": "Sword Statue (Lv 3)",
-    "effect_value": [100, 1],
+    "effect_value": [
+      100,
+      1
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -292,7 +356,10 @@
   {
     "icon_no": 1514,
     "name": "Statue of Sword (Lv4)",
-    "effect_value": [500, 1],
+    "effect_value": [
+      500,
+      1
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -302,7 +369,10 @@
   {
     "icon_no": 1521,
     "name": "Fist Statue (Lv1)",
-    "effect_value": [10, 2],
+    "effect_value": [
+      10,
+      2
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -312,7 +382,10 @@
   {
     "icon_no": 1522,
     "name": "Fist Statue (Lv 2)",
-    "effect_value": [25, 2],
+    "effect_value": [
+      25,
+      2
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -322,7 +395,10 @@
   {
     "icon_no": 1523,
     "name": "Fist Statue (Lv 3)",
-    "effect_value": [100, 2],
+    "effect_value": [
+      100,
+      2
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -332,7 +408,10 @@
   {
     "icon_no": 1524,
     "name": "Fist Statue (Lv4)",
-    "effect_value": [500, 2],
+    "effect_value": [
+      500,
+      2
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -342,7 +421,10 @@
   {
     "icon_no": 1531,
     "name": "Spear Statue (Lv1)",
-    "effect_value": [10, 3],
+    "effect_value": [
+      10,
+      3
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -352,7 +434,10 @@
   {
     "icon_no": 1532,
     "name": "Spear Statue (Lv2)",
-    "effect_value": [25, 3],
+    "effect_value": [
+      25,
+      3
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -362,7 +447,10 @@
   {
     "icon_no": 1533,
     "name": "Spear Statue (Lv 3)",
-    "effect_value": [100, 3],
+    "effect_value": [
+      100,
+      3
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -372,7 +460,10 @@
   {
     "icon_no": 1534,
     "name": "Statue of Spear (Lv4)",
-    "effect_value": [500, 3],
+    "effect_value": [
+      500,
+      3
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -382,7 +473,10 @@
   {
     "icon_no": 1541,
     "name": "Bow Statue (Lv1)",
-    "effect_value": [10, 4],
+    "effect_value": [
+      10,
+      4
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -392,7 +486,10 @@
   {
     "icon_no": 1542,
     "name": "Bow Statue (Lv2)",
-    "effect_value": [25, 4],
+    "effect_value": [
+      25,
+      4
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -402,7 +499,10 @@
   {
     "icon_no": 1543,
     "name": "Bow Statue (Lv 3)",
-    "effect_value": [100, 4],
+    "effect_value": [
+      100,
+      4
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -412,7 +512,10 @@
   {
     "icon_no": 1544,
     "name": "Statue of Bow (Lv4)",
-    "effect_value": [500, 4],
+    "effect_value": [
+      500,
+      4
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -422,7 +525,10 @@
   {
     "icon_no": 1551,
     "name": "Gun Statue (Lv1)",
-    "effect_value": [10, 5],
+    "effect_value": [
+      10,
+      5
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -432,7 +538,10 @@
   {
     "icon_no": 1552,
     "name": "Gun Statue (Lv2)",
-    "effect_value": [25, 5],
+    "effect_value": [
+      25,
+      5
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -442,7 +551,10 @@
   {
     "icon_no": 1553,
     "name": "Gun Statue (Lv 3)",
-    "effect_value": [100, 5],
+    "effect_value": [
+      100,
+      5
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -452,7 +564,10 @@
   {
     "icon_no": 1554,
     "name": "Statue of Gun (Lv4)",
-    "effect_value": [500, 5],
+    "effect_value": [
+      500,
+      5
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -462,7 +577,10 @@
   {
     "icon_no": 1561,
     "name": "Axe Statue (Lv1)",
-    "effect_value": [10, 6],
+    "effect_value": [
+      10,
+      6
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -472,7 +590,10 @@
   {
     "icon_no": 1562,
     "name": "Axe Statue (Lv 2)",
-    "effect_value": [25, 6],
+    "effect_value": [
+      25,
+      6
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -482,7 +603,10 @@
   {
     "icon_no": 1563,
     "name": "Axe Statue (Lv 3)",
-    "effect_value": [100, 6],
+    "effect_value": [
+      100,
+      6
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -492,7 +616,10 @@
   {
     "icon_no": 1564,
     "name": "Statue of Axe (Lv4)",
-    "effect_value": [500, 6],
+    "effect_value": [
+      500,
+      6
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -502,7 +629,10 @@
   {
     "icon_no": 1571,
     "name": "Staff Statue (Lv1)",
-    "effect_value": [10, 7],
+    "effect_value": [
+      10,
+      7
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -512,7 +642,10 @@
   {
     "icon_no": 1572,
     "name": "Staff Statue (Lv2)",
-    "effect_value": [25, 7],
+    "effect_value": [
+      25,
+      7
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -522,7 +655,10 @@
   {
     "icon_no": 1573,
     "name": "Staff Statue (Lv 3)",
-    "effect_value": [100, 7],
+    "effect_value": [
+      100,
+      7
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -532,7 +668,10 @@
   {
     "icon_no": 1574,
     "name": "Statue of Staff (Lv4)",
-    "effect_value": [500, 7],
+    "effect_value": [
+      500,
+      7
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -542,7 +681,10 @@
   {
     "icon_no": 1581,
     "name": "Mon. Phys. Statue (Lv1)",
-    "effect_value": [10, 8],
+    "effect_value": [
+      10,
+      8
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -552,7 +694,10 @@
   {
     "icon_no": 1582,
     "name": "Mon. Phys. Statue (Lv2)",
-    "effect_value": [25, 8],
+    "effect_value": [
+      25,
+      8
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -562,7 +707,10 @@
   {
     "icon_no": 1583,
     "name": "Mon. Phys. Statue (Lv 3)",
-    "effect_value": [100, 8],
+    "effect_value": [
+      100,
+      8
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -572,7 +720,10 @@
   {
     "icon_no": 1584,
     "name": "Statue of Mon. Phys. (Lv4)",
-    "effect_value": [500, 8],
+    "effect_value": [
+      500,
+      8
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -582,7 +733,10 @@
   {
     "icon_no": 1591,
     "name": "Mon. Mag. Statue (Lv1)",
-    "effect_value": [10, 9],
+    "effect_value": [
+      10,
+      9
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -592,7 +746,10 @@
   {
     "icon_no": 1592,
     "name": "Mon. Mag. Statue (Lv2)",
-    "effect_value": [25, 9],
+    "effect_value": [
+      25,
+      9
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -602,7 +759,10 @@
   {
     "icon_no": 1593,
     "name": "Mon. Mag. Statue (Lv 3)",
-    "effect_value": [100, 9],
+    "effect_value": [
+      100,
+      9
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -612,7 +772,10 @@
   {
     "icon_no": 1594,
     "name": "Statue of Mon. Mag. (Lv4)",
-    "effect_value": [500, 9],
+    "effect_value": [
+      500,
+      9
+    ],
     "sell_price": 0,
     "item_type": 15,
     "max_num": 9999,
@@ -622,7 +785,9 @@
   {
     "icon_no": 1601,
     "name": "N.E. Prinny",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 16,
     "max_num": 999,
@@ -632,7 +797,9 @@
   {
     "icon_no": 1602,
     "name": "Prism Hides",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 16,
     "max_num": 99999,
@@ -642,7 +809,9 @@
   {
     "icon_no": 1701,
     "name": "Skill Book (Lv1)",
-    "effect_value": [10],
+    "effect_value": [
+      10
+    ],
     "sell_price": 0,
     "item_type": 17,
     "max_num": 9999,
@@ -652,7 +821,9 @@
   {
     "icon_no": 1702,
     "name": "Skill Book (Lv2)",
-    "effect_value": [25],
+    "effect_value": [
+      25
+    ],
     "sell_price": 0,
     "item_type": 17,
     "max_num": 9999,
@@ -662,7 +833,9 @@
   {
     "icon_no": 1703,
     "name": "Skill Book (Lv3)",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 17,
     "max_num": 9999,
@@ -672,7 +845,9 @@
   {
     "icon_no": 1704,
     "name": "Skill Book (Lv4)",
-    "effect_value": [500],
+    "effect_value": [
+      500
+    ],
     "sell_price": 0,
     "item_type": 17,
     "max_num": 9999,
@@ -682,7 +857,9 @@
   {
     "icon_no": 1801,
     "name": "Reinc. Gem (Lv1)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 50,
     "item_type": 18,
     "max_num": 99999,
@@ -692,7 +869,9 @@
   {
     "icon_no": 1802,
     "name": "Reinc. Gem (Lv2)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 75,
     "item_type": 18,
     "max_num": 99999,
@@ -702,7 +881,9 @@
   {
     "icon_no": 1803,
     "name": "Reinc. Gem (Lv3)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 150,
     "item_type": 18,
     "max_num": 99999,
@@ -712,7 +893,9 @@
   {
     "icon_no": 1811,
     "name": "Hum. Reinc. Gem (Lv1)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 75,
     "item_type": 18,
     "max_num": 99999,
@@ -722,7 +905,9 @@
   {
     "icon_no": 1812,
     "name": "Hum. Reinc. Gem (Lv2)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 150,
     "item_type": 18,
     "max_num": 99999,
@@ -732,7 +917,9 @@
   {
     "icon_no": 1813,
     "name": "Hum. Reinc. Gem (Lv3)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 350,
     "item_type": 18,
     "max_num": 99999,
@@ -742,7 +929,9 @@
   {
     "icon_no": 1821,
     "name": "Mon. Reinc. Gem (Lv1)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 75,
     "item_type": 18,
     "max_num": 99999,
@@ -752,7 +941,9 @@
   {
     "icon_no": 1822,
     "name": "Mon. Reinc. Gem (Lv2)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 150,
     "item_type": 18,
     "max_num": 99999,
@@ -762,7 +953,9 @@
   {
     "icon_no": 1823,
     "name": "Mon. Reinc. Gem (Lv3)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 350,
     "item_type": 18,
     "max_num": 99999,
@@ -772,7 +965,9 @@
   {
     "icon_no": 1831,
     "name": "Shining Reinc. Gem (Lv1)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 750,
     "item_type": 18,
     "max_num": 99999,
@@ -782,7 +977,9 @@
   {
     "icon_no": 1832,
     "name": "Shining Reinc. Gem (Lv2)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 750,
     "item_type": 18,
     "max_num": 99999,
@@ -792,7 +989,9 @@
   {
     "icon_no": 1833,
     "name": "Shining Reinc. Gem (Lv3)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 750,
     "item_type": 18,
     "max_num": 99999,
@@ -802,7 +1001,9 @@
   {
     "icon_no": 1834,
     "name": "Shining Reinc. Gem (Lv4)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 750,
     "item_type": 18,
     "max_num": 99999,
@@ -812,7 +1013,9 @@
   {
     "icon_no": 1835,
     "name": "Shining Reinc. Gem (Lv5)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 750,
     "item_type": 18,
     "max_num": 99999,
@@ -822,7 +1025,9 @@
   {
     "icon_no": 1836,
     "name": "Shining Reinc. Gem (Lv6)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 750,
     "item_type": 18,
     "max_num": 99999,
@@ -832,7 +1037,9 @@
   {
     "icon_no": 1837,
     "name": "Shining Reinc. Gem (Lv7)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 750,
     "item_type": 18,
     "max_num": 99999,
@@ -842,7 +1049,9 @@
   {
     "icon_no": 1838,
     "name": "Shining Reinc. Gem (Lv8)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 750,
     "item_type": 18,
     "max_num": 99999,
@@ -852,7 +1061,9 @@
   {
     "icon_no": 1839,
     "name": "Shining Reinc. Gem (Lv9)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 750,
     "item_type": 18,
     "max_num": 99999,
@@ -862,7 +1073,9 @@
   {
     "icon_no": 1840,
     "name": "Reinc. Statue (Lv1)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 1000,
     "item_type": 18,
     "max_num": 99999,
@@ -872,7 +1085,9 @@
   {
     "icon_no": 1841,
     "name": "Reinc. Statue (Lv2)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 1000,
     "item_type": 18,
     "max_num": 99999,
@@ -882,7 +1097,9 @@
   {
     "icon_no": 1842,
     "name": "Reinc. Statue (Lv3)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 1000,
     "item_type": 18,
     "max_num": 99999,
@@ -892,7 +1109,9 @@
   {
     "icon_no": 1843,
     "name": "Reinc. Statue (Lv4)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 1000,
     "item_type": 18,
     "max_num": 99999,
@@ -902,7 +1121,9 @@
   {
     "icon_no": 1844,
     "name": "Reinc. Statue (Lv5)",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 1000,
     "item_type": 18,
     "max_num": 99999,
@@ -912,7 +1133,9 @@
   {
     "icon_no": 1901,
     "name": "Premium Summon Ticket",
-    "effect_value": [100001],
+    "effect_value": [
+      100001
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -922,7 +1145,9 @@
   {
     "icon_no": 1902,
     "name": "3★ or above Summon Ticket",
-    "effect_value": [110001],
+    "effect_value": [
+      110001
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -932,7 +1157,9 @@
   {
     "icon_no": 1903,
     "name": "4★ Summon Ticket",
-    "effect_value": [110002],
+    "effect_value": [
+      110002
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -942,7 +1169,9 @@
   {
     "icon_no": 1904,
     "name": "1&D2 Summon Ticket",
-    "effect_value": [210001],
+    "effect_value": [
+      210001
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -952,7 +1181,9 @@
   {
     "icon_no": 1905,
     "name": "2&3 Summon Ticket",
-    "effect_value": [210002],
+    "effect_value": [
+      210002
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -962,7 +1193,9 @@
   {
     "icon_no": 1906,
     "name": "4&5 Summon Ticket",
-    "effect_value": [210003],
+    "effect_value": [
+      210003
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -972,7 +1205,9 @@
   {
     "icon_no": 1902,
     "name": "3★ or above Summon Ticket (4★: 150% Drop Rate)",
-    "effect_value": [110005],
+    "effect_value": [
+      110005
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -982,7 +1217,9 @@
   {
     "icon_no": 1909,
     "name": "Valentine Summon Ticket",
-    "effect_value": [210004],
+    "effect_value": [
+      210004
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -992,7 +1229,9 @@
   {
     "icon_no": 1910,
     "name": "White Day Summon Ticket",
-    "effect_value": [210005],
+    "effect_value": [
+      210005
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -1002,7 +1241,9 @@
   {
     "icon_no": 1911,
     "name": "Premium Summon Ticket (10 times)",
-    "effect_value": [110003],
+    "effect_value": [
+      110003
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -1012,7 +1253,9 @@
   {
     "icon_no": 1912,
     "name": "Novice Summon Ticket (10 Times)",
-    "effect_value": [110004],
+    "effect_value": [
+      110004
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -1022,7 +1265,9 @@
   {
     "icon_no": 1913,
     "name": "New Hero Summon Ticket (PU Drop Rate Up)",
-    "effect_value": [210006],
+    "effect_value": [
+      210006
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -1032,7 +1277,9 @@
   {
     "icon_no": 1914,
     "name": "New Hero Summon Ticket (PU Drop Rate Great Up)",
-    "effect_value": [210007],
+    "effect_value": [
+      210007
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -1042,7 +1289,9 @@
   {
     "icon_no": 1915,
     "name": "New Hero Summon Ticket (PU Guaranteed)",
-    "effect_value": [210008],
+    "effect_value": [
+      210008
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -1052,7 +1301,9 @@
   {
     "icon_no": 1916,
     "name": "Dark Santa Summon Ticket",
-    "effect_value": [210009],
+    "effect_value": [
+      210009
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -1062,7 +1313,9 @@
   {
     "icon_no": 1917,
     "name": "Compensation 3★ Summon Ticket",
-    "effect_value": [210010],
+    "effect_value": [
+      210010
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -1072,7 +1325,9 @@
   {
     "icon_no": 1999,
     "name": "1st Anniversary Celebration Ticket",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 0,
     "item_type": 19,
     "max_num": 999,
@@ -1082,7 +1337,9 @@
   {
     "icon_no": 2001,
     "name": "Event Points",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1092,7 +1349,9 @@
   {
     "icon_no": 2002,
     "name": "Event Points",
-    "effect_value": [4],
+    "effect_value": [
+      4
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1102,7 +1361,9 @@
   {
     "icon_no": 2003,
     "name": "Event Points",
-    "effect_value": [6],
+    "effect_value": [
+      6
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1112,7 +1373,9 @@
   {
     "icon_no": 2004,
     "name": "Event Points",
-    "effect_value": [12],
+    "effect_value": [
+      12
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1122,7 +1385,9 @@
   {
     "icon_no": 2005,
     "name": "Event Points",
-    "effect_value": [15],
+    "effect_value": [
+      15
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1132,7 +1397,9 @@
   {
     "icon_no": 2006,
     "name": "Event Points",
-    "effect_value": [17],
+    "effect_value": [
+      17
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1142,7 +1409,9 @@
   {
     "icon_no": 2007,
     "name": "Event Points",
-    "effect_value": [21],
+    "effect_value": [
+      21
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1152,7 +1421,9 @@
   {
     "icon_no": 2008,
     "name": "Event Points",
-    "effect_value": [26],
+    "effect_value": [
+      26
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1162,7 +1433,9 @@
   {
     "icon_no": 2009,
     "name": "Event Points",
-    "effect_value": [35],
+    "effect_value": [
+      35
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1172,7 +1445,9 @@
   {
     "icon_no": 2006,
     "name": "Event Points",
-    "effect_value": [24],
+    "effect_value": [
+      24
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1182,7 +1457,9 @@
   {
     "icon_no": 2011,
     "name": "Event Points",
-    "effect_value": [38],
+    "effect_value": [
+      38
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1192,7 +1469,9 @@
   {
     "icon_no": 2012,
     "name": "Event Points",
-    "effect_value": [41],
+    "effect_value": [
+      41
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1202,7 +1481,9 @@
   {
     "icon_no": 2006,
     "name": "Event Points",
-    "effect_value": [42],
+    "effect_value": [
+      42
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1212,7 +1493,9 @@
   {
     "icon_no": 2014,
     "name": "Event Points",
-    "effect_value": [47],
+    "effect_value": [
+      47
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1222,7 +1505,9 @@
   {
     "icon_no": 2015,
     "name": "Event Points",
-    "effect_value": [50],
+    "effect_value": [
+      50
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1232,7 +1517,9 @@
   {
     "icon_no": 2016,
     "name": "Event Points",
-    "effect_value": [54],
+    "effect_value": [
+      54
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1242,7 +1529,9 @@
   {
     "icon_no": 2006,
     "name": "Event Points",
-    "effect_value": [55],
+    "effect_value": [
+      55
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1252,7 +1541,9 @@
   {
     "icon_no": 2018,
     "name": "Event Points",
-    "effect_value": [58],
+    "effect_value": [
+      58
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1262,7 +1553,9 @@
   {
     "icon_no": 2019,
     "name": "Event Points",
-    "effect_value": [60],
+    "effect_value": [
+      60
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1272,7 +1565,9 @@
   {
     "icon_no": 2020,
     "name": "Event Points",
-    "effect_value": [61],
+    "effect_value": [
+      61
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1282,7 +1577,9 @@
   {
     "icon_no": 2015,
     "name": "Event Points",
-    "effect_value": [65],
+    "effect_value": [
+      65
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1292,7 +1589,9 @@
   {
     "icon_no": 2022,
     "name": "Event Points",
-    "effect_value": [66],
+    "effect_value": [
+      66
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1302,7 +1601,9 @@
   {
     "icon_no": 2023,
     "name": "Event Points",
-    "effect_value": [69],
+    "effect_value": [
+      69
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1312,7 +1613,9 @@
   {
     "icon_no": 2024,
     "name": "Event Points",
-    "effect_value": [72],
+    "effect_value": [
+      72
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1322,7 +1625,9 @@
   {
     "icon_no": 2025,
     "name": "Event Points",
-    "effect_value": [73],
+    "effect_value": [
+      73
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1332,7 +1637,9 @@
   {
     "icon_no": 2026,
     "name": "Event Points",
-    "effect_value": [79],
+    "effect_value": [
+      79
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1342,7 +1649,9 @@
   {
     "icon_no": 2027,
     "name": "Event Points",
-    "effect_value": [81],
+    "effect_value": [
+      81
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1352,7 +1661,9 @@
   {
     "icon_no": 2028,
     "name": "Event Points",
-    "effect_value": [82],
+    "effect_value": [
+      82
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1362,7 +1673,9 @@
   {
     "icon_no": 2006,
     "name": "Event Points",
-    "effect_value": [89],
+    "effect_value": [
+      89
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1372,7 +1685,9 @@
   {
     "icon_no": 2030,
     "name": "Event Points",
-    "effect_value": [90],
+    "effect_value": [
+      90
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1382,7 +1697,9 @@
   {
     "icon_no": 2031,
     "name": "Event Points",
-    "effect_value": [95],
+    "effect_value": [
+      95
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1392,7 +1709,9 @@
   {
     "icon_no": 2032,
     "name": "Event Points",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1402,7 +1721,9 @@
   {
     "icon_no": 2033,
     "name": "Event Points",
-    "effect_value": [103],
+    "effect_value": [
+      103
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1412,7 +1733,9 @@
   {
     "icon_no": 2034,
     "name": "Event Points",
-    "effect_value": [104],
+    "effect_value": [
+      104
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1422,7 +1745,9 @@
   {
     "icon_no": 2035,
     "name": "Event Points",
-    "effect_value": [110],
+    "effect_value": [
+      110
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1432,7 +1757,9 @@
   {
     "icon_no": 2036,
     "name": "Event Points",
-    "effect_value": [112],
+    "effect_value": [
+      112
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1442,7 +1769,9 @@
   {
     "icon_no": 2037,
     "name": "Event Points",
-    "effect_value": [117],
+    "effect_value": [
+      117
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1452,7 +1781,9 @@
   {
     "icon_no": 2038,
     "name": "Event Points",
-    "effect_value": [119],
+    "effect_value": [
+      119
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1462,7 +1793,9 @@
   {
     "icon_no": 2039,
     "name": "Event Points",
-    "effect_value": [126],
+    "effect_value": [
+      126
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1472,7 +1805,9 @@
   {
     "icon_no": 2040,
     "name": "Event Points",
-    "effect_value": [123],
+    "effect_value": [
+      123
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1482,7 +1817,9 @@
   {
     "icon_no": 2041,
     "name": "Event Points",
-    "effect_value": [131],
+    "effect_value": [
+      131
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1492,7 +1829,9 @@
   {
     "icon_no": 2042,
     "name": "Event Points",
-    "effect_value": [132],
+    "effect_value": [
+      132
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1502,7 +1841,9 @@
   {
     "icon_no": 2043,
     "name": "Event Points",
-    "effect_value": [135],
+    "effect_value": [
+      135
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1512,7 +1853,9 @@
   {
     "icon_no": 2044,
     "name": "Event Points",
-    "effect_value": [142],
+    "effect_value": [
+      142
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1522,7 +1865,9 @@
   {
     "icon_no": 2045,
     "name": "Event Points",
-    "effect_value": [143],
+    "effect_value": [
+      143
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1532,7 +1877,9 @@
   {
     "icon_no": 2018,
     "name": "Event Points",
-    "effect_value": [149],
+    "effect_value": [
+      149
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1542,7 +1889,9 @@
   {
     "icon_no": 2047,
     "name": "Event Points",
-    "effect_value": [151],
+    "effect_value": [
+      151
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1552,7 +1901,9 @@
   {
     "icon_no": 2048,
     "name": "Event Points",
-    "effect_value": [154],
+    "effect_value": [
+      154
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1562,7 +1913,9 @@
   {
     "icon_no": 2049,
     "name": "Event Points",
-    "effect_value": [156],
+    "effect_value": [
+      156
+    ],
     "sell_price": 0,
     "item_type": 20,
     "max_num": 99999999,
@@ -1572,7 +1925,9 @@
   {
     "icon_no": 2101,
     "name": "Majin Etna Shard",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 21,
     "max_num": 9999,
@@ -1582,7 +1937,9 @@
   {
     "icon_no": 2102,
     "name": "Pure Flonne Shard",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 21,
     "max_num": 9999,
@@ -1592,7 +1949,9 @@
   {
     "icon_no": 2103,
     "name": "Bloodis Shard",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 21,
     "max_num": 9999,
@@ -1602,7 +1961,9 @@
   {
     "icon_no": 2104,
     "name": "Sister Artina Shard",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 21,
     "max_num": 9999,
@@ -1612,7 +1973,9 @@
   {
     "icon_no": 2105,
     "name": "Awakened Killia Shard",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 21,
     "max_num": 9999,
@@ -1622,7 +1985,9 @@
   {
     "icon_no": 2106,
     "name": "Pringer X Shard",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 21,
     "max_num": 9999,
@@ -1632,7 +1997,9 @@
   {
     "icon_no": 2301,
     "name": "Mana Potion",
-    "effect_value": [500],
+    "effect_value": [
+      500
+    ],
     "sell_price": 0,
     "item_type": 23,
     "max_num": 9999,
@@ -1642,7 +2009,9 @@
   {
     "icon_no": 2401,
     "name": "DG Skip Coupon",
-    "effect_value": [3],
+    "effect_value": [
+      3
+    ],
     "sell_price": 100,
     "item_type": 24,
     "max_num": 99999,
@@ -1652,7 +2021,9 @@
   {
     "icon_no": 2501,
     "name": "AP",
-    "effect_value": [9],
+    "effect_value": [
+      9
+    ],
     "sell_price": 0,
     "item_type": 25,
     "max_num": 9999,
@@ -1662,7 +2033,9 @@
   {
     "icon_no": 2601,
     "name": "Remembrance Sphere",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 26,
     "max_num": 99999,
@@ -1672,7 +2045,9 @@
   {
     "icon_no": 2801,
     "name": "Prinny Coin",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 0,
     "item_type": 28,
     "max_num": 99999999,
@@ -1682,7 +2057,9 @@
   {
     "icon_no": 2901,
     "name": "Miraculous Elixir (Lv1000)",
-    "effect_value": [1000],
+    "effect_value": [
+      1000
+    ],
     "sell_price": 0,
     "item_type": 29,
     "max_num": 9999,
@@ -1692,7 +2069,9 @@
   {
     "icon_no": 2902,
     "name": "Miraculous Elixir (Lv3000)",
-    "effect_value": [3000],
+    "effect_value": [
+      3000
+    ],
     "sell_price": 0,
     "item_type": 29,
     "max_num": 9999,
@@ -1702,7 +2081,9 @@
   {
     "icon_no": 2903,
     "name": "Miraculous Elixir (Lv5000)",
-    "effect_value": [5000],
+    "effect_value": [
+      5000
+    ],
     "sell_price": 0,
     "item_type": 29,
     "max_num": 9999,
@@ -1712,7 +2093,10 @@
   {
     "icon_no": 3001,
     "name": "EXP Boost Pill",
-    "effect_value": [1, 7000],
+    "effect_value": [
+      1,
+      7000
+    ],
     "sell_price": 0,
     "item_type": 30,
     "max_num": 9999,
@@ -1722,7 +2106,9 @@
   {
     "icon_no": 3101,
     "name": "King's Scroll",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 31,
     "max_num": 9999,
@@ -1732,7 +2118,9 @@
   {
     "icon_no": 3102,
     "name": "Pawn's Scroll",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 31,
     "max_num": 9999,
@@ -1742,7 +2130,9 @@
   {
     "icon_no": 3103,
     "name": "Rook's Scroll",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 31,
     "max_num": 9999,
@@ -1752,7 +2142,9 @@
   {
     "icon_no": 3104,
     "name": "Bishop's Scroll",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 31,
     "max_num": 9999,
@@ -1762,7 +2154,9 @@
   {
     "icon_no": 3105,
     "name": "Knight's Scroll",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 31,
     "max_num": 9999,
@@ -1772,7 +2166,9 @@
   {
     "icon_no": 3106,
     "name": "Queen's Scroll",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 31,
     "max_num": 9999,
@@ -1782,7 +2178,9 @@
   {
     "icon_no": 3201,
     "name": "Prinny Steel",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 32,
     "max_num": 9999,
@@ -1792,7 +2190,9 @@
   {
     "icon_no": 3301,
     "name": "POP Booster",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 33,
     "max_num": 9999,
@@ -1802,7 +2202,9 @@
   {
     "icon_no": 3401,
     "name": "1st Anniversary Special Ticket",
-    "effect_value": [71],
+    "effect_value": [
+      71
+    ],
     "sell_price": 0,
     "item_type": 34,
     "max_num": 9999,
@@ -1812,7 +2214,9 @@
   {
     "icon_no": 3402,
     "name": "Netherworld New Year Exchange Ticket",
-    "effect_value": [87],
+    "effect_value": [
+      87
+    ],
     "sell_price": 0,
     "item_type": 34,
     "max_num": 9999,
@@ -1822,7 +2226,9 @@
   {
     "icon_no": 3403,
     "name": "1.5th Anniversary Special Ticket",
-    "effect_value": [118],
+    "effect_value": [
+      118
+    ],
     "sell_price": 0,
     "item_type": 34,
     "max_num": 9999,
@@ -1832,7 +2238,9 @@
   {
     "icon_no": 3404,
     "name": "Demonic Summer Special Ticket",
-    "effect_value": [134],
+    "effect_value": [
+      134
+    ],
     "sell_price": 0,
     "item_type": 34,
     "max_num": 9999,
@@ -1842,7 +2250,9 @@
   {
     "icon_no": 3405,
     "name": "Fest Character Redeem Ticket",
-    "effect_value": [155],
+    "effect_value": [
+      155
+    ],
     "sell_price": 0,
     "item_type": 34,
     "max_num": 9999,
@@ -1852,7 +2262,9 @@
   {
     "icon_no": 3406,
     "name": "Fest Character Redeem Ticket",
-    "effect_value": [157],
+    "effect_value": [
+      157
+    ],
     "sell_price": 0,
     "item_type": 34,
     "max_num": 9999,
@@ -1862,7 +2274,9 @@
   {
     "icon_no": 3499,
     "name": "Battle Pts",
-    "effect_value": [99998],
+    "effect_value": [
+      99998
+    ],
     "sell_price": 0,
     "item_type": 34,
     "max_num": 99999999,
@@ -1872,7 +2286,9 @@
   {
     "icon_no": 3501,
     "name": "HP Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -1882,7 +2298,9 @@
   {
     "icon_no": 3502,
     "name": "ATK Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -1892,7 +2310,9 @@
   {
     "icon_no": 3503,
     "name": "DEF Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -1902,7 +2322,9 @@
   {
     "icon_no": 3504,
     "name": "INT Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -1912,7 +2334,9 @@
   {
     "icon_no": 3505,
     "name": "RES Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -1922,7 +2346,9 @@
   {
     "icon_no": 3506,
     "name": "SPD Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -1932,7 +2358,9 @@
   {
     "icon_no": 3507,
     "name": "EXP Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -1942,7 +2370,9 @@
   {
     "icon_no": 3508,
     "name": "HL Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -1952,7 +2382,9 @@
   {
     "icon_no": 3509,
     "name": "WM Enhancer Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -1962,7 +2394,9 @@
   {
     "icon_no": 3510,
     "name": "Skill Enhancer Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -1972,7 +2406,9 @@
   {
     "icon_no": 3511,
     "name": "HP Amplifier Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -1982,7 +2418,9 @@
   {
     "icon_no": 3512,
     "name": "ATK Amplifier Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -1992,7 +2430,9 @@
   {
     "icon_no": 3513,
     "name": "DEF Amplifier Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2002,7 +2442,9 @@
   {
     "icon_no": 3514,
     "name": "INT Amplifier Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2012,7 +2454,9 @@
   {
     "icon_no": 3515,
     "name": "RES Amplifier Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2022,7 +2466,9 @@
   {
     "icon_no": 3516,
     "name": "Axe ATK Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2032,7 +2478,9 @@
   {
     "icon_no": 3517,
     "name": "Staff INT Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2042,7 +2490,9 @@
   {
     "icon_no": 3518,
     "name": "Fist ATK Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2052,7 +2502,9 @@
   {
     "icon_no": 3519,
     "name": "Mon. Phys. ATK Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2062,7 +2514,9 @@
   {
     "icon_no": 3520,
     "name": "Armor DEF Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2072,7 +2526,9 @@
   {
     "icon_no": 3521,
     "name": "Belt ATK Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2082,7 +2538,9 @@
   {
     "icon_no": 3522,
     "name": "Muscle HP Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2092,7 +2550,9 @@
   {
     "icon_no": 3523,
     "name": "Gun ATK Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2102,7 +2562,9 @@
   {
     "icon_no": 3524,
     "name": "Sword ATK Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2112,7 +2574,9 @@
   {
     "icon_no": 3525,
     "name": "Glasses INT Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2122,7 +2586,9 @@
   {
     "icon_no": 3526,
     "name": "Spear ATK Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2132,7 +2598,9 @@
   {
     "icon_no": 3527,
     "name": "Bow ATK Boost Caretaker",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 500,
     "item_type": 35,
     "max_num": 9999,
@@ -2142,7 +2610,9 @@
   {
     "icon_no": 3601,
     "name": "Cute Ranch Ticket",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 200,
     "item_type": 36,
     "max_num": 9999,
@@ -2152,7 +2622,9 @@
   {
     "icon_no": 3602,
     "name": "Muscle Ranch Ticket",
-    "effect_value": [2],
+    "effect_value": [
+      2
+    ],
     "sell_price": 200,
     "item_type": 36,
     "max_num": 9999,
@@ -2162,7 +2634,9 @@
   {
     "icon_no": 3603,
     "name": "Handsome Ranch Ticket",
-    "effect_value": [3],
+    "effect_value": [
+      3
+    ],
     "sell_price": 200,
     "item_type": 36,
     "max_num": 9999,
@@ -2172,7 +2646,9 @@
   {
     "icon_no": 3901,
     "name": "Medal of Obedience",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 10,
     "item_type": 39,
     "max_num": 9999,
@@ -2182,7 +2658,9 @@
   {
     "icon_no": 4101,
     "name": "Pri Prism",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 0,
     "item_type": 41,
     "max_num": 99999,
@@ -2192,7 +2670,9 @@
   {
     "icon_no": 4201,
     "name": "Prilixir",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 0,
     "item_type": 42,
     "max_num": 99999,
@@ -2202,7 +2682,9 @@
   {
     "icon_no": 4501,
     "name": "BTS Point",
-    "effect_value": [117],
+    "effect_value": [
+      117
+    ],
     "sell_price": 0,
     "item_type": 45,
     "max_num": 99999999,
@@ -2212,7 +2694,9 @@
   {
     "icon_no": 4501,
     "name": "BTS Point",
-    "effect_value": [126],
+    "effect_value": [
+      126
+    ],
     "sell_price": 0,
     "item_type": 45,
     "max_num": 99999999,
@@ -2222,7 +2706,9 @@
   {
     "icon_no": 4501,
     "name": "BTS Point",
-    "effect_value": [132],
+    "effect_value": [
+      132
+    ],
     "sell_price": 0,
     "item_type": 45,
     "max_num": 99999999,
@@ -2232,7 +2718,9 @@
   {
     "icon_no": 4501,
     "name": "BTS Point",
-    "effect_value": [142],
+    "effect_value": [
+      142
+    ],
     "sell_price": 0,
     "item_type": 45,
     "max_num": 99999999,
@@ -2242,7 +2730,9 @@
   {
     "icon_no": 4501,
     "name": "BTS Point",
-    "effect_value": [149],
+    "effect_value": [
+      149
+    ],
     "sell_price": 0,
     "item_type": 45,
     "max_num": 99999999,
@@ -2252,7 +2742,9 @@
   {
     "icon_no": 4501,
     "name": "BTS Point",
-    "effect_value": [154],
+    "effect_value": [
+      154
+    ],
     "sell_price": 0,
     "item_type": 45,
     "max_num": 99999999,
@@ -2262,7 +2754,9 @@
   {
     "icon_no": 4701,
     "name": "Memory Enhancement Piece",
-    "effect_value": [0],
+    "effect_value": [
+      0
+    ],
     "sell_price": 0,
     "item_type": 47,
     "max_num": 99999,
@@ -2272,7 +2766,9 @@
   {
     "icon_no": 4901,
     "name": "BTS Challenge Ticket",
-    "effect_value": [142],
+    "effect_value": [
+      142
+    ],
     "sell_price": 0,
     "item_type": 49,
     "max_num": 9999,
@@ -2282,7 +2778,9 @@
   {
     "icon_no": 4901,
     "name": "BTS Challenge Ticket",
-    "effect_value": [149],
+    "effect_value": [
+      149
+    ],
     "sell_price": 0,
     "item_type": 49,
     "max_num": 9999,
@@ -2292,7 +2790,9 @@
   {
     "icon_no": 4901,
     "name": "BTS Challenge Ticket",
-    "effect_value": [154],
+    "effect_value": [
+      154
+    ],
     "sell_price": 0,
     "item_type": 49,
     "max_num": 9999,
@@ -2302,7 +2802,10 @@
   {
     "icon_no": 12341,
     "name": "Subdue Ticket",
-    "effect_value": [0, 100],
+    "effect_value": [
+      0,
+      100
+    ],
     "sell_price": 0,
     "item_type": 4,
     "max_num": 9999,
@@ -2312,7 +2815,9 @@
   {
     "icon_no": 12342,
     "name": "Event Skip Ticket",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 0,
     "item_type": 24,
     "max_num": 9999,
@@ -2322,7 +2827,9 @@
   {
     "icon_no": 37001,
     "name": "[Imp 1] Ranch Ticket",
-    "effect_value": [30005],
+    "effect_value": [
+      30005
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2332,7 +2839,9 @@
   {
     "icon_no": 37002,
     "name": "[Imp 2] Ranch Ticket",
-    "effect_value": [30006],
+    "effect_value": [
+      30006
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2342,7 +2851,9 @@
   {
     "icon_no": 37003,
     "name": "[Imp 3] Ranch Ticket",
-    "effect_value": [30007],
+    "effect_value": [
+      30007
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2352,7 +2863,9 @@
   {
     "icon_no": 37004,
     "name": "[Imp 4] Ranch Ticket",
-    "effect_value": [30008],
+    "effect_value": [
+      30008
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2362,7 +2875,9 @@
   {
     "icon_no": 37005,
     "name": "[Orc 1] Ranch Ticket",
-    "effect_value": [30009],
+    "effect_value": [
+      30009
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2372,7 +2887,9 @@
   {
     "icon_no": 37006,
     "name": "[Orc 2] Ranch Ticket",
-    "effect_value": [30010],
+    "effect_value": [
+      30010
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2382,7 +2899,9 @@
   {
     "icon_no": 37007,
     "name": "[Orc 3] Ranch Ticket",
-    "effect_value": [30011],
+    "effect_value": [
+      30011
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2392,7 +2911,9 @@
   {
     "icon_no": 37008,
     "name": "[Orc 4] Ranch Ticket",
-    "effect_value": [30012],
+    "effect_value": [
+      30012
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2402,7 +2923,9 @@
   {
     "icon_no": 37009,
     "name": "[Rabbit 1] Ranch Ticket",
-    "effect_value": [30013],
+    "effect_value": [
+      30013
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2412,7 +2935,9 @@
   {
     "icon_no": 37010,
     "name": "[Rabbit 2] Ranch Ticket",
-    "effect_value": [30014],
+    "effect_value": [
+      30014
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2422,7 +2947,9 @@
   {
     "icon_no": 37011,
     "name": "[Rabbit 3] Ranch Ticket",
-    "effect_value": [30015],
+    "effect_value": [
+      30015
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2432,7 +2959,9 @@
   {
     "icon_no": 37012,
     "name": "[Rabbit 4] Ranch Ticket",
-    "effect_value": [30016],
+    "effect_value": [
+      30016
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2442,7 +2971,9 @@
   {
     "icon_no": 37013,
     "name": "[Fairy 1] Ranch Ticket",
-    "effect_value": [30017],
+    "effect_value": [
+      30017
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2452,7 +2983,9 @@
   {
     "icon_no": 37014,
     "name": "[Fairy 2] Ranch Ticket",
-    "effect_value": [30018],
+    "effect_value": [
+      30018
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2462,7 +2995,9 @@
   {
     "icon_no": 37015,
     "name": "[Fairy 3] Ranch Ticket",
-    "effect_value": [30019],
+    "effect_value": [
+      30019
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2472,7 +3007,9 @@
   {
     "icon_no": 37016,
     "name": "[Fairy 4] Ranch Ticket",
-    "effect_value": [30020],
+    "effect_value": [
+      30020
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2482,7 +3019,9 @@
   {
     "icon_no": 37017,
     "name": "[Sludge 1] Ranch Ticket",
-    "effect_value": [30021],
+    "effect_value": [
+      30021
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2492,7 +3031,9 @@
   {
     "icon_no": 37018,
     "name": "[Sludge 2] Ranch Ticket",
-    "effect_value": [30022],
+    "effect_value": [
+      30022
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2502,7 +3043,9 @@
   {
     "icon_no": 37019,
     "name": "[Sludge 3] Ranch Ticket",
-    "effect_value": [30023],
+    "effect_value": [
+      30023
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2512,7 +3055,9 @@
   {
     "icon_no": 37020,
     "name": "[Sludge 4] Ranch Ticket",
-    "effect_value": [30024],
+    "effect_value": [
+      30024
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2522,7 +3067,9 @@
   {
     "icon_no": 37021,
     "name": "[Slumber Cat 1] Ranch Ticket",
-    "effect_value": [30025],
+    "effect_value": [
+      30025
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2532,7 +3079,9 @@
   {
     "icon_no": 37022,
     "name": "[Slumber Cat 2] Ranch Ticket",
-    "effect_value": [30026],
+    "effect_value": [
+      30026
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2542,7 +3091,9 @@
   {
     "icon_no": 37023,
     "name": "[Slumber Cat 3] Ranch Ticket",
-    "effect_value": [30027],
+    "effect_value": [
+      30027
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2552,7 +3103,9 @@
   {
     "icon_no": 37024,
     "name": "[Slumber Cat 4] Ranch Ticket",
-    "effect_value": [30028],
+    "effect_value": [
+      30028
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2562,7 +3115,9 @@
   {
     "icon_no": 37025,
     "name": "[Shroom 1] Ranch Ticket",
-    "effect_value": [30037],
+    "effect_value": [
+      30037
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2572,7 +3127,9 @@
   {
     "icon_no": 37026,
     "name": "[Shroom 2] Ranch Ticket",
-    "effect_value": [30038],
+    "effect_value": [
+      30038
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2582,7 +3139,9 @@
   {
     "icon_no": 37027,
     "name": "[Shroom 3] Ranch Ticket",
-    "effect_value": [30039],
+    "effect_value": [
+      30039
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2592,7 +3151,9 @@
   {
     "icon_no": 37028,
     "name": "[Shroom 4] Ranch Ticket",
-    "effect_value": [30040],
+    "effect_value": [
+      30040
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2602,7 +3163,9 @@
   {
     "icon_no": 37029,
     "name": "[Undead 1] Ranch Ticket",
-    "effect_value": [30033],
+    "effect_value": [
+      30033
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2612,7 +3175,9 @@
   {
     "icon_no": 37030,
     "name": "[Undead 2] Ranch Ticket",
-    "effect_value": [30034],
+    "effect_value": [
+      30034
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2622,7 +3187,9 @@
   {
     "icon_no": 37031,
     "name": "[Undead 3] Ranch Ticket",
-    "effect_value": [30035],
+    "effect_value": [
+      30035
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2632,7 +3199,9 @@
   {
     "icon_no": 37032,
     "name": "[Undead 4] Ranch Ticket",
-    "effect_value": [30036],
+    "effect_value": [
+      30036
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2642,7 +3211,9 @@
   {
     "icon_no": 37033,
     "name": "[Living Armor 1] Ranch Ticket",
-    "effect_value": [30125],
+    "effect_value": [
+      30125
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2652,7 +3223,9 @@
   {
     "icon_no": 37034,
     "name": "[Living Armor 2] Ranch Ticket",
-    "effect_value": [30126],
+    "effect_value": [
+      30126
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2662,7 +3235,9 @@
   {
     "icon_no": 37035,
     "name": "[Living Armor 3] Ranch Ticket",
-    "effect_value": [30127],
+    "effect_value": [
+      30127
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2672,7 +3247,9 @@
   {
     "icon_no": 37036,
     "name": "[Living Armor 4] Ranch Ticket",
-    "effect_value": [30128],
+    "effect_value": [
+      30128
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2682,7 +3259,9 @@
   {
     "icon_no": 37037,
     "name": "[Gargoyle 1] Ranch Ticket",
-    "effect_value": [30089],
+    "effect_value": [
+      30089
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2692,7 +3271,9 @@
   {
     "icon_no": 37038,
     "name": "[Gargoyle 2] Ranch Ticket",
-    "effect_value": [30090],
+    "effect_value": [
+      30090
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2702,7 +3283,9 @@
   {
     "icon_no": 37039,
     "name": "[Gargoyle 3] Ranch Ticket",
-    "effect_value": [30091],
+    "effect_value": [
+      30091
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2712,7 +3295,9 @@
   {
     "icon_no": 37040,
     "name": "[Gargoyle 4] Ranch Ticket",
-    "effect_value": [30092],
+    "effect_value": [
+      30092
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2722,7 +3307,9 @@
   {
     "icon_no": 37041,
     "name": "[Spirit 1] Ranch Ticket",
-    "effect_value": [30085],
+    "effect_value": [
+      30085
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2732,7 +3319,9 @@
   {
     "icon_no": 37042,
     "name": "[Spirit 2] Ranch Ticket",
-    "effect_value": [30086],
+    "effect_value": [
+      30086
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2742,7 +3331,9 @@
   {
     "icon_no": 37043,
     "name": "[Spirit 3] Ranch Ticket",
-    "effect_value": [30087],
+    "effect_value": [
+      30087
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2752,7 +3343,9 @@
   {
     "icon_no": 37044,
     "name": "[Spirit 4] Ranch Ticket",
-    "effect_value": [30088],
+    "effect_value": [
+      30088
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2762,7 +3355,9 @@
   {
     "icon_no": 37045,
     "name": "[Felynn 1] Ranch Ticket",
-    "effect_value": [30045],
+    "effect_value": [
+      30045
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2772,7 +3367,9 @@
   {
     "icon_no": 37046,
     "name": "[Felynn 2] Ranch Ticket",
-    "effect_value": [30046],
+    "effect_value": [
+      30046
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2782,7 +3379,9 @@
   {
     "icon_no": 37047,
     "name": "[Felynn 3] Ranch Ticket",
-    "effect_value": [30047],
+    "effect_value": [
+      30047
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2792,7 +3391,9 @@
   {
     "icon_no": 37048,
     "name": "[Felynn 4] Ranch Ticket",
-    "effect_value": [30048],
+    "effect_value": [
+      30048
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2802,7 +3403,9 @@
   {
     "icon_no": 37049,
     "name": "[Winged Warrior 1] Ranch Ticket",
-    "effect_value": [30029],
+    "effect_value": [
+      30029
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2812,7 +3415,9 @@
   {
     "icon_no": 37050,
     "name": "[Winged Warrior 2] Ranch Ticket",
-    "effect_value": [30030],
+    "effect_value": [
+      30030
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2822,7 +3427,9 @@
   {
     "icon_no": 37051,
     "name": "[Winged Warrior 3] Ranch Ticket",
-    "effect_value": [30031],
+    "effect_value": [
+      30031
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2832,7 +3439,9 @@
   {
     "icon_no": 37052,
     "name": "[Winged Warrior 4] Ranch Ticket",
-    "effect_value": [30032],
+    "effect_value": [
+      30032
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2842,7 +3451,9 @@
   {
     "icon_no": 37053,
     "name": "[Flora Beast 1] Ranch Ticket",
-    "effect_value": [30041],
+    "effect_value": [
+      30041
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2852,7 +3463,9 @@
   {
     "icon_no": 37054,
     "name": "[Flora Beast 2] Ranch Ticket",
-    "effect_value": [30042],
+    "effect_value": [
+      30042
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2862,7 +3475,9 @@
   {
     "icon_no": 37055,
     "name": "[Flora Beast 3] Ranch Ticket",
-    "effect_value": [30043],
+    "effect_value": [
+      30043
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2872,7 +3487,9 @@
   {
     "icon_no": 37056,
     "name": "[Flora Beast 4] Ranch Ticket",
-    "effect_value": [30044],
+    "effect_value": [
+      30044
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2882,7 +3499,9 @@
   {
     "icon_no": 37057,
     "name": "[Nether Noble 1] Ranch Ticket",
-    "effect_value": [30061],
+    "effect_value": [
+      30061
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2892,7 +3511,9 @@
   {
     "icon_no": 37058,
     "name": "[Nether Noble 2] Ranch Ticket",
-    "effect_value": [30062],
+    "effect_value": [
+      30062
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2902,7 +3523,9 @@
   {
     "icon_no": 37059,
     "name": "[Nether Noble 3] Ranch Ticket",
-    "effect_value": [30063],
+    "effect_value": [
+      30063
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2912,7 +3535,9 @@
   {
     "icon_no": 37060,
     "name": "[Nether Noble 4] Ranch Ticket",
-    "effect_value": [30064],
+    "effect_value": [
+      30064
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2922,7 +3547,9 @@
   {
     "icon_no": 37061,
     "name": "[Death 1] Ranch Ticket",
-    "effect_value": [30097],
+    "effect_value": [
+      30097
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2932,7 +3559,9 @@
   {
     "icon_no": 37062,
     "name": "[Death 2] Ranch Ticket",
-    "effect_value": [30098],
+    "effect_value": [
+      30098
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2942,7 +3571,9 @@
   {
     "icon_no": 37063,
     "name": "[Death 3] Ranch Ticket",
-    "effect_value": [30099],
+    "effect_value": [
+      30099
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2952,7 +3583,9 @@
   {
     "icon_no": 37064,
     "name": "[Death 4] Ranch Ticket",
-    "effect_value": [30100],
+    "effect_value": [
+      30100
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2962,7 +3595,9 @@
   {
     "icon_no": 37065,
     "name": "[Chimera 1] Ranch Ticket",
-    "effect_value": [30057],
+    "effect_value": [
+      30057
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2972,7 +3607,9 @@
   {
     "icon_no": 37066,
     "name": "[Chimera 2] Ranch Ticket",
-    "effect_value": [30058],
+    "effect_value": [
+      30058
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2982,7 +3619,9 @@
   {
     "icon_no": 37067,
     "name": "[Chimera 3] Ranch Ticket",
-    "effect_value": [30059],
+    "effect_value": [
+      30059
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -2992,7 +3631,9 @@
   {
     "icon_no": 37068,
     "name": "[Chimera 4] Ranch Ticket",
-    "effect_value": [30060],
+    "effect_value": [
+      30060
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -3002,7 +3643,9 @@
   {
     "icon_no": 37069,
     "name": "[Bear 1] Ranch Ticket",
-    "effect_value": [30065],
+    "effect_value": [
+      30065
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -3012,7 +3655,9 @@
   {
     "icon_no": 37070,
     "name": "[Bear 2] Ranch Ticket",
-    "effect_value": [30066],
+    "effect_value": [
+      30066
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -3022,7 +3667,9 @@
   {
     "icon_no": 37071,
     "name": "[Bear 3] Ranch Ticket",
-    "effect_value": [30067],
+    "effect_value": [
+      30067
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -3032,7 +3679,9 @@
   {
     "icon_no": 37072,
     "name": "[Bear 4] Ranch Ticket",
-    "effect_value": [30068],
+    "effect_value": [
+      30068
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -3042,7 +3691,9 @@
   {
     "icon_no": 37073,
     "name": "[Horseman 1] Ranch Ticket",
-    "effect_value": [30081],
+    "effect_value": [
+      30081
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -3052,7 +3703,9 @@
   {
     "icon_no": 37074,
     "name": "[Horseman 2] Ranch Ticket",
-    "effect_value": [30082],
+    "effect_value": [
+      30082
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -3062,7 +3715,9 @@
   {
     "icon_no": 37075,
     "name": "[Horseman 3] Ranch Ticket",
-    "effect_value": [30083],
+    "effect_value": [
+      30083
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -3072,7 +3727,9 @@
   {
     "icon_no": 37076,
     "name": "[Horseman 4] Ranch Ticket",
-    "effect_value": [30084],
+    "effect_value": [
+      30084
+    ],
     "sell_price": 1200,
     "item_type": 37,
     "max_num": 9999,
@@ -3082,7 +3739,9 @@
   {
     "icon_no": 380001,
     "name": "Super HP Boost Recipe 1",
-    "effect_value": [1],
+    "effect_value": [
+      1
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3092,7 +3751,9 @@
   {
     "icon_no": 380002,
     "name": "Super HP Boost Recipe 2",
-    "effect_value": [2],
+    "effect_value": [
+      2
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3102,7 +3763,9 @@
   {
     "icon_no": 380003,
     "name": "Super HP Boost Recipe 3",
-    "effect_value": [3],
+    "effect_value": [
+      3
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3112,7 +3775,9 @@
   {
     "icon_no": 380004,
     "name": "Super ATK Boost Recipe 1",
-    "effect_value": [4],
+    "effect_value": [
+      4
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3122,7 +3787,9 @@
   {
     "icon_no": 380005,
     "name": "Super ATK Boost Recipe 2",
-    "effect_value": [5],
+    "effect_value": [
+      5
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3132,7 +3799,9 @@
   {
     "icon_no": 380006,
     "name": "Super ATK Boost Recipe 3",
-    "effect_value": [6],
+    "effect_value": [
+      6
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3142,7 +3811,9 @@
   {
     "icon_no": 380007,
     "name": "Super DEF Boost Recipe 1",
-    "effect_value": [7],
+    "effect_value": [
+      7
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3152,7 +3823,9 @@
   {
     "icon_no": 380008,
     "name": "Super DEF Boost Recipe 2",
-    "effect_value": [8],
+    "effect_value": [
+      8
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3162,7 +3835,9 @@
   {
     "icon_no": 380009,
     "name": "Super DEF Boost Recipe 3",
-    "effect_value": [9],
+    "effect_value": [
+      9
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3172,7 +3847,9 @@
   {
     "icon_no": 380010,
     "name": "Super INT Boost Recipe 1",
-    "effect_value": [10],
+    "effect_value": [
+      10
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3182,7 +3859,9 @@
   {
     "icon_no": 380011,
     "name": "Super INT Boost Recipe 2",
-    "effect_value": [11],
+    "effect_value": [
+      11
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3192,7 +3871,9 @@
   {
     "icon_no": 380012,
     "name": "Super INT Boost Recipe 3",
-    "effect_value": [12],
+    "effect_value": [
+      12
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3202,7 +3883,9 @@
   {
     "icon_no": 380013,
     "name": "Super RES Boost Recipe 1",
-    "effect_value": [13],
+    "effect_value": [
+      13
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3212,7 +3895,9 @@
   {
     "icon_no": 380014,
     "name": "Super RES Boost Recipe 2",
-    "effect_value": [14],
+    "effect_value": [
+      14
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3222,7 +3907,9 @@
   {
     "icon_no": 380015,
     "name": "Super RES Boost Recipe 3",
-    "effect_value": [15],
+    "effect_value": [
+      15
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3232,7 +3919,9 @@
   {
     "icon_no": 380016,
     "name": "Super WM Enhancer Recipe 1",
-    "effect_value": [16],
+    "effect_value": [
+      16
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3242,7 +3931,9 @@
   {
     "icon_no": 380017,
     "name": "Super WM Enhancer Recipe 2",
-    "effect_value": [17],
+    "effect_value": [
+      17
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3252,7 +3943,9 @@
   {
     "icon_no": 380018,
     "name": "Super WM Enhancer Recipe 3",
-    "effect_value": [18],
+    "effect_value": [
+      18
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3262,7 +3955,9 @@
   {
     "icon_no": 380019,
     "name": "Super Skill Enhancer Recipe 1",
-    "effect_value": [19],
+    "effect_value": [
+      19
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3272,7 +3967,9 @@
   {
     "icon_no": 380020,
     "name": "Super Skill Enhancer Recipe 2",
-    "effect_value": [20],
+    "effect_value": [
+      20
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3282,7 +3979,9 @@
   {
     "icon_no": 380021,
     "name": "Super Skill Enhancer Recipe 3",
-    "effect_value": [21],
+    "effect_value": [
+      21
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3292,7 +3991,9 @@
   {
     "icon_no": 380200,
     "name": "ATK Amplifier [White] 1",
-    "effect_value": [22],
+    "effect_value": [
+      22
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3302,7 +4003,9 @@
   {
     "icon_no": 380201,
     "name": "ATK Amplifier [White] 2",
-    "effect_value": [23],
+    "effect_value": [
+      23
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3312,7 +4015,9 @@
   {
     "icon_no": 380202,
     "name": "ATK Amplifier [White] 3",
-    "effect_value": [24],
+    "effect_value": [
+      24
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3322,7 +4027,9 @@
   {
     "icon_no": 380203,
     "name": "ATK Amplifier [Silver] 1",
-    "effect_value": [25],
+    "effect_value": [
+      25
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3332,7 +4039,9 @@
   {
     "icon_no": 380204,
     "name": "ATK Amplifier [Silver] 2",
-    "effect_value": [26],
+    "effect_value": [
+      26
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3342,7 +4051,9 @@
   {
     "icon_no": 380205,
     "name": "ATK Amplifier [Silver] 3",
-    "effect_value": [27],
+    "effect_value": [
+      27
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3352,7 +4063,9 @@
   {
     "icon_no": 380206,
     "name": "ATK Amplifier [Gold] 1",
-    "effect_value": [28],
+    "effect_value": [
+      28
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3362,7 +4075,9 @@
   {
     "icon_no": 380207,
     "name": "ATK Amplifier [Gold] 2",
-    "effect_value": [29],
+    "effect_value": [
+      29
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3372,7 +4087,9 @@
   {
     "icon_no": 380208,
     "name": "ATK Amplifier [Gold] 3",
-    "effect_value": [30],
+    "effect_value": [
+      30
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3382,7 +4099,9 @@
   {
     "icon_no": 380209,
     "name": "INT Amplifier [White] 1",
-    "effect_value": [31],
+    "effect_value": [
+      31
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3392,7 +4111,9 @@
   {
     "icon_no": 380210,
     "name": "INT Amplifier [White] 2",
-    "effect_value": [32],
+    "effect_value": [
+      32
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3402,7 +4123,9 @@
   {
     "icon_no": 380211,
     "name": "INT Amplifier [White] 3",
-    "effect_value": [33],
+    "effect_value": [
+      33
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3412,7 +4135,9 @@
   {
     "icon_no": 380212,
     "name": "INT Amplifier [Silver] 1",
-    "effect_value": [34],
+    "effect_value": [
+      34
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3422,7 +4147,9 @@
   {
     "icon_no": 380213,
     "name": "INT Amplifier [Silver] 2",
-    "effect_value": [35],
+    "effect_value": [
+      35
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3432,7 +4159,9 @@
   {
     "icon_no": 380214,
     "name": "INT Amplifier [Silver] 3",
-    "effect_value": [36],
+    "effect_value": [
+      36
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3442,7 +4171,9 @@
   {
     "icon_no": 380215,
     "name": "INT Amplifier [Gold] 1",
-    "effect_value": [37],
+    "effect_value": [
+      37
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3452,7 +4183,9 @@
   {
     "icon_no": 380216,
     "name": "INT Amplifier [Gold] 2",
-    "effect_value": [38],
+    "effect_value": [
+      38
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3462,7 +4195,9 @@
   {
     "icon_no": 380217,
     "name": "INT Amplifier [Gold] 3",
-    "effect_value": [39],
+    "effect_value": [
+      39
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3472,7 +4207,9 @@
   {
     "icon_no": 380218,
     "name": "DEF Amplifier [White] 1",
-    "effect_value": [40],
+    "effect_value": [
+      40
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3482,7 +4219,9 @@
   {
     "icon_no": 380219,
     "name": "DEF Amplifier [White] 2",
-    "effect_value": [41],
+    "effect_value": [
+      41
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3492,7 +4231,9 @@
   {
     "icon_no": 380220,
     "name": "DEF Amplifier [White] 3",
-    "effect_value": [42],
+    "effect_value": [
+      42
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3502,7 +4243,9 @@
   {
     "icon_no": 380221,
     "name": "DEF Amplifier [Silver] 1",
-    "effect_value": [43],
+    "effect_value": [
+      43
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3512,7 +4255,9 @@
   {
     "icon_no": 380222,
     "name": "DEF Amplifier [Silver] 2",
-    "effect_value": [44],
+    "effect_value": [
+      44
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3522,7 +4267,9 @@
   {
     "icon_no": 380223,
     "name": "DEF Amplifier [Silver] 3",
-    "effect_value": [45],
+    "effect_value": [
+      45
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3532,7 +4279,9 @@
   {
     "icon_no": 380224,
     "name": "DEF Amplifier [Gold] 1",
-    "effect_value": [46],
+    "effect_value": [
+      46
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3542,7 +4291,9 @@
   {
     "icon_no": 380225,
     "name": "DEF Amplifier [Gold] 2",
-    "effect_value": [47],
+    "effect_value": [
+      47
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3552,7 +4303,9 @@
   {
     "icon_no": 380226,
     "name": "DEF Amplifier [Gold] 3",
-    "effect_value": [48],
+    "effect_value": [
+      48
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3562,7 +4315,9 @@
   {
     "icon_no": 380227,
     "name": "RES Amplifier [White] 1",
-    "effect_value": [49],
+    "effect_value": [
+      49
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3572,7 +4327,9 @@
   {
     "icon_no": 380228,
     "name": "RES Amplifier [White] 2",
-    "effect_value": [50],
+    "effect_value": [
+      50
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3582,7 +4339,9 @@
   {
     "icon_no": 380229,
     "name": "RES Amplifier [White] 3",
-    "effect_value": [51],
+    "effect_value": [
+      51
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3592,7 +4351,9 @@
   {
     "icon_no": 380230,
     "name": "RES Amplifier [Silver] 1",
-    "effect_value": [52],
+    "effect_value": [
+      52
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3602,7 +4363,9 @@
   {
     "icon_no": 380231,
     "name": "RES Amplifier [Silver] 2",
-    "effect_value": [53],
+    "effect_value": [
+      53
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3612,7 +4375,9 @@
   {
     "icon_no": 380232,
     "name": "RES Amplifier [Silver] 3",
-    "effect_value": [54],
+    "effect_value": [
+      54
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3622,7 +4387,9 @@
   {
     "icon_no": 380233,
     "name": "RES Amplifier [Gold] 1",
-    "effect_value": [55],
+    "effect_value": [
+      55
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3632,7 +4399,9 @@
   {
     "icon_no": 380234,
     "name": "RES Amplifier [Gold] 2",
-    "effect_value": [56],
+    "effect_value": [
+      56
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3642,7 +4411,9 @@
   {
     "icon_no": 380235,
     "name": "RES Amplifier [Gold] 3",
-    "effect_value": [57],
+    "effect_value": [
+      57
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3652,7 +4423,9 @@
   {
     "icon_no": 380236,
     "name": "Tutor [White] 1",
-    "effect_value": [58],
+    "effect_value": [
+      58
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3662,7 +4435,9 @@
   {
     "icon_no": 380237,
     "name": "Tutor [White] 2",
-    "effect_value": [59],
+    "effect_value": [
+      59
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3672,7 +4447,9 @@
   {
     "icon_no": 380238,
     "name": "Tutor [White] 3",
-    "effect_value": [60],
+    "effect_value": [
+      60
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3682,7 +4459,9 @@
   {
     "icon_no": 380239,
     "name": "Tutor [Silver] 1",
-    "effect_value": [61],
+    "effect_value": [
+      61
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3692,7 +4471,9 @@
   {
     "icon_no": 380240,
     "name": "Tutor [Silver] 2",
-    "effect_value": [62],
+    "effect_value": [
+      62
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3702,7 +4483,9 @@
   {
     "icon_no": 380241,
     "name": "Tutor [Silver] 3",
-    "effect_value": [63],
+    "effect_value": [
+      63
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3712,7 +4495,9 @@
   {
     "icon_no": 380242,
     "name": "Tutor [Gold] 1",
-    "effect_value": [64],
+    "effect_value": [
+      64
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3722,7 +4507,9 @@
   {
     "icon_no": 380243,
     "name": "Tutor [Gold] 2",
-    "effect_value": [65],
+    "effect_value": [
+      65
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3732,7 +4519,9 @@
   {
     "icon_no": 380244,
     "name": "Tutor [Gold] 3",
-    "effect_value": [66],
+    "effect_value": [
+      66
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3742,7 +4531,9 @@
   {
     "icon_no": 380245,
     "name": "Almighty [Gold] 1",
-    "effect_value": [67],
+    "effect_value": [
+      67
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3752,7 +4543,9 @@
   {
     "icon_no": 380246,
     "name": "Almighty [Gold] 2",
-    "effect_value": [68],
+    "effect_value": [
+      68
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3762,7 +4555,9 @@
   {
     "icon_no": 380247,
     "name": "Almighty [Gold] 3",
-    "effect_value": [69],
+    "effect_value": [
+      69
+    ],
     "sell_price": 1000,
     "item_type": 38,
     "max_num": 9999,
@@ -3772,7 +4567,10 @@
   {
     "icon_no": 2302,
     "name": "Dedicated Mana Potion",
-    "effect_value": [500, 127],
+    "effect_value": [
+      500,
+      127
+    ],
     "sell_price": 0,
     "item_type": 23,
     "max_num": 9999,
@@ -3782,7 +4580,10 @@
   {
     "icon_no": 2302,
     "name": "Dedicated Mana Potion",
-    "effect_value": [500, 129],
+    "effect_value": [
+      500,
+      129
+    ],
     "sell_price": 0,
     "item_type": 23,
     "max_num": 9999,
@@ -3792,7 +4593,10 @@
   {
     "icon_no": 2302,
     "name": "Dedicated Mana Potion",
-    "effect_value": [500, 132],
+    "effect_value": [
+      500,
+      132
+    ],
     "sell_price": 0,
     "item_type": 23,
     "max_num": 9999,
@@ -3802,7 +4606,10 @@
   {
     "icon_no": 2302,
     "name": "Dedicated Mana Potion",
-    "effect_value": [500, 133],
+    "effect_value": [
+      500,
+      133
+    ],
     "sell_price": 0,
     "item_type": 23,
     "max_num": 9999,
@@ -3812,7 +4619,10 @@
   {
     "icon_no": 2302,
     "name": "Dedicated Mana Potion",
-    "effect_value": [500, 134],
+    "effect_value": [
+      500,
+      134
+    ],
     "sell_price": 0,
     "item_type": 23,
     "max_num": 9999,
@@ -3822,7 +4632,10 @@
   {
     "icon_no": 2302,
     "name": "Dedicated Mana Potion",
-    "effect_value": [500, 136],
+    "effect_value": [
+      500,
+      136
+    ],
     "sell_price": 0,
     "item_type": 23,
     "max_num": 9999,
@@ -3832,7 +4645,10 @@
   {
     "icon_no": 2302,
     "name": "Dedicated Mana Potion",
-    "effect_value": [500, 137],
+    "effect_value": [
+      500,
+      137
+    ],
     "sell_price": 0,
     "item_type": 23,
     "max_num": 9999,
@@ -3842,7 +4658,10 @@
   {
     "icon_no": 2302,
     "name": "Dedicated Mana Potion",
-    "effect_value": [500, 139],
+    "effect_value": [
+      500,
+      139
+    ],
     "sell_price": 0,
     "item_type": 23,
     "max_num": 9999,
@@ -3852,7 +4671,10 @@
   {
     "icon_no": 2302,
     "name": "Dedicated Mana Potion",
-    "effect_value": [500, 20040],
+    "effect_value": [
+      500,
+      20040
+    ],
     "sell_price": 0,
     "item_type": 23,
     "max_num": 9999,
@@ -3862,7 +4684,9 @@
   {
     "icon_no": 2701,
     "name": "Laharl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3872,7 +4696,9 @@
   {
     "icon_no": 2701,
     "name": "Killia Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3882,7 +4708,9 @@
   {
     "icon_no": 2701,
     "name": "Valvatorez Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3892,7 +4720,9 @@
   {
     "icon_no": 2701,
     "name": "Adell Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3902,7 +4732,9 @@
   {
     "icon_no": 2701,
     "name": "Mao Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3912,7 +4744,9 @@
   {
     "icon_no": 2701,
     "name": "Etna Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3922,7 +4756,9 @@
   {
     "icon_no": 2701,
     "name": "Fallen Angel Flonne Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3932,7 +4768,9 @@
   {
     "icon_no": 2701,
     "name": "Seraphina Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3942,7 +4780,9 @@
   {
     "icon_no": 2701,
     "name": "Fuka Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3952,7 +4792,9 @@
   {
     "icon_no": 2701,
     "name": "Rozalin Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3962,7 +4804,9 @@
   {
     "icon_no": 2701,
     "name": "Axel Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3972,7 +4816,9 @@
   {
     "icon_no": 2701,
     "name": "Fenrich Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3982,7 +4828,9 @@
   {
     "icon_no": 2701,
     "name": "Majorita Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -3992,7 +4840,9 @@
   {
     "icon_no": 2701,
     "name": "Emizel Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4002,7 +4852,9 @@
   {
     "icon_no": 2701,
     "name": "Barbara Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4012,7 +4864,9 @@
   {
     "icon_no": 2701,
     "name": "Girl Laharl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4022,7 +4876,9 @@
   {
     "icon_no": 2701,
     "name": "Christo Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4032,7 +4888,9 @@
   {
     "icon_no": 2701,
     "name": "Zeroken Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4042,7 +4900,9 @@
   {
     "icon_no": 2701,
     "name": "Red Magnus Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4052,7 +4912,9 @@
   {
     "icon_no": 2701,
     "name": "Krichevskoy Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4062,7 +4924,9 @@
   {
     "icon_no": 2701,
     "name": "Sicily Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4072,7 +4936,9 @@
   {
     "icon_no": 2701,
     "name": "Almaz Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4082,7 +4948,9 @@
   {
     "icon_no": 2701,
     "name": "Salvatore Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4092,7 +4960,9 @@
   {
     "icon_no": 2701,
     "name": "Sapphire Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4102,7 +4972,9 @@
   {
     "icon_no": 2701,
     "name": "Bloodis Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4112,7 +4984,9 @@
   {
     "icon_no": 2701,
     "name": "Xenolith Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4122,7 +4996,9 @@
   {
     "icon_no": 2701,
     "name": "Pure Flonne Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4132,7 +5008,9 @@
   {
     "icon_no": 2701,
     "name": "Archangel Flonne Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4142,7 +5020,9 @@
   {
     "icon_no": 2701,
     "name": "Void Dark Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4152,7 +5032,9 @@
   {
     "icon_no": 2701,
     "name": "Artina Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4162,7 +5044,9 @@
   {
     "icon_no": 2701,
     "name": "Sister Artina Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4172,7 +5056,9 @@
   {
     "icon_no": 2701,
     "name": "Tyrant Valvatorez Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4182,7 +5068,9 @@
   {
     "icon_no": 2701,
     "name": "Awakened Killia Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4192,7 +5080,9 @@
   {
     "icon_no": 2701,
     "name": "Tyrant Overlord Killidia Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4202,7 +5092,9 @@
   {
     "icon_no": 2701,
     "name": "Majin Etna Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4212,7 +5104,9 @@
   {
     "icon_no": 2701,
     "name": "Heroine Asagi Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4222,7 +5116,9 @@
   {
     "icon_no": 2701,
     "name": "Gordon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4232,7 +5128,9 @@
   {
     "icon_no": 2701,
     "name": "Jennifer Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4242,7 +5140,9 @@
   {
     "icon_no": 2701,
     "name": "Mr. Champloo Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4252,7 +5152,9 @@
   {
     "icon_no": 2701,
     "name": "Yukimaru Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4262,7 +5164,9 @@
   {
     "icon_no": 2701,
     "name": "Fubuki Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4272,7 +5176,9 @@
   {
     "icon_no": 2701,
     "name": "Awakened Rozalin Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4282,7 +5188,9 @@
   {
     "icon_no": 2701,
     "name": "Dark Santa Laharl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4292,7 +5200,9 @@
   {
     "icon_no": 2701,
     "name": "Noel Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4302,7 +5212,9 @@
   {
     "icon_no": 2701,
     "name": "Attired Rozalin Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4312,7 +5224,9 @@
   {
     "icon_no": 2701,
     "name": "Pure Sicily Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4322,7 +5236,9 @@
   {
     "icon_no": 2701,
     "name": "Dark Artina Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4332,7 +5248,9 @@
   {
     "icon_no": 2701,
     "name": "Love Oracle Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4342,7 +5260,9 @@
   {
     "icon_no": 2701,
     "name": "Bunny Seraphina Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4352,7 +5272,9 @@
   {
     "icon_no": 2701,
     "name": "Easter Mao Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4362,7 +5284,9 @@
   {
     "icon_no": 2701,
     "name": "Gym Suits Fuka Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4372,7 +5296,9 @@
   {
     "icon_no": 2701,
     "name": "Iris Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4382,7 +5308,9 @@
   {
     "icon_no": 2701,
     "name": "Virunga Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4392,7 +5320,9 @@
   {
     "icon_no": 2701,
     "name": "Torachiyo Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4402,7 +5332,9 @@
   {
     "icon_no": 2701,
     "name": "Diez Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4412,7 +5344,9 @@
   {
     "icon_no": 2701,
     "name": "Lucy Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4422,7 +5356,9 @@
   {
     "icon_no": 2701,
     "name": "Swimsuit Girl Laharl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4432,7 +5368,9 @@
   {
     "icon_no": 2701,
     "name": "Swimsuit Etna Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4442,7 +5380,9 @@
   {
     "icon_no": 2701,
     "name": "Swimsuit Flonne Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4452,7 +5392,9 @@
   {
     "icon_no": 2701,
     "name": "Meaver Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4462,7 +5404,9 @@
   {
     "icon_no": 2701,
     "name": "Marlene Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4472,7 +5416,9 @@
   {
     "icon_no": 2701,
     "name": "Fuka XENO Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4482,7 +5428,9 @@
   {
     "icon_no": 2701,
     "name": "Raspberyl XENO Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4492,7 +5440,9 @@
   {
     "icon_no": 2701,
     "name": "Yukata Valvatorez Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4502,7 +5452,9 @@
   {
     "icon_no": 2701,
     "name": "Yukata Yukimaru Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4512,7 +5464,9 @@
   {
     "icon_no": 2701,
     "name": "Hibana Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4522,7 +5476,9 @@
   {
     "icon_no": 2701,
     "name": "Meliodas Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4532,7 +5488,9 @@
   {
     "icon_no": 2701,
     "name": "Elizabeth Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4542,7 +5500,9 @@
   {
     "icon_no": 2701,
     "name": "Ban Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4552,7 +5512,9 @@
   {
     "icon_no": 2701,
     "name": "Diane Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4562,7 +5524,9 @@
   {
     "icon_no": 2701,
     "name": "Gowther Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4572,7 +5536,9 @@
   {
     "icon_no": 2701,
     "name": "Cutie Demon Elizabeth Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4582,7 +5548,9 @@
   {
     "icon_no": 2701,
     "name": "Liones Princess Etna Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4592,7 +5560,9 @@
   {
     "icon_no": 2701,
     "name": "Merlin Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4602,7 +5572,9 @@
   {
     "icon_no": 2701,
     "name": "King Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4612,7 +5584,9 @@
   {
     "icon_no": 2701,
     "name": "Cute Flonne Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4622,7 +5596,9 @@
   {
     "icon_no": 2701,
     "name": "Cute Chacha Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4632,7 +5608,9 @@
   {
     "icon_no": 2701,
     "name": "Cute Mei Ling Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4642,7 +5620,9 @@
   {
     "icon_no": 2701,
     "name": "Mao XENO Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4652,7 +5632,9 @@
   {
     "icon_no": 2701,
     "name": "Halloween Majorita Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4662,7 +5644,9 @@
   {
     "icon_no": 2701,
     "name": "Halloween Artina Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4672,7 +5656,9 @@
   {
     "icon_no": 2701,
     "name": "Halloween Laharl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4682,7 +5668,9 @@
   {
     "icon_no": 2701,
     "name": "Zed Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4692,7 +5680,9 @@
   {
     "icon_no": 2701,
     "name": "Majolene Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4702,7 +5692,9 @@
   {
     "icon_no": 2701,
     "name": "Attired Killia Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4712,7 +5704,9 @@
   {
     "icon_no": 2701,
     "name": "Attired Seraphina Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4722,7 +5716,9 @@
   {
     "icon_no": 2701,
     "name": "Thunderlord Laharl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4732,7 +5728,9 @@
   {
     "icon_no": 2701,
     "name": "Sicily XENO Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4742,7 +5740,9 @@
   {
     "icon_no": 2701,
     "name": "Santa Adell Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4752,7 +5752,9 @@
   {
     "icon_no": 2701,
     "name": "Santa Rozalin Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4762,7 +5764,9 @@
   {
     "icon_no": 2701,
     "name": "Attired Girl Laharl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4772,7 +5776,9 @@
   {
     "icon_no": 2701,
     "name": "Maiden Sicily Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4782,7 +5788,9 @@
   {
     "icon_no": 2701,
     "name": "Tyrant Overlord Laharl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4792,7 +5800,9 @@
   {
     "icon_no": 2701,
     "name": "Melodia Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4802,7 +5812,9 @@
   {
     "icon_no": 2701,
     "name": "Ivar Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4812,7 +5824,9 @@
   {
     "icon_no": 2701,
     "name": "Emilia Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4822,7 +5836,9 @@
   {
     "icon_no": 2701,
     "name": "Rem Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4832,7 +5848,9 @@
   {
     "icon_no": 2701,
     "name": "Ram Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4842,7 +5860,9 @@
   {
     "icon_no": 2701,
     "name": "Sweet Omega Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4852,7 +5872,9 @@
   {
     "icon_no": 2701,
     "name": "Prier Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4862,7 +5884,9 @@
   {
     "icon_no": 2701,
     "name": "Croix Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4872,7 +5896,9 @@
   {
     "icon_no": 2701,
     "name": "Alouette Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4882,7 +5908,9 @@
   {
     "icon_no": 2701,
     "name": "Eclair Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4892,7 +5920,9 @@
   {
     "icon_no": 2701,
     "name": "Bieko Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4902,7 +5932,9 @@
   {
     "icon_no": 2701,
     "name": "Piyori Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4912,7 +5944,9 @@
   {
     "icon_no": 2701,
     "name": "Misedor Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4922,7 +5956,9 @@
   {
     "icon_no": 2701,
     "name": "Wicked Mao Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4932,7 +5968,9 @@
   {
     "icon_no": 2701,
     "name": "Emizel XENO Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4942,7 +5980,9 @@
   {
     "icon_no": 2701,
     "name": "Frostlord Rozalin Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4952,7 +5992,9 @@
   {
     "icon_no": 2701,
     "name": "Flamelord Majorita Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4962,7 +6004,9 @@
   {
     "icon_no": 2701,
     "name": "Merome Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4972,7 +6016,9 @@
   {
     "icon_no": 2701,
     "name": "Mikasa Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4982,7 +6028,9 @@
   {
     "icon_no": 2701,
     "name": "Levi Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -4992,7 +6040,9 @@
   {
     "icon_no": 2701,
     "name": "Rampaging Adell Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5002,7 +6052,9 @@
   {
     "icon_no": 2701,
     "name": "Swimsuit Fuka Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5012,7 +6064,9 @@
   {
     "icon_no": 2701,
     "name": "Swimsuit Lucy Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5022,7 +6076,9 @@
   {
     "icon_no": 2701,
     "name": "Amane Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5032,7 +6088,9 @@
   {
     "icon_no": 2701,
     "name": "Tyrant Overlord Etna Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5042,7 +6100,9 @@
   {
     "icon_no": 2701,
     "name": "Zetta Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5052,7 +6112,9 @@
   {
     "icon_no": 2701,
     "name": "Petta Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5062,7 +6124,9 @@
   {
     "icon_no": 2701,
     "name": "Pram Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5072,7 +6136,9 @@
   {
     "icon_no": 2701,
     "name": "Salome Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5082,7 +6148,9 @@
   {
     "icon_no": 2701,
     "name": "Siedl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5092,7 +6160,9 @@
   {
     "icon_no": 2701,
     "name": "Wise Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5102,7 +6172,9 @@
   {
     "icon_no": 2701,
     "name": "Keke Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5112,7 +6184,9 @@
   {
     "icon_no": 2701,
     "name": "Timmy Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5122,7 +6196,9 @@
   {
     "icon_no": 2701,
     "name": "Aiko Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5132,7 +6208,9 @@
   {
     "icon_no": 2701,
     "name": "Tavern Mascot Flonne Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5142,7 +6220,9 @@
   {
     "icon_no": 2701,
     "name": "Kagemaru Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5152,7 +6232,9 @@
   {
     "icon_no": 2701,
     "name": "Prism Red Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5162,7 +6244,9 @@
   {
     "icon_no": 2701,
     "name": "Prism Blue Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5172,7 +6256,9 @@
   {
     "icon_no": 2701,
     "name": "Prism Yellow Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5182,7 +6268,9 @@
   {
     "icon_no": 2701,
     "name": "Prism Green Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5192,7 +6280,9 @@
   {
     "icon_no": 2701,
     "name": "Prism Purple Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5202,7 +6292,9 @@
   {
     "icon_no": 2701,
     "name": "Prism Orange Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5212,7 +6304,9 @@
   {
     "icon_no": 2701,
     "name": "Prism Indigo Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5222,7 +6316,9 @@
   {
     "icon_no": 2701,
     "name": "Prism Pink Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5232,7 +6328,9 @@
   {
     "icon_no": 2701,
     "name": "Prism White Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5242,7 +6340,9 @@
   {
     "icon_no": 2701,
     "name": "Prism Black Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5252,7 +6352,9 @@
   {
     "icon_no": 2701,
     "name": "Kyoko Needleworker Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5262,7 +6364,9 @@
   {
     "icon_no": 2701,
     "name": "Asuka Cranekick Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5272,7 +6376,9 @@
   {
     "icon_no": 2701,
     "name": "Warrior Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5282,7 +6388,9 @@
   {
     "icon_no": 2701,
     "name": "Valkyrie Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5292,7 +6400,9 @@
   {
     "icon_no": 2701,
     "name": "Martial Artist Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5302,7 +6412,9 @@
   {
     "icon_no": 2701,
     "name": "Fight Mistress Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5312,7 +6424,9 @@
   {
     "icon_no": 2701,
     "name": "Red Skull Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5322,7 +6436,9 @@
   {
     "icon_no": 2701,
     "name": "Blue Skull Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5332,7 +6448,9 @@
   {
     "icon_no": 2701,
     "name": "Green Skull Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5342,7 +6460,9 @@
   {
     "icon_no": 2701,
     "name": "Star Skull Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5352,7 +6472,9 @@
   {
     "icon_no": 2701,
     "name": "Red Mage Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5362,7 +6484,9 @@
   {
     "icon_no": 2701,
     "name": "Blue Mage Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5372,7 +6496,9 @@
   {
     "icon_no": 2701,
     "name": "Green Mage Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5382,7 +6508,9 @@
   {
     "icon_no": 2701,
     "name": "Star Mage Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5392,7 +6520,9 @@
   {
     "icon_no": 2701,
     "name": "Clergy Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5402,7 +6532,9 @@
   {
     "icon_no": 2701,
     "name": "Cleric Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5412,7 +6544,9 @@
   {
     "icon_no": 2701,
     "name": "Archer Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5422,7 +6556,9 @@
   {
     "icon_no": 2701,
     "name": "Thief Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5432,7 +6568,9 @@
   {
     "icon_no": 2701,
     "name": "Maid Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5442,7 +6580,9 @@
   {
     "icon_no": 2701,
     "name": "Gunner Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5452,7 +6592,9 @@
   {
     "icon_no": 2701,
     "name": "Ninja Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5462,7 +6604,9 @@
   {
     "icon_no": 2701,
     "name": "Lady Samurai Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5472,7 +6616,9 @@
   {
     "icon_no": 2701,
     "name": "Armor Knight Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5482,7 +6628,9 @@
   {
     "icon_no": 2701,
     "name": "Professor Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5492,7 +6640,9 @@
   {
     "icon_no": 2701,
     "name": "Wrestler Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5502,7 +6652,9 @@
   {
     "icon_no": 2701,
     "name": "Pirate Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5512,7 +6664,9 @@
   {
     "icon_no": 2701,
     "name": "Dark Knight Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5522,7 +6676,9 @@
   {
     "icon_no": 2701,
     "name": "Celestial Host Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5532,7 +6688,9 @@
   {
     "icon_no": 2701,
     "name": "Celestial Hostess Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5542,7 +6700,9 @@
   {
     "icon_no": 2701,
     "name": "Usalia Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5552,7 +6712,9 @@
   {
     "icon_no": 2701,
     "name": "Raspberyl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5562,7 +6724,9 @@
   {
     "icon_no": 2701,
     "name": "Desco Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5572,7 +6736,9 @@
   {
     "icon_no": 2701,
     "name": "Pringer V3 Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5582,7 +6748,9 @@
   {
     "icon_no": 2701,
     "name": "Thursday Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5592,7 +6760,9 @@
   {
     "icon_no": 2701,
     "name": "Kurtis Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5602,7 +6772,9 @@
   {
     "icon_no": 2701,
     "name": "Lamington Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5612,7 +6784,9 @@
   {
     "icon_no": 2701,
     "name": "Mid Boss Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5622,7 +6796,9 @@
   {
     "icon_no": 2701,
     "name": "Ms. Raspberyl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5632,7 +6808,9 @@
   {
     "icon_no": 2701,
     "name": "Overlord Priere Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5642,7 +6820,9 @@
   {
     "icon_no": 2701,
     "name": "Santa Usalia Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5652,7 +6832,9 @@
   {
     "icon_no": 2701,
     "name": "Mirror Cake Prinny Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5662,7 +6844,9 @@
   {
     "icon_no": 2701,
     "name": "Gym Suits Raspberyl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5672,7 +6856,9 @@
   {
     "icon_no": 2701,
     "name": "Overlord Asagi Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5682,7 +6868,9 @@
   {
     "icon_no": 2701,
     "name": "Creator Asagi Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5692,7 +6880,9 @@
   {
     "icon_no": 2701,
     "name": "Swimsuit Desco Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5702,7 +6892,9 @@
   {
     "icon_no": 2701,
     "name": "Desco XENO Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5712,7 +6904,9 @@
   {
     "icon_no": 2701,
     "name": "Swimsuit Prinny Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5722,7 +6916,9 @@
   {
     "icon_no": 2701,
     "name": "Attired Prinny Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5732,7 +6928,9 @@
   {
     "icon_no": 2701,
     "name": "Dark Santa Usalia Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5742,7 +6940,9 @@
   {
     "icon_no": 2701,
     "name": "Liezerota Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5752,7 +6952,9 @@
   {
     "icon_no": 2701,
     "name": "Saint Etna Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5762,7 +6964,9 @@
   {
     "icon_no": 2701,
     "name": "Sakuya Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5772,7 +6976,9 @@
   {
     "icon_no": 2701,
     "name": "Beatrice Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5782,7 +6988,9 @@
   {
     "icon_no": 2701,
     "name": "Pringer X Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5792,7 +7000,9 @@
   {
     "icon_no": 2701,
     "name": "Tink XENO Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5802,7 +7012,9 @@
   {
     "icon_no": 2701,
     "name": "Fallen Vessel Flonne Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5812,7 +7024,9 @@
   {
     "icon_no": 2701,
     "name": "Trista Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5822,7 +7036,9 @@
   {
     "icon_no": 2701,
     "name": "Swimsuit Raspberyl Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5832,7 +7048,9 @@
   {
     "icon_no": 2701,
     "name": "Des X Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5842,7 +7060,9 @@
   {
     "icon_no": 2701,
     "name": "Rainier Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5852,7 +7072,9 @@
   {
     "icon_no": 2701,
     "name": "Hoggmeiser Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5862,7 +7084,9 @@
   {
     "icon_no": 2701,
     "name": "Prinny Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5872,7 +7096,9 @@
   {
     "icon_no": 2701,
     "name": "Prinny Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5882,7 +7108,9 @@
   {
     "icon_no": 2701,
     "name": "Prinny Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5892,7 +7120,9 @@
   {
     "icon_no": 2701,
     "name": "Prinny Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5902,7 +7132,9 @@
   {
     "icon_no": 2701,
     "name": "Imp Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5912,7 +7144,9 @@
   {
     "icon_no": 2701,
     "name": "Imp Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5922,7 +7156,9 @@
   {
     "icon_no": 2701,
     "name": "Imp Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5932,7 +7168,9 @@
   {
     "icon_no": 2701,
     "name": "Imp Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5942,7 +7180,9 @@
   {
     "icon_no": 2701,
     "name": "Orc Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5952,7 +7192,9 @@
   {
     "icon_no": 2701,
     "name": "Orc Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5962,7 +7204,9 @@
   {
     "icon_no": 2701,
     "name": "Orc Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5972,7 +7216,9 @@
   {
     "icon_no": 2701,
     "name": "Orc Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5982,7 +7228,9 @@
   {
     "icon_no": 2701,
     "name": "Rabbit Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -5992,7 +7240,9 @@
   {
     "icon_no": 2701,
     "name": "Rabbit Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6002,7 +7252,9 @@
   {
     "icon_no": 2701,
     "name": "Rabbit Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6012,7 +7264,9 @@
   {
     "icon_no": 2701,
     "name": "Rabbit Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6022,7 +7276,9 @@
   {
     "icon_no": 2701,
     "name": "Fairy Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6032,7 +7288,9 @@
   {
     "icon_no": 2701,
     "name": "Fairy Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6042,7 +7300,9 @@
   {
     "icon_no": 2701,
     "name": "Fairy Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6052,7 +7312,9 @@
   {
     "icon_no": 2701,
     "name": "Fairy Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6062,7 +7324,9 @@
   {
     "icon_no": 2701,
     "name": "Sludge Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6072,7 +7336,9 @@
   {
     "icon_no": 2701,
     "name": "Sludge Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6082,7 +7348,9 @@
   {
     "icon_no": 2701,
     "name": "Sludge Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6092,7 +7360,9 @@
   {
     "icon_no": 2701,
     "name": "Sludge Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6102,7 +7372,9 @@
   {
     "icon_no": 2701,
     "name": "Slumber Cat Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6112,7 +7384,9 @@
   {
     "icon_no": 2701,
     "name": "Slumber Cat Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6122,7 +7396,9 @@
   {
     "icon_no": 2701,
     "name": "Slumber Cat Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6132,7 +7408,9 @@
   {
     "icon_no": 2701,
     "name": "Slumber Cat Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6142,7 +7420,9 @@
   {
     "icon_no": 2701,
     "name": "Winged Warrior Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6152,7 +7432,9 @@
   {
     "icon_no": 2701,
     "name": "Winged Warrior Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6162,7 +7444,9 @@
   {
     "icon_no": 2701,
     "name": "Winged Warrior Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6172,7 +7456,9 @@
   {
     "icon_no": 2701,
     "name": "Winged Warrior Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6182,7 +7468,9 @@
   {
     "icon_no": 2701,
     "name": "Undead Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6192,7 +7480,9 @@
   {
     "icon_no": 2701,
     "name": "Undead Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6202,7 +7492,9 @@
   {
     "icon_no": 2701,
     "name": "Undead Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6212,7 +7504,9 @@
   {
     "icon_no": 2701,
     "name": "Undead Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6222,7 +7516,9 @@
   {
     "icon_no": 2701,
     "name": "Shroom Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6232,7 +7528,9 @@
   {
     "icon_no": 2701,
     "name": "Shroom Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6242,7 +7540,9 @@
   {
     "icon_no": 2701,
     "name": "Shroom Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6252,7 +7552,9 @@
   {
     "icon_no": 2701,
     "name": "Shroom Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6262,7 +7564,9 @@
   {
     "icon_no": 2701,
     "name": "Flora Beast Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6272,7 +7576,9 @@
   {
     "icon_no": 2701,
     "name": "Flora Beast Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6282,7 +7588,9 @@
   {
     "icon_no": 2701,
     "name": "Flora Beast Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6292,7 +7600,9 @@
   {
     "icon_no": 2701,
     "name": "Flora Beast Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6302,7 +7612,9 @@
   {
     "icon_no": 2701,
     "name": "Felynn Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6312,7 +7624,9 @@
   {
     "icon_no": 2701,
     "name": "Felynn Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6322,7 +7636,9 @@
   {
     "icon_no": 2701,
     "name": "Felynn Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6332,7 +7648,9 @@
   {
     "icon_no": 2701,
     "name": "Felynn Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6342,7 +7660,9 @@
   {
     "icon_no": 2701,
     "name": "Succubus Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6352,7 +7672,9 @@
   {
     "icon_no": 2701,
     "name": "Succubus Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6362,7 +7684,9 @@
   {
     "icon_no": 2701,
     "name": "Succubus Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6372,7 +7696,9 @@
   {
     "icon_no": 2701,
     "name": "Succubus Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6382,7 +7708,9 @@
   {
     "icon_no": 2701,
     "name": "Chimera Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6392,7 +7720,9 @@
   {
     "icon_no": 2701,
     "name": "Chimera Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6402,7 +7732,9 @@
   {
     "icon_no": 2701,
     "name": "Chimera Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6412,7 +7744,9 @@
   {
     "icon_no": 2701,
     "name": "Chimera Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6422,7 +7756,9 @@
   {
     "icon_no": 2701,
     "name": "Nether Noble Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6432,7 +7768,9 @@
   {
     "icon_no": 2701,
     "name": "Nether Noble Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6442,7 +7780,9 @@
   {
     "icon_no": 2701,
     "name": "Nether Noble Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6452,7 +7792,9 @@
   {
     "icon_no": 2701,
     "name": "Nether Noble Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6462,7 +7804,9 @@
   {
     "icon_no": 2701,
     "name": "Bear Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6472,7 +7816,9 @@
   {
     "icon_no": 2701,
     "name": "Bear Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6482,7 +7828,9 @@
   {
     "icon_no": 2701,
     "name": "Bear Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6492,7 +7840,9 @@
   {
     "icon_no": 2701,
     "name": "Bear Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6502,7 +7852,9 @@
   {
     "icon_no": 2701,
     "name": "Dragon King Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6512,7 +7864,9 @@
   {
     "icon_no": 2701,
     "name": "Dragon King Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6522,7 +7876,9 @@
   {
     "icon_no": 2701,
     "name": "Dragon King Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6532,7 +7888,9 @@
   {
     "icon_no": 2701,
     "name": "Dragon King Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6542,7 +7900,9 @@
   {
     "icon_no": 2701,
     "name": "Nine-Tails Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6552,7 +7912,9 @@
   {
     "icon_no": 2701,
     "name": "Nine-Tails Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6562,7 +7924,9 @@
   {
     "icon_no": 2701,
     "name": "Nine-Tails Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6572,7 +7936,9 @@
   {
     "icon_no": 2701,
     "name": "Nine-Tails Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6582,7 +7948,9 @@
   {
     "icon_no": 2701,
     "name": "Twin Dragon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6592,7 +7960,9 @@
   {
     "icon_no": 2701,
     "name": "Twin Dragon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6602,7 +7972,9 @@
   {
     "icon_no": 2701,
     "name": "Twin Dragon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6612,7 +7984,9 @@
   {
     "icon_no": 2701,
     "name": "Twin Dragon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6622,7 +7996,9 @@
   {
     "icon_no": 2701,
     "name": "Horseman Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6632,7 +8008,9 @@
   {
     "icon_no": 2701,
     "name": "Horseman Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6642,7 +8020,9 @@
   {
     "icon_no": 2701,
     "name": "Horseman Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6652,7 +8032,9 @@
   {
     "icon_no": 2701,
     "name": "Horseman Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6662,7 +8044,9 @@
   {
     "icon_no": 2701,
     "name": "Spirit Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6672,7 +8056,9 @@
   {
     "icon_no": 2701,
     "name": "Spirit Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6682,7 +8068,9 @@
   {
     "icon_no": 2701,
     "name": "Spirit Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6692,7 +8080,9 @@
   {
     "icon_no": 2701,
     "name": "Spirit Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6702,7 +8092,9 @@
   {
     "icon_no": 2701,
     "name": "Gargoyle Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6712,7 +8104,9 @@
   {
     "icon_no": 2701,
     "name": "Gargoyle Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6722,7 +8116,9 @@
   {
     "icon_no": 2701,
     "name": "Gargoyle Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6732,7 +8128,9 @@
   {
     "icon_no": 2701,
     "name": "Gargoyle Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6742,7 +8140,9 @@
   {
     "icon_no": 2701,
     "name": "Death Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6752,7 +8152,9 @@
   {
     "icon_no": 2701,
     "name": "Death Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6762,7 +8164,9 @@
   {
     "icon_no": 2701,
     "name": "Death Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6772,7 +8176,9 @@
   {
     "icon_no": 2701,
     "name": "Death Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6782,7 +8188,9 @@
   {
     "icon_no": 2701,
     "name": "Dragon Zombie Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6792,7 +8200,9 @@
   {
     "icon_no": 2701,
     "name": "Dragon Zombie Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6802,7 +8212,9 @@
   {
     "icon_no": 2701,
     "name": "Dragon Zombie Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6812,7 +8224,9 @@
   {
     "icon_no": 2701,
     "name": "Dragon Zombie Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6822,7 +8236,9 @@
   {
     "icon_no": 2701,
     "name": "Rifle Demon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6832,7 +8248,9 @@
   {
     "icon_no": 2701,
     "name": "Rifle Demon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6842,7 +8260,9 @@
   {
     "icon_no": 2701,
     "name": "Rifle Demon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6852,7 +8272,9 @@
   {
     "icon_no": 2701,
     "name": "Rifle Demon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6862,7 +8284,9 @@
   {
     "icon_no": 2701,
     "name": "Lantern Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6872,7 +8296,9 @@
   {
     "icon_no": 2701,
     "name": "Lantern Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6882,7 +8308,9 @@
   {
     "icon_no": 2701,
     "name": "Lantern Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6892,7 +8320,9 @@
   {
     "icon_no": 2701,
     "name": "Lantern Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6902,7 +8332,9 @@
   {
     "icon_no": 2701,
     "name": "Living Armor Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6912,7 +8344,9 @@
   {
     "icon_no": 2701,
     "name": "Living Armor Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6922,7 +8356,9 @@
   {
     "icon_no": 2701,
     "name": "Living Armor Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6932,7 +8368,9 @@
   {
     "icon_no": 2701,
     "name": "Living Armor Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6942,7 +8380,9 @@
   {
     "icon_no": 2701,
     "name": "Serpent Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6952,7 +8392,9 @@
   {
     "icon_no": 2701,
     "name": "Serpent Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6962,7 +8404,9 @@
   {
     "icon_no": 2701,
     "name": "Serpent Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6972,7 +8416,9 @@
   {
     "icon_no": 2701,
     "name": "Serpent Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6982,7 +8428,9 @@
   {
     "icon_no": 2701,
     "name": "Mystic Dragon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -6992,7 +8440,9 @@
   {
     "icon_no": 2701,
     "name": "Mystic Dragon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -7002,7 +8452,9 @@
   {
     "icon_no": 2701,
     "name": "Mystic Dragon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -7012,7 +8464,9 @@
   {
     "icon_no": 2701,
     "name": "Mystic Dragon Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -7022,7 +8476,9 @@
   {
     "icon_no": 2701,
     "name": "Space Barila Crystal",
-    "effect_value": [100],
+    "effect_value": [
+      100
+    ],
     "sell_price": 0,
     "item_type": 27,
     "max_num": 9999,
@@ -7032,7 +8488,9 @@
   {
     "icon_no": 4000001,
     "name": "1★ Prinny (Blue)",
-    "effect_value": [30001],
+    "effect_value": [
+      30001
+    ],
     "sell_price": 0,
     "item_type": 40,
     "max_num": 99999,
@@ -7042,7 +8500,9 @@
   {
     "icon_no": 4000002,
     "name": "1★ Prinny (Pink)",
-    "effect_value": [30002],
+    "effect_value": [
+      30002
+    ],
     "sell_price": 0,
     "item_type": 40,
     "max_num": 99999,
@@ -7052,7 +8512,9 @@
   {
     "icon_no": 4000003,
     "name": "1★ Prinny (Green)",
-    "effect_value": [30003],
+    "effect_value": [
+      30003
+    ],
     "sell_price": 0,
     "item_type": 40,
     "max_num": 99999,
@@ -7062,7 +8524,9 @@
   {
     "icon_no": 4000004,
     "name": "1★ Prinny (Red)",
-    "effect_value": [30004],
+    "effect_value": [
+      30004
+    ],
     "sell_price": 0,
     "item_type": 40,
     "max_num": 99999,
@@ -7072,7 +8536,9 @@
   {
     "icon_no": 4601,
     "name": "Swimsuit Fuka Nether Star",
-    "effect_value": [127],
+    "effect_value": [
+      127
+    ],
     "sell_price": 0,
     "item_type": 46,
     "max_num": 9999,
@@ -7082,7 +8548,9 @@
   {
     "icon_no": 4601,
     "name": "Petta Nether Star",
-    "effect_value": [132],
+    "effect_value": [
+      132
+    ],
     "sell_price": 0,
     "item_type": 46,
     "max_num": 9999,
@@ -7092,7 +8560,9 @@
   {
     "icon_no": 4601,
     "name": "Pram Nether Star",
-    "effect_value": [133],
+    "effect_value": [
+      133
+    ],
     "sell_price": 0,
     "item_type": 46,
     "max_num": 9999,
@@ -7102,7 +8572,9 @@
   {
     "icon_no": 4601,
     "name": "Salome Nether Star",
-    "effect_value": [134],
+    "effect_value": [
+      134
+    ],
     "sell_price": 0,
     "item_type": 46,
     "max_num": 9999,
@@ -7112,7 +8584,9 @@
   {
     "icon_no": 4601,
     "name": "Wise Nether Star",
-    "effect_value": [136],
+    "effect_value": [
+      136
+    ],
     "sell_price": 0,
     "item_type": 46,
     "max_num": 9999,
@@ -7122,7 +8596,9 @@
   {
     "icon_no": 4601,
     "name": "Keke Nether Star",
-    "effect_value": [137],
+    "effect_value": [
+      137
+    ],
     "sell_price": 0,
     "item_type": 46,
     "max_num": 9999,
@@ -7132,7 +8608,9 @@
   {
     "icon_no": 4601,
     "name": "Aiko Nether Star",
-    "effect_value": [139],
+    "effect_value": [
+      139
+    ],
     "sell_price": 0,
     "item_type": 46,
     "max_num": 9999,
@@ -7142,7 +8620,9 @@
   {
     "icon_no": 4601,
     "name": "Swimsuit Raspberyl Nether Star",
-    "effect_value": [20040],
+    "effect_value": [
+      20040
+    ],
     "sell_price": 0,
     "item_type": 46,
     "max_num": 9999,
