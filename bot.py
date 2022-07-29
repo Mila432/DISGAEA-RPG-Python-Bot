@@ -13,10 +13,6 @@ a.config(
 )
 a.quick_login()
 
-# a.options.team_num = 1
-# print(a.pd.deck)
-# exit(0)
-
 codes = [
     # "drpgxhayzink",
     # "drpgxredcloud",
@@ -200,11 +196,7 @@ def loop(team=9, rebirth=False, farm_stage_id=313515, only_weapons=False):
     clear_inbox()
 
 
-# clear_inbox()
-
-unit_id = 10884950
-# unit_id = 113247303
-# a.do_axel_contest(unit_id, 1000)
+clear_inbox()
 
 # a.do_axel_contest_multiple_characters(2)
 # farm_event_stage(stage_id=114710104, times=10, team=6)
@@ -226,6 +218,9 @@ unit_id = 10884950
 # 114710104 - Defensive Battle 4
 
 # farm_event_stage(1, 1142105312, team=9)
+
+for unit_id in a.pd.deck(9):
+    a.do_axel_contest(unit_id, 1000)
 
 # Full loop
 loop(team=9, rebirth=True, farm_stage_id=314109)

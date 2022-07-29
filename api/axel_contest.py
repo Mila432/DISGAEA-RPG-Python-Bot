@@ -94,8 +94,15 @@ class AxelContest(Player, metaclass=ABCMeta):
         self.log(f"Started Axel Contest for {unit_name} - Last cleared stage: {last_cleared_stage}"
                  f" - Highest stage to clear {highestStageToClear}")
         while last_cleared_stage < highestStageToClear:
-            start = self.client.axel_context_battle_start(self.get_axel_stage_energy_cost(last_cleared_stage),
-                                                          collection['m_character_id'], [cid])
+            start = self.client.axel_context_battle_start(
+                act=self.get_axel_stage_energy_cost(last_cleared_stage),
+                m_character_id=collection['m_character_id'],
+                t_character_ids=[character['id']]
+            )
+
+            if 'api_error' in start:
+                raise start['api_error']['message']
+
             end = self.client.axel_context_battle_end(
                 collection['m_character_id'],
                 self.get_battle_exp_data_axel_contest(start, [cid]),
