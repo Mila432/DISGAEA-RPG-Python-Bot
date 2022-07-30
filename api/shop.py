@@ -193,8 +193,8 @@ class Shop(Player, metaclass=ABCMeta):
                 self.log_sell(i)
             data = self.client.shop_sell_equipment(sell_list)
             self.check_resp(data)
-            self.player_weapons(True)
-            self.player_equipment(True)
+            # self.player_weapons(True)
+            # self.player_equipment(True)
             return data
 
     def log_sell(self, w):

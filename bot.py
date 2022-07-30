@@ -162,19 +162,22 @@ def refine_items(max_rarity: int = 99, max_item_rank: int = 9999, min_rarity: in
         a.etna_resort_refine_item(i['id'])
 
 
-def loop(team=9, rebirth=False, farm_stage_id=313515, only_weapons=False):
+def loop(team=9, rebirth=False, farm_stage_id=None, only_weapons=False):
     a.o.auto_rebirth = rebirth
     a.o.team_num = team
 
     if a.current_ap >= 6000:
-        # if farm_stage_id is None:
-        #     a.do_axel_contest_multiple_characters(6)
-        # else:
-        use_ap(stage_id=farm_stage_id)
+        if farm_stage_id is None:
+            for unit_id in a.pd.deck(1):
+                a.do_axel_contest(unit_id, 1000)
+        else:
+            use_ap(stage_id=farm_stage_id)
 
     for i in range(30):
         a.log("- claiming rewards")
         a.get_mail_and_rewards()
+
+        refine_items(min_rarity=90, min_item_rank=40)
 
         a.log("- farming item world")
         farm_item_world(team=team, min_rarity=0, min_rank=40, min_item_rank=40, min_item_level=0,
@@ -183,7 +186,6 @@ def loop(team=9, rebirth=False, farm_stage_id=313515, only_weapons=False):
         a.log("- donate equipment")
         a.etna_resort_donate_items(max_item_rarity=69, max_innocent_rank=8, max_innocent_type=5)
         a.etna_resort_donate_items(max_item_rarity=69, max_innocent_rank=4, max_innocent_type=8)
-        refine_items(min_rarity=95, min_item_rank=40)
         a.etna_resort_get_all_daily_rewards()
 
         a.log("- selling items")
@@ -219,8 +221,5 @@ daily(bts=False)
 
 # farm_event_stage(1, 1142105312, team=9)
 
-for unit_id in a.pd.deck(9):
-    a.do_axel_contest(unit_id, 1000)
-
 # Full loop
-loop(team=9, rebirth=True, farm_stage_id=314109)
+loop(team=9, rebirth=True, farm_stage_id=None)

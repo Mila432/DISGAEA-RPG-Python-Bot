@@ -158,10 +158,10 @@ class API(BaseAPI):
 
     def upgrade_items(self, ensure_drops: bool = False, only_weapons: bool = False, run_limit: (int, None) = None):
 
-        self.player_innocents()
-        self.player_weapons()
+        self.player_innocents(True)
+        self.player_weapons(True)
         self.upgrade_item_list(self.pd.weapons, equipment_type=1, ensure_drops=ensure_drops, only_weapons=only_weapons)
-        self.player_equipment()
+        self.player_equipment(True)
         self.upgrade_item_list(self.pd.equipment, equipment_type=2, ensure_drops=ensure_drops,
                                only_weapons=only_weapons)
 
