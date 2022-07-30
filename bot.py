@@ -203,7 +203,7 @@ clear_inbox()
 # do_quest(108410101)
 
 # Daily tasks
-# daily(bts=False)
+daily(bts=False)
 
 # a.autoRebirth(True)
 # a.setTeamNum(9)

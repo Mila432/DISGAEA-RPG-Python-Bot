@@ -1,6 +1,8 @@
-from abc import ABCMeta
 import datetime
+from abc import ABCMeta
+
 from dateutil import parser
+
 from api.constants import Fish_Fleet_Area_Bribe_Status, Fish_Fleet_Index, Fish_Fleet_Result_type
 from api.player import Player
 

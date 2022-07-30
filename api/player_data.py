@@ -1,5 +1,5 @@
-from api.logger import Logger
 from api.game_data import GameData
+from api.logger import Logger
 from api.options import Options
 
 

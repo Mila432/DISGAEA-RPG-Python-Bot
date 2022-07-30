@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-import string
 import random
+import string
+
 from api import BaseAPI
 
 

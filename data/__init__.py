@@ -1,6 +1,6 @@
+import io
 import json
 import os
-import io
 
 data = {}
 pwd = os.path.dirname(__file__)

@@ -22,7 +22,7 @@ innocents_trained = 0
 tickets_finished = False
 
 for innocent in all_available_innocents:
-    
+
     if tickets_finished:
         break
 
@@ -31,15 +31,16 @@ for innocent in all_available_innocents:
         continue
     print(f"\nFound innocent to train. Starting value: {innocent['effect_values'][0]}")
     attempts = 0
-    innocents_trained +=1
+    innocents_trained += 1
     while effect_rank < max_innocent_rank:
         res = a.client.innocent_training(innocent['id'])
-        if('api_error' in res and 'message' in res['api_error'] and res['api_error']['message'] == 'Not enough item.'):
+        if ('api_error' in res and 'message' in res['api_error'] and res['api_error']['message'] == 'Not enough item.'):
             print("No caretaker tickets left")
             tickets_finished = True
             break
         effect_rank = res['result']['after_t_data']['innocents'][0]['effect_rank']
-        print(f"\tTrained innocent with result {a.innocent_get_training_result(res['result']['training_result'])} - Current value: {res['result']['after_t_data']['innocents'][0]['effect_values'][0]}")
-        attempts +=1
+        print(
+            f"\tTrained innocent with result {a.innocent_get_training_result(res['result']['training_result'])} - Current value: {res['result']['after_t_data']['innocents'][0]['effect_values'][0]}")
+        attempts += 1
     print(f"\tUpgraded innocent to Legendary. Finished training. Total attempts: {attempts}")
-print(f"\nNo innocents left to train. Total innocents trained: {innocents_trained}") 
+print(f"\nNo innocents left to train. Total innocents trained: {innocents_trained}")

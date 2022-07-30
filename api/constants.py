@@ -11,9 +11,10 @@ class Constants:
     Current_Raid_Normal_Boss_ID = 1431
     Current_Raid_Badass_Boss_ID = 1432
     Current_Bingo_ID = 2
-    session_id = '' # FILL SESSION_ID HERE
-    user_id ='' # FILL USER_ID HERE
-    ticket = '' # FILL TICKET FOR STEAM LOGIN
+    session_id = ''  # FILL SESSION_ID HERE
+    user_id = ''  # FILL USER_ID HERE
+    ticket = ''  # FILL TICKET FOR STEAM LOGIN
+
 
 class Raid_Gacha_ID(IntEnum):
     SUMMER_PRINNY_EVENT_POINT = 49

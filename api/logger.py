@@ -1,5 +1,5 @@
-import time
 import logging
+import time
 
 logger = logging.getLogger('disgaea_bot')
 logger.setLevel(logging.DEBUG)

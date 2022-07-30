@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
-import requests
 import base64
 import json
-import time
-import sys
 import os
+import sys
+import time
+
+import requests
+
 
 class codedbots(object):
     def __init__(self):

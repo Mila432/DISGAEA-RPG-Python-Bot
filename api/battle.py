@@ -1,6 +1,6 @@
 import random
-from abc import ABCMeta
 import time
+from abc import ABCMeta
 
 from api.player import Player
 

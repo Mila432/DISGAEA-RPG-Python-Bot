@@ -1,5 +1,5 @@
-from main import API
 from api.constants import Constants
+from main import API
 
 a: API = API()
 a.config(

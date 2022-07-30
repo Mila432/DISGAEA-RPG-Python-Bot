@@ -1,18 +1,19 @@
-import requests
-import json
 import base64
-import time
+import json
 import sys
-# noinspection PyPep8Naming
-from api.options import Options
-from api.logger import Logger
-from codedbots import codedbots
-from boltrend import boltrend
-from api.game_data import GameData
-from api.constants import Constants
+import time
 
+import requests
 # noinspection PyUnresolvedReferences
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
+from api.constants import Constants
+from api.game_data import GameData
+from api.logger import Logger
+# noinspection PyPep8Naming
+from api.options import Options
+from boltrend import boltrend
+from codedbots import codedbots
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 

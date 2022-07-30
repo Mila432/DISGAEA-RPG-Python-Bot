@@ -313,5 +313,3 @@ class EtnaResort(Items, metaclass=ABCMeta):
         if i['innocent_type'] > max_innocent_type:
             return False
         return True
-
-

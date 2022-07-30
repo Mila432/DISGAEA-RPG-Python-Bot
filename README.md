@@ -4,7 +4,8 @@ requirements:
 
 - `pip install requests`
 - `pip install dateutil`
-- license key (get it from https://disgaea.codedbots.com, once you have the license key put it into `codedbots.py` on line 12)
+- license key (get it from https://disgaea.codedbots.com, once you have the license key put it into `codedbots.py` on
+  line 12)
 
 ![bot running](https://raw.github.com/Mila432/DISGAEA-RPG-Python-Bot/master/1.png)
 

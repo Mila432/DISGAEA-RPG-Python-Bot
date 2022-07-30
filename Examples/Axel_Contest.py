@@ -1,5 +1,6 @@
-from main import API
 import os
+
+from main import API
 
 a = API()
 a.config(

@@ -1,8 +1,9 @@
-from abc import ABCMeta
 import random
+from abc import ABCMeta
+
 from api.constants import Constants
-from data import data as gamedata
 from api.player import Player
+from data import data as gamedata
 
 
 class Raid(Player, metaclass=ABCMeta):
@@ -212,7 +213,7 @@ class Raid(Player, metaclass=ABCMeta):
                 boss_count += 1
                 self.log(f"Farmed boss with level {raid_boss['level']}. Total bosses farmed: {boss_count}")
 
-   # Will check for raid bosses and will send help requests if active ones are found.
+    # Will check for raid bosses and will send help requests if active ones are found.
     def raid_check_and_send(self):
         all_bosses = self.raid_get_all_bosses()
         if len(all_bosses) > 0:
