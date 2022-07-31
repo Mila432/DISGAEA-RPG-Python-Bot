@@ -62,7 +62,8 @@ class Client:
                 cdata = data
             r = self.s.post(self.o.main_url + url, data=cdata)
         if 'X-Crypt-Iv' not in r.headers:
-            Logger.error('missing iv!')
+            r_method = data['rpc']['method'] if 'rpc' in data else url
+            Logger.error('request: "%s" was missing iv!' % r_method)
             exit(1)
             return None
         res = self.c.decrypt(base64.b64encode(r.content), r.headers['X-Crypt-Iv'])
@@ -81,9 +82,9 @@ class Client:
                     Logger.info('Potion usage disabled. Exiting...')
                     sys.exit()
             else:
-                r = data['rpc']['method'] if 'rpc' in data else url
+                r_method = data['rpc']['method'] if 'rpc' in data else url
                 if 'trophy' not in r:
-                    Logger.error('request: "%s" server returned error: %s' % (r, res['api_error']['message']))
+                    Logger.error('request: "%s" server returned error: %s' % (r_method, res['api_error']['message']))
                 # exit(1)
         if 'password' in res:
             self.o.password = res['password']
