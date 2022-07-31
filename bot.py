@@ -3,7 +3,7 @@ import os
 
 from dateutil import parser
 
-from api.constants import Constants
+from api.constants import Constants, EquipmentType, Innocent_ID
 from main import API
 
 a = API()
@@ -30,7 +30,7 @@ for code in codes:
 
 
 def farm_event_stage(times, stage_id, team):
-    a.o.team_num = (team)
+    a.o.team_num = team
     for i in range(times):
         do_quest(stage_id)
 
@@ -79,6 +79,10 @@ def do_gates(gates_data, gem_team=7, hl_team=8):
 
 def daily(bts=False, team=9):
     a.get_mail_and_rewards()
+    send_sardines()
+
+    # Buy items from HL shop
+    a.buy_daily_items_from_shop()
 
     if bts:
         a.o.team_num = team
@@ -129,8 +133,7 @@ def clear_inbox():
     last_id = None
     while len(ids) > 0:
         a.get_mail()
-        a.sell_items(max_rarity=69, max_item_rank=40, keep_max_lvl=True, only_max_lvl=False,
-                     max_innocent_rank=8, max_innocent_type=8)
+
         ids = a.client.present_index(conditions=[0, 1, 2, 3, 4, 99], order=1)['result']['_items']
         if len(ids) == 0:
             break
@@ -138,6 +141,9 @@ def clear_inbox():
         if new_last_id == last_id:
             a.log("- inbox is empty or didnt change")
             break
+        else:
+            a.sell_items(max_rarity=69, max_item_rank=40, keep_max_lvl=True, only_max_lvl=False,
+                         max_innocent_rank=8, max_innocent_type=Innocent_ID.HL)
         last_id = new_last_id
 
 
@@ -159,7 +165,7 @@ def refine_items(max_rarity: int = 99, max_item_rank: int = 9999, min_rarity: in
                                        min_innocent_rank=0, min_innocent_type=0)
     for item in items:
         equip_type = a.pd.get_equip_type(item)
-        if equip_type == 1:
+        if equip_type == EquipmentType.WEAPON:
             weapons.append(item)
         # else:
         #   equipments.append(item)
@@ -177,8 +183,15 @@ def spin_hospital():
     last_roulete_time_string = a.client.hospital_index()['result']['last_hospital_at']
     last_roulette_time = parser.parse(last_roulete_time_string)
     utcminus4time = datetime.datetime.utcnow() + datetime.timedelta(hours=-4)
-    if (utcminus4time > last_roulette_time + datetime.timedelta(hours=8)):
+    if utcminus4time > last_roulette_time + datetime.timedelta(hours=8):
         result = a.client.hospital_roulette()
+
+
+def send_sardines():
+    # Send sardines
+    player_data = a.client.player_index()
+    if player_data['result']['act_give_count']['act_send_count'] == 0:
+        a.client.friend_send_sardines()
 
 
 def do_bingo():
@@ -200,6 +213,7 @@ def loop(team=9, rebirth=False, farm_stage_id=None, only_weapons=False):
     a.o.team_num = team
 
     spin_hospital()
+    a.survey_complete_all_expeditions_and_start_again(use_bribes=True, hours=24)
 
     if a.current_ap >= 6000:
         use_ap(stage_id=farm_stage_id)

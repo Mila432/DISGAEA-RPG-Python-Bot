@@ -91,3 +91,7 @@ class Innocent_ID(IntEnum):
     SPD = 6
     EXP = 7
     HL = 8
+
+class EquipmentType(IntEnum):
+    WEAPON = 1
+    ARMOR = 2

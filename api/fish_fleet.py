@@ -12,15 +12,15 @@ class FishFleet(Player, metaclass=ABCMeta):
         super().__init__()
 
     def survey_complete_all_expeditions_and_start_again(self, use_bribes, hours):
-        serverDateTime = datetime.datetime.utcnow() + datetime.timedelta(hours=-4)
+        server_date_time = datetime.datetime.utcnow() + datetime.timedelta(hours=-4)
         fish_fleet_data = self.client.survey_index()
         for fish_fleet in fish_fleet_data['result']['t_surveys']:
             fleet_name = self.survey_get_fleet_name(fish_fleet['m_survey_id'])
             end_time_string = fish_fleet['end_at']
-            ## fleet has been sent
+            # fleet has been sent
             if fish_fleet['end_at'] != '':
                 end_time_date_time = parser.parse(end_time_string)
-                if serverDateTime > end_time_date_time:
+                if server_date_time > end_time_date_time:
                     # Complete expedition and print rewards
                     self.survey_complete_expedition(fish_fleet['m_survey_id'])
                     # Start expedition again
@@ -83,7 +83,7 @@ class FishFleet(Player, metaclass=ABCMeta):
         closest_fleet_end_time = datetime.datetime.max
         for fish_fleet in fish_fleet_data['result']['t_surveys']:
             end_time_string = fish_fleet['end_at']
-            ## fleet has been sent
+            # fleet has been sent
             if fish_fleet['end_at'] != '':
                 end_time_date_time = parser.parse(end_time_string)
                 if end_time_date_time < closest_fleet_end_time:
