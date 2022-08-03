@@ -18,6 +18,7 @@ class Items(Shop):
             for i in innos:
                 ids.append(i['id'])
             data = self.client.innocent_remove_all(ids, 0)
+            self.check_resp(data)
             if data['result']['after_t_data']:
                 self.player_update_equip_detail(e)
                 for i in data['result']['after_t_data']['innocents']:

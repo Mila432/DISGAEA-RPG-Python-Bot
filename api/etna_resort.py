@@ -207,7 +207,7 @@ class EtnaResort(Items, metaclass=ABCMeta):
                 continue
             innos.append(i['id'])
 
-        self.log('donate - skipping %s innocents' % skipping)
+        self.log('donating %s, skipping %s innocents' % (len(innos), skipping))
         if len(innos) > 0:
             for batch in (innos[i:i + 20] for i in range(0, len(innos), 20)):
                 self.kingdom_innocent_entry(innocent_ids=batch)

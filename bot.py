@@ -167,8 +167,8 @@ def refine_items(max_rarity: int = 99, max_item_rank: int = 9999, min_rarity: in
         equip_type = a.pd.get_equip_type(item)
         if equip_type == EquipmentType.WEAPON:
             weapons.append(item)
-        # else:
-        #   equipments.append(item)
+        else:
+            equipments.append(item)
 
     a.log('[*] refine_items: found %s weapons and %s equipment to refine' % (len(weapons), len(equipments)))
 
@@ -229,7 +229,8 @@ def loop(team=9, rebirth=False, farm_stage_id=None, only_weapons=False):
                         only_weapons=only_weapons)
 
         a.log("- donate equipment")
-        a.etna_resort_donate_items(max_item_rarity=69, max_innocent_rank=8, max_innocent_type=5)
+        a.etna_donate_innocents(max_innocent_rank=4, max_innocent_type=Innocent_ID.RES)
+        a.etna_resort_donate_items(max_item_rarity=69, max_innocent_rank=8, max_innocent_type=Innocent_ID.RES)
         a.etna_resort_donate_items(max_item_rarity=69, max_innocent_rank=4, max_innocent_type=8)
         a.etna_resort_get_all_daily_rewards()
 
@@ -240,8 +241,8 @@ def loop(team=9, rebirth=False, farm_stage_id=None, only_weapons=False):
         if a.current_ap >= 6000:
             use_ap(stage_id=farm_stage_id)
 
-    clear_inbox()
 
+clear_inbox()
 
 # clear_inbox()
 
@@ -256,15 +257,15 @@ daily(bts=False)
 # a.setTeamNum(9)
 
 # # Uncomment to clear a new event area. Provide the first 4 digits of the m_area_id.
-# clear_event(get_event_areas(1142))
+# clear_event(get_event_areas(1154))
 
 # 314109 - misc stage
-# 1142105310 - Extra+ (HL)
-# 1142105311 - Extra+ (EXP)
-# 1142105312 - Extra+ (1★)
+# 1154105310 - Extra+ (HL)
+# 1154105311 - Extra+ (EXP)
+# 1154105312 - Extra+ (1★)
 # 114710104 - Defensive Battle 4
 
-# farm_event_stage(1, 1142105312, team=9)
+# farm_event_stage(1, 1154105312, team=9)
 
 # Full loop
 loop(team=9, rebirth=True, farm_stage_id=None)
