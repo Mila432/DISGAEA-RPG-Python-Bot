@@ -18,7 +18,6 @@ head={'version_check':0,'signup':1,'login':1,'rpc':2}
 
 class API(object):
 	def __init__(self):
-		self.c=codedbots()
 		self.b=boltrend()
 		self.s=requests.Session()
 		self.s.verify=False
@@ -34,12 +33,13 @@ class API(object):
 	def setRegion(self,r):
 		if r==1:
 			self.mainurl='https://api.rpg.disgaea-app.com/'
-			self.version='2.11.2'
+			self.version='3.6.2'
 			self.region=1
 		else:
 			self.mainurl='https://disgaea-game-live-en.boltrend.com/'
 			self.version='2.16.4'
 			self.region=2
+		self.c=codedbots(self.region)
 
 	def setDevice(self,r):
 		self.device=str(r)
@@ -142,16 +142,16 @@ class API(object):
 			if self.region==2:
 				self.s.headers.update({'X-Unity-Version':'2018.4.3f1','Accept-Language':'en-us','X_CHANNEL':'1','Content-Type':'application/x-haut-hoiski','User-Agent':'en/17 CFNetwork/1206 Darwin/20.1.0','X-OS-TYPE':'1','X-APP-VERSION':self.version,'X-Crypt-Iv':self.thisiv,'Accept':'*/*'})
 			else:
-				self.s.headers.update({'X-PERF-SCENE-TIME':'8619','X-PERF-APP-BUILD-NUMBER':'0','X-PERF-NETWORK-REQ-LAST':'1','X-PERF-DISC-FREE':'5395','X-PERF-FPS-LAST-MED':'59.99','X-APP-VERSION':self.version,'X-PERF-OS-VERSION':'iOS 14.2','X-PERF-CPU-SYS':'0','X-PERF-CPU-USER':'40.79','X-PERF-BUTTERY':'100','X-PERF-SCENE-TRACE':'startup_scene,title_scene,startup_scene,title_scene','X-PERF-NETWORK-ERR-LAST':'0','X-PERF-NETWORK-REQ-TOTAL':'1','X-PERF-CPU-IDLE':'59.21','X-PERF-APP-VERSION':'2.11.2','X-PERF-FPS-LAST-AVG':'59.23','User-Agent':'forwardworks/194 CFNetwork/1206 Darwin/20.1.0','X-PERF-MEM-USER':'1624','X-PERF-LAUNCH-TIME':'20210408T15:50:36Z','X-PERF-SCENE':'title_scene','X-PERF-FPS':'59.99','X-Crypt-Iv':self.thisiv,'X-PERF-MEM-AVAILABLE':'24','X-OS-TYPE':self.device,'X-PERF-LAST-DELTA-TIMES':'16,17,16,17,21,13,16,17,17,17','X-PERF-NETWORK-ERR-TOTAL':'0','X-PERF-DEVICE':'iPad7,5','Content-Type':'application/x-haut-hoiski','X-PERF-OS':'iOS 14.2','X-PERF-MEM-PYSIC':'1981','X-Unity-Version':'2018.4.20f1','X-PERF-TIME':'20210408T15:52:43Z','X-PERF-APP-ID':'com.disgaearpg.forwardworks','X-PERF-LAUNCH-DURATION':'70363'})
+				self.s.headers.update({'X-PERF-SCENE-TIME':'8619','X-PERF-APP-BUILD-NUMBER':'0','X-PERF-NETWORK-REQ-LAST':'1','X-PERF-DISC-FREE':'5395','X-PERF-FPS-LAST-MED':'59.99','X-APP-VERSION':self.version,'X-PERF-OS-VERSION':'iOS 14.2','X-PERF-CPU-SYS':'0','X-PERF-CPU-USER':'40.79','X-PERF-BUTTERY':'100','X-PERF-SCENE-TRACE':'startup_scene,title_scene,startup_scene,title_scene','X-PERF-NETWORK-ERR-LAST':'0','X-PERF-NETWORK-REQ-TOTAL':'1','X-PERF-CPU-IDLE':'59.21','X-PERF-APP-VERSION':'2.11.2','X-PERF-FPS-LAST-AVG':'59.23','User-Agent':'RPG/282 CFNetwork/1197 Darwin/20.0.0','X-PERF-MEM-USER':'1624','X-PERF-LAUNCH-TIME':'20210408T15:50:36Z','X-PERF-SCENE':'title_scene','X-PERF-FPS':'59.99','X-Crypt-Iv':self.thisiv,'X-PERF-MEM-AVAILABLE':'24','X-PERF-LAST-DELTA-TIMES':'16,17,16,17,21,13,16,17,17,17','X-PERF-NETWORK-ERR-TOTAL':'0','X-PERF-DEVICE':'iPad7,5','Content-Type':'application/x-haut-hoiski','X-PERF-OS':'iOS 14.2','X-PERF-MEM-PYSIC':'1981','X-Unity-Version':'2019.4.29f1','X-PERF-TIME':'20210408T15:52:43Z','X-PERF-APP-ID':'com.disgaearpg.forwardworks','X-PERF-LAUNCH-DURATION':'70363','x-jvhpdr5cvhahu5zp':'Sj3guMhsn6TRzhmg','accept':'*/*','accept-encoding':'gzip, deflate, br'})
 		elif i==1:
 			if self.region==2:
 				self.s.headers.update({'X-Unity-Version':'2018.4.3f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','X_CHANNEL':'1','Content-Type':'application/x-haut-hoiski','User-Agent':'en/17 CFNetwork/1206 Darwin/20.1.0','X-OS-TYPE':'1','X-APP-VERSION':self.version})
 			else:
-				self.s.headers.update({'X-Unity-Version':'2018.4.20f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'forwardworks/194 CFNetwork/1206 Darwin/20.1.0','X-OS-TYPE':self.device,'X-APP-VERSION':self.version})
+				self.s.headers.update({'X-Unity-Version':'2019.4.29f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'RPG/282 CFNetwork/1197 Darwin/20.0.0','X-APP-VERSION':self.version,'x-jvhpdr5cvhahu5zp':'Sj3guMhsn6TRzhmg','accept':'*/*','accept-encoding':'gzip, deflate, br'})
 		elif i==2:
-			self.s.headers.update({'X-Unity-Version':'2018.4.20f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'iPad6Gen/iOS 14.2','X-OS-TYPE':self.device,'X-APP-VERSION':self.version,'X-SESSION':self.session_id})
+			self.s.headers.update({'X-Unity-Version':'2019.4.29f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'iPad6Gen/iOS 14.2','X-OS-TYPE':self.device,'X-APP-VERSION':self.version,'X-SESSION':self.session_id})
 		else:
-			self.s.headers.update({'X-Unity-Version':'2018.4.20f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'forwardworks/194 CFNetwork/1206 Darwin/20.1.0','X-OS-TYPE':self.device,'X-APP-VERSION':self.version})
+			self.s.headers.update({'X-Unity-Version':'2019.4.29f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'RPG/282 CFNetwork/1197 Darwin/20.0.0','X-APP-VERSION':self.version,'x-jvhpdr5cvhahu5zp':'Sj3guMhsn6TRzhmg','accept':'*/*','accept-encoding':'gzip, deflate, br'})
 
 	def rndid(self):
 		return self.c.rndid()
@@ -564,7 +564,7 @@ class API(object):
 		end= self.battle_end(battle_exp_data=self.getbattle_exp_data(start),m_stage_id=m_stage_id,battle_type=1,result=1,command_count=9)
 		res=self.parseReward(end)
 		return res
-        
+		
 	def doQuestEvent(self,m_stage_id=101102):
 		stage=self.getStage(m_stage_id)
 		self.log('doing quest:%s [%s]'%(stage['name'],m_stage_id))
@@ -749,6 +749,7 @@ class API(object):
 		self.getmail()
 
 	def dologin(self):
+		self.version_check()
 		self.login()
 		self.player_index()
 		self.player_tutorial()

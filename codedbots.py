@@ -7,8 +7,9 @@ import sys
 import os
 
 class codedbots(object):
-	def __init__(self):
+	def __init__(self,region=2):
 		self.s=requests.Session()
+		self.region=region
 		self.license='PUT YOUR LICENSE KEY HERE'
 		if len(self.license)!=64:
 			print('license invalid')
@@ -25,7 +26,7 @@ class codedbots(object):
 		return self.s.get(self.mainurl+'/iv').content
 
 	def encrypt(self,data,iv):
-		r= self.s.post(self.mainurl+'/encrypt',data={'data':base64.b64encode(json.dumps(data).encode()),'iv':iv,'license':self.license,'fuji_key':self.key})
+		r= self.s.post(self.mainurl+'/encrypt',data={'data':base64.b64encode(json.dumps(data).encode()),'iv':iv,'license':self.license,'fuji_key':self.key,'region':self.region})
 		if r.status_code==200:
 			return base64.b64decode(r.content)
 		else:
@@ -34,7 +35,7 @@ class codedbots(object):
 			return None
 
 	def decrypt(self,data,iv):
-		r= self.s.post(self.mainurl+'/decrypt',data={'data':data,'iv':iv,'fuji_key':self.key,'license':self.license})
+		r= self.s.post(self.mainurl+'/decrypt',data={'data':data,'iv':iv,'fuji_key':self.key,'license':self.license,'region':self.region})
 		if r.status_code==200:
 			return json.loads(base64.b64decode(r.content))
 		else:
