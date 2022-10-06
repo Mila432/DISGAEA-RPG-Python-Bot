@@ -487,6 +487,82 @@ class API(object):
 		data=self.rpc('battle/help_list',{})
 		return data
 
+	def player_equipment_decks(self,updated_at,page):
+		data=self.rpc('player/equipment_decks',{"updated_at": updated_at, "page": page})
+		return data
+
+	def player_stage_missions(self,updated_at,page):
+		data=self.rpc('player/stage_missions',{"updated_at": updated_at, "page": page})
+		return data
+
+	def award_index(self,updated_at,page):
+		data=self.rpc('award/index',{"updated_at": updated_at, "page": page})
+		return data
+
+	def inherit_check(self):
+		data=self.rpc('inherit/check',{})
+		return data
+
+	def inherit_conf_inherit(self,public_id,inherit_code):
+		data=self.rpc('inherit/conf_inherit',{"public_id": public_id, "inherit_code": inherit_code})
+		return data
+
+	def inherit_exec_inherit(self,public_id,inherit_code):
+		data=self.rpc('inherit/exec_inherit',{"public_id": public_id, "inherit_code": inherit_code})
+		return data
+
+	def player_character_commands(self,updated_at,page):
+		data=self.rpc('player/character_commands',{"updated_at": updated_at, "page": page})
+		return data
+
+	def player_deck_groups(self):
+		data=self.rpc('player/deck_groups',{})
+		return data
+
+	def memory_index(self):
+		data=self.rpc('memory/index',{})
+		return data
+
+	def battle_skip_parties(self):
+		data=self.rpc('battle/skip_parties',{})
+		return data
+
+	def webcast_index(self):
+		data=self.rpc('webcast/index',{})
+		return data
+
+	def item_world_survey_index(self):
+		data=self.rpc('item_world_survey/index',{})
+		return data
+
+	def arena_deck(self):
+		data=self.rpc('arena/deck',{})
+		return data
+
+	def event_missions(self,m_event_id):
+		data=self.rpc('event/missions',{"m_event_id": m_event_id})
+		return data
+
+	def bingo_index(self,id):
+		data=self.rpc('bingo/index',{"id": id})
+		return data
+
+	def bingo_lottery(self,id,use_stone):
+		data=self.rpc('bingo/lottery',{"id": id, "use_stone": use_stone})
+		return data
+
+	def event_missions(self,m_event_id):
+		data=self.rpc('event/missions',{"m_event_id": m_event_id})
+		return data
+
+	def auth_providers(self):
+		data=self.callAPI('auth_providers',None)
+		return data
+
+	def inherit_get_code(self):
+		data=self.rpc('inherit/get_code',{})
+		return data
+
 	def battle_start(self,m_stage_id,help_t_player_id,help_t_character_id,act,help_t_character_lv):
 		data=self.rpc('battle/start',{"t_character_ids": [], "t_deck_no": 1, "m_stage_id": m_stage_id, "m_guest_character_id": 0, "help_t_player_id": help_t_player_id, "t_raid_status_id": 0, "help_t_character_id": help_t_character_id, "auto_rebirth_t_character_ids": [], "act": act, "help_t_character_lv": help_t_character_lv})
 		return data
