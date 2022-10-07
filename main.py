@@ -10,6 +10,7 @@ from codedbots import codedbots
 from boltrend import boltrend
 import traceback
 from data import data as gamedata
+import inspect
 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -75,6 +76,10 @@ class API(object):
 	def callAPI(self,url,data=None):
 		#if hasattr(self,'waitn') and self.waitn>=1:
 		#	time.sleep(self.waitn)
+		if 'version_check' in url and not hasattr(self,'oldkey'):
+			self.oldkey=self.c.key
+		if 'version_check' in url and hasattr(self,'oldkey'):
+			self.c.key=self.oldkey
 		self.thisiv=self.c.randomiv()
 		self.setheaders(url)
 		if data is None:
@@ -100,7 +105,8 @@ class API(object):
 					return None
 				return self.callAPI(url,data)
 			else:
-				self.log('server returned error: %s'%(res['api_error']['message']))
+				self.log('server returned error: %s for %s'%(res['api_error']['message'],inspect.stack()[2][3]))
+				return None
 				#exit(1)
 		if 'password' in res:
 			self.password=res['password']
@@ -149,9 +155,15 @@ class API(object):
 			else:
 				self.s.headers.update({'X-Unity-Version':'2019.4.29f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'RPG/282 CFNetwork/1197 Darwin/20.0.0','X-APP-VERSION':self.version,'x-jvhpdr5cvhahu5zp':'Sj3guMhsn6TRzhmg','accept':'*/*','accept-encoding':'gzip, deflate, br'})
 		elif i==2:
-			self.s.headers.update({'X-Unity-Version':'2019.4.29f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'iPad6Gen/iOS 14.2','X-OS-TYPE':self.device,'X-APP-VERSION':self.version,'X-SESSION':self.session_id})
+			if self.region==2:
+				self.s.headers.update({'X-Unity-Version':'2018.4.3f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','X_CHANNEL':'1','Content-Type':'application/x-haut-hoiski','User-Agent':'en/17 CFNetwork/1206 Darwin/20.1.0','X-OS-TYPE':'1','X-APP-VERSION':self.version})
+			else:
+				self.s.headers.update({'X-Unity-Version':'2019.4.29f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'iPad6Gen/iOS 14.2','X-OS-TYPE':self.device,'X-APP-VERSION':self.version,'X-SESSION':self.session_id,'x-jvhpdr5cvhahu5zp':'Sj3guMhsn6TRzhmg','accept':'*/*','accept-encoding':'gzip, deflate, br'})
 		else:
-			self.s.headers.update({'X-Unity-Version':'2019.4.29f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'RPG/282 CFNetwork/1197 Darwin/20.0.0','X-APP-VERSION':self.version,'x-jvhpdr5cvhahu5zp':'Sj3guMhsn6TRzhmg','accept':'*/*','accept-encoding':'gzip, deflate, br'})
+			if self.region==2:
+				self.s.headers.update({'X-Unity-Version':'2018.4.20f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'forwardworks/194 CFNetwork/1206 Darwin/20.1.0','X-OS-TYPE':self.device,'X-APP-VERSION':self.version})
+			else:
+				self.s.headers.update({'X-Unity-Version':'2019.4.29f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'RPG/282 CFNetwork/1197 Darwin/20.0.0','X-APP-VERSION':self.version,'x-jvhpdr5cvhahu5zp':'Sj3guMhsn6TRzhmg','accept':'*/*','accept-encoding':'gzip, deflate, br','X-SESSION':self.session_id})
 
 	def rndid(self):
 		return self.c.rndid()
@@ -174,8 +186,8 @@ class API(object):
 	def rpc(self,method,prms):
 		return self.callAPI('rpc',{"rpc":{"jsonrpc":"2.0","id":self.rndid(),"prms":json.dumps(prms,separators=(',',':')),"method":method}})
 
-	def player_add(self):
-		data=self.rpc('player/add',{})
+	def player_add(self,tracking_authorize=2):
+		data=self.rpc('player/add',{"uuid": self.uuid, "pw": self.password, "tracking_authorize": tracking_authorize})
 		return data
 
 	def app_constants(self):
@@ -556,7 +568,7 @@ class API(object):
 		return data
 
 	def auth_providers(self):
-		data=self.callAPI('auth_providers',None)
+		data=self.callAPI('auth/providers',None)
 		return data
 
 	def inherit_get_code(self):
@@ -824,7 +836,20 @@ class API(object):
 		self.getmail()
 		self.getmail()
 
-	def dologin(self):
+	def dologin(self,public_id=None,inherit_code=None):
+		if public_id and inherit_code:
+			public_id=str(public_id)
+			inherit_code=str(inherit_code)
+			self.version_check()
+			self.signup()
+			self.login()
+			self.player_add(tracking_authorize=2)
+			self.inherit_check()
+			self.auth_providers()
+			if not self.inherit_conf_inherit(public_id=public_id,inherit_code=inherit_code):
+				self.log('wrong password or public_id')
+				exit(1)
+			self.inherit_exec_inherit(public_id=public_id,inherit_code=inherit_code)
 		self.version_check()
 		self.login()
 		self.player_index()
@@ -867,6 +892,9 @@ class API(object):
 		self.getmail()
 		self.getmail()
 		self.getfreegacha()
+		if public_id and inherit_code:
+			code=self.inherit_get_code()['result']
+			print('public_id: %s inherit_code: %s'%(code['public_id'],code['inherit_code']))
 
 	def shop_equipment_items(self):
 		data=self.rpc('shop/equipment_items',{})
