@@ -11,6 +11,7 @@ from boltrend import boltrend
 import traceback
 from data import data as gamedata
 import inspect
+from collections import OrderedDict
 
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -127,7 +128,8 @@ class API(object):
 				self.log('t_player_id:%s player_rank:%s'%(res['result']['t_player_id'],res['result']['player_rank']))
 			self.pid=res['result']['t_player_id']
 		if 'result' in res and 'after_t_status' in res['result']:
-			self.log('%s / %s rank:%s'%(res['result']['after_t_status']['act'],res['result']['after_t_status']['act_max'],res['result']['after_t_status']['rank']))
+			if res['result']['after_t_status']:
+				self.log('%s / %s rank:%s'%(res['result']['after_t_status']['act'],res['result']['after_t_status']['act_max'],res['result']['after_t_status']['rank']))
 		if 'result' in res and 't_innocent_id' in res['result']:
 			if res['result']['t_innocent_id']!=0:
 				self.log('t_innocent_id:%s'%(res['result']['t_innocent_id']))
@@ -158,7 +160,7 @@ class API(object):
 			if self.region==2:
 				self.s.headers.update({'X-Unity-Version':'2018.4.3f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','X_CHANNEL':'1','Content-Type':'application/x-haut-hoiski','User-Agent':'en/17 CFNetwork/1206 Darwin/20.1.0','X-OS-TYPE':'1','X-APP-VERSION':self.version})
 			else:
-				self.s.headers.update({'X-Unity-Version':'2019.4.29f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'iPad6Gen/iOS 14.2','X-OS-TYPE':self.device,'X-APP-VERSION':self.version,'X-SESSION':self.session_id,'x-jvhpdr5cvhahu5zp':'Sj3guMhsn6TRzhmg','accept':'*/*','accept-encoding':'gzip, deflate, br'})
+				self.s.headers.update({'X-Unity-Version':'2019.4.29f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'iPad6Gen/iOS 14.2','X-APP-VERSION':self.version,'X-SESSION':self.session_id,'x-jvhpdr5cvhahu5zp':'Sj3guMhsn6TRzhmg','accept':'*/*','accept-encoding':'gzip, deflate, br'})
 		else:
 			if self.region==2:
 				self.s.headers.update({'X-Unity-Version':'2018.4.20f1','X-Crypt-Iv':self.thisiv,'Accept-Language':'en-us','Content-Type':'application/x-haut-hoiski','User-Agent':'forwardworks/194 CFNetwork/1206 Darwin/20.1.0','X-OS-TYPE':self.device,'X-APP-VERSION':self.version})
@@ -184,7 +186,8 @@ class API(object):
 		return data
 
 	def rpc(self,method,prms):
-		return self.callAPI('rpc',{"rpc":{"jsonrpc":"2.0","id":self.rndid(),"prms":json.dumps(prms,separators=(',',':')),"method":method}})
+		rpc=OrderedDict([('jsonrpc', "2.0"), ('id', self.rndid()), ('method', method), ('prms', json.dumps(prms,separators=(',',':')))])
+		return self.callAPI('rpc',{"rpc":rpc})
 
 	def player_add(self,tracking_authorize=2):
 		data=self.rpc('player/add',{"uuid": self.uuid, "pw": self.password, "tracking_authorize": tracking_authorize})
@@ -218,7 +221,7 @@ class API(object):
 		return data
 
 	def adjust_add(self,event_id):
-		data=self.rpc('adjust/add',{"event_id": event_id})
+		data=self.rpc('adjust/add',{"event_id":event_id})
 		return data
 
 	def player_tutorial_choice_characters(self):
@@ -226,13 +229,14 @@ class API(object):
 		return data
 
 	def player_characters(self,updated_at,page):
-		data=self.rpc('player/characters',{"updated_at": updated_at,"page": page})
+		data=self.rpc('player/characters',{"updated_at":updated_at,"page":page})
 		return data
 
 	def player_weapons(self,updated_at=0,page=1):
 		if not hasattr(self,'equipments'):
 			self.weapons=[]
 		data=self.rpc('player/weapons',{"updated_at": updated_at,"page": page})
+		if not data:    return data
 		if len(data['result']['_items'])<=0:	return data
 		self.weapons=self.weapons + data['result']['_items']
 		return self.player_weapons(updated_at,page+1)
@@ -245,6 +249,7 @@ class API(object):
 		if not hasattr(self,'equipments'):
 			self.equipments=[]
 		data=self.rpc('player/equipments',{"updated_at": updated_at,"page": page})
+		if not data:    return data
 		if len(data['result']['_items'])<=0:	return data
 		self.equipments=self.equipments + data['result']['_items']
 		return self.player_equipments(updated_at,page+1)
@@ -273,12 +278,13 @@ class API(object):
 		data=self.rpc('player/boosts',{})
 		return data
 
-	def player_character_collections(self):
-		data=self.rpc('player/character_collections',{})
+	def player_character_collections(self,updated_at,page):
+		data=self.rpc('player/character_collections',{"updated_at":updated_at,"page":page})
 		return data
 
 	def player_decks(self):
 		data=self.rpc('player/decks',{})
+		if not data:    return data
 		self.deck=[data['result']['_items'][0]['t_character_ids'][x] for x in data['result']['_items'][0]['t_character_ids']]
 		return data
 
@@ -310,8 +316,9 @@ class API(object):
 		data=self.rpc('player/home_customizes',{})
 		return data
 
-	def player_items(self):
-		data=self.rpc('player/items',{})
+	def player_items(self,updated_at=0,page=1):
+		data=self.rpc('player/items',{"updated_at":updated_at,"page":page})
+		if not data:    return data
 		self.items=data['result']['_items']
 		return data
 
@@ -321,6 +328,7 @@ class API(object):
 
 	def player_stone_sum(self):
 		data=self.rpc('player/stone_sum',{})
+		if not data:    return data
 		self.log('free stones:%s paid stones:%s'%(data['result']['_items'][0]['num'],data['result']['_items'][1]['num']))
 		self.gems=data['result']['_items'][0]['num']
 		return data
@@ -353,8 +361,8 @@ class API(object):
 		data=self.rpc('potential/current',{})
 		return data
 
-	def potential_conditions(self):
-		data=self.rpc('potential/conditions',{})
+	def potential_conditions(self,updated_at,page):
+		data=self.rpc('potential/conditions',{"updated_at":updated_at,"page":page})
 		return data
 
 	def character_boosts(self):
@@ -385,12 +393,12 @@ class API(object):
 		data=self.rpc('weapon_equipment/update_effect_unconfirmed',{})
 		return data
 
-	def trophy_character_missions(self,m_character_ids,updated_at):
-		data=self.rpc('trophy/character_missions',{"m_character_ids": m_character_ids, "updated_at": updated_at})
+	def trophy_character_missions(self,updated_at,page):
+		data=self.rpc('trophy/character_missions',{"updated_at":updated_at,"page":page})
 		return data
 
 	def system_version_update(self):
-		data=self.rpc('system/version_update',{"app_version": self.version, "resouce_version": self.newest_resource_version, "database_version": "0"})
+		data=self.rpc('system/version_update',{"app_version": self.version, "resouce_version": self.newest_resource_version, "database_version": ''})
 		return data
 
 	def login_update(self):
@@ -431,8 +439,8 @@ class API(object):
 			data=self.rpc('present/index',{"conditions": conditions, "order":order})
 		return data
 
-	def raid_ranking_reward(self):
-		data=self.rpc('raid/ranking_reward',{})
+	def raid_ranking_reward(self,m_event_id):
+		data=self.rpc('raid/ranking_reward',{"m_event_id":m_event_id})
 		return data
 
 	def sub_tutorial_read(self,m_sub_tutorial_id):
@@ -450,7 +458,10 @@ class API(object):
 	def getmail(self):
 		did=set()
 		while(1):
-			ids=self.present_index(conditions=[0, 1, 2, 3, 4, 99],order=1)['result']['_items']
+			ids=self.present_index(conditions=[0, 1, 2, 3, 4, 99],order=1)
+			if not ids:
+				break
+			ids=ids['result']['_items']
 			msgs=[]
 			for i in ids:
 				if i['id'] in did:	continue
@@ -837,10 +848,10 @@ class API(object):
 		self.getmail()
 
 	def dologin(self,public_id=None,inherit_code=None):
+		self.version_check()
 		if public_id and inherit_code:
 			public_id=str(public_id)
 			inherit_code=str(inherit_code)
-			self.version_check()
 			self.signup()
 			self.login()
 			self.player_add(tracking_authorize=2)
@@ -850,28 +861,34 @@ class API(object):
 				self.log('wrong password or public_id')
 				exit(1)
 			self.inherit_exec_inherit(public_id=public_id,inherit_code=inherit_code)
-		self.version_check()
+			self.version_check()
+
 		self.login()
-		self.player_index()
-		self.player_tutorial()
-		self.getmail()
-		self.getmail()
-		self.player_stone_sum()
 		self.app_constants()
 		self.player_tutorial()
 		self.battle_status()
+		self.player_sync()
 		self.player_characters(updated_at=0,page=1)
 		self.player_weapons(updated_at=0,page=1)
+		self.player_weapon_effects(updated_at=0,page=1)
 		self.player_equipments(updated_at=0,page=1)
+		self.player_equipment_effects(updated_at=0,page=1)
+		self.player_items(updated_at=0,page=1)
+		self.player_equipment_decks(updated_at=0,page=1)
+		self.player_clear_stages(updated_at=0,page=1)
+		self.player_stage_missions(updated_at=0,page=1)
 		self.player_innocents(updated_at=0,page=1)
+		self.award_index(updated_at=0,page=1)
+		self.player_character_commands(updated_at=0,page=1)
+		self.player_character_collections(updated_at=0,page=1)
+		self.trophy_character_missions(updated_at=0,page=1)
 		self.player_index()
 		self.player_agendas()
 		self.player_boosts()
-		self.player_character_collections()
 		self.player_decks()
+		self.player_deck_groups()
 		self.friend_index()
 		self.player_home_customizes()
-		self.player_items()
 		self.passport_index()
 		self.player_stone_sum()
 		self.player_sub_tutorials()
@@ -881,20 +898,30 @@ class API(object):
 		self.stage_boost_index()
 		self.information_popup()
 		self.player_character_mana_potions()
-		self.player_equipments(updated_at=0,page=2)
-		self.player_innocents(updated_at=0,page=2)
+		self.potential_current()
+		self.character_boosts()
+		self.survey_index()
+		self.kingdom_entries()
+		self.breeding_center_list()
+		self.trophy_daily_requests()
+		self.weapon_equipment_update_effect_unconfirmed()
+		self.memory_index()
+		self.battle_skip_parties()
+		self.webcast_index()
+		self.item_world_survey_index()
+		self.arena_deck()
+		self.potential_conditions(updated_at=0,page=1)
 		self.player_badges()
 		self.system_version_manage()
-		self.player_update_device_token(device_token='')
-		self.login_update()
-		self.player_badge_homes()
-		self.trophy_beginner_missions()
+		
+		if self.region==1:
+			self.auth_providers()
+			code=self.inherit_get_code()['result']
+			self.log('public_id: %s inherit_code: %s'%(code['public_id'],code['inherit_code']))
+		self.friend_send_act()
 		self.getmail()
 		self.getmail()
 		self.getfreegacha()
-		if public_id and inherit_code:
-			code=self.inherit_get_code()['result']
-			print('public_id: %s inherit_code: %s'%(code['public_id'],code['inherit_code']))
 
 	def shop_equipment_items(self):
 		data=self.rpc('shop/equipment_items',{})
