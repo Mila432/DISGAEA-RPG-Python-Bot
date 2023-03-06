@@ -619,34 +619,34 @@ class API(object):
 
 	def getStage(self,i):
 		i=int(i)
-		for s in gamedata['stages']:
+		for s in gamedata[self.region]['stages']:
 			if i == s['id']:
 				return s
 
 	def getItem(self,i):
-		for s in gamedata['items']:
+		for s in gamedata[self.region]['items']:
 			if i == s['id']:
 				return s
 
 	def getUnit(self,i):
-		for s in gamedata['units']:
+		for s in gamedata[self.region]['units']:
 			if i == s['id']:
 				return s
 
 	def getChar(self,i):
-		for s in gamedata['characters']:
+		for s in gamedata[self.region]['characters']:
 			if 'm_character_id' not in s:	continue
 			if i == s['m_character_id']:
 				return s
 		return {'class_name':'MISSING'}
 
 	def getEquip(self,i):
-		for s in gamedata['equip']:
+		for s in gamedata[self.region]['equip']:
 			if i == s['id']:
 				return s
 
 	def getWeapon(self,i):
-		for s in gamedata['weapon']:
+		for s in gamedata[self.region]['weapon']:
 			if i == s['id']:
 				return s
 
@@ -811,7 +811,7 @@ class API(object):
 		if not farmingAll:
 			self.getDone()
 		ss=[]
-		for s in gamedata['stages']:
+		for s in gamedata[self.region]['stages']:
 			ss.append(s['id'])
 		ss.sort(reverse = False)
 		#ss=sorted(ss)
